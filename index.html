@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aeos Group & YAAS — Autonomous Media Infrastructure Deck</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans, Outfit, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['"Outfit"', '"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            pine: {
+              950: '#031410',
+              900: '#072620',
+              850: '#0B332B',
+              800: '#0F3E35',
+              750: '#12483E',
+              700: '#165246',
+              600: '#1F6B5C',
+            },
+            lime: {
+              300: '#D8FF54',
+              400: '#C6FF3D',
+              500: '#B2F425',
+              600: '#9CE014',
+            },
+            cream: {
+              50: '#F9FAF7',
+              100: '#F2F5ED',
+              200: '#E5EAD9',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Alpine.js CDN -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
+
+  <style>
+    /* Custom Selection */
+    ::selection { background: #C6FF3D; color: #072620; }
+
+    /* HARD LOCK: ZERO SCROLLBARS NATIONWIDE */
+    * {
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
+    }
+    *::-webkit-scrollbar,
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      max-height: 100vh;
+      max-height: 100dvh;
+      overflow: hidden !important;
+      background-color: #031410;
+      position: fixed;
+      inset: 0;
+    }
+
+    .slide-canvas {
+      width: 100vw;
+      height: 100vh !important;
+      height: 100dvh !important;
+      max-height: 100vh !important;
+      max-height: 100dvh !important;
+      overflow: hidden !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-sizing: border-box;
+      padding: clamp(0.75rem, 1.8vh, 1.5rem) clamp(1rem, 2.5vw, 2.5rem) clamp(0.75rem, 1.6vh, 1.25rem) clamp(1rem, 2.5vw, 2.5rem) !important;
+    }
+
+    /* Print / PDF Engine: Strictly 1920x1080 16:9 Landscape Pages */
+    @media print {
+      @page {
+        size: 1920px 1080px landscape;
+        margin: 0;
+      }
+      body {
+        position: static !important;
+        background: #072620 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        overflow: visible !important;
+        height: auto !important;
+      }
+      .no-print { display: none !important; }
+      .slide-canvas {
+        display: flex !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        height: 1080px !important;
+        min-height: 1080px !important;
+        max-height: 1080px !important;
+        width: 1920px !important;
+        max-width: 1920px !important;
+        position: relative !important;
+        padding: 40px 60px 48px 60px !important;
+        overflow: hidden !important;
+        opacity: 1 !important;
+        transform: none !important;
+        visibility: visible !important;
+      }
+      .slide-canvas[style*="display: none"],
+      [x-show].slide-canvas {
+        display: flex !important;
+        opacity: 1 !important;
+      }
+      .drawer-panel { display: none !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-pine-950 text-white font-sans antialiased selection:bg-lime-400 selection:text-pine-950"
+      x-data="deckApp()"
+      @keydown.window="handleKeydown($event)">
+
+  <!-- ========================================================================= -->
+  <!-- SLIDE 1: STRATEGIC CONTEXT (Deep Pine Canvas · Edge-to-Edge)             -->
+  <!-- ========================================================================= -->
+  <section x-show="currentSlide === 1" x-transition.opacity.duration.300ms 
+           class="slide-canvas h-full w-full bg-gradient-to-br from-pine-900 via-pine-950 to-[#02100C] text-white flex flex-col justify-between relative">
+    
+    <!-- Ambient Radial Glow -->
+    <div class="absolute -right-32 -bottom-32 w-[550px] h-[550px] bg-lime-400/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+    <!-- Integrated Top Header Strip -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-pine-800/80 pb-2.5 z-10 shrink-0">
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-lg bg-lime-400 flex items-center justify-center font-display font-black text-pine-950 text-sm shadow-sm">
+          Æ
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs uppercase tracking-wider font-bold font-mono text-lime-400">Aeos Group · YAAS Media</span>
+          <span class="text-pine-600 font-mono">|</span>
+          <span class="text-xs font-mono text-pine-300">01 · Strategic Context & Market Shift</span>
+        </div>
+      </div>
+      <!-- Right Action Triggers -->
+      <div class="flex items-center gap-2.5 no-print">
+        <button @click="toggleDrawer()"
+                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg border border-lime-400/30 bg-pine-850 hover:bg-pine-800 text-lime-400 transition-all">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>Call Notes (N)</span>
+        </button>
+        <button @click="printDeck()"
+                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg bg-lime-400 hover:bg-lime-300 text-pine-950 font-bold transition-all shadow-sm">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Export PDF</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Content: Full-Width 2-Column Split -->
+    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center my-auto z-10 py-1">
+      
+      <!-- Left Column (7 cols): Bold Headline & Macro Stat -->
+      <div class="lg:col-span-7 space-y-2.5 sm:space-y-3 lg:space-y-3.5">
+        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-pine-850 border border-pine-700 text-lime-400 text-[11px] font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
+          <span>THE ATTENTION ECONOMY PARADIGM SHIFT</span>
+        </div>
+
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold tracking-tight text-white leading-[1.1]">
+          The Market is Moving — <br>
+          <span class="text-lime-400">And It’s Owned Media</span>
+        </h1>
+        
+        <p class="text-xs sm:text-sm text-pine-200/90 max-w-2xl leading-relaxed">
+          Paid ad CAC is breaking brand unit economics. Enterprise brands must escape ad spend by becoming autonomous media engines. YAAS delivers organic audience capture across 70+ channels; Aeos Labs mechanizes the backend from 100 to 1,000+ monthly assets with zero headcount drag or AI slop.
+        </p>
+
+        <!-- Giant Metric Callout & Verified Aeos Scale Strip -->
+        <div class="pt-0.5 flex flex-wrap items-center gap-4 lg:gap-6">
+          <div class="flex items-center gap-3.5">
+            <span class="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight leading-none">1B+</span>
+            <div class="border-l-2 border-lime-400 pl-3">
+              <span class="text-sm sm:text-base font-bold text-lime-400 block font-display leading-tight">Monthly Organic Views</span>
+              <span class="text-[10px] sm:text-[11px] text-pine-300 font-mono">Compounding distribution across managed brand channels</span>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-2 pt-1 sm:pt-0">
+            <span class="px-2.5 py-0.5 rounded-lg bg-pine-900 border border-pine-750 text-xs font-mono text-lime-300">70+ Channels</span>
+            <span class="px-2.5 py-0.5 rounded-lg bg-pine-900 border border-pine-750 text-xs font-mono text-lime-300">2,000+ Videos / Mo</span>
+          </div>
+        </div>
+
+        <!-- Structural Shift Bento Cards (Fills Void & Anchors Shift) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-0.5 max-w-2xl">
+          <div class="bg-pine-850/90 p-3 rounded-xl border border-pine-750 shadow-md flex flex-col justify-between">
+            <div>
+              <span class="text-[9px] font-mono text-red-400 font-bold uppercase tracking-wider block mb-0.5">THE OBSOLETE PLAYBOOK</span>
+              <div class="text-xs font-bold text-white mb-0.5">Paid Ad CAC Treadmill</div>
+              <p class="text-[11px] text-pine-300 leading-snug">Renting transient attention. Ad budgets scale 1:1 with revenue; stopping spend kills inbound leads immediately.</p>
+            </div>
+          </div>
+          <div class="bg-pine-850/90 p-3 rounded-xl border border-lime-400/40 shadow-md flex flex-col justify-between">
+            <div>
+              <span class="text-[9px] font-mono text-lime-400 font-bold uppercase tracking-wider block mb-0.5">THE AEOS THESIS</span>
+              <div class="text-xs font-bold text-white mb-0.5">Autonomous Owned Media</div>
+              <p class="text-[11px] text-pine-300 leading-snug">Compounding brand equity. 70+ channels capture permanent organic mindshare at zero continuous ad spend.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column (5 cols): Spacious Deep-Tech Telemetry Radar HUD -->
+      <div class="lg:col-span-5 flex justify-center items-center">
+        <div class="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 flex items-center justify-center">
+          
+          <!-- Subtle Crosshair Axes -->
+          <div class="absolute inset-x-0 top-1/2 h-px bg-pine-800/60 pointer-events-none"></div>
+          <div class="absolute inset-y-0 left-1/2 w-px bg-pine-800/60 pointer-events-none"></div>
+
+          <!-- Outer Orbit Ring (1,000+ Assets / Mo) -->
+          <div class="absolute w-[240px] h-[240px] sm:w-[260px] sm:h-[260px] rounded-full border border-dashed border-pine-700 flex items-center justify-center pointer-events-none">
+            <!-- Satellite Dot at 45° -->
+            <div class="absolute top-[24px] right-[24px] w-2.5 h-2.5 rounded-full bg-lime-400 shadow-[0_0_12px_#C6FF3D] flex items-center justify-center">
+              <span class="w-1 h-1 rounded-full bg-pine-950"></span>
+            </div>
+          </div>
+
+          <!-- Top-Right Staggered HUD Callout Badge (Scale Ceiling) -->
+          <div class="absolute -top-1 -right-1 sm:-right-2 bg-pine-900/95 border border-lime-400/50 shadow-xl px-2.5 py-1 rounded-xl backdrop-blur-md z-20">
+            <div class="flex items-center gap-1.5 mb-0.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
+              <span class="text-[9px] font-mono text-lime-400 uppercase font-bold tracking-wider">Scale Ceiling</span>
+            </div>
+            <div class="text-xs font-bold text-white font-mono">1,000+ Assets / Mo</div>
+            <div class="text-[8px] text-pine-300 font-mono">Autonomous Aeos Cluster</div>
+          </div>
+
+          <!-- Middle Orbit Ring (450 Assets / Mo) -->
+          <div class="absolute w-[170px] h-[170px] sm:w-[190px] sm:h-[190px] rounded-full border border-lime-400/30 flex items-center justify-center pointer-events-none">
+            <!-- Satellite Dot at 215° -->
+            <div class="absolute bottom-[16px] left-[16px] w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34D399]"></div>
+          </div>
+
+          <!-- Bottom-Left Staggered HUD Callout Badge (Hybrid Engine) -->
+          <div class="absolute -bottom-1 -left-1 sm:-left-2 bg-pine-900/95 border border-pine-700 shadow-xl px-2.5 py-1 rounded-xl backdrop-blur-md z-20">
+            <div class="flex items-center gap-1.5 mb-0.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span class="text-[9px] font-mono text-emerald-400 uppercase font-bold tracking-wider">Hybrid Tier</span>
+            </div>
+            <div class="text-xs font-bold text-white font-mono">450 Assets / Mo</div>
+            <div class="text-[8px] text-pine-300 font-mono">Semi-Automated Workflows</div>
+          </div>
+
+          <!-- Inner Core Sphere (Obsidian + Electric Lime Radar Core) -->
+          <div class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-gradient-to-br from-pine-950 via-pine-900 to-[#02100C] border-2 border-lime-400 flex flex-col items-center justify-center text-center shadow-[0_0_35px_rgba(198,255,61,0.25)] p-2 z-10 transition-transform hover:scale-105">
+            <div class="w-full flex items-center justify-center gap-1 mb-0.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-lime-400"></span>
+              <span class="text-[8px] font-mono text-pine-300 uppercase font-bold tracking-wider">Manual Baseline</span>
+            </div>
+            <span class="text-xl sm:text-2xl font-display font-black text-lime-400 my-0.5 whitespace-nowrap">80–100</span>
+            <span class="text-[8px] font-semibold text-white leading-tight">Assets / Mo<br><span class="text-pine-400 font-mono text-[8px]">(Editor Drag)</span></span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Integrated Bottom Footer Strip (Clear Corridor for Dock) -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-pine-400 pt-2 border-t border-pine-800/80 z-10 shrink-0 font-medium">
+      <div class="flex items-center gap-2 max-w-[28%] truncate">
+        <span class="w-2 h-2 rounded-full bg-lime-400"></span>
+        <span>CORE: OWNED MEDIA MOAT</span>
+      </div>
+      <div class="w-[300px] sm:w-[480px] lg:w-[560px] pointer-events-none shrink-0"></div>
+      <div class="text-right max-w-[28%] truncate">
+        PARTNERS: ZOHO · CLEARTRIP · RED BULL
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SLIDE 2: STRUCTURAL CONTRAST (Crisp Pure White Canvas · Edge-to-Edge)    -->
+  <!-- ========================================================================= -->
+  <section x-show="currentSlide === 2" x-transition.opacity.duration.300ms 
+           class="slide-canvas h-full w-full bg-cream-50 text-pine-950 flex flex-col justify-between relative">
+    
+    <!-- Integrated Top Header Strip -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-2.5 z-10 shrink-0">
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-lg bg-pine-950 flex items-center justify-center font-display font-black text-lime-400 text-sm shadow-sm">
+          Æ
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs uppercase tracking-wider font-bold font-mono text-pine-900">Aeos Group · Root Cause Diagnosis</span>
+          <span class="text-stone-300 font-mono">|</span>
+          <span class="text-xs font-mono text-stone-600">02 · Fragile Prompt Loops vs. Deterministic Pipelines</span>
+        </div>
+      </div>
+      <!-- Right Action Triggers -->
+      <div class="flex items-center gap-2.5 no-print">
+        <button @click="toggleDrawer()"
+                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg border border-stone-300 bg-white hover:bg-stone-100 text-pine-950 font-medium transition-all shadow-sm">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>Call Notes (N)</span>
+        </button>
+        <button @click="printDeck()"
+                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg bg-pine-950 hover:bg-pine-900 text-lime-400 font-bold transition-all shadow-sm">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Export PDF</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Content: Full-Width 2-Column Split -->
+    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center my-auto z-10 py-1">
+      
+      <!-- Left Column (5 cols): Clear Problem Statement & Stat -->
+      <div class="lg:col-span-5 space-y-3.5 lg:space-y-4">
+        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-stone-100 border border-stone-200 text-pine-800 text-[11px] font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-pine-900"></span>
+          <span>THE HIDDEN CEILING OF AGENCY PRODUCTION</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-pine-950 leading-tight">
+          Eliminating <br>
+          <span class="text-pine-700">Fragile Loops</span>
+        </h2>
+        
+        <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+          <strong>90% of AI video pipelines degrade into slop.</strong> Unguided LLM prompts hallucinate client stats, drop brand rules, and crash without durable state.
+        </p>
+
+        <!-- Deep Pine Stat Card (Compact Height) -->
+        <div class="bg-pine-900 text-white p-4 sm:p-5 rounded-2xl shadow-xl flex items-center justify-between border border-pine-800">
+          <div>
+            <span class="text-4xl sm:text-5xl font-display font-extrabold text-lime-400">85%</span>
+            <span class="block text-[11px] font-mono text-pine-300 mt-0.5 uppercase tracking-wider font-semibold">Turnaround Drag</span>
+            <p class="text-xs text-stone-300 mt-0.5 leading-snug">Wasted in manual meeting-to-editor context relay</p>
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-pine-800 border border-pine-700 flex items-center justify-center text-lime-400 shrink-0">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+        </div>
+
+        <!-- Founder's Office Grounding Strip -->
+        <div class="bg-lime-300/40 border border-lime-500/30 p-3 rounded-xl flex items-center gap-2.5 text-xs text-pine-950 font-medium">
+          <svg class="w-4 h-4 text-pine-900 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span><strong>Founder Requirement:</strong> "Sit on calls with clients, know what is being discussed, and put that in decks without losing context."</span>
+        </div>
+      </div>
+
+      <!-- Right Column (7 cols): 4 Wide Squircle Cards (2 Lime, 2 Deep Pine · Compact Height) -->
+      <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+        
+        <!-- Card 1: Electric Lime (Prompt Drift) -->
+        <div class="bg-lime-400 p-4 lg:p-4.5 rounded-2xl shadow-md border border-lime-500/40 flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-pine-950 flex items-center justify-center text-lime-400 mb-2.5 shadow-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h3 class="text-sm lg:text-base font-bold text-pine-950 mb-1">Prompt Drift & Slop</h3>
+            <p class="text-xs text-pine-900/80 leading-relaxed">
+              Unguided ChatGPT/Zapier prompts generate generic layouts, purple AI glows, and warped brand assets that look like cheap AI slop.
+            </p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-pine-900/15 text-[10px] font-mono text-pine-900 font-bold uppercase tracking-wider">
+            VULNERABILITY: UNGUARDED LLM
+          </div>
+        </div>
+
+        <!-- Card 2: Deep Pine (No Persistence) -->
+        <div class="bg-pine-900 text-white p-4 lg:p-4.5 rounded-2xl shadow-md border border-pine-800 flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-pine-800 flex items-center justify-center text-lime-400 mb-2.5">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <h3 class="text-sm lg:text-base font-bold text-white mb-1">Zero State Persistence</h3>
+            <p class="text-xs text-stone-300 leading-relaxed">
+              Brittle webhook endpoints fail silently without Dead Letter Queues (DLQs), memory retry, or durable call context anchors.
+            </p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-pine-800 text-[10px] font-mono text-lime-400 font-bold uppercase tracking-wider">
+            FAILURE: SILENT PIPELINE DROPS
+          </div>
+        </div>
+
+        <!-- Card 3: Deep Pine (Editor Bottleneck) -->
+        <div class="bg-pine-900 text-white p-4 lg:p-4.5 rounded-2xl shadow-md border border-pine-800 flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-pine-800 flex items-center justify-center text-lime-400 mb-2.5">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+            </div>
+            <h3 class="text-sm lg:text-base font-bold text-white mb-1">Linear Editor Bottleneck</h3>
+            <p class="text-xs text-stone-300 leading-relaxed">
+              Timeline-based Premiere/After Effects editors require 4–8 hours per clip. Cannot scale to 1,000+ monthly assets without bloating payroll.
+            </p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-pine-800 text-[10px] font-mono text-lime-400 font-bold uppercase tracking-wider">
+            BOTTLENECK: LINEAR TIME SPENT
+          </div>
+        </div>
+
+        <!-- Card 4: Electric Lime (Deterministic Moat) -->
+        <div class="bg-lime-400 p-4 lg:p-4.5 rounded-2xl shadow-md border border-lime-500/40 flex flex-col justify-between">
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-pine-950 flex items-center justify-center text-lime-400 mb-2.5 shadow-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="text-sm lg:text-base font-bold text-pine-950 mb-1">Aeos Deterministic Moat</h3>
+            <p class="text-xs text-pine-900/80 leading-relaxed">
+              FastMCP schema contracts, Remotion programmatic React rendering, and AlphaCTR optimization guaranteeing 100% brand parity.
+            </p>
+          </div>
+          <div class="mt-3 pt-2 border-t border-pine-900/15 text-[10px] font-mono text-pine-900 font-bold uppercase tracking-wider">
+            SOLUTION: CODE-AS-VIDEO PIPELINE
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Integrated Bottom Footer Strip (Clear Corridor for Dock) -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-stone-500 pt-2 border-t border-stone-200 z-10 shrink-0 font-medium">
+      <span class="max-w-[28%] truncate">PARADIGM: DETERMINISTIC SYSTEMS</span>
+      <div class="w-[300px] sm:w-[480px] lg:w-[560px] pointer-events-none shrink-0"></div>
+      <span class="text-right max-w-[28%] truncate">ZERO SLOP: AST VALIDATION</span>
+    </div>
+
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SLIDE 3: SYSTEM TOPOLOGY (Unified Obsidian & Pine Canvas · Edge-to-Edge) -->
+  <!-- ========================================================================= -->
+  <section x-show="currentSlide === 3" x-transition.opacity.duration.300ms 
+           class="slide-canvas h-full w-full bg-gradient-to-br from-pine-900 via-pine-950 to-[#02100C] text-white flex flex-col justify-between relative">
+    
+    <!-- Ambient Radial Glow -->
+    <div class="absolute -right-32 -bottom-32 w-[550px] h-[550px] bg-lime-400/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+    <!-- Integrated Top Header Strip -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-pine-800/80 pb-2.5 z-10 shrink-0">
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-lg bg-lime-400 flex items-center justify-center font-display font-black text-pine-950 text-sm shadow-sm">
+          Æ
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs uppercase tracking-wider font-bold font-mono text-lime-400">Aeos Labs Engine Architecture</span>
+          <span class="text-pine-600 font-mono">|</span>
+          <span class="text-xs font-mono text-pine-300">03 · End-to-End Autonomous Pipeline & Distribution Flow</span>
+        </div>
+      </div>
+      <!-- Right Action Triggers -->
+      <div class="flex items-center gap-2.5 no-print">
+        <button @click="toggleDrawer()"
+                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg border border-lime-400/30 bg-pine-850 hover:bg-pine-800 text-lime-400 transition-all">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>Call Notes (N)</span>
+        </button>
+        <button @click="printDeck()"
+                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg bg-lime-400 hover:bg-lime-300 text-pine-950 font-bold transition-all shadow-sm">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Export PDF</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Content: Full-Width 2-Row Layout -->
+    <div class="w-full max-w-[1600px] mx-auto space-y-3 lg:space-y-4 my-auto z-10 py-0">
+      
+      <!-- Top Row: Bar Chart (5 cols) + Connected Pipeline (7 cols) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5 items-stretch">
+        
+        <!-- Top Left Bar Chart Card (Shadcn-Grade High-Fidelity SVG Chart) -->
+        <div class="lg:col-span-5 bg-pine-950 text-white p-4 lg:p-5 rounded-2xl shadow-xl flex flex-col justify-between border border-pine-800">
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-3xl sm:text-4xl font-display font-extrabold text-lime-400 tracking-tight">+480%</span>
+              <span class="text-[11px] font-mono bg-pine-850 text-lime-300 px-2.5 py-0.5 rounded-full border border-pine-700 font-bold">TARGET CAPACITY</span>
+            </div>
+            <h3 class="text-base lg:text-lg font-bold text-white mb-0.5">Monthly Asset Throughput</h3>
+            <p class="text-xs text-pine-300">Progression from manual solo editor to autonomous Aeos Remotion cluster.</p>
+          </div>
+
+          <!-- Shadcn-Grade SVG Bar Chart with Reference Lines & Spline Curve -->
+          <div class="pt-2">
+            <svg class="w-full h-28 lg:h-32 overflow-visible" viewBox="0 0 460 145" fill="none">
+              <defs>
+                <linearGradient id="barSpruceFull" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#1F6B5C" />
+                  <stop offset="100%" stop-color="#0F3E35" />
+                </linearGradient>
+                <linearGradient id="barEmeraldFull" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#22C55E" />
+                  <stop offset="100%" stop-color="#165246" />
+                </linearGradient>
+                <linearGradient id="barLimeFull" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#E5FFA8" />
+                  <stop offset="100%" stop-color="#C6FF3D" />
+                </linearGradient>
+                <filter id="neonGlowFull" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#C6FF3D" flood-opacity="0.6"/>
+                </filter>
+              </defs>
+
+              <!-- Horizontal Dashed Reference Grid Lines -->
+              <line x1="36" y1="18" x2="440" y2="18" stroke="rgba(255,255,255,0.08)" stroke-dasharray="3 3"/>
+              <text x="6" y="22" fill="#6EE7B7" font-size="8" font-family="'JetBrains Mono', monospace">1,000</text>
+
+              <line x1="36" y1="52" x2="440" y2="52" stroke="rgba(255,255,255,0.06)" stroke-dasharray="3 3"/>
+              <text x="14" y="56" fill="#4ADE80" font-size="8" font-family="'JetBrains Mono', monospace">500</text>
+
+              <line x1="36" y1="86" x2="440" y2="86" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3 3"/>
+              <text x="14" y="90" fill="#22C55E" font-size="8" font-family="'JetBrains Mono', monospace">250</text>
+
+              <line x1="36" y1="120" x2="440" y2="120" stroke="#165246" stroke-width="1.5"/>
+              <text x="24" y="124" fill="#9CA3AF" font-size="8" font-family="'JetBrains Mono', monospace">0</text>
+
+              <!-- 5 Stylized Rounded Bars -->
+              <rect x="58" y="106" width="46" height="14" rx="4" fill="url(#barSpruceFull)"/>
+              <text x="81" y="136" text-anchor="middle" fill="#9CA3AF" font-size="9" font-family="'JetBrains Mono', monospace">W1 (80)</text>
+
+              <rect x="136" y="90" width="46" height="30" rx="4" fill="url(#barSpruceFull)"/>
+              <text x="159" y="136" text-anchor="middle" fill="#9CA3AF" font-size="9" font-family="'JetBrains Mono', monospace">W2 (220)</text>
+
+              <rect x="214" y="60" width="46" height="60" rx="4" fill="url(#barEmeraldFull)"/>
+              <text x="237" y="136" text-anchor="middle" fill="#C6FF3D" font-size="9" font-family="'JetBrains Mono', monospace">W3 (450)</text>
+
+              <rect x="292" y="28" width="46" height="92" rx="4" fill="url(#barLimeFull)" opacity="0.85"/>
+              <text x="315" y="136" text-anchor="middle" fill="#C6FF3D" font-weight="bold" font-size="9" font-family="'JetBrains Mono', monospace">W4 (800)</text>
+
+              <rect x="370" y="8" width="50" height="112" rx="5" fill="url(#barLimeFull)" filter="url(#neonGlowFull)"/>
+              <text x="395" y="136" text-anchor="middle" fill="#C6FF3D" font-weight="bold" font-size="9" font-family="'JetBrains Mono', monospace">Scale (1k+)</text>
+
+              <!-- Smooth Cubic Spline Trend Line Overlay -->
+              <path d="M 81 106 C 120 102, 140 88, 159 84 C 200 80, 220 54, 237 50 C 275 46, 300 24, 315 20 C 350 16, 375 6, 395 6"
+                    fill="none" stroke="#C6FF3D" stroke-width="2.5" stroke-linecap="round"/>
+
+              <!-- Glowing Node Vertices -->
+              <circle cx="81" cy="106" r="3.5" fill="#C6FF3D"/>
+              <circle cx="159" cy="84" r="3.5" fill="#C6FF3D"/>
+              <circle cx="237" cy="50" r="4" fill="#C6FF3D"/>
+              <circle cx="315" cy="20" r="4" fill="#C6FF3D"/>
+              <circle cx="395" cy="6" r="5" fill="#C6FF3D" filter="url(#neonGlowFull)"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Top Right Flow Diagram (5-Stage Visual Connection Pipeline) -->
+        <div class="lg:col-span-7 bg-pine-900 text-white p-4 lg:p-5 rounded-2xl shadow-xl flex flex-col justify-between border border-pine-800">
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <h3 class="text-sm lg:text-base font-bold text-white flex items-center gap-2">
+                <svg class="w-4 h-4 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+                <span>5-Stage Deterministic Production Pipeline</span>
+              </h3>
+              <span class="text-[10px] font-mono text-lime-400 font-bold bg-pine-950 px-2 py-0.5 rounded border border-pine-700">TARGET RUN RELIABILITY: 99.7% (PROVEN IN ATC ENGINE)</span>
+            </div>
+            <p class="text-xs text-pine-200/80 mb-2">
+              Automated webhook acknowledgement, AST schema validation, programmatic Remotion compilation, and automated DLQ error recovery.
+            </p>
+          </div>
+
+          <!-- Horizontal Connected Steps Flow with Arrows -->
+          <div class="grid grid-cols-5 gap-2 my-auto items-center">
+            <!-- Step 1 -->
+            <div class="bg-pine-850 p-2 rounded-xl border border-pine-700 text-center flex flex-col justify-between h-18 shadow-sm">
+              <div class="text-[8px] font-mono text-lime-400 font-bold uppercase">01 Intake</div>
+              <div class="text-xs font-bold text-white leading-tight">Webhook</div>
+              <div class="text-[9px] text-pine-300 font-mono">HMAC &lt;1.2s</div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-pine-850 p-2 rounded-xl border border-pine-700 text-center flex flex-col justify-between h-18 shadow-sm">
+              <div class="text-[8px] font-mono text-lime-400 font-bold uppercase">02 Schema</div>
+              <div class="text-xs font-bold text-white leading-tight">FastMCP</div>
+              <div class="text-[9px] text-pine-300 font-mono">Zero Drift</div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-pine-850 p-2 rounded-xl border border-pine-700 text-center flex flex-col justify-between h-18 shadow-sm">
+              <div class="text-[8px] font-mono text-lime-400 font-bold uppercase">03 Synthesis</div>
+              <div class="text-xs font-bold text-white leading-tight">Avatar/Voice</div>
+              <div class="text-[9px] text-pine-300 font-mono">Aeos Clone</div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-pine-850 p-2 rounded-xl border border-pine-700 text-center flex flex-col justify-between h-18 shadow-sm">
+              <div class="text-[8px] font-mono text-lime-400 font-bold uppercase">04 Render</div>
+              <div class="text-xs font-bold text-white leading-tight">Remotion</div>
+              <div class="text-[9px] text-pine-300 font-mono">AlphaCTR</div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="bg-lime-400 text-pine-950 p-2 rounded-xl border border-lime-300 text-center flex flex-col justify-between h-18 shadow-md">
+              <div class="text-[8px] font-mono text-pine-900 font-black uppercase">05 Fan-Out</div>
+              <div class="text-xs font-black text-pine-950 leading-tight">YAAS 10x</div>
+              <div class="text-[9px] text-pine-900 font-mono font-bold">70+ Brand DB</div>
+            </div>
+          </div>
+
+          <!-- Dead Letter Queue Safeguard -->
+          <div class="mt-2.5 pt-2 border-t border-pine-800 flex items-center justify-between text-xs text-pine-300">
+            <span class="flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-lime-400"></span>
+              <span class="text-[11px]"><strong>DLQ Recovery:</strong> 3x exponential backoff with instant Slack escalation.</span>
+            </span>
+            <span class="font-mono text-lime-400 text-[10px]">ZERO SOCKET LEAKS</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row (3 Sleek Glassmorphic Dark Bento Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 pt-0.5">
+        
+        <!-- Bento 1: Intake & HMAC -->
+        <div class="bg-pine-850 p-3 lg:p-3.5 rounded-xl shadow-md border border-pine-750 flex items-center gap-3">
+          <div class="w-9 h-9 lg:w-10 lg:h-10 rounded-lg bg-pine-900 border border-pine-700 flex items-center justify-center text-lime-400 shrink-0 shadow-sm">
+            <svg class="w-5 h-5 text-lime-400 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h4 class="text-xs sm:text-sm font-bold text-white mb-0.5">Ingest & HMAC Verification</h4>
+            <p class="text-[11px] text-pine-200/90 leading-snug">
+              Automated webhook authentication with SHA-256 HMAC signatures and strict JSON schemas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bento 2: Remotion & AlphaCTR -->
+        <div class="bg-pine-850 p-3 lg:p-3.5 rounded-xl shadow-md border border-pine-750 flex items-center gap-3">
+          <div class="w-9 h-9 lg:w-10 lg:h-10 rounded-lg bg-pine-900 border border-pine-700 flex items-center justify-center text-lime-400 shrink-0 shadow-sm">
+            <svg class="w-5 h-5 text-lime-400 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div>
+            <h4 class="text-xs sm:text-sm font-bold text-white mb-0.5">Remotion & AlphaCTR</h4>
+            <p class="text-[11px] text-pine-200/90 leading-snug">
+              Deterministic React video rendering, VideoVault asset cache, and AlphaCTR thumbnail scoring.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bento 3: YAAS Fan-Out -->
+        <div class="bg-pine-850 p-3 lg:p-3.5 rounded-xl shadow-md border border-pine-750 flex items-center gap-3">
+          <div class="w-9 h-9 lg:w-10 lg:h-10 rounded-lg bg-pine-900 border border-pine-700 flex items-center justify-center text-lime-400 shrink-0 shadow-sm">
+            <svg class="w-5 h-5 text-lime-400 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </div>
+          <div>
+            <h4 class="text-xs sm:text-sm font-bold text-white mb-0.5">YAAS 10-Platform Fan-Out</h4>
+            <p class="text-[11px] text-pine-200/90 leading-snug">
+              Simultaneous distribution across 70+ brand channels (YouTube, Shorts, LinkedIn, X, Reels).
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Integrated Bottom Footer Strip (Clear Corridor for Dock) -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-pine-400 pt-2 border-t border-pine-800/80 font-medium z-10 shrink-0">
+      <span class="max-w-[28%] truncate">TOPOLOGY: DISTRIBUTED ASYNC</span>
+      <div class="w-[300px] sm:w-[480px] lg:w-[560px] pointer-events-none shrink-0"></div>
+      <span class="text-right max-w-[28%] truncate">PROTOCOL: FastMCP / WEBHOOKS</span>
+    </div>
+
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SLIDE 4: 30-DAY EXECUTION ROADMAP (Deep Spruce Canvas · Edge-to-Edge)   -->
+  <!-- ========================================================================= -->
+  <section x-show="currentSlide === 4" x-transition.opacity.duration.300ms 
+           class="slide-canvas h-full w-full bg-gradient-to-br from-pine-900 via-pine-950 to-[#02100C] text-white flex flex-col justify-between relative">
+    
+    <!-- Integrated Top Header Strip -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-pine-800/80 pb-2.5 z-10 shrink-0">
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-lg bg-lime-400 flex items-center justify-center font-display font-black text-pine-950 text-sm shadow-sm">
+          Æ
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs uppercase tracking-wider font-bold font-mono text-lime-400">Aeos Labs Delivery Engine</span>
+          <span class="text-pine-600 font-mono">|</span>
+          <span class="text-xs font-mono text-pine-300">04 · 30-Day Production Milestones</span>
+        </div>
+      </div>
+      <!-- Right Action Triggers -->
+      <div class="flex items-center gap-2.5 no-print">
+        <button @click="toggleDrawer()"
+                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg border border-lime-400/30 bg-pine-850 hover:bg-pine-800 text-lime-400 transition-all">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>Call Notes (N)</span>
+        </button>
+        <button @click="printDeck()"
+                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg bg-lime-400 hover:bg-lime-300 text-pine-950 font-bold transition-all shadow-sm">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Export PDF</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Content: Full-Width 4-Column Grid -->
+    <div class="w-full max-w-[1600px] mx-auto space-y-3 lg:space-y-4 my-auto z-10 py-0">
+      <div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold tracking-tight text-white mb-1 leading-tight">
+          Rapid Phased Deployment: <br>
+          <span class="text-lime-400">Zero Handholding, Concrete Proof-of-Work</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-pine-200/80 max-w-2xl leading-relaxed">
+          Designed to deliver client-facing proof of work in Week 1, stress-test concurrency in Week 3, and achieve autonomous 1,000+ monthly asset velocity in Week 4.
+        </p>
+      </div>
+
+      <!-- 4 Milestone Cards Grid (Compact Heights) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative">
+        
+        <!-- Week 1 -->
+        <div class="bg-pine-850 p-4 lg:p-4.5 rounded-2xl border border-pine-700 hover:border-lime-400/40 transition-all flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-2.5">
+              <div class="flex items-center gap-1.5">
+                <span class="font-mono text-[11px] text-lime-400 font-bold bg-pine-900 px-2 py-0.5 rounded-md border border-pine-700/80">WEEK 1</span>
+                <span class="text-[10px] font-mono text-pine-400 uppercase">Days 1–7</span>
+              </div>
+              <div class="w-7 h-7 rounded-lg bg-pine-900/90 border border-pine-700/80 flex items-center justify-center text-lime-400 shrink-0">
+                <svg class="w-3.5 h-3.5 text-lime-400 shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
+              </div>
+            </div>
+            <h4 class="text-sm lg:text-base font-bold text-white mb-1">Protocol & Discovery</h4>
+            <p class="text-[11px] lg:text-xs text-pine-300 leading-relaxed mb-3">
+              Ingest brand design tokens, map font typography rules, and establish FastMCP JSON schema contracts with HMAC SHA-256 validation.
+            </p>
+          </div>
+          <div class="pt-2.5 border-t border-pine-800 text-xs font-mono text-lime-300 font-medium flex items-center justify-between">
+            <span>✓ Gateways Live</span>
+            <span class="text-pine-400 text-[10px]">FAST-MCP</span>
+          </div>
+        </div>
+
+        <!-- Week 2 -->
+        <div class="bg-pine-850 p-4 lg:p-4.5 rounded-2xl border border-pine-700 hover:border-lime-400/40 transition-all flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-2.5">
+              <div class="flex items-center gap-1.5">
+                <span class="font-mono text-[11px] text-lime-400 font-bold bg-pine-900 px-2 py-0.5 rounded-md border border-pine-700/80">WEEK 2</span>
+                <span class="text-[10px] font-mono text-pine-400 uppercase">Days 8–14</span>
+              </div>
+              <div class="w-7 h-7 rounded-lg bg-pine-900/90 border border-pine-700/80 flex items-center justify-center text-lime-400 shrink-0">
+                <svg class="w-3.5 h-3.5 text-lime-400 shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+            </div>
+            <h4 class="text-sm lg:text-base font-bold text-white mb-1">Prototype Batch (20)</h4>
+            <p class="text-[11px] lg:text-xs text-pine-300 leading-relaxed mb-3">
+              Generate initial 20 verified video clips with Aeos avatar clone sync, programmatic Remotion React layouts, and client sign-off.
+            </p>
+          </div>
+          <div class="pt-2.5 border-t border-pine-800 text-xs font-mono text-lime-300 font-medium flex items-center justify-between">
+            <span>✓ Client Sign-Off</span>
+            <span class="text-pine-400 text-[10px]">REMOTION</span>
+          </div>
+        </div>
+
+        <!-- Week 3 -->
+        <div class="bg-pine-850 p-4 lg:p-4.5 rounded-2xl border border-pine-700 hover:border-lime-400/40 transition-all flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-2.5">
+              <div class="flex items-center gap-1.5">
+                <span class="font-mono text-[11px] text-lime-400 font-bold bg-pine-900 px-2 py-0.5 rounded-md border border-pine-700/80">WEEK 3</span>
+                <span class="text-[10px] font-mono text-pine-400 uppercase">Days 15–21</span>
+              </div>
+              <div class="w-7 h-7 rounded-lg bg-pine-900/90 border border-pine-700/80 flex items-center justify-center text-lime-400 shrink-0">
+                <svg class="w-3.5 h-3.5 text-lime-400 shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+            </div>
+            <h4 class="text-sm lg:text-base font-bold text-white mb-1">Stress Soak (200/day)</h4>
+            <p class="text-[11px] lg:text-xs text-pine-300 leading-relaxed mb-3">
+              Soak test concurrency with zero socket leaks, validate automated DLQ recovery with 3x backoff, and run AlphaCTR thumbnail A/B tests.
+            </p>
+          </div>
+          <div class="pt-2.5 border-t border-pine-800 text-xs font-mono text-lime-300 font-medium flex items-center justify-between">
+            <span>✓ Concurrency Passed</span>
+            <span class="text-pine-400 text-[10px]">DLQ RECOVERY</span>
+          </div>
+        </div>
+
+        <!-- Week 4: Highlighted Scale Milestone -->
+        <div class="bg-lime-400 text-pine-950 p-4 lg:p-4.5 rounded-2xl border border-lime-300 flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-2.5">
+              <div class="flex items-center gap-1.5">
+                <span class="font-mono text-[11px] text-pine-950 font-black bg-white px-2 py-0.5 rounded-md shadow-sm">WEEK 4</span>
+                <span class="text-[10px] font-mono text-pine-900 font-bold uppercase">Days 22–30</span>
+              </div>
+              <div class="w-7 h-7 rounded-lg bg-pine-950 border border-pine-900 flex items-center justify-center text-lime-400 shrink-0 shadow-sm">
+                <svg class="w-3.5 h-3.5 text-lime-400 shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              </div>
+            </div>
+            <h4 class="text-sm lg:text-base font-black text-pine-950 mb-1">Autonomous Cutover</h4>
+            <p class="text-[11px] lg:text-xs text-pine-900 font-medium leading-relaxed mb-3">
+              Full 1,000+ monthly asset cutover across 10 distribution platforms with real-time executive telemetry dashboard and zero manual drag.
+            </p>
+          </div>
+          <div class="pt-2.5 border-t border-pine-900/20 text-xs font-mono text-pine-950 font-bold flex items-center justify-between">
+            <span>✓ 1,000+ Scaled Production Target</span>
+            <span class="text-pine-900 text-[10px]">YAAS 10X</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Integrated Bottom Footer Strip (Clear Corridor for Dock) -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-pine-400 pt-2 border-t border-pine-800/80 z-10 shrink-0 font-medium">
+      <span class="max-w-[28%] truncate">TIMELINE: 30-DAY DEPLOYMENT</span>
+      <div class="w-[300px] sm:w-[480px] lg:w-[560px] pointer-events-none shrink-0"></div>
+      <span class="text-right max-w-[28%] truncate">GATE: PROTOTYPE APPROVAL</span>
+    </div>
+
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SLIDE 5: MEASURABLE ROI (Crisp Pure White Canvas · Edge-to-Edge)         -->
+  <!-- ========================================================================= -->
+  <section x-show="currentSlide === 5" x-transition.opacity.duration.300ms 
+           class="slide-canvas h-full w-full bg-cream-50 text-pine-950 flex flex-col justify-between relative">
+    
+    <!-- Integrated Top Header Strip -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-2.5 z-10 shrink-0">
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-lg bg-pine-950 flex items-center justify-center font-display font-black text-lime-400 text-sm shadow-sm">
+          Æ
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs uppercase tracking-wider font-bold font-mono text-pine-900">Aeos Labs Acceptance Criteria</span>
+          <span class="text-stone-300 font-mono">|</span>
+          <span class="text-xs font-mono text-stone-600">05 · Measurable ROI & Operational Benchmarks</span>
+        </div>
+      </div>
+      <!-- Right Action Triggers -->
+      <div class="flex items-center gap-2.5 no-print">
+        <button @click="toggleDrawer()"
+                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg border border-stone-300 bg-white hover:bg-stone-100 text-pine-950 font-medium transition-all shadow-sm">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>Call Notes (N)</span>
+        </button>
+        <button @click="printDeck()"
+                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg bg-pine-950 hover:bg-pine-900 text-lime-400 font-bold transition-all shadow-sm">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Export PDF</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Content: Full-Width 4 KPI Bento Cards -->
+    <div class="w-full max-w-[1600px] mx-auto space-y-3 lg:space-y-4 my-auto z-10 py-0">
+      <div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold tracking-tight text-pine-950 mb-1 leading-tight">
+          Definite Outcomes: <br>
+          <span class="text-pine-700">Speed, Reliability & Token Economics</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-stone-600 max-w-2xl leading-relaxed">
+          Acceptance criteria benchmarked against real production systems to eliminate context loss and provide executive visibility.
+        </p>
+      </div>
+
+      <!-- 4 KPI Bento Cards (Compact Heights) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Metric 1: 85% Turnaround -->
+        <div class="bg-pine-900 text-white p-4 lg:p-4.5 rounded-2xl shadow-xl flex flex-col justify-between border border-pine-800 transition-transform hover:-translate-y-1">
+          <div>
+            <span class="text-[9px] font-mono text-lime-400 uppercase tracking-wider font-bold">CONTEXT RELAY</span>
+            <div class="text-4xl sm:text-5xl font-display font-extrabold text-lime-400 my-1.5 tracking-tight">85%</div>
+            <h4 class="text-sm font-bold text-white mb-1">Turnaround Reduction</h4>
+            <p class="text-xs text-stone-300 leading-relaxed">
+              Compresses raw meeting-to-deck turnaround from 48 hours down to &lt;4 hours using structured context pipelines and direct slide generation.
+            </p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-pine-800 text-[10px] font-mono text-stone-400 flex items-center justify-between">
+            <span>BENCHMARK: CONTEXT ENGINE</span>
+            <span class="text-lime-400 font-bold">&lt;4H SLA</span>
+          </div>
+        </div>
+
+        <!-- Metric 2: <1.2s Ingest Latency -->
+        <div class="bg-white text-pine-950 p-4 lg:p-4.5 rounded-2xl shadow-xl flex flex-col justify-between border border-stone-200 transition-transform hover:-translate-y-1">
+          <div>
+            <span class="text-[9px] font-mono text-stone-500 uppercase tracking-wider font-bold">INGEST SPEED</span>
+            <div class="text-4xl sm:text-5xl font-display font-extrabold text-pine-900 my-1.5 tracking-tight">&lt;1.2s</div>
+            <h4 class="text-sm font-bold text-pine-950 mb-1">Webhook Ingest-ACK</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Automated webhook acknowledgement with zero socket leaks, SHA-256 HMAC verification, and strict AST schema contracts (PR #276 pattern).
+            </p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-stone-100 text-[10px] font-mono text-stone-500 font-bold flex items-center justify-between">
+            <span>BENCHMARK: HTTPX ASYNC REFACTOR</span>
+            <span class="text-pine-900 font-bold">ZERO LEAKS</span>
+          </div>
+        </div>
+
+        <!-- Metric 3: 99.7% Execution Reliability -->
+        <div class="bg-lime-400 text-pine-950 p-4 lg:p-4.5 rounded-2xl shadow-xl flex flex-col justify-between border border-lime-500/40 transition-transform hover:-translate-y-1">
+          <div>
+            <span class="text-[9px] font-mono text-pine-900 uppercase tracking-wider font-black">PIPELINE SLA</span>
+            <div class="text-4xl sm:text-5xl font-display font-extrabold text-pine-950 my-1.5 tracking-tight">99.7%</div>
+            <h4 class="text-sm font-black text-pine-950 mb-1">Execution Reliability</h4>
+            <p class="text-xs text-pine-900/90 font-medium leading-relaxed">
+              Target run success rate across automated batch pipelines with DLQ retry backoffs and real-time alerts (ATC production receipt).
+            </p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-pine-900/20 text-[10px] font-mono text-pine-950 font-bold flex items-center justify-between">
+            <span>BENCHMARK: 1,000+ AUDIT</span>
+            <span class="text-pine-950 font-black">0.67 REQ/S</span>
+          </div>
+        </div>
+
+        <!-- Metric 4: 4.8x Output Velocity -->
+        <div class="bg-pine-900 text-white p-4 lg:p-4.5 rounded-2xl shadow-xl flex flex-col justify-between border border-pine-800 transition-transform hover:-translate-y-1">
+          <div>
+            <span class="text-[9px] font-mono text-lime-400 uppercase tracking-wider font-bold">MEDIA LEVERAGE</span>
+            <div class="text-4xl sm:text-5xl font-display font-extrabold text-white my-1.5 tracking-tight">4.8x</div>
+            <h4 class="text-sm font-bold text-white mb-1">Output Multiplier</h4>
+            <p class="text-xs text-stone-300 leading-relaxed">
+              Asset throughput multiplier at constant compute cost vs traditional linear video editing agencies, scaling to 1,000+ monthly assets effortlessly.
+            </p>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-pine-800 text-[10px] font-mono text-lime-400 font-bold flex items-center justify-between">
+            <span>BENCHMARK: PROGRAMMATIC REMOTION</span>
+            <span class="text-lime-400 font-bold">1,000+ CLIPS</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Integrated Bottom Footer Strip (Clear Corridor for Dock) -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-stone-500 pt-2 border-t border-stone-200 z-10 shrink-0 font-medium">
+      <span class="max-w-[28%] truncate">FRAMEWORK: ACCEPTANCE THRESHOLDS</span>
+      <div class="w-[300px] sm:w-[480px] lg:w-[560px] pointer-events-none shrink-0"></div>
+      <span class="text-right max-w-[28%] truncate">BOUNDED EMPIRICAL RECEIPTS</span>
+    </div>
+
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- SLIDE 6: CONTEXT OPERATOR DOSSIER (Deep Spruce Canvas · Edge-to-Edge)     -->
+  <!-- ========================================================================= -->
+  <section x-show="currentSlide === 6" x-transition.opacity.duration.300ms 
+           class="slide-canvas h-full w-full bg-gradient-to-br from-pine-900 via-pine-950 to-[#02100C] text-white flex flex-col justify-between relative">
+    
+    <!-- Integrated Top Header Strip -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-pine-800/80 pb-2.5 z-10 shrink-0">
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-lg bg-lime-400 flex items-center justify-center font-display font-black text-pine-950 text-sm shadow-sm">
+          Æ
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs uppercase tracking-wider font-bold font-mono text-lime-400">Founder's Office Systems Operator</span>
+          <span class="text-pine-600 font-mono">|</span>
+          <span class="text-xs font-mono text-pine-300">Appendix · Aman Suryavanshi Technical Proof-of-Work</span>
+        </div>
+      </div>
+      <!-- Right Action Triggers -->
+      <div class="flex items-center gap-2.5 no-print">
+        <button @click="toggleDrawer()"
+                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg border border-lime-400/30 bg-pine-850 hover:bg-pine-800 text-lime-400 transition-all">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span>Call Notes (N)</span>
+        </button>
+        <button @click="printDeck()"
+                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg bg-lime-400 hover:bg-lime-300 text-pine-950 font-bold transition-all shadow-sm">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>Export PDF</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Content: Full-Width 2-Column Split with Header -->
+    <div class="w-full max-w-[1600px] mx-auto space-y-3 lg:space-y-4 my-auto z-10 py-0">
+      <div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold tracking-tight text-white mb-1 leading-tight">
+          Execution Dossier: <br>
+          <span class="text-lime-400">Shipped Systems & Verified Receipts</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-pine-300 max-w-3xl leading-relaxed">
+          Zero unverified claims. Every metric, webhook architecture, and concurrency refactor backed by physical production commits.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-stretch">
+        
+        <!-- Left Column (5 cols): Profile Card -->
+        <div class="lg:col-span-5 bg-pine-850 p-4 sm:p-5 rounded-2xl border border-pine-700 shadow-xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3.5 mb-3">
+              <!-- Avatar -->
+              <div class="relative shrink-0">
+                <div class="w-12 h-12 rounded-xl bg-lime-400 p-0.5 flex items-center justify-center shadow-md">
+                  <div class="w-11 h-11 rounded-lg bg-pine-950 flex items-center justify-center font-display font-black text-lg text-lime-400">
+                    AS
+                  </div>
+                </div>
+                <!-- Status dot -->
+                <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-lime-400 border-2 border-pine-900 flex items-center justify-center">
+                  <div class="w-1 h-1 rounded-full bg-pine-950"></div>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-lg sm:text-xl font-display font-black text-white">Aman Suryavanshi</h3>
+                <p class="text-[11px] font-mono text-lime-400">AI Generalist & Autonomous Business Automator</p>
+                <p class="text-[11px] text-pine-300">Delhi NCR / Bengaluru · Ready for On-Site or Hybrid</p>
+              </div>
+            </div>
+
+            <!-- Bio Statement -->
+            <p class="text-xs text-pine-200/95 leading-relaxed border-t border-pine-750 pt-2.5 font-normal">
+              I sit on calls with clients and founders, absorb high-bandwidth messy discussions, preserve deep technical substance, and compile them into high-density deliverables without losing context or requiring handholding.
+            </p>
+
+            <!-- Core Competencies Badges -->
+            <div class="grid grid-cols-2 gap-2 mt-3">
+              <div class="bg-pine-900/80 p-2 sm:p-2.5 rounded-xl border border-pine-750">
+                <span class="text-[8px] font-mono text-lime-400 font-bold block uppercase tracking-wider mb-0.5">HIGH-BANDWIDTH RELAY</span>
+                <span class="text-[11px] text-white font-semibold leading-tight block">Zero-loss executive synthesis</span>
+              </div>
+              <div class="bg-pine-900/80 p-2 sm:p-2.5 rounded-xl border border-pine-750">
+                <span class="text-[8px] font-mono text-lime-400 font-bold block uppercase tracking-wider mb-0.5">AUTONOMOUS OPS</span>
+                <span class="text-[11px] text-white font-semibold leading-tight block">FastMCP & n8n architecture</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-2.5 border-t border-pine-750 mt-2">
+            <!-- Canonical Links -->
+            <div class="flex flex-wrap items-center gap-2">
+              <a href="https://amansuryavanshi.me" target="_blank" class="px-2.5 py-1 rounded-lg bg-pine-900 hover:bg-pine-800 border border-pine-700 text-[11px] font-mono text-lime-400 flex items-center gap-1.5 transition-all shadow-sm">
+                <span>amansuryavanshi.me</span>
+              </a>
+              <a href="https://github.com/AmanSuryavanshi-1" target="_blank" class="px-2.5 py-1 rounded-lg bg-pine-900 hover:bg-pine-800 border border-pine-700 text-[11px] font-mono text-pine-200 hover:text-white flex items-center gap-1.5 transition-all shadow-sm">
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/amansuryavanshi-ai/" target="_blank" class="px-2.5 py-1 rounded-lg bg-pine-900 hover:bg-pine-800 border border-pine-700 text-[11px] font-mono text-pine-200 hover:text-white flex items-center gap-1.5 transition-all shadow-sm">
+                <span>LinkedIn</span>
+              </a>
+            </div>
+
+            <!-- Canonical Contact Coordinates -->
+            <div class="flex items-center justify-between text-[11px] font-mono text-pine-300">
+              <span class="text-lime-300 font-semibold">amansurya.work@gmail.com</span>
+              <span>+91-8745030106</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column (7 cols): Grounded Codebase Receipts Grid (4 Alternating Checkerboard Cards) -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 h-full">
+          
+          <!-- Receipt 1: OmniPost-Core (Electric Lime · Checkerboard Top-Left) -->
+          <div class="bg-lime-400 text-pine-950 p-4 rounded-xl shadow-md border border-lime-300 flex flex-col justify-between transition-transform hover:-translate-y-0.5">
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[8px] font-mono bg-pine-950 text-lime-400 px-2 py-0.5 rounded border border-pine-800 font-bold uppercase tracking-wider">122-NODE AUTOMATION</span>
+                <span class="text-[8px] font-mono text-pine-900 font-black uppercase">PRODUCTION</span>
+              </div>
+              <h4 class="text-xs sm:text-sm font-black text-pine-950 mb-0.5">OmniPost-Core Engine</h4>
+              <p class="text-[11px] text-pine-900/90 font-medium leading-relaxed">
+                122-node production n8n automation engine, FastMCP protocol gateways, structured JSON schemas, and automated DLQs.
+              </p>
+            </div>
+            <div class="mt-2.5 pt-1.5 border-t border-pine-900/20 text-[9px] font-mono text-pine-950 font-bold">
+              0% Prompt Drift · Port 3010 FastMCP
+            </div>
+          </div>
+
+          <!-- Receipt 2: notebooklm-py PR #276 (Deep Pine · Checkerboard Top-Right) -->
+          <div class="bg-pine-900 text-white p-4 rounded-xl shadow-md border border-pine-750 flex flex-col justify-between transition-transform hover:-translate-y-0.5">
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[8px] font-mono bg-pine-800 text-lime-400 px-2 py-0.5 rounded border border-pine-700 font-bold uppercase tracking-wider">16.5k★ REPO CONTRIBUTOR</span>
+                <span class="text-[8px] font-mono text-lime-300 font-semibold uppercase">MERGED PR</span>
+              </div>
+              <h4 class="text-xs sm:text-sm font-bold text-white mb-0.5">notebooklm-py (PR #276)</h4>
+              <p class="text-[11px] text-pine-200/90 leading-relaxed">
+                Merged in 16.5k★ repo. Refactored async HTTPX sessions, cookie rotation, and Windows asyncio loop concurrency across 24 files.
+              </p>
+            </div>
+            <div class="mt-2.5 pt-1.5 border-t border-pine-800 text-[9px] font-mono text-lime-400 font-bold">
+              Zero Socket Leaks · 24 Files Refactored
+            </div>
+          </div>
+
+          <!-- Receipt 3: Aviators Training Centre (Deep Pine · Checkerboard Bottom-Left) -->
+          <div class="bg-pine-900 text-white p-4 rounded-xl shadow-md border border-pine-750 flex flex-col justify-between transition-transform hover:-translate-y-0.5">
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[8px] font-mono bg-pine-800 text-lime-400 px-2 py-0.5 rounded border border-pine-700 font-bold uppercase tracking-wider">ENTERPRISE WEBHOOK</span>
+                <span class="text-[8px] font-mono text-pine-400 font-semibold uppercase">1,000+ AUDIT</span>
+              </div>
+              <h4 class="text-xs sm:text-sm font-bold text-white mb-0.5">Aviators Training Centre (ATC)</h4>
+              <p class="text-[11px] text-pine-200/90 leading-relaxed">
+                3-layer HMAC SHA-256 webhook validator, Notion CMS 8 relational databases with 0.67 req/s semaphore throttle.
+              </p>
+            </div>
+            <div class="mt-2.5 pt-1.5 border-t border-pine-800 text-[9px] font-mono text-lime-400 font-bold">
+              99.7% Run Reliability Across Bookings
+            </div>
+          </div>
+
+          <!-- Receipt 4: SecondBrain Real-Time Context Engine (Electric Lime · Checkerboard Bottom-Right) -->
+          <div class="bg-lime-400 text-pine-950 p-4 rounded-xl shadow-md border border-lime-300 flex flex-col justify-between transition-transform hover:-translate-y-0.5">
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-[8px] font-mono bg-pine-950 text-lime-400 px-2 py-0.5 rounded border border-pine-800 font-bold uppercase tracking-wider">LOCAL RAG PROTOTYPE</span>
+                <span class="text-[8px] font-mono text-pine-900 font-black uppercase">MEETING MEMORY</span>
+              </div>
+              <h4 class="text-xs sm:text-sm font-black text-pine-950 mb-0.5">SecondBrain Context Prototype</h4>
+              <p class="text-[11px] text-pine-900/90 font-medium leading-relaxed">
+                Context synthesis prototype indexing transcripts for rapid retrieval during technical discussions — local demo on request.
+              </p>
+            </div>
+            <div class="mt-2.5 pt-1.5 border-t border-pine-900/20 text-[9px] font-mono text-pine-950 font-bold">
+              Obsidian Local Transcript RAG Prototype
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Integrated Bottom Footer Strip (Clear Corridor for Dock) -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-pine-400 pt-2 border-t border-pine-800/80 z-10 shrink-0 font-medium">
+      <span class="max-w-[28%] truncate">SOURCE: VERIFIED CODEBASE COMMITS</span>
+      <div class="w-[300px] sm:w-[480px] lg:w-[560px] pointer-events-none shrink-0"></div>
+      <span class="text-right max-w-[28%] truncate">ON-SITE: DELHI NCR / BENGALURU</span>
+    </div>
+
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- FLOATING MINIMAL BOTTOM NAVIGATION DOCK (No Print · Zero Vertical Drag)  -->
+  <!-- ========================================================================= -->
+  <nav class="no-print fixed bottom-2.5 sm:bottom-3 left-1/2 -translate-x-1/2 z-40 bg-pine-950/90 backdrop-blur-xl border border-pine-800/80 shadow-2xl px-2.5 sm:px-3 py-1 rounded-full flex items-center gap-1.5 sm:gap-2">
+    <!-- Prev Button -->
+    <button @click="prevSlide()"
+            :disabled="currentSlide === 1"
+            class="p-1 rounded-full border border-pine-750 bg-pine-900 hover:bg-pine-850 text-pine-200 disabled:opacity-30 disabled:pointer-events-none transition-all shadow-sm"
+            title="Previous Slide (←)">
+      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+
+    <!-- Slide Indicator Pills -->
+    <div class="flex items-center gap-1">
+      <template x-for="i in totalSlides" :key="i">
+        <button @click="currentSlide = i"
+                class="px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-mono font-bold whitespace-nowrap transition-all"
+                :class="currentSlide === i 
+                  ? 'bg-lime-400 text-pine-950 shadow-md scale-105' 
+                  : 'bg-pine-900/60 text-pine-400 hover:bg-pine-800 hover:text-white border border-pine-800/50'">
+          <span class="hidden sm:inline" x-text="i === 1 ? '01 Context' : i === 2 ? '02 Problem' : i === 3 ? '03 Topology' : i === 4 ? '04 Roadmap' : i === 5 ? '05 ROI' : '06 Appendix'"></span>
+          <span class="sm:hidden" x-text="'0' + i"></span>
+        </button>
+      </template>
+    </div>
+
+    <!-- Next Button -->
+    <button @click="nextSlide()"
+            :disabled="currentSlide === totalSlides"
+            class="p-1 rounded-full border border-pine-750 bg-pine-900 hover:bg-pine-850 text-pine-200 disabled:opacity-30 disabled:pointer-events-none transition-all shadow-sm"
+            title="Next Slide (→)">
+      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <div class="h-3.5 w-px bg-pine-800 mx-0.5"></div>
+
+    <!-- Fullscreen Button -->
+    <button @click="toggleFullscreen()"
+            class="p-1 rounded-full border border-pine-750 bg-pine-900 hover:bg-pine-850 text-pine-200 transition-all shadow-sm"
+            title="Toggle Fullscreen (F)">
+      <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+    </button>
+  </nav>
+
+
+  <!-- ========================================================================= -->
+  <!-- SLIDE-OUT CALL NOTES DRAWER (Context Operator Intelligence)               -->
+  <!-- ========================================================================= -->
+  <div x-show="drawerOpen"
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="translate-x-full"
+       x-transition:enter-end="translate-x-0"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="translate-x-0"
+       x-transition:leave-end="translate-x-full"
+       class="drawer-panel fixed top-0 right-0 h-full w-full sm:w-[500px] bg-pine-950/95 backdrop-blur-2xl border-l border-pine-800 shadow-2xl z-50 flex flex-col justify-between p-6">
+    
+    <div>
+      <div class="flex items-center justify-between pb-4 border-b border-pine-800 mb-6">
+        <div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-lime-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <h3 class="text-sm font-bold text-white font-mono uppercase tracking-wider">Executive Call Intelligence</h3>
+          </div>
+          <p class="text-xs text-pine-300 mt-0.5">Illustrative Client Synthesis Demonstration · Simulated CMO Call Minutes to Slide Synthesis</p>
+        </div>
+        <button @click="drawerOpen = false" class="text-pine-400 hover:text-white p-1 rounded-lg hover:bg-pine-850 transition-all">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Dynamic Meeting Notes Based on Active Slide -->
+      <div class="space-y-4 text-xs font-mono text-pine-200">
+        <div class="bg-pine-900 p-3.5 rounded-xl border border-pine-800">
+          <span class="text-lime-400 font-bold block mb-1">CALL TRANSCRIPTION METADATA:</span>
+          <span class="text-pine-300">Timestamp: 14:32 IST · Zoom Client Call<br>Attendees: Varun Mayya / Enterprise CMO / Aeos Labs Engineering</span>
+        </div>
+
+        <div class="bg-pine-850 p-4 rounded-xl border border-pine-700 space-y-3">
+          <span class="text-white font-bold text-xs uppercase tracking-wider block border-b border-pine-700 pb-1.5">
+            Active Slide Notes: Slide <span x-text="currentSlide"></span>
+          </span>
+
+          <!-- Note for Slide 1 -->
+          <div x-show="currentSlide === 1" class="space-y-2 text-pine-300">
+            <p><span class="text-lime-400 font-bold">• Client Quote:</span> "Paid ad CAC is destroying our margins. We want to turn our brand into an owned media engine like YAAS does—publishing 1,000+ clips/month without hiring 20 editors or pumping generic AI slop."</p>
+            <p><span class="text-white font-bold">• Extracted Thesis:</span> Frame the hybrid solution: YAAS organic brand strategy up front, powered by Aeos Labs programmatic video pipelines on the backend.</p>
+          </div>
+
+          <!-- Note for Slide 2 -->
+          <div x-show="currentSlide === 2" class="space-y-2 text-pine-300">
+            <p><span class="text-lime-400 font-bold">• Client Pain:</span> "We tried building this with Zapier and ChatGPT API. It kept hallucinating random stats and crashing mid-batch. Nobody maintained state between runs."</p>
+            <p><span class="text-white font-bold">• Architectural Fix:</span> Highlight why unguided chat prompts fail and show how strict JSON schemas prevent prompt drift.</p>
+          </div>
+
+          <!-- Note for Slide 3 -->
+          <div x-show="currentSlide === 3" class="space-y-2 text-pine-300">
+            <p><span class="text-lime-400 font-bold">• Technical Scope:</span> Client needs raw footage intake combined with Aeos synthetic avatar synthesis, deterministic Remotion rendering, and automated AlphaCTR thumbnail scoring.</p>
+            <p><span class="text-white font-bold">• Protocol Design:</span> Wire FastMCP gateway to Remotion engine with VideoVault cache, AlphaCTR A/B optimization, automated DLQs, and YAAS multi-channel distribution.</p>
+          </div>
+
+          <!-- Note for Slide 4 -->
+          <div x-show="currentSlide === 4" class="space-y-2 text-pine-300">
+            <p><span class="text-lime-400 font-bold">• Delivery Constraint:</span> Client needs production proof-of-work within 14 days before signing annual enterprise expansion.</p>
+            <p><span class="text-white font-bold">• Roadmap Gate:</span> Week 2 prototype run of 20 verified assets satisfies expansion threshold; Week 4 reaches full 1,000+ run.</p>
+          </div>
+
+          <!-- Note for Slide 5 -->
+          <div x-show="currentSlide === 5" class="space-y-2 text-pine-300">
+            <p><span class="text-lime-400 font-bold">• Acceptance Criteria:</span> Target &lt;1.2s webhook-ACK ingest latency, 99.7% execution reliability, and 85% turnaround reduction.</p>
+            <p><span class="text-white font-bold">• Verification:</span> Deliver formal end-of-sprint metric telemetry report matching ATC production benchmarks.</p>
+          </div>
+
+          <!-- Note for Slide 6 -->
+          <div x-show="currentSlide === 6" class="space-y-2 text-pine-300">
+            <p><span class="text-lime-400 font-bold">• Operator Alignment:</span> Demonstrates real systems engineering background (n8n 122-node, FastMCP, `notebooklm-py` contributor) to eliminate context loss.</p>
+          </div>
+        </div>
+
+        <div class="bg-lime-400 text-pine-950 border border-lime-300 p-3.5 rounded-xl text-xs font-sans font-medium">
+          💡 <strong>The Operator Advantage:</strong> This drawer proves the exact skill Varun needs: absorbing high-bandwidth verbal discussions on client calls and compiling them directly into durable, high-density decks without losing context.
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="pt-4 border-t border-pine-800 text-center">
+      <span class="text-[10px] font-mono text-pine-400">PRESS 'N' OR CLICK OUTSIDE TO CLOSE</span>
+    </div>
+  </div>
+
+  <script>
+    function deckApp() {
+      return {
+        currentSlide: 1,
+        totalSlides: 6,
+        drawerOpen: false,
+
+        init() {
+          window.__deck = this;
+        },
+
+        nextSlide() {
+          if (this.currentSlide < this.totalSlides) {
+            this.currentSlide++;
+          }
+        },
+
+        prevSlide() {
+          if (this.currentSlide > 1) {
+            this.currentSlide--;
+          }
+        },
+
+        toggleDrawer() {
+          this.drawerOpen = !this.drawerOpen;
+        },
+
+        toggleFullscreen() {
+          if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(err => {
+              console.warn("Fullscreen request error:", err);
+            });
+          } else {
+            document.exitFullscreen().catch(err => {
+              console.warn("Exit fullscreen error:", err);
+            });
+          }
+        },
+
+        printDeck() {
+          window.print();
+        },
+
+        handleKeydown(e) {
+          if (e.key === 'ArrowRight' || e.key === ' ') {
+            this.nextSlide();
+          } else if (e.key === 'ArrowLeft') {
+            this.prevSlide();
+          } else if (e.key === 'n' || e.key === 'N') {
+            this.toggleDrawer();
+          } else if (e.key === 'f' || e.key === 'F') {
+            this.toggleFullscreen();
+          } else if (e.key === 'Escape') {
+            this.drawerOpen = false;
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>
