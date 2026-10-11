@@ -162,39 +162,39 @@
   <section x-show="currentSlide === 1" x-transition.opacity.duration.300ms 
            class="slide-canvas h-full w-full bg-yaas-dark text-white flex flex-col justify-between relative">
     
-    <!-- Top Header Strip -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-neutral-800 pb-2.5 z-10 shrink-0">
-      <div class="flex items-center gap-3">
-        <div class="w-7 h-7 rounded-lg bg-yaas-yellow flex items-center justify-center font-display font-black text-black text-sm shadow-sm">
+    <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-neutral-800/80 pb-1.5 z-10 shrink-0">
+      <div class="flex items-center gap-2.5">
+        <div class="w-5 h-5 rounded bg-yaas-yellow flex items-center justify-center font-display font-black text-black text-[11px] shadow-sm">
           Æ
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-xs uppercase tracking-wider font-bold font-mono text-yaas-yellow">Aeos Group · YAAS Media</span>
+          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-yaas-yellow">Aeos Group · YAAS Media</span>
           <span class="text-neutral-700 font-mono">|</span>
-          <span class="text-xs font-mono text-neutral-400">01 · Strategic Context & Market Shift</span>
+          <span class="text-[11px] font-mono text-neutral-400">01 · Strategic Context & Market Shift</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
-      <div class="flex items-center gap-2.5 no-print">
+      <div class="flex items-center gap-2 no-print">
         <button @click="toggleDrawer()"
-                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg border border-neutral-700 bg-neutral-900 hover:bg-neutral-800 text-yaas-yellow transition-all">
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded border border-neutral-700 bg-neutral-900 hover:bg-neutral-800 text-yaas-yellow transition-all">
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           <span>Call Notes (N)</span>
         </button>
         <button @click="printDeck()"
-                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg bg-yaas-yellow hover:bg-amber-300 text-black font-bold transition-all shadow-sm">
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-yaas-yellow hover:bg-amber-300 text-black font-bold transition-all shadow-sm">
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           <span>Export PDF</span>
         </button>
       </div>
     </div>
 
-    <!-- Main Content: Cognis-Style Balanced 2-Column Split -->
+    <!-- Main Content: Cognis-Style Balanced 2-Column Split (Spacious & High-Signal) -->
     <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center my-auto z-10 py-1">
       
-      <!-- Left Column (7 cols): Bold Cognis Headline & Massive Stats -->
-      <div class="lg:col-span-7 space-y-3 sm:space-y-3.5">
-        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800 text-yaas-yellow text-[11px] font-mono">
+      <!-- Left Column (6 cols): Bold Cognis Headline & Core Thesis -->
+      <div class="lg:col-span-6 space-y-3.5">
+        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800 text-yaas-yellow text-[10px] font-mono">
           <span class="w-1.5 h-1.5 rounded-full bg-yaas-yellow"></span>
           <span>01 · THE ATTENTION ECONOMY PARADIGM SHIFT</span>
         </div>
@@ -204,79 +204,145 @@
           <span class="text-yaas-yellow">And It’s Owned Media</span>
         </h1>
         
-        <p class="text-xs sm:text-sm text-neutral-300 max-w-2xl leading-relaxed">
-          Paid ad CAC is breaking brand unit economics. Enterprise brands must escape ad spend by becoming autonomous media engines. YAAS delivers organic audience capture across 70+ channels; Aeos Labs mechanizes the backend to 1,000+ monthly assets with zero headcount drag or AI slop.
+        <p class="text-xs sm:text-sm text-neutral-300 max-w-xl leading-relaxed">
+          Paid ad CAC is breaking brand unit economics. Enterprise brands must escape ad spend by becoming autonomous media engines. YAAS delivers organic audience capture across 70+ channels; Aeos Labs mechanizes the post-production backend to 1,000+ monthly assets with zero headcount drag or brand drift.
         </p>
 
-        <!-- Big Clean Cognis-Style Stats (No Cluttered Borders) -->
-        <div class="pt-1 flex flex-wrap items-center gap-6 lg:gap-10">
+        <!-- Big Clean Cognis-Style Stats -->
+        <div class="pt-1 flex flex-wrap items-center gap-6 lg:gap-8">
           <div>
-            <div class="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight leading-none">1B+</div>
-            <div class="text-[11px] font-mono text-yaas-yellow font-bold uppercase tracking-wider mt-1">MONTHLY ORGANIC VIEWS</div>
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight leading-none">1B+</div>
+            <div class="text-[10px] font-mono text-yaas-yellow font-bold uppercase tracking-wider mt-1.5">MONTHLY ORGANIC VIEWS</div>
             <div class="text-[10px] text-neutral-400 font-mono">YAAS Public Network Footprint</div>
           </div>
           <div class="h-10 w-px bg-neutral-800 hidden sm:block"></div>
           <div>
-            <div class="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight leading-none">1,000+</div>
-            <div class="text-[11px] font-mono text-yaas-yellow font-bold uppercase tracking-wider mt-1">VIDEOS / MONTH</div>
-            <div class="text-[10px] text-neutral-400 font-mono">Autonomous Pipeline Target</div>
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight leading-none">1,000+</div>
+            <div class="text-[10px] font-mono text-yaas-yellow font-bold uppercase tracking-wider mt-1.5">VIDEOS / MONTH</div>
+            <div class="text-[10px] text-neutral-400 font-mono">Target Fleet Velocity</div>
           </div>
           <div class="h-10 w-px bg-neutral-800 hidden sm:block"></div>
           <div>
-            <div class="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight leading-none">70+</div>
-            <div class="text-[11px] font-mono text-yaas-yellow font-bold uppercase tracking-wider mt-1">ACTIVE CHANNELS</div>
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight leading-none">70+</div>
+            <div class="text-[10px] font-mono text-yaas-yellow font-bold uppercase tracking-wider mt-1.5">BRAND CHANNELS</div>
             <div class="text-[10px] text-neutral-400 font-mono">Zoho · Cleartrip · Zerodha</div>
           </div>
         </div>
 
-        <!-- Cognis Contrast Bento: Obsolete Playbook vs Aeos Thesis -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 max-w-2xl">
-          <div class="bg-neutral-900/90 p-3 rounded-xl border border-neutral-800 shadow-md">
-            <span class="text-[9px] font-mono text-red-400 font-bold uppercase tracking-wider block mb-1">THE OBSOLETE PLAYBOOK</span>
-            <div class="text-xs font-bold text-white mb-0.5">Paid Ad CAC Treadmill</div>
-            <p class="text-[11px] text-neutral-400 leading-snug">Renting transient attention. Ad budgets scale 1:1 with revenue; stopping spend kills inbound leads immediately.</p>
+        <!-- Operating Axiom Callout: Amplifying Craft, Not Replacing It -->
+        <div class="p-3 rounded-xl bg-neutral-900/90 border border-neutral-800 max-w-xl flex items-start gap-3 shadow-md">
+          <div class="w-6 h-6 rounded bg-yaas-yellow/10 border border-yaas-yellow/30 flex items-center justify-center text-yaas-yellow shrink-0 mt-0.5">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
           </div>
-          <div class="bg-neutral-900/90 p-3 rounded-xl border border-yaas-yellow/40 shadow-md">
-            <span class="text-[9px] font-mono text-yaas-yellow font-bold uppercase tracking-wider block mb-1">THE AEOS THESIS</span>
-            <div class="text-xs font-bold text-white mb-0.5">Autonomous Owned Media</div>
-            <p class="text-[11px] text-neutral-300 leading-snug">Compounding brand equity. 70+ channels capture permanent organic mindshare through owned media distribution.</p>
+          <div>
+            <div class="text-xs font-bold text-white mb-0.5 font-display">The Aeos Operating Axiom</div>
+            <p class="text-[11px] text-neutral-300 leading-relaxed font-sans">
+              "Attention is the only durable moat as technology commoditizes." Automation does not replace the creative engine — it builds the deterministic operating system around it to eliminate repetitive assembly friction.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- Right Column (5 cols): Authentic Bengaluru Studio Photographic Print (Image 2.5 Sunburst) -->
-      <div class="lg:col-span-5 flex justify-center items-center">
-        <div class="w-full max-w-md bg-neutral-900 border border-neutral-800 p-3.5 rounded-2xl shadow-2xl relative overflow-hidden">
+      <!-- Right Column (6 cols): Creative Pipeline Architecture (High-Signal Systems Map) -->
+      <div class="lg:col-span-6 flex justify-center items-center">
+        <div class="w-full bg-neutral-900/95 border border-neutral-800 p-4 sm:p-5 rounded-2xl shadow-2xl relative overflow-hidden space-y-3">
           
-          <!-- Subtle Cognis Dot Pattern Accent Corner -->
-          <div class="absolute -top-6 -right-6 w-24 h-24 cognis-dash-pattern-dark pointer-events-none rounded-full opacity-40"></div>
+          <!-- Subtle Top Pattern -->
+          <div class="absolute -top-6 -right-6 w-24 h-24 cognis-dash-pattern-dark pointer-events-none rounded-full opacity-30"></div>
 
-          <!-- Top Strip -->
-          <div class="flex items-center justify-between text-[10px] font-mono mb-2 text-neutral-400">
+          <!-- Card Header Strip -->
+          <div class="flex items-center justify-between text-[10px] font-mono border-b border-neutral-800 pb-2 text-neutral-400">
             <span class="flex items-center gap-1.5 text-neutral-200">
               <span class="w-1.5 h-1.5 rounded-full bg-yaas-yellow"></span>
-              <strong class="text-white">STUDIO SPEC</strong> · BENGALURU PRODUCTION LAB
+              <strong class="text-white tracking-wider">CREATIVE PRODUCTION OPERATING SYSTEM</strong>
             </span>
-            <span class="text-yaas-yellow font-bold">12.5x CAPACITY</span>
+            <span class="text-yaas-yellow font-bold">1 SHOOT → 100+ ASSETS</span>
           </div>
 
-          <!-- Real Editorial Studio Photograph -->
-          <div class="relative rounded-xl overflow-hidden border border-neutral-800 aspect-[16/10] bg-black group shadow-lg">
-            <img src="assets/aeos_hero_studio.png" alt="Aeos Production Studio and Video Timeline Console" 
-                 class="w-full h-full object-cover filter transition-transform duration-700 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+          <!-- 3-Tier Pipeline Visualization -->
+          <div class="space-y-2 font-mono">
             
-            <!-- Clean Bottom Overlay -->
-            <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[10px] font-mono">
-              <span class="text-white font-semibold bg-black/70 px-2 py-0.5 rounded border border-neutral-700">ARRI OPTICS · CODE-AS-VIDEO</span>
-              <span class="text-yaas-yellow font-bold bg-black/70 px-1.5 py-0.5 rounded border border-neutral-700">1,000+ CLIPS/MO</span>
+            <!-- Tier 1: Human Craft Layer -->
+            <div class="p-2.5 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-yaas-yellow font-bold text-xs shrink-0 font-mono">
+                  01
+                </div>
+                <div>
+                  <div class="text-xs font-sans font-bold text-white flex items-center gap-2">
+                    Human Creative Core
+                    <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-amber-950/80 text-yaas-yellow border border-yaas-yellow/30 font-semibold">100% CRAFT PRESERVED</span>
+                  </div>
+                  <div class="text-[10px] text-neutral-400 font-sans">
+                    Physical set design, directors, lighting, founder hook storytelling.
+                  </div>
+                </div>
+              </div>
+              <span class="text-[10px] text-neutral-500 uppercase tracking-wider hidden sm:block">INPUT</span>
             </div>
+
+            <!-- Transition Indicator -->
+            <div class="flex items-center justify-center text-neutral-600 text-xs py-0.5">
+              <svg class="w-4 h-4 text-yaas-yellow/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="7 10 12 15 17 10"/></svg>
+            </div>
+
+            <!-- Tier 2: Deterministic Remotion AST Layer -->
+            <div class="p-2.5 rounded-xl bg-neutral-950 border border-yaas-yellow/40 flex items-center justify-between shadow-inner">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-yaas-yellow flex items-center justify-center text-black font-extrabold text-xs shrink-0 font-mono">
+                  02
+                </div>
+                <div>
+                  <div class="text-xs font-sans font-bold text-white flex items-center gap-2">
+                    Deterministic Remotion AST Engine
+                    <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-yaas-yellow/20 text-yaas-yellow border border-yaas-yellow/40 font-semibold">80% PLUMBING MECHANIZED</span>
+                  </div>
+                  <div class="text-[10px] text-neutral-300 font-sans">
+                    Script-to-video React render trees, typography sync, 9:16 vs 16:9 auto-crop.
+                  </div>
+                </div>
+              </div>
+              <span class="text-[10px] text-yaas-yellow font-bold tracking-wider hidden sm:block">&lt;45S / CLIP</span>
+            </div>
+
+            <!-- Transition Indicator -->
+            <div class="flex items-center justify-center text-neutral-600 text-xs py-0.5">
+              <svg class="w-4 h-4 text-yaas-yellow/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="7 10 12 15 17 10"/></svg>
+            </div>
+
+            <!-- Tier 3: Fleet Distribution Layer -->
+            <div class="p-2.5 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 font-bold text-xs shrink-0 font-mono">
+                  03
+                </div>
+                <div>
+                  <div class="text-xs font-sans font-bold text-white flex items-center gap-2">
+                    Multi-Platform Brand Fleet
+                    <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-purple-950/80 text-purple-300 border border-purple-700/40 font-semibold">70+ ACTIVE CHANNELS</span>
+                  </div>
+                  <div class="text-[10px] text-neutral-400 font-sans">
+                    Simultaneous distribution to YouTube, Instagram, X, LinkedIn with zero drift.
+                  </div>
+                </div>
+              </div>
+              <span class="text-[10px] text-purple-400 font-bold uppercase tracking-wider hidden sm:block">FLEET</span>
+            </div>
+
           </div>
 
-          <!-- Subtitle note -->
-          <div class="mt-2.5 pt-2 border-t border-neutral-800 flex items-center justify-between text-xs font-mono text-neutral-400">
-            <span>Deterministic Remotion React Pipeline</span>
-            <span class="text-yaas-yellow font-bold">Zero Slop</span>
+          <!-- Bottom Metric Strip (Unit Economics Delta) -->
+          <div class="pt-2 border-t border-neutral-800 grid grid-cols-2 gap-2 text-center font-mono">
+            <div class="p-2 rounded-lg bg-black/60 border border-neutral-800">
+              <div class="text-[9px] text-neutral-500 uppercase tracking-wider">MANUAL TIMELINE ASSEMBLY</div>
+              <div class="text-xs sm:text-sm font-bold text-red-400 mt-0.5">₹4,500 <span class="text-[10px] text-neutral-500 font-normal">/ asset</span></div>
+              <div class="text-[9px] text-neutral-400 font-sans">4–8 hrs manual keyframing</div>
+            </div>
+            <div class="p-2 rounded-lg bg-black/60 border border-yaas-yellow/30">
+              <div class="text-[9px] text-yaas-yellow uppercase tracking-wider">DETERMINISTIC PIPELINE</div>
+              <div class="text-xs sm:text-sm font-bold text-white mt-0.5">₹320 <span class="text-[10px] text-neutral-500 font-normal">/ asset</span></div>
+              <div class="text-[9px] text-yaas-yellow font-sans">&lt;45s render · 14x efficiency</div>
+            </div>
           </div>
 
         </div>
@@ -305,28 +371,28 @@
   <section x-show="currentSlide === 2" x-transition.opacity.duration.300ms 
            class="slide-canvas h-full w-full bg-canvas-light text-neutral-900 flex flex-col justify-between relative">
     
-    <!-- Top Header Strip -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-2.5 z-10 shrink-0">
-      <div class="flex items-center gap-3">
-        <div class="w-7 h-7 rounded-lg bg-black flex items-center justify-center font-display font-black text-yaas-yellow text-sm shadow-sm">
+    <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-1.5 z-10 shrink-0">
+      <div class="flex items-center gap-2.5">
+        <div class="w-5 h-5 rounded bg-black flex items-center justify-center font-display font-black text-yaas-yellow text-[11px] shadow-sm">
           Æ
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-xs uppercase tracking-wider font-bold font-mono text-neutral-900">Aeos Group · Root Cause Diagnosis</span>
+          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-neutral-900">Aeos Group · Root Cause Diagnosis</span>
           <span class="text-stone-300 font-mono">|</span>
-          <span class="text-xs font-mono text-stone-600">02 · Fragile Prompt Loops vs. Deterministic Pipelines</span>
+          <span class="text-[11px] font-mono text-stone-600">02 · Fragile Prompt Loops vs. Deterministic Pipelines</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
-      <div class="flex items-center gap-2.5 no-print">
+      <div class="flex items-center gap-2 no-print">
         <button @click="toggleDrawer()"
-                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg border border-stone-300 bg-white hover:bg-stone-100 text-neutral-900 font-medium transition-all shadow-sm">
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded border border-stone-300 bg-white hover:bg-stone-100 text-neutral-900 font-medium transition-all shadow-sm">
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           <span>Call Notes (N)</span>
         </button>
         <button @click="printDeck()"
-                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg bg-black hover:bg-neutral-800 text-yaas-yellow font-bold transition-all shadow-sm">
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-black hover:bg-neutral-800 text-yaas-yellow font-bold transition-all shadow-sm">
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           <span>Export PDF</span>
         </button>
       </div>
@@ -348,7 +414,7 @@
         </h2>
         
         <p class="text-xs text-stone-600 leading-relaxed">
-          <strong>90% of AI video pipelines degrade into slop.</strong> Unguided LLM prompts hallucinate client stats, drop brand rules, and crash without durable state.
+          <strong>Unguided prompt pipelines suffer high variance and brand drift.</strong> Raw LLM video scripts hallucinate client data, violate brand guidelines, and lack deterministic state.
         </p>
 
         <!-- 3 Cognis-Style Colored Square-Badge Rows -->
@@ -493,16 +559,17 @@
           </svg>
         </div>
 
-        <!-- Bottom ZEISS Optical Inset Card (High Craft Commercial Macro) -->
+        <!-- Bottom Architecture Inset Card (Cognis Frame Integrity) -->
         <div class="mt-1.5 bg-white p-2.5 rounded-xl border border-stone-200 shadow-sm flex items-center gap-3 z-10">
-          <img src="assets/aeos_cinema_optics.png" alt="ZEISS Master Prime 50mm Cinema Lens" 
-               class="w-12 h-12 rounded-lg object-cover shrink-0 border border-stone-200" />
+          <div class="w-10 h-10 rounded-lg bg-stone-100 border border-stone-200 flex items-center justify-center text-neutral-800 shrink-0">
+            <svg class="w-5 h-5 text-neutral-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+          </div>
           <div class="min-w-0">
             <div class="flex items-center gap-2">
-              <span class="text-[9px] font-mono text-neutral-900 font-bold uppercase tracking-wider">OPTICAL TO CODE EQUIVALENCE</span>
-              <span class="text-[8px] font-mono bg-amber-100 text-amber-800 font-bold px-1.5 py-0.5 rounded">ZERO-SLOP AST</span>
+              <span class="text-[9px] font-mono text-neutral-900 font-bold uppercase tracking-wider">DETERMINISTIC COMPOSITION</span>
+              <span class="text-[8px] font-mono bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded">FRAME-ACCURATE AST</span>
             </div>
-            <p class="text-[11px] text-stone-600 leading-snug truncate">Manual timeline keyframing replaced by deterministic Remotion React render trees.</p>
+            <p class="text-[11px] text-stone-600 leading-snug truncate">Script-to-video React render trees eliminate manual timeline keyframing drag.</p>
           </div>
         </div>
 
@@ -514,7 +581,7 @@
     <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-stone-500 pt-2 border-t border-stone-200 z-10 shrink-0 font-medium">
       <span class="max-w-[28%] truncate">PARADIGM: DETERMINISTIC SYSTEMS</span>
       <div class="w-[300px] sm:w-[480px] lg:w-[560px] pointer-events-none shrink-0"></div>
-      <span class="text-right max-w-[28%] truncate">ZERO SLOP: AST VALIDATION</span>
+      <span class="text-right max-w-[28%] truncate font-mono">FRAME INTEGRITY: AST VALIDATION</span>
     </div>
 
   </section>
@@ -526,28 +593,28 @@
   <section x-show="currentSlide === 3" x-transition.opacity.duration.300ms 
            class="slide-canvas h-full w-full bg-yaas-dark text-white flex flex-col justify-between relative">
     
-    <!-- Top Header Strip -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-neutral-800 pb-2.5 z-10 shrink-0">
-      <div class="flex items-center gap-3">
-        <div class="w-7 h-7 rounded-lg bg-yaas-yellow flex items-center justify-center font-display font-black text-black text-sm shadow-sm">
+    <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-neutral-800/80 pb-1.5 z-10 shrink-0">
+      <div class="flex items-center gap-2.5">
+        <div class="w-5 h-5 rounded bg-yaas-yellow flex items-center justify-center font-display font-black text-black text-[11px] shadow-sm">
           Æ
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-xs uppercase tracking-wider font-bold font-mono text-yaas-yellow">Aeos Labs Architecture</span>
+          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-yaas-yellow">Aeos Labs Architecture</span>
           <span class="text-neutral-700 font-mono">|</span>
-          <span class="text-xs font-mono text-neutral-400">03 · End-to-End Autonomous Pipeline & Distribution Flow</span>
+          <span class="text-[11px] font-mono text-neutral-400">03 · End-to-End Autonomous Pipeline & Distribution Flow</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
-      <div class="flex items-center gap-2.5 no-print">
+      <div class="flex items-center gap-2 no-print">
         <button @click="toggleDrawer()"
-                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg border border-neutral-700 bg-neutral-900 hover:bg-neutral-800 text-yaas-yellow transition-all">
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded border border-neutral-700 bg-neutral-900 hover:bg-neutral-800 text-yaas-yellow transition-all">
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           <span>Call Notes (N)</span>
         </button>
         <button @click="printDeck()"
-                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg bg-yaas-yellow hover:bg-amber-300 text-black font-bold transition-all shadow-sm">
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-yaas-yellow hover:bg-amber-300 text-black font-bold transition-all shadow-sm">
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           <span>Export PDF</span>
         </button>
       </div>
@@ -757,28 +824,28 @@
   <section x-show="currentSlide === 4" x-transition.opacity.duration.300ms 
            class="slide-canvas h-full w-full bg-canvas-light text-neutral-900 flex flex-col justify-between relative">
     
-    <!-- Top Header Strip -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-2.5 z-10 shrink-0">
-      <div class="flex items-center gap-3">
-        <div class="w-7 h-7 rounded-lg bg-black flex items-center justify-center font-display font-black text-yaas-yellow text-sm shadow-sm">
+    <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-1.5 z-10 shrink-0">
+      <div class="flex items-center gap-2.5">
+        <div class="w-5 h-5 rounded bg-black flex items-center justify-center font-display font-black text-yaas-yellow text-[11px] shadow-sm">
           Æ
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-xs uppercase tracking-wider font-bold font-mono text-neutral-900">Aeos Labs Delivery Engine</span>
+          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-neutral-900">Aeos Labs Delivery Engine</span>
           <span class="text-stone-300 font-mono">|</span>
-          <span class="text-xs font-mono text-stone-600">04 · 30-Day Phased Milestones</span>
+          <span class="text-[11px] font-mono text-stone-600">04 · 30-Day Phased Milestones</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
-      <div class="flex items-center gap-2.5 no-print">
+      <div class="flex items-center gap-2 no-print">
         <button @click="toggleDrawer()"
-                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg border border-stone-300 bg-white hover:bg-stone-100 text-neutral-900 font-medium transition-all shadow-sm">
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded border border-stone-300 bg-white hover:bg-stone-100 text-neutral-900 font-medium transition-all shadow-sm">
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           <span>Call Notes (N)</span>
         </button>
         <button @click="printDeck()"
-                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg bg-black hover:bg-neutral-800 text-yaas-yellow font-bold transition-all shadow-sm">
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-black hover:bg-neutral-800 text-yaas-yellow font-bold transition-all shadow-sm">
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           <span>Export PDF</span>
         </button>
       </div>
@@ -918,28 +985,28 @@
   <section x-show="currentSlide === 5" x-transition.opacity.duration.300ms 
            class="slide-canvas h-full w-full bg-yaas-dark text-white flex flex-col justify-between relative">
     
-    <!-- Top Header Strip -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-neutral-800 pb-2.5 z-10 shrink-0">
-      <div class="flex items-center gap-3">
-        <div class="w-7 h-7 rounded-lg bg-yaas-yellow flex items-center justify-center font-display font-black text-black text-sm shadow-sm">
+    <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-neutral-800/80 pb-1.5 z-10 shrink-0">
+      <div class="flex items-center gap-2.5">
+        <div class="w-5 h-5 rounded bg-yaas-yellow flex items-center justify-center font-display font-black text-black text-[11px] shadow-sm">
           Æ
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-xs uppercase tracking-wider font-bold font-mono text-yaas-yellow">Aeos Group Unit Economics</span>
+          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-yaas-yellow">Aeos Group Unit Economics</span>
           <span class="text-neutral-700 font-mono">|</span>
-          <span class="text-xs font-mono text-neutral-400">05 · Margin Expansion & Capital Efficiency</span>
+          <span class="text-[11px] font-mono text-neutral-400">05 · Margin Expansion & Capital Efficiency</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
-      <div class="flex items-center gap-2.5 no-print">
+      <div class="flex items-center gap-2 no-print">
         <button @click="toggleDrawer()"
-                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg border border-neutral-700 bg-neutral-900 hover:bg-neutral-800 text-yaas-yellow transition-all">
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded border border-neutral-700 bg-neutral-900 hover:bg-neutral-800 text-yaas-yellow transition-all">
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           <span>Call Notes (N)</span>
         </button>
         <button @click="printDeck()"
-                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg bg-yaas-yellow hover:bg-amber-300 text-black font-bold transition-all shadow-sm">
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-yaas-yellow hover:bg-amber-300 text-black font-bold transition-all shadow-sm">
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           <span>Export PDF</span>
         </button>
       </div>
@@ -953,7 +1020,7 @@
           <span class="text-yaas-yellow">85.5% Net Burn Reduction</span>
         </h2>
         <p class="text-xs sm:text-sm text-neutral-400 max-w-2xl leading-relaxed">
-          Comparing traditional linear agency headcount burn against the deterministic Aeos programmatic Remotion rendering cluster.
+          Modeled on 10 enterprise brand channels: comparing traditional linear agency payroll (₹4.5L/mo) against the deterministic Aeos programmatic Remotion rendering cluster (₹65K/mo).
         </p>
       </div>
 
@@ -1043,28 +1110,28 @@
   <section x-show="currentSlide === 6" x-transition.opacity.duration.300ms 
            class="slide-canvas h-full w-full bg-canvas-light text-neutral-900 flex flex-col justify-between relative">
     
-    <!-- Top Header Strip -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-2.5 z-10 shrink-0">
-      <div class="flex items-center gap-3">
-        <div class="w-7 h-7 rounded-lg bg-black flex items-center justify-center font-display font-black text-yaas-yellow text-sm shadow-sm">
+    <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-1.5 z-10 shrink-0">
+      <div class="flex items-center gap-2.5">
+        <div class="w-5 h-5 rounded bg-black flex items-center justify-center font-display font-black text-yaas-yellow text-[11px] shadow-sm">
           Æ
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-xs uppercase tracking-wider font-bold font-mono text-neutral-900">Systems Operator Appendix</span>
+          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-neutral-900">Systems Operator Appendix</span>
           <span class="text-stone-300 font-mono">|</span>
-          <span class="text-xs font-mono text-stone-600">06 · Technical Implementation & Proof-of-Work</span>
+          <span class="text-[11px] font-mono text-stone-600">06 · Technical Implementation & Proof-of-Work</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
-      <div class="flex items-center gap-2.5 no-print">
+      <div class="flex items-center gap-2 no-print">
         <button @click="toggleDrawer()"
-                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg border border-stone-300 bg-white hover:bg-stone-100 text-neutral-900 font-medium transition-all shadow-sm">
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded border border-stone-300 bg-white hover:bg-stone-100 text-neutral-900 font-medium transition-all shadow-sm">
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           <span>Call Notes (N)</span>
         </button>
         <button @click="printDeck()"
-                class="flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-lg bg-black hover:bg-neutral-800 text-yaas-yellow font-bold transition-all shadow-sm">
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-black hover:bg-neutral-800 text-yaas-yellow font-bold transition-all shadow-sm">
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           <span>Export PDF</span>
         </button>
       </div>
@@ -1275,12 +1342,12 @@
 
           <!-- Note for Slide 1 -->
           <div x-show="currentSlide === 1" class="space-y-2 text-neutral-300">
-            <p><span class="text-yaas-yellow font-bold">• Core Thesis:</span> Paid ad CAC is breaking unit economics. Enterprise brands are building owned media engines. YAAS handles organic audience strategy up front; Aeos Labs mechanizes the backend to 1,000+ assets with zero slop.</p>
+            <p><span class="text-yaas-yellow font-bold">• Core Thesis:</span> Paid ad CAC is breaking unit economics. Enterprise brands are building owned media engines. YAAS handles organic audience strategy up front; Aeos Labs mechanizes the backend to 1,000+ assets with 100% brand parity and zero headcount drag.</p>
           </div>
 
           <!-- Note for Slide 2 -->
           <div x-show="currentSlide === 2" class="space-y-2 text-neutral-300">
-            <p><span class="text-yaas-yellow font-bold">• Production Drag:</span> 90% of AI video pipelines degrade into slop. Manual Premiere keyframing takes 4–8h/clip and cannot scale past 80 clips without headcount bloat.</p>
+            <p><span class="text-yaas-yellow font-bold">• Production Drag:</span> Unguided prompt pipelines suffer high variance and brand drift. Manual Premiere keyframing takes 4–8h/clip and cannot scale past 80 clips without headcount bloat.</p>
           </div>
 
           <!-- Note for Slide 3 -->

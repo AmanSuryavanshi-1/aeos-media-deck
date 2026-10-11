@@ -2,8 +2,76 @@
   "directed": false,
   "multigraph": false,
   "graph": {},
-  "nodes": [],
-  "links": [],
+  "nodes": [
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "id": "readme_md",
+      "community": 1,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "\u00c6OS Media Engine \u00b7 Solutions Architecture & Systems Deck",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "id": "aeos_deck_readme_\u00e6os_media_engine_solutions_architecture_systems_deck",
+      "community": 1,
+      "norm_label": "\u00e6os media engine \u00b7 solutions architecture & systems deck"
+    },
+    {
+      "label": "\u26a1 Architecture Highlights",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L10",
+      "id": "aeos_deck_readme_architecture_highlights",
+      "community": 0,
+      "norm_label": "\u26a1 architecture highlights"
+    },
+    {
+      "label": "Author",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L20",
+      "id": "aeos_deck_readme_author",
+      "community": 0,
+      "norm_label": "author"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "readme_md",
+      "target": "aeos_deck_readme_\u00e6os_media_engine_solutions_architecture_systems_deck",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "aeos_deck_readme_\u00e6os_media_engine_solutions_architecture_systems_deck",
+      "target": "aeos_deck_readme_architecture_highlights",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "aeos_deck_readme_architecture_highlights",
+      "target": "aeos_deck_readme_author",
+      "confidence_score": 1.0
+    }
+  ],
   "hyperedges": [],
-  "built_at_commit": "75036137ea647e1ba2e7fc03a4ca8e765eddbb19"
+  "built_at_commit": "4f87b768b02b3cc3f1b79d44fbd42764cb3f09dd"
 }
