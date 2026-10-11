@@ -24,22 +24,42 @@
             mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
+            pine: {
+              950: '#061D18',
+              900: '#0A2D26',
+              850: '#0D3830',
+              800: '#104037',
+              750: '#12483E',
+              700: '#165246',
+              600: '#1F6B5C',
+            },
+            lime: {
+              300: '#D8FF54',
+              400: '#C6FF3D',
+              500: '#B2F425',
+              600: '#9CE014',
+            },
+            cream: {
+              50: '#F9FAF7',
+              100: '#F2F5ED',
+              200: '#E5EAD9',
+            },
             yaas: {
-              yellow: '#FFD900',
-              gold: '#F59E0B',
-              dark: '#0A0A0A',
-              card: '#141414',
-              border: '#262626',
+              yellow: '#C6FF3D', // Token alias migration: maps to Electric Lime
+              gold: '#B2F425',
+              dark: '#061D18',   // Token alias migration: maps to Deep Pine
+              card: '#0A2D26',
+              border: '#104037',
             },
             cognis: {
               orange: '#FF5722',
               purple: '#8B5CF6',
               amber: '#FFB800',
               emerald: '#10B981',
-              charcoal: '#0F172A',
+              charcoal: '#061D18',
             },
             canvas: {
-              dark: '#0A0A0A',
+              dark: '#061D18',
               light: '#F9FAF7',
             }
           }
@@ -53,7 +73,7 @@
 
   <style>
     /* Custom Selection */
-    ::selection { background: #FFD900; color: #0A0A0A; }
+    ::selection { background: #C6FF3D; color: #061D18; }
 
     /* HARD LOCK: ZERO SCROLLBARS NATIONWIDE */
     * {
@@ -74,7 +94,7 @@
       width: 100%;
       min-height: 100vh;
       min-height: 100dvh;
-      background-color: #0A0A0A;
+      background-color: #061D18;
       position: relative;
     }
 
@@ -111,15 +131,15 @@
 
     /* Cognis Diagonal Dash Grid Pattern */
     .cognis-dash-pattern {
-      background-image: radial-gradient(#FFD900 1.2px, transparent 1.2px);
+      background-image: radial-gradient(#C6FF3D 1.2px, transparent 1.2px);
       background-size: 14px 14px;
     }
     .cognis-dash-pattern-dark {
-      background-image: radial-gradient(rgba(255, 217, 0, 0.25) 1.2px, transparent 1.2px);
+      background-image: radial-gradient(rgba(198, 255, 61, 0.2) 1.2px, transparent 1.2px);
       background-size: 14px 14px;
     }
     .cognis-dash-pattern-stone {
-      background-image: radial-gradient(rgba(15, 23, 42, 0.15) 1.2px, transparent 1.2px);
+      background-image: radial-gradient(rgba(6, 29, 24, 0.15) 1.2px, transparent 1.2px);
       background-size: 14px 14px;
     }
 
@@ -131,7 +151,7 @@
       }
       body {
         position: static !important;
-        background: #0A0A0A !important;
+        background: #061D18 !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
         overflow: visible !important;
@@ -169,54 +189,57 @@
       @keydown.window="handleKeydown($event)">
 
   <!-- ========================================================================= -->
-  <!-- SLIDE 1: STRATEGIC CONTEXT (Pitch Black Canvas · Cognis Editorial Style) -->
+  <!-- SLIDE 1: STRATEGIC CONTEXT (Deep Pine Canvas · Mavence & Agro Style)      -->
   <!-- ========================================================================= -->
   <section x-show="currentSlide === 1" x-transition.opacity.duration.300ms 
-           class="slide-canvas w-full bg-yaas-dark text-white flex flex-col justify-between relative">
+           class="slide-canvas w-full bg-pine-950 text-white flex flex-col justify-between relative overflow-hidden">
     
+    <!-- Ambient Radial Lime Glow -->
+    <div class="absolute -right-32 -bottom-32 w-[550px] h-[550px] bg-lime-400/10 rounded-full blur-[140px] pointer-events-none"></div>
+
     <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-neutral-800/80 pb-1.5 z-10 shrink-0 h-[30px]">
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-pine-800/80 pb-1.5 z-10 shrink-0 h-[30px]">
       <div class="flex items-center gap-2.5">
-        <div class="w-5 h-5 rounded bg-yaas-yellow flex items-center justify-center font-display font-black text-black text-[11px] shadow-sm">
+        <div class="w-5 h-5 rounded bg-lime-400 flex items-center justify-center font-display font-black text-pine-950 text-[11px] shadow-sm">
           Æ
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-yaas-yellow">Aeos Group · YAAS Media</span>
-          <span class="text-neutral-700 font-mono">|</span>
-          <span class="text-[11px] font-mono text-neutral-400">01 · Strategic Context</span>
+          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-lime-400">Aeos Group · YAAS Media</span>
+          <span class="text-pine-700 font-mono">|</span>
+          <span class="text-[11px] font-mono text-pine-300">01 · Strategic Context</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
       <div class="flex items-center gap-2 no-print">
         <button @click="toggleDrawer()"
-                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded border border-neutral-700 bg-neutral-900 hover:bg-neutral-800 text-yaas-yellow transition-all">
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded border border-pine-700 bg-pine-900 hover:bg-pine-850 text-lime-400 transition-all">
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           <span>Call Notes (N)</span>
         </button>
         <button @click="printDeck()"
-                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-yaas-yellow hover:bg-amber-300 text-black font-bold transition-all shadow-sm">
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-lime-400 hover:bg-lime-300 text-pine-950 font-bold transition-all shadow-sm">
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           <span>Export PDF</span>
         </button>
       </div>
     </div>
 
-    <!-- Main Content: Minimalist Split (3–6 Word Headline + Mavence Giant Stats + 3D Token) -->
+    <!-- Main Content: Minimalist Split (Headline + Mavence Stats + Deep-Tech Radar HUD) -->
     <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto z-10 py-3">
       
       <!-- Left Column (7 cols): Dramatic Typographic Hierarchy -->
       <div class="lg:col-span-7 space-y-4">
-        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800 text-yaas-yellow text-[10px] font-mono">
-          <span class="w-1.5 h-1.5 rounded-full bg-yaas-yellow animate-pulse"></span>
+        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-pine-900 border border-pine-750 text-lime-400 text-[10px] font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
           <span>01 · THE ATTENTION ECONOMY</span>
         </div>
 
         <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-extrabold tracking-tight text-white leading-[1.05]">
           Attention is <br class="hidden sm:inline">
-          <span class="text-yaas-yellow">the Moat.</span>
+          <span class="text-lime-400">the Moat.</span>
         </h1>
         
-        <p class="text-xs sm:text-sm lg:text-base text-neutral-300 max-w-xl font-normal leading-relaxed">
+        <p class="text-xs sm:text-sm lg:text-base text-pine-200 max-w-xl font-normal leading-relaxed">
           Paid ad CAC is breaking brand economics. Enterprise brands must become autonomous media engines.
         </p>
 
@@ -224,68 +247,84 @@
         <div class="pt-2 flex flex-wrap items-baseline gap-6 lg:gap-10">
           <div>
             <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight leading-none">1B+</div>
-            <div class="text-[10px] font-mono text-yaas-yellow font-bold uppercase tracking-wider mt-1.5">ORGANIC REACH (Modeled)</div>
-            <div class="text-[10px] text-neutral-500 font-mono">YAAS Public Network Footprint</div>
+            <div class="text-[10px] font-mono text-lime-400 font-bold uppercase tracking-wider mt-1.5">ORGANIC REACH (Modeled)</div>
+            <div class="text-[10px] text-pine-400 font-mono">YAAS Public Network Footprint</div>
           </div>
-          <div class="h-10 w-px bg-neutral-800 hidden sm:block"></div>
+          <div class="h-10 w-px bg-pine-800 hidden sm:block"></div>
           <div>
             <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight leading-none">70+</div>
-            <div class="text-[10px] font-mono text-yaas-yellow font-bold uppercase tracking-wider mt-1.5">BRAND CHANNELS (Modeled)</div>
-            <div class="text-[10px] text-neutral-500 font-mono">Zoho · Cleartrip · Zerodha</div>
+            <div class="text-[10px] font-mono text-lime-400 font-bold uppercase tracking-wider mt-1.5">BRAND CHANNELS (Modeled)</div>
+            <div class="text-[10px] text-pine-400 font-mono">Zoho · Cleartrip · Zerodha</div>
           </div>
-          <div class="h-10 w-px bg-neutral-800 hidden sm:block"></div>
+          <div class="h-10 w-px bg-pine-800 hidden sm:block"></div>
           <div>
             <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight leading-none">1,000+</div>
-            <div class="text-[10px] font-mono text-yaas-yellow font-bold uppercase tracking-wider mt-1.5">TARGET FLEET (Modeled)</div>
-            <div class="text-[10px] text-neutral-500 font-mono">Monthly Remotion AST Capacity</div>
+            <div class="text-[10px] font-mono text-lime-400 font-bold uppercase tracking-wider mt-1.5">TARGET FLEET (Modeled)</div>
+            <div class="text-[10px] text-pine-400 font-mono">Monthly Remotion AST Capacity</div>
           </div>
         </div>
 
         <!-- Operating Axiom Single-Line Quote Pill -->
         <div class="pt-1">
-          <div class="p-3 rounded-xl bg-neutral-900/90 border border-neutral-800 max-w-xl flex items-center gap-3 shadow-md">
-            <div class="w-1.5 h-6 rounded-full bg-yaas-yellow shrink-0"></div>
-            <p class="text-xs text-neutral-300 font-sans italic">
+          <div class="p-3 rounded-xl bg-pine-900/90 border border-pine-800 max-w-xl flex items-center gap-3 shadow-md">
+            <div class="w-1.5 h-6 rounded-full bg-lime-400 shrink-0"></div>
+            <p class="text-xs text-pine-200 font-sans italic">
               "Attention is the only durable moat as technology commoditizes."
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Right Column (5 cols): 3D Translucent Geometric Core Visual Anchor -->
+      <!-- Right Column (5 cols): Deep-Tech Telemetry Orbital Radar HUD (Zero AI-Slop Graphic) -->
       <div class="lg:col-span-5 flex justify-center items-center">
-        <div class="w-full max-w-[440px] bg-neutral-900/80 border border-neutral-800 p-3 sm:p-4 rounded-2xl shadow-2xl relative overflow-hidden group">
+        <div class="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 flex items-center justify-center">
           
-          <!-- Floating Status Pill -->
-          <div class="flex items-center justify-between text-[10px] font-mono border-b border-neutral-800 pb-2 mb-3 text-neutral-400">
-            <span class="flex items-center gap-1.5 text-neutral-200">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <strong class="text-white tracking-wider">AUTONOMOUS MEDIA OS</strong>
-            </span>
-            <span class="text-yaas-yellow font-bold">1 SHOOT → 100+ ASSETS</span>
-          </div>
+          <!-- Subtle Crosshair Axes -->
+          <div class="absolute inset-x-0 top-1/2 h-px bg-pine-800/60 pointer-events-none"></div>
+          <div class="absolute inset-y-0 left-1/2 w-px bg-pine-800/60 pointer-events-none"></div>
 
-          <!-- 3D Geometric Token Image -->
-          <div class="relative w-full aspect-square rounded-xl overflow-hidden bg-black/60 border border-neutral-800/80 flex items-center justify-center">
-            <img src="assets/aeos_isometric_core.jpg" 
-                 alt="Aeos Autonomous Media OS Core" 
-                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <!-- Fallback SVG wireframe -->
-            <div class="hidden w-full h-full items-center justify-center bg-neutral-950 p-6">
-              <svg class="w-3/4 h-3/4 text-yaas-yellow/80" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polygon points="50,10 90,32 90,78 50,98 10,78 10,32"/>
-                <line x1="50" y1="10" x2="50" y2="98"/>
-                <line x1="10" y1="32" x2="90" y2="78"/>
-                <line x1="90" y1="32" x2="10" y2="78"/>
-              </svg>
+          <!-- Outer Orbit Ring (1,000+ Assets / Mo) -->
+          <div class="absolute w-[260px] h-[260px] sm:w-[290px] sm:h-[290px] rounded-full border border-dashed border-pine-700/80 flex items-center justify-center pointer-events-none">
+            <!-- Satellite Dot at 45° -->
+            <div class="absolute top-[28px] right-[28px] w-3 h-3 rounded-full bg-lime-400 shadow-[0_0_14px_#C6FF3D] flex items-center justify-center">
+              <span class="w-1 h-1 rounded-full bg-pine-950"></span>
             </div>
           </div>
 
-          <!-- Bottom Micro-Caption -->
-          <div class="mt-2.5 flex items-center justify-between text-[10px] font-mono text-neutral-400 pt-1">
-            <span>DETERMINISTIC COMPOSITION</span>
-            <span class="text-yaas-yellow font-bold">FRAME-ACCURATE AST</span>
+          <!-- Top-Right Staggered HUD Callout Badge (Scale Ceiling) -->
+          <div class="absolute -top-2 -right-2 sm:-right-4 bg-pine-900/95 border border-lime-400/50 shadow-2xl px-3 py-1.5 rounded-xl backdrop-blur-md z-20">
+            <div class="flex items-center gap-1.5 mb-0.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
+              <span class="text-[9px] font-mono text-lime-400 uppercase font-bold tracking-wider">SCALE CEILING</span>
+            </div>
+            <div class="text-xs font-bold text-white font-mono">1,000+ Assets / Mo</div>
+            <div class="text-[9px] text-pine-300 font-mono">Autonomous Aeos Cluster</div>
+          </div>
+
+          <!-- Middle Orbit Ring (450 Assets / Mo) -->
+          <div class="absolute w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] rounded-full border border-lime-400/30 flex items-center justify-center pointer-events-none">
+            <!-- Satellite Dot at 215° -->
+            <div class="absolute bottom-[20px] left-[20px] w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34D399]"></div>
+          </div>
+
+          <!-- Bottom-Left Staggered HUD Callout Badge (Hybrid Tier) -->
+          <div class="absolute -bottom-2 -left-2 sm:-left-4 bg-pine-900/95 border border-pine-700 shadow-2xl px-3 py-1.5 rounded-xl backdrop-blur-md z-20">
+            <div class="flex items-center gap-1.5 mb-0.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span class="text-[9px] font-mono text-emerald-400 uppercase font-bold tracking-wider">HYBRID TIER</span>
+            </div>
+            <div class="text-xs font-bold text-white font-mono">450 Assets / Mo</div>
+            <div class="text-[9px] text-pine-300 font-mono">Semi-Automated Workflows</div>
+          </div>
+
+          <!-- Inner Core Sphere (Obsidian + Electric Lime Radar Core) -->
+          <div class="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full bg-gradient-to-br from-pine-950 via-pine-900 to-[#02100C] border-2 border-lime-400 flex flex-col items-center justify-center text-center shadow-[0_0_35px_rgba(198,255,61,0.25)] p-2 z-10 transition-transform hover:scale-105">
+            <div class="w-full flex items-center justify-center gap-1 mb-0.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-lime-400"></span>
+              <span class="text-[8px] font-mono text-pine-300 uppercase font-bold tracking-wider">MANUAL BASELINE</span>
+            </div>
+            <span class="text-2xl sm:text-3xl font-display font-black text-lime-400 my-0.5 whitespace-nowrap">80–100</span>
+            <span class="text-[9px] font-semibold text-white leading-tight">Assets / Mo<br><span class="text-pine-400 font-mono text-[8px]">(Editor Drag)</span></span>
           </div>
 
         </div>
@@ -294,18 +333,19 @@
     </div>
 
     <!-- Bottom Footer Strip -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-neutral-500 pt-2 border-t border-neutral-800 z-10 shrink-0 font-medium">
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-pine-400 pt-2 border-t border-pine-800/80 z-10 shrink-0 font-medium">
       <div class="flex items-center gap-2 max-w-[28%] truncate">
-        <span class="w-2 h-2 rounded-full bg-yaas-yellow"></span>
+        <span class="w-2 h-2 rounded-full bg-lime-400"></span>
         <span>CORE: OWNED MEDIA MOAT</span>
       </div>
       <div class="w-[300px] sm:w-[480px] lg:w-[560px] pointer-events-none shrink-0"></div>
-      <div class="text-right max-w-[28%] truncate text-neutral-400">
+      <div class="text-right max-w-[28%] truncate">
         PARTNERS: ZOHO · CLEARTRIP · RED BULL · ZERODHA
       </div>
     </div>
 
   </section>
+
 
 
   <!-- ========================================================================= -->
@@ -317,7 +357,7 @@
     <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
     <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-1.5 z-10 shrink-0 h-[30px]">
       <div class="flex items-center gap-2.5">
-        <div class="w-5 h-5 rounded bg-black flex items-center justify-center font-display font-black text-yaas-yellow text-[11px] shadow-sm">
+        <div class="w-5 h-5 rounded bg-pine-950 flex items-center justify-center font-display font-black text-lime-400 text-[11px] shadow-sm">
           Æ
         </div>
         <div class="flex items-center gap-2">
@@ -334,7 +374,7 @@
           <span>Call Notes (N)</span>
         </button>
         <button @click="printDeck()"
-                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-black hover:bg-neutral-800 text-yaas-yellow font-bold transition-all shadow-sm">
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-pine-950 hover:bg-pine-900 text-lime-400 font-bold transition-all shadow-sm">
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           <span>Export PDF</span>
         </button>
@@ -504,142 +544,159 @@
 
 
   <!-- ========================================================================= -->
-  <!-- SLIDE 3: SYSTEM TOPOLOGY (Pitch Black Canvas · Cognis 07 Style)           -->
+  <!-- SLIDE 3: SYSTEM TOPOLOGY (Connected Pipeline Rail · Deep Pine Architecture)-->
   <!-- ========================================================================= -->
   <section x-show="currentSlide === 3" x-transition.opacity.duration.300ms 
-           class="slide-canvas w-full bg-yaas-dark text-white flex flex-col justify-between relative">
+           class="slide-canvas w-full bg-pine-950 text-white flex flex-col justify-between relative overflow-hidden">
     
+    <!-- Subtle Background Glow -->
+    <div class="absolute -top-32 right-1/4 w-96 h-96 bg-lime-400/5 rounded-full blur-3xl pointer-events-none"></div>
+
     <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-neutral-800/80 pb-1.5 z-10 shrink-0 h-[30px]">
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-pine-800/80 pb-1.5 z-10 shrink-0 h-[30px]">
       <div class="flex items-center gap-2.5">
-        <div class="w-5 h-5 rounded bg-yaas-yellow flex items-center justify-center font-display font-black text-black text-[11px] shadow-sm">
+        <div class="w-5 h-5 rounded bg-lime-400 flex items-center justify-center font-display font-black text-pine-950 text-[11px] shadow-sm">
           Æ
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-yaas-yellow">Aeos Labs Architecture</span>
-          <span class="text-neutral-700 font-mono">|</span>
-          <span class="text-[11px] font-mono text-neutral-400">03 · Autonomous Pipeline</span>
+          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-lime-400">Aeos Labs Architecture</span>
+          <span class="text-pine-700 font-mono">|</span>
+          <span class="text-[11px] font-mono text-pine-300">03 · Autonomous Pipeline</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
       <div class="flex items-center gap-2 no-print">
         <button @click="toggleDrawer()"
-                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded border border-neutral-700 bg-neutral-900 hover:bg-neutral-800 text-yaas-yellow transition-all">
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded border border-pine-700 bg-pine-900 hover:bg-pine-850 text-lime-400 transition-all">
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           <span>Call Notes (N)</span>
         </button>
         <button @click="printDeck()"
-                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-yaas-yellow hover:bg-amber-300 text-black font-bold transition-all shadow-sm">
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-lime-400 hover:bg-lime-300 text-pine-950 font-bold transition-all shadow-sm">
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           <span>Export PDF</span>
         </button>
       </div>
     </div>
 
-    <!-- Main Content: Oracle-Style Spacious Flow -->
-    <div class="w-full max-w-[1600px] mx-auto space-y-6 my-auto z-10 py-4">
+    <!-- Main Content: Connected Pipeline Rail Flow -->
+    <div class="w-full max-w-[1600px] mx-auto space-y-5 my-auto z-10 py-3">
       
       <!-- Headline & Subtitle -->
       <div class="space-y-2 max-w-3xl">
-        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800 text-yaas-yellow text-[10px] font-mono">
-          <span class="w-1.5 h-1.5 rounded-full bg-yaas-yellow animate-pulse"></span>
+        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-pine-900 border border-pine-750 text-lime-400 text-[10px] font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
           <span>03 · DETERMINISTIC SYSTEM TOPOLOGY</span>
         </div>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-white leading-tight">
-          Code Replaces <span class="text-yaas-yellow">Keyframes.</span>
+          Code Replaces <span class="text-lime-400">Keyframes.</span>
         </h2>
-        <p class="text-xs sm:text-sm lg:text-base text-neutral-300 font-normal leading-relaxed">
+        <p class="text-xs sm:text-sm lg:text-base text-pine-200 font-normal leading-relaxed">
           One founder shoot programmatically compiles into 100+ multi-format assets via deterministic React Remotion AST.
         </p>
       </div>
 
-      <!-- 4 Oracle-Style Pipeline Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        
-        <!-- [01] Ingest -->
-        <div class="bg-neutral-900/90 border border-neutral-800 p-5 rounded-2xl shadow-xl space-y-3 relative overflow-hidden group hover:border-neutral-700 transition-all">
-          <div class="flex items-center justify-between">
-            <span class="text-2xl font-display font-black text-yaas-yellow/80 group-hover:text-yaas-yellow transition-colors">[01]</span>
-            <span class="text-[9px] font-mono bg-neutral-800 text-neutral-300 px-2 py-0.5 rounded-full">&lt;1.2s ACK</span>
-          </div>
-          <div>
-            <h4 class="text-base font-bold text-white mb-1">Edge Ingest</h4>
-            <p class="text-xs text-neutral-400 leading-snug">
-              Automated webhook intake with HMAC SHA-256 validation.
-            </p>
-          </div>
-          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-neutral-500">
-            SHA-256 SIGNED
-          </div>
-        </div>
+      <!-- Connected Horizontal Pipeline Rail (Custom Flow) -->
+      <div class="relative pt-2">
+        <!-- Connecting Corridor Rail Line (Visible on Desktop) -->
+        <div class="hidden lg:block absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-pine-800 via-lime-400/30 to-pine-800 -translate-y-6 z-0 pointer-events-none rounded-full"></div>
 
-        <!-- [02] Schema -->
-        <div class="bg-neutral-900/90 border border-neutral-800 p-5 rounded-2xl shadow-xl space-y-3 relative overflow-hidden group hover:border-neutral-700 transition-all">
-          <div class="flex items-center justify-between">
-            <span class="text-2xl font-display font-black text-yaas-yellow/80 group-hover:text-yaas-yellow transition-colors">[02]</span>
-            <span class="text-[9px] font-mono bg-neutral-800 text-neutral-300 px-2 py-0.5 rounded-full">MCP TYPED</span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
+          
+          <!-- [01] Ingest -->
+          <div class="relative bg-pine-900/90 border border-pine-800 p-5 rounded-2xl shadow-xl space-y-3 group hover:border-pine-700 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-2xl font-display font-black text-lime-400/80 group-hover:text-lime-400 transition-colors">[01]</span>
+                <span class="text-[9px] font-mono bg-pine-800 text-pine-200 px-2.5 py-0.5 rounded-full border border-pine-700">&lt;1.2s ACK</span>
+              </div>
+              <h4 class="text-base font-bold text-white mb-1">Edge Ingest</h4>
+              <p class="text-xs text-pine-300 leading-snug">
+                Automated webhook intake with HMAC SHA-256 validation.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-pine-800/80 text-[10px] font-mono text-pine-400 flex items-center justify-between">
+              <span>SHA-256 SIGNED</span>
+              <span class="hidden lg:inline text-lime-400/60 font-bold">➔</span>
+            </div>
           </div>
-          <div>
-            <h4 class="text-base font-bold text-white mb-1">FastMCP Schema</h4>
-            <p class="text-xs text-neutral-400 leading-snug">
-              Typed contracts with strict JSON Schemas and zero brand drift.
-            </p>
-          </div>
-          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-neutral-500">
-            ZERO SCHEMA DRIFT
-          </div>
-        </div>
 
-        <!-- [03] Compile -->
-        <div class="bg-neutral-900/90 border border-yaas-yellow/40 p-5 rounded-2xl shadow-xl space-y-3 relative overflow-hidden group hover:border-yaas-yellow transition-all">
-          <div class="flex items-center justify-between">
-            <span class="text-2xl font-display font-black text-yaas-yellow">[03]</span>
-            <span class="text-[9px] font-mono bg-yaas-yellow text-black font-bold px-2 py-0.5 rounded-full">&lt;45s / CLIP</span>
+          <!-- [02] Schema -->
+          <div class="relative bg-pine-900/90 border border-pine-800 p-5 rounded-2xl shadow-xl space-y-3 group hover:border-pine-700 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-2xl font-display font-black text-lime-400/80 group-hover:text-lime-400 transition-colors">[02]</span>
+                <span class="text-[9px] font-mono bg-pine-800 text-pine-200 px-2.5 py-0.5 rounded-full border border-pine-700">MCP TYPED</span>
+              </div>
+              <h4 class="text-base font-bold text-white mb-1">FastMCP Schema</h4>
+              <p class="text-xs text-pine-300 leading-snug">
+                Typed contracts with strict JSON Schemas and zero brand drift.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-pine-800/80 text-[10px] font-mono text-pine-400 flex items-center justify-between">
+              <span>ZERO SCHEMA DRIFT</span>
+              <span class="hidden lg:inline text-lime-400/60 font-bold">➔</span>
+            </div>
           </div>
-          <div>
-            <h4 class="text-base font-bold text-white mb-1">Remotion AST</h4>
-            <p class="text-xs text-neutral-300 leading-snug">
-              Frame-accurate React render tree with automated typography sync.
-            </p>
-          </div>
-          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-yaas-yellow">
-            FRAME-ACCURATE AST
-          </div>
-        </div>
 
-        <!-- [04] Fleet -->
-        <div class="bg-neutral-900/90 border border-neutral-800 p-5 rounded-2xl shadow-xl space-y-3 relative overflow-hidden group hover:border-neutral-700 transition-all">
-          <div class="flex items-center justify-between">
-            <span class="text-2xl font-display font-black text-purple-400">[04]</span>
-            <span class="text-[9px] font-mono bg-purple-950/80 text-purple-300 px-2 py-0.5 rounded-full">70+ BRANDS</span>
+          <!-- [03] Remotion AST (Hero Stage) -->
+          <div class="relative bg-gradient-to-b from-pine-900 via-pine-850 to-pine-900 border-2 border-lime-400 p-5 rounded-2xl shadow-[0_0_30px_rgba(198,255,61,0.2)] space-y-3 group transition-all flex flex-col justify-between transform lg:-translate-y-1">
+            <!-- Pulsing Active Stage Pill -->
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-lime-400 text-pine-950 text-[9px] font-mono font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-md tracking-wider flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-pine-950 animate-pulse"></span>
+              HERO STAGE
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-2 mt-1">
+                <span class="text-2xl font-display font-black text-lime-400">[03]</span>
+                <span class="text-[9px] font-mono bg-lime-400 text-pine-950 font-bold px-2 py-0.5 rounded-full">&lt;45s / CLIP</span>
+              </div>
+              <h4 class="text-base font-bold text-white mb-1">Remotion AST</h4>
+              <p class="text-xs text-pine-200 leading-snug">
+                Frame-accurate React render tree with automated typography sync.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-lime-400/30 text-[10px] font-mono text-lime-400 flex items-center justify-between font-bold">
+              <span>FRAME-ACCURATE AST</span>
+              <span class="hidden lg:inline text-lime-400 font-bold">➔</span>
+            </div>
           </div>
-          <div>
-            <h4 class="text-base font-bold text-white mb-1">Fleet Fan-Out</h4>
-            <p class="text-xs text-neutral-400 leading-snug">
-              Simultaneous 10-platform distribution (YouTube, X, Reels, LinkedIn).
-            </p>
-          </div>
-          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-purple-400">
-            10-PLATFORM DISPATCH
-          </div>
-        </div>
 
+          <!-- [04] Fleet Fan-Out -->
+          <div class="relative bg-pine-900/90 border border-pine-800 p-5 rounded-2xl shadow-xl space-y-3 group hover:border-pine-700 transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-2xl font-display font-black text-emerald-400 group-hover:text-emerald-300 transition-colors">[04]</span>
+                <span class="text-[9px] font-mono bg-emerald-950/80 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-800">70+ BRANDS</span>
+              </div>
+              <h4 class="text-base font-bold text-white mb-1">Fleet Fan-Out</h4>
+              <p class="text-xs text-pine-300 leading-snug">
+                Simultaneous 10-platform distribution (YouTube, X, Reels, LinkedIn).
+              </p>
+            </div>
+            <div class="pt-2 border-t border-pine-800/80 text-[10px] font-mono text-emerald-400 flex items-center justify-between">
+              <span>10-PLATFORM DISPATCH</span>
+              <span class="hidden lg:inline text-emerald-400 font-bold">●</span>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      <!-- Bottom Metric Strip -->
-      <div class="p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+      <!-- Bottom Metric Strip (Deep Pine Telemetry) -->
+      <div class="p-3.5 rounded-xl bg-pine-900/80 border border-pine-800 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
         <div class="flex items-center gap-2">
-          <span class="text-neutral-500 uppercase">VELOCITY MULTIPLIER:</span>
-          <span class="text-yaas-yellow font-bold">12.5x (&lt;45s vs 4–8h manual)</span>
+          <span class="text-pine-400 uppercase">VELOCITY MULTIPLIER:</span>
+          <span class="text-lime-400 font-bold">12.5x (&lt;45s vs 4–8h manual)</span>
         </div>
-        <div class="h-3 w-px bg-neutral-800 hidden sm:block"></div>
+        <div class="h-3 w-px bg-pine-800 hidden sm:block"></div>
         <div class="flex items-center gap-2">
-          <span class="text-neutral-500 uppercase">CONCURRENCY:</span>
+          <span class="text-pine-400 uppercase">CONCURRENCY:</span>
           <span class="text-white font-bold">ZERO SOCKET LEAKS</span>
         </div>
-        <div class="h-3 w-px bg-neutral-800 hidden sm:block"></div>
+        <div class="h-3 w-px bg-pine-800 hidden sm:block"></div>
         <div class="flex items-center gap-2">
-          <span class="text-neutral-500 uppercase">DLQ RECOVERY:</span>
+          <span class="text-pine-400 uppercase">DLQ RECOVERY:</span>
           <span class="text-emerald-400 font-bold">3x BACKOFF · 99.7% RELIABILITY</span>
         </div>
       </div>
@@ -647,25 +704,25 @@
     </div>
 
     <!-- Bottom Footer Strip -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-neutral-500 pt-2 border-t border-neutral-800 z-10 shrink-0 font-medium">
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-pine-400 pt-2 border-t border-pine-800/80 z-10 shrink-0 font-medium">
       <span class="max-w-[28%] truncate">CORE: REACT REMOTION AST</span>
       <div class="w-[300px] sm:w-[480px] lg:w-[560px] pointer-events-none shrink-0"></div>
-      <span class="text-right max-w-[28%] truncate text-neutral-400">EXECUTION: ZERO SOCKET LEAKS</span>
+      <span class="text-right max-w-[28%] truncate text-pine-300">EXECUTION: ZERO SOCKET LEAKS</span>
     </div>
 
   </section>
 
 
   <!-- ========================================================================= -->
-  <!-- SLIDE 4: 3-PHASE EXECUTION ROADMAP (Crisp Off-White Canvas · Cognis 03)  -->
+  <!-- SLIDE 4: 3-PHASE EXECUTION ROADMAP (Stepped Horizon Timeline · Cream)     -->
   <!-- ========================================================================= -->
   <section x-show="currentSlide === 4" x-transition.opacity.duration.300ms 
-           class="slide-canvas w-full bg-canvas-light text-neutral-900 flex flex-col justify-between relative">
+           class="slide-canvas w-full bg-canvas-light text-neutral-900 flex flex-col justify-between relative overflow-hidden">
     
     <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
     <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-1.5 z-10 shrink-0 h-[30px]">
       <div class="flex items-center gap-2.5">
-        <div class="w-5 h-5 rounded bg-black flex items-center justify-center font-display font-black text-yaas-yellow text-[11px] shadow-sm">
+        <div class="w-5 h-5 rounded bg-pine-950 flex items-center justify-center font-display font-black text-lime-400 text-[11px] shadow-sm">
           Æ
         </div>
         <div class="flex items-center gap-2">
@@ -682,135 +739,141 @@
           <span>Call Notes (N)</span>
         </button>
         <button @click="printDeck()"
-                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-black hover:bg-neutral-800 text-yaas-yellow font-bold transition-all shadow-sm">
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-pine-950 hover:bg-pine-900 text-lime-400 font-bold transition-all shadow-sm">
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           <span>Export PDF</span>
         </button>
       </div>
     </div>
 
-    <!-- Main Content: Solvanta / Oracle Clean 3-Column Plan -->
+    <!-- Main Content: Stepped Horizon Milestone Timeline -->
     <div class="w-full max-w-[1600px] mx-auto space-y-5 my-auto z-10 py-3">
       
       <!-- Headline & Subtitle -->
       <div class="space-y-2 max-w-3xl">
         <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-stone-100 border border-stone-200 text-neutral-800 text-[11px] font-mono">
-          <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-pine-950"></span>
           <span>04 · PHASED EXECUTION ROADMAP</span>
         </div>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-neutral-950 leading-tight">
-          30-Day Autonomous <span class="text-amber-600">Fleet.</span>
+          30-Day Autonomous <span class="text-pine-800">Fleet.</span>
         </h2>
         <p class="text-xs sm:text-sm lg:text-base text-stone-600 font-normal leading-relaxed">
           Zero handholding. Concrete proof-of-work delivered in rapid 14-day validation cycles toward autonomy.
         </p>
       </div>
 
-      <!-- 3 Minimalist Milestone Columns -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        
-        <!-- Phase 1: Weeks 1–2 -->
-        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between hover:border-stone-300 transition-all space-y-4">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-[10px] text-neutral-800 font-bold bg-stone-100 px-2.5 py-1 rounded-md border border-stone-200">
-                [01] WEEKS 1–2
-              </span>
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-            </div>
-            <h4 class="text-base font-bold text-neutral-950 mb-2">Intake & Normalization</h4>
-            
-            <ul class="space-y-2 text-xs text-stone-600 font-sans">
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
-                <span>Webhook edge intake (&lt;1.2s ACK)</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
-                <span>FastMCP zero-drift typed schemas</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
-                <span>Notion CMS 0.67 req/s rate-limiting</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div class="pt-3 border-t border-stone-100 text-[11px] font-mono text-emerald-700 font-bold flex items-center justify-between">
-            <span>DAY 14 GATE</span>
-            <span class="uppercase">PRODUCTION READY</span>
-          </div>
-        </div>
+      <!-- Stepped Horizon Progress Corridor & Timeline Stations -->
+      <div class="relative pt-2">
+        <!-- Connecting Milestone Corridor Spine (Desktop) -->
+        <div class="hidden md:block absolute top-10 left-12 right-12 h-1 bg-gradient-to-r from-emerald-500 via-lime-500 to-purple-500 rounded-full z-0 pointer-events-none opacity-80"></div>
 
-        <!-- Phase 2: Weeks 3–4 -->
-        <div class="bg-white p-5 rounded-2xl border-2 border-amber-400 shadow-md flex flex-col justify-between relative space-y-4">
-          <div class="absolute -top-3 right-4 bg-black text-yaas-yellow text-[9px] font-mono font-bold px-2.5 py-0.5 rounded-full shadow-sm">
-            CORE ENGINE
-          </div>
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-[10px] text-black font-bold bg-yaas-yellow px-2.5 py-1 rounded-md">
-                [02] WEEKS 3–4
-              </span>
-              <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
-            </div>
-            <h4 class="text-base font-bold text-neutral-950 mb-2">Remotion AST Engine</h4>
-            
-            <ul class="space-y-2 text-xs text-stone-600 font-sans">
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-black shrink-0"></span>
-                <span>Headless render cluster (&lt;45s/clip)</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-black shrink-0"></span>
-                <span>VideoVault cached asset library</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-black shrink-0"></span>
-                <span>Automated DLQ 3x backoff recovery</span>
-              </li>
-            </ul>
-          </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 relative z-10">
           
-          <div class="pt-3 border-t border-stone-100 text-[11px] font-mono text-amber-700 font-bold flex items-center justify-between">
-            <span>DAY 28 GATE</span>
-            <span class="uppercase">VELOCITY ENGINE</span>
-          </div>
-        </div>
-
-        <!-- Phase 3: Scale -->
-        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between hover:border-stone-300 transition-all space-y-4">
-          <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-[10px] text-purple-700 font-bold bg-purple-50 px-2.5 py-1 rounded-md border border-purple-200">
-                [03] SCALE
-              </span>
-              <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
+          <!-- Station 01: Weeks 1–2 -->
+          <div class="bg-white p-5 rounded-2xl border border-stone-200/90 shadow-sm flex flex-col justify-between hover:border-stone-300 transition-all space-y-4 relative">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[10px] text-neutral-800 font-bold bg-stone-100 px-2.5 py-1 rounded-md border border-stone-200">
+                  [01] WEEKS 1–2
+                </span>
+                <span class="w-5 h-5 rounded-full bg-emerald-100 border border-emerald-400 flex items-center justify-center text-emerald-700 text-xs font-bold shadow-sm">✓</span>
+              </div>
+              <h4 class="text-base font-bold text-neutral-950 mb-2">Intake & Normalization</h4>
+              
+              <ul class="space-y-2 text-xs text-stone-600 font-sans">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
+                  <span>Webhook edge intake (&lt;1.2s ACK)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
+                  <span>FastMCP zero-drift typed schemas</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
+                  <span>Notion CMS 0.67 req/s rate-limiting</span>
+                </li>
+              </ul>
             </div>
-            <h4 class="text-base font-bold text-neutral-950 mb-2">Fleet Scaling & Fan-Out</h4>
             
-            <ul class="space-y-2 text-xs text-stone-600 font-sans">
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
-                <span>1,000+ monthly assets fleet capacity</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
-                <span>AlphaCTR A/B thumbnail variant scoring</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
-                <span>10-platform distribution across 70+ channels</span>
-              </li>
-            </ul>
+            <div class="pt-3 border-t border-stone-100 text-[11px] font-mono text-emerald-700 font-bold flex items-center justify-between">
+              <span>DAY 14 GATE</span>
+              <span class="uppercase">PRODUCTION READY</span>
+            </div>
           </div>
-          
-          <div class="pt-3 border-t border-stone-100 text-[11px] font-mono text-purple-700 font-bold flex items-center justify-between">
-            <span>SCALE</span>
-            <span class="uppercase">AUTONOMOUS FLEET</span>
-          </div>
-        </div>
 
+          <!-- Station 02: Weeks 3–4 (Core Engine Hero) -->
+          <div class="bg-white p-5 rounded-2xl border-2 border-pine-900 shadow-md flex flex-col justify-between relative space-y-4 transform md:-translate-y-1">
+            <div class="absolute -top-3 right-4 bg-pine-950 text-lime-400 text-[9px] font-mono font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
+              CORE ENGINE
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[10px] text-pine-950 font-bold bg-lime-400 px-2.5 py-1 rounded-md">
+                  [02] WEEKS 3–4
+                </span>
+                <span class="w-5 h-5 rounded-full bg-lime-100 border border-lime-400 flex items-center justify-center text-pine-950 text-xs font-bold shadow-sm">⚡</span>
+              </div>
+              <h4 class="text-base font-bold text-neutral-950 mb-2">Remotion AST Engine</h4>
+              
+              <ul class="space-y-2 text-xs text-stone-600 font-sans">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-pine-950 shrink-0"></span>
+                  <span>Headless render cluster (&lt;45s/clip)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-pine-950 shrink-0"></span>
+                  <span>VideoVault cached asset library</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-pine-950 shrink-0"></span>
+                  <span>Automated DLQ 3x backoff recovery</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="pt-3 border-t border-stone-100 text-[11px] font-mono text-pine-900 font-bold flex items-center justify-between">
+              <span>DAY 28 GATE</span>
+              <span class="uppercase">VELOCITY ENGINE</span>
+            </div>
+          </div>
+
+          <!-- Station 03: Scale -->
+          <div class="bg-white p-5 rounded-2xl border border-stone-200/90 shadow-sm flex flex-col justify-between hover:border-stone-300 transition-all space-y-4">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[10px] text-purple-700 font-bold bg-purple-50 px-2.5 py-1 rounded-md border border-purple-200">
+                  [03] SCALE
+                </span>
+                <span class="w-5 h-5 rounded-full bg-purple-100 border border-purple-300 flex items-center justify-center text-purple-700 text-xs font-bold shadow-sm">🚀</span>
+              </div>
+              <h4 class="text-base font-bold text-neutral-950 mb-2">Fleet Scaling & Fan-Out</h4>
+              
+              <ul class="space-y-2 text-xs text-stone-600 font-sans">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                  <span>1,000+ monthly assets fleet capacity</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                  <span>AlphaCTR A/B thumbnail scoring</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                  <span>10-platform distribution (70+ channels)</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="pt-3 border-t border-stone-100 text-[11px] font-mono text-purple-700 font-bold flex items-center justify-between">
+              <span>SCALE</span>
+              <span class="uppercase">AUTONOMOUS FLEET</span>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </div>
@@ -826,140 +889,177 @@
 
 
   <!-- ========================================================================= -->
-  <!-- SLIDE 5: UNIT ECONOMICS (Pitch Black Canvas · Cognis 05 Style)           -->
+  <!-- SLIDE 5: UNIT ECONOMICS (Comparative Economics Infographic · Deep Pine)   -->
   <!-- ========================================================================= -->
   <section x-show="currentSlide === 5" x-transition.opacity.duration.300ms 
-           class="slide-canvas w-full bg-yaas-dark text-white flex flex-col justify-between relative">
+           class="slide-canvas w-full bg-pine-950 text-white flex flex-col justify-between relative overflow-hidden">
     
+    <!-- Subtle Background Glow -->
+    <div class="absolute -top-32 left-1/3 w-96 h-96 bg-lime-400/5 rounded-full blur-3xl pointer-events-none"></div>
+
     <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-neutral-800/80 pb-1.5 z-10 shrink-0 h-[30px]">
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-pine-800/80 pb-1.5 z-10 shrink-0 h-[30px]">
       <div class="flex items-center gap-2.5">
-        <div class="w-5 h-5 rounded bg-yaas-yellow flex items-center justify-center font-display font-black text-black text-[11px] shadow-sm">
+        <div class="w-5 h-5 rounded bg-lime-400 flex items-center justify-center font-display font-black text-pine-950 text-[11px] shadow-sm">
           Æ
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-yaas-yellow">Aeos Group Unit Economics</span>
-          <span class="text-neutral-700 font-mono">|</span>
-          <span class="text-[11px] font-mono text-neutral-400">05 · Capital Efficiency</span>
+          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-lime-400">Aeos Group Unit Economics</span>
+          <span class="text-pine-700 font-mono">|</span>
+          <span class="text-[11px] font-mono text-pine-300">05 · Capital Efficiency</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
       <div class="flex items-center gap-2 no-print">
         <button @click="toggleDrawer()"
-                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded border border-neutral-700 bg-neutral-900 hover:bg-neutral-800 text-yaas-yellow transition-all">
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded border border-pine-700 bg-pine-900 hover:bg-pine-850 text-lime-400 transition-all">
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           <span>Call Notes (N)</span>
         </button>
         <button @click="printDeck()"
-                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-yaas-yellow hover:bg-amber-300 text-black font-bold transition-all shadow-sm">
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-lime-400 hover:bg-lime-300 text-pine-950 font-bold transition-all shadow-sm">
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           <span>Export PDF</span>
         </button>
       </div>
     </div>
 
-    <!-- Main Content: Mavence-Style Giant Typographic Metrics -->
-    <div class="w-full max-w-[1600px] mx-auto space-y-6 my-auto z-10 py-4">
+    <!-- Main Content: Diverse Comparative Infographic Layout -->
+    <div class="w-full max-w-[1600px] mx-auto space-y-5 my-auto z-10 py-3">
       
       <!-- Headline & Subtitle -->
       <div class="space-y-2 max-w-3xl">
-        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800 text-yaas-yellow text-[10px] font-mono">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-pine-900 border border-pine-750 text-lime-400 text-[10px] font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
           <span>05 · UNIT ECONOMICS & ARBITRAGE</span>
         </div>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-white leading-tight">
-          85.5% Margin <span class="text-yaas-yellow">Expansion.</span>
+          85.5% Margin <span class="text-lime-400">Expansion.</span>
         </h2>
-        <p class="text-xs sm:text-sm lg:text-base text-neutral-300 font-normal leading-relaxed">
+        <p class="text-xs sm:text-sm lg:text-base text-pine-200 font-normal leading-relaxed">
           Modeled on 10 enterprise channels: comparing linear agency payroll against programmatic Remotion compute.
         </p>
       </div>
 
-      <!-- 4 Giant Typographic Metric Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- 3 Diverse Infographic Panels (Breaking Monotony) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
         
-        <!-- Card 1: Linear Agency Payroll -->
-        <div class="bg-neutral-900/90 border border-neutral-800 p-5 rounded-2xl shadow-xl flex flex-col justify-between space-y-3 group hover:border-neutral-700 transition-all">
+        <!-- Panel 1 (4 cols): Side-by-Side Visual Comparative Height Bars (~7:1 Height Ratio) -->
+        <div class="lg:col-span-4 bg-pine-900/90 border border-pine-800 p-5 rounded-2xl shadow-xl flex flex-col justify-between space-y-4">
           <div>
-            <span class="text-[10px] font-mono text-red-400 uppercase tracking-wider font-bold">TRADITIONAL (Modeled)</span>
-            <div class="text-4xl sm:text-5xl font-display font-extrabold text-white my-2 tracking-tight">₹4.5L<span class="text-sm text-neutral-500 font-normal">/mo</span></div>
-            <h4 class="text-sm font-bold text-white mb-1">Linear Agency Payroll</h4>
-            <p class="text-xs text-neutral-400 leading-snug">
-              6 human editors keyframing in Premiere. Hard cap at ~80 clips/mo.
-            </p>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-mono text-pine-400 uppercase tracking-wider font-bold">MONTHLY RUN-RATE (Modeled)</span>
+              <span class="text-[9px] font-mono text-lime-400 bg-pine-800 px-2 py-0.5 rounded-full border border-pine-700">7:1 COST RATIO</span>
+            </div>
+            <h4 class="text-sm font-bold text-white mb-3">Payroll vs Compute</h4>
           </div>
-          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-neutral-500 flex items-center justify-between">
-            <span>6 EDITORS</span>
-            <span class="text-red-400">4–8H / CLIP</span>
+
+          <!-- The Visual Side-by-Side Height Bars Component -->
+          <div class="h-44 flex items-end justify-center gap-8 px-4 pb-2 border-b border-pine-800/80">
+            <!-- Left Bar: ₹4.5L Traditional Payroll (Height 100% / ~140px) -->
+            <div class="flex flex-col items-center gap-2 flex-1 max-w-[90px]">
+              <span class="text-xs font-mono font-bold text-red-400">₹4.5L</span>
+              <div class="w-full h-32 rounded-t-lg bg-gradient-to-t from-red-950/80 to-red-500/80 border border-red-500/50 shadow-[0_0_15px_rgba(239,68,68,0.2)]"></div>
+              <span class="text-[9px] font-mono text-pine-400 text-center leading-tight">Agency<br>Payroll</span>
+            </div>
+
+            <!-- Right Bar: ₹65K Remotion Compute (Height ~20% / ~28px) -->
+            <div class="flex flex-col items-center gap-2 flex-1 max-w-[90px]">
+              <span class="text-xs font-mono font-bold text-lime-400">₹65K</span>
+              <div class="w-full h-7 rounded-t-lg bg-gradient-to-t from-lime-500 to-lime-300 border border-lime-400 shadow-[0_0_15px_rgba(198,255,61,0.3)]"></div>
+              <span class="text-[9px] font-mono text-lime-400 font-bold text-center leading-tight">Aeos<br>Compute</span>
+            </div>
+          </div>
+
+          <div class="text-[10px] font-mono text-pine-400 flex items-center justify-between pt-1">
+            <span>6 Editors (80 clips cap)</span>
+            <span class="text-lime-400 font-bold">1 Op (1,000+ clips)</span>
           </div>
         </div>
 
-        <!-- Card 2: Aeos Remotion Cluster -->
-        <div class="bg-neutral-900/90 border border-yaas-yellow/50 p-5 rounded-2xl shadow-xl flex flex-col justify-between space-y-3 group hover:border-yaas-yellow transition-all">
+        <!-- Panel 2 (4 cols): Upward Growth Curve & Capital Recovery Core -->
+        <div class="lg:col-span-4 bg-gradient-to-b from-pine-900 via-pine-850 to-pine-900 border-2 border-lime-400/80 p-5 rounded-2xl shadow-[0_0_30px_rgba(198,255,61,0.15)] flex flex-col justify-between space-y-4">
           <div>
-            <span class="text-[10px] font-mono text-yaas-yellow uppercase tracking-wider font-bold">DETERMINISTIC (Modeled)</span>
-            <div class="text-4xl sm:text-5xl font-display font-extrabold text-yaas-yellow my-2 tracking-tight">₹65K<span class="text-sm text-neutral-400 font-normal">/mo</span></div>
-            <h4 class="text-sm font-bold text-white mb-1">Aeos Remotion Cluster</h4>
-            <p class="text-xs text-neutral-300 leading-snug">
-              Programmatic React render cluster. 1 operator oversees 1,000+ clips.
-            </p>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-mono text-lime-400 uppercase tracking-wider font-bold">COST ARBITRAGE (Modeled)</span>
+              <span class="w-2 h-2 rounded-full bg-lime-400 animate-pulse"></span>
+            </div>
+            <h4 class="text-sm font-bold text-white">Net Capital Recovery</h4>
           </div>
-          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-yaas-yellow flex items-center justify-between">
-            <span>1 OPERATOR</span>
-            <span>&lt;45S / CLIP</span>
+
+          <!-- Dynamic SVG Upward Growth Curve & Center Metric -->
+          <div class="py-2 flex flex-col items-center justify-center text-center relative">
+            <!-- Background Curved Path -->
+            <svg class="w-48 h-16 overflow-visible mb-1" viewBox="0 0 200 60" fill="none">
+              <path d="M 10 50 Q 100 48 180 12" stroke="#C6FF3D" stroke-width="3" stroke-linecap="round" fill="none" />
+              <!-- Arrowhead -->
+              <polygon points="180,5 192,13 180,21" fill="#C6FF3D" />
+            </svg>
+            <div class="text-5xl font-display font-extrabold text-lime-400 tracking-tight leading-none my-1">
+              85.5%
+            </div>
+            <div class="text-xs font-mono font-bold text-white mt-1">₹3.85L / month Recovered</div>
+            <div class="text-[10px] text-pine-300 font-mono mt-0.5">₹46L+ / Year Saved per 10 Channels</div>
+          </div>
+
+          <div class="p-2.5 rounded-xl bg-pine-950/80 border border-pine-800 text-[10px] font-mono text-pine-300 text-center">
+            REDEPLOYED CAPITAL: R&D & TALENT ACQUISITION
           </div>
         </div>
 
-        <!-- Card 3: 85.5% Margin Expansion -->
-        <div class="bg-neutral-900/90 border border-neutral-800 p-5 rounded-2xl shadow-xl flex flex-col justify-between space-y-3 group hover:border-neutral-700 transition-all">
+        <!-- Panel 3 (4 cols): Media Velocity & 10×10 Capacity Dot Matrix -->
+        <div class="lg:col-span-4 bg-pine-900/90 border border-pine-800 p-5 rounded-2xl shadow-xl flex flex-col justify-between space-y-4">
           <div>
-            <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-wider font-bold">COST ARBITRAGE (Modeled)</span>
-            <div class="text-4xl sm:text-5xl font-display font-extrabold text-emerald-400 my-2 tracking-tight">85.5%</div>
-            <h4 class="text-sm font-bold text-white mb-1">Net Capital Recovery</h4>
-            <p class="text-xs text-neutral-400 leading-snug">
-              ₹3.85L/mo recovered capital per 10 client brand channels.
-            </p>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-mono text-pine-400 uppercase tracking-wider font-bold">MEDIA VELOCITY (Modeled)</span>
+              <span class="text-2xl font-display font-black text-lime-400">12.5x</span>
+            </div>
+            <h4 class="text-sm font-bold text-white mb-2">Fleet Capacity Scale</h4>
           </div>
-          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-emerald-400 flex items-center justify-between">
-            <span>RECOVERED</span>
-            <span>₹46L+ / YEAR</span>
-          </div>
-        </div>
 
-        <!-- Card 4: 12.5x Velocity Multiplier -->
-        <div class="bg-neutral-900/90 border border-neutral-800 p-5 rounded-2xl shadow-xl flex flex-col justify-between space-y-3 group hover:border-neutral-700 transition-all">
-          <div>
-            <span class="text-[10px] font-mono text-yaas-yellow uppercase tracking-wider font-bold">MEDIA VELOCITY (Modeled)</span>
-            <div class="text-4xl sm:text-5xl font-display font-extrabold text-white my-2 tracking-tight">12.5x</div>
-            <h4 class="text-sm font-bold text-white mb-1">Asset Output Multiplier</h4>
-            <p class="text-xs text-neutral-400 leading-snug">
-              Throughput acceleration at constant compute budget vs manual timelines.
-            </p>
+          <!-- Mavence-Style 10x10 Capacity Dot Matrix (100 Dots) -->
+          <div class="flex flex-col items-center py-1">
+            <div class="grid grid-cols-10 gap-1.5 p-3 rounded-xl bg-pine-950/90 border border-pine-800">
+              <!-- 8 Red Dots representing Manual Premiere Cap (~80 clips) -->
+              <span class="w-2 h-2 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
+              <span class="w-2 h-2 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
+              <span class="w-2 h-2 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
+              <span class="w-2 h-2 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
+              <span class="w-2 h-2 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
+              <span class="w-2 h-2 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
+              <span class="w-2 h-2 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
+              <span class="w-2 h-2 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
+              <!-- Remaining 92 Electric Lime Dots representing Autonomous Fleet Scale -->
+              <template x-for="i in 92" :key="i">
+                <span class="w-2 h-2 rounded-full bg-lime-400/80 shadow-[0_0_4px_#C6FF3D]" title="Remotion Fleet Clip"></span>
+              </template>
+            </div>
           </div>
-          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-neutral-400 flex items-center justify-between">
-            <span>CAPACITY</span>
-            <span class="text-yaas-yellow font-bold">1,000+ CLIPS</span>
+
+          <div class="pt-2 border-t border-pine-800/80 text-[10px] font-mono flex items-center justify-between text-pine-400">
+            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-400"></span> Manual (80)</span>
+            <span class="flex items-center gap-1.5 text-lime-400 font-bold"><span class="w-2 h-2 rounded-full bg-lime-400"></span> Fleet (1,000+)</span>
           </div>
         </div>
 
       </div>
 
       <!-- Bottom Reference Footnote -->
-      <div class="p-3 rounded-xl bg-neutral-900/60 border border-neutral-800 flex items-center justify-between text-[11px] font-mono text-neutral-400">
+      <div class="p-3 rounded-xl bg-pine-900/80 border border-pine-800 flex items-center justify-between text-[11px] font-mono text-pine-400">
         <span class="flex items-center gap-2">
-          <span class="w-1.5 h-1.5 rounded-full bg-yaas-yellow"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-lime-400"></span>
           <span>CAPITAL EFFICIENCY: HIGH-LEVERAGE COMPUTE OVER LINEAR AGENCY PAYROLL</span>
         </span>
-        <span class="text-neutral-500 hidden sm:inline">(Modeled on 10 Enterprise Brand Channels)</span>
+        <span class="text-pine-400 hidden sm:inline">(Modeled on 10 Enterprise Brand Channels)</span>
       </div>
 
     </div>
 
     <!-- Bottom Footer Strip -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-neutral-500 pt-2 border-t border-neutral-800 z-10 shrink-0 font-medium">
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-pine-400 pt-2 border-t border-pine-800/80 z-10 shrink-0 font-medium">
       <span class="max-w-[28%] truncate">ANALYSIS: 10 ENTERPRISE CHANNELS</span>
       <div class="w-[300px] sm:w-[480px] lg:w-[560px] pointer-events-none shrink-0"></div>
-      <span class="text-right max-w-[28%] truncate text-neutral-400">STATUS: 85.5% NET CAPITAL RECOVERY</span>
+      <span class="text-right max-w-[28%] truncate text-pine-300">STATUS: 85.5% NET CAPITAL RECOVERY</span>
     </div>
 
   </section>
@@ -974,7 +1074,7 @@
     <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
     <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-1.5 z-10 shrink-0 h-[30px]">
       <div class="flex items-center gap-2.5">
-        <div class="w-5 h-5 rounded bg-black flex items-center justify-center font-display font-black text-yaas-yellow text-[11px] shadow-sm">
+        <div class="w-5 h-5 rounded bg-pine-950 flex items-center justify-center font-display font-black text-lime-400 text-[11px] shadow-sm">
           Æ
         </div>
         <div class="flex items-center gap-2">
@@ -991,7 +1091,7 @@
           <span>Call Notes (N)</span>
         </button>
         <button @click="printDeck()"
-                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-black hover:bg-neutral-800 text-yaas-yellow font-bold transition-all shadow-sm">
+                class="flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-pine-950 hover:bg-pine-900 text-lime-400 font-bold transition-all shadow-sm">
           <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
           <span>Export PDF</span>
         </button>
@@ -1002,11 +1102,11 @@
     <div class="w-full max-w-[1600px] mx-auto space-y-4 my-auto z-10 py-3">
       <div>
         <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-stone-100 border border-stone-200 text-neutral-800 text-[11px] font-mono mb-1.5">
-          <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+          <span class="w-1.5 h-1.5 rounded-full bg-pine-950"></span>
           <span>06 · SHIPPED PROOF-OF-WORK RECEIPTS</span>
         </div>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-neutral-950 leading-tight">
-          Verified Technical <span class="text-amber-600">Provenance.</span>
+          Verified Technical <span class="text-pine-800">Provenance.</span>
         </h2>
         <p class="text-xs sm:text-sm text-stone-600 max-w-3xl leading-relaxed mt-1">
           Production automation engines, upstream open-source PRs, and deterministic webhook pipelines backed by physical commits.
@@ -1025,7 +1125,7 @@
                      alt="Aman Suryavanshi" 
                      class="w-full h-full object-cover object-top"
                      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="hidden w-full h-full bg-black items-center justify-center font-display font-black text-yaas-yellow text-base">
+                <div class="hidden w-full h-full bg-pine-950 items-center justify-center font-display font-black text-lime-400 text-base">
                   AS
                 </div>
               </div>
@@ -1154,7 +1254,7 @@
       <template x-for="i in totalSlides" :key="i">
         <button @click="currentSlide = i"
                 class="px-2.5 py-1 rounded-full text-xs font-mono font-bold transition-all"
-                :class="currentSlide === i ? 'bg-yaas-yellow text-black shadow-sm' : 'text-neutral-400 hover:text-white hover:bg-neutral-800'">
+                :class="currentSlide === i ? 'bg-lime-400 text-pine-950 shadow-sm' : 'text-neutral-400 hover:text-white hover:bg-neutral-800'">
           <span x-text="'0' + i"></span>
           <span class="hidden md:inline ml-1 font-normal text-[10px]" 
                 x-text="['Context', 'Problem', 'Topology', 'Roadmap', 'ROI', 'Operator'][i-1]"></span>
@@ -1197,7 +1297,7 @@
     <div>
       <div class="flex items-center justify-between pb-4 border-b border-neutral-800">
         <div>
-          <span class="text-[10px] font-mono text-yaas-yellow font-bold uppercase tracking-wider">FOUNDER DISCOVERY RELAY</span>
+          <span class="text-[10px] font-mono text-lime-400 font-bold uppercase tracking-wider">FOUNDER DISCOVERY RELAY</span>
           <h3 class="text-lg font-bold text-white">Call Notes & Architectural Context</h3>
         </div>
         <button @click="drawerOpen = false" class="p-1 rounded-lg hover:bg-neutral-800 text-neutral-400 hover:text-white">
@@ -1207,43 +1307,43 @@
 
       <div class="mt-4 space-y-4 text-xs leading-relaxed overflow-y-auto max-h-[75vh] pr-1">
         <div class="bg-neutral-800/80 border border-neutral-700/80 p-3.5 rounded-xl space-y-2">
-          <span class="text-[11px] font-mono text-yaas-yellow font-bold block">
+          <span class="text-[11px] font-mono text-lime-400 font-bold block">
             Active Slide Notes: Slide <span x-text="currentSlide"></span>
           </span>
 
           <!-- Note for Slide 1 -->
           <div x-show="currentSlide === 1" class="space-y-2 text-neutral-300">
-            <p><span class="text-yaas-yellow font-bold">• Core Thesis:</span> Paid ad CAC is breaking unit economics. Enterprise brands are building owned media engines. YAAS handles organic audience strategy up front; Aeos Labs mechanizes the backend to 1,000+ assets with 100% brand parity and zero headcount drag.</p>
+            <p><span class="text-lime-400 font-bold">• Core Thesis:</span> Paid ad CAC is breaking unit economics. Enterprise brands are building owned media engines. YAAS handles organic audience strategy up front; Aeos Labs mechanizes the backend to 1,000+ assets with 100% brand parity and zero headcount drag.</p>
           </div>
 
           <!-- Note for Slide 2 -->
           <div x-show="currentSlide === 2" class="space-y-2 text-neutral-300">
-            <p><span class="text-yaas-yellow font-bold">• Production Drag:</span> Unguided prompt pipelines suffer high variance and brand drift. Manual Premiere keyframing takes 4–8h/clip and cannot scale past 80 clips without headcount bloat.</p>
+            <p><span class="text-lime-400 font-bold">• Production Drag:</span> Unguided prompt pipelines suffer high variance and brand drift. Manual Premiere keyframing takes 4–8h/clip and cannot scale past 80 clips without headcount bloat.</p>
           </div>
 
           <!-- Note for Slide 3 -->
           <div x-show="currentSlide === 3" class="space-y-2 text-neutral-300">
-            <p><span class="text-yaas-yellow font-bold">• Protocol Design:</span> Webhook edge ingestion (&lt;1.2s ACK) → FastMCP strict type validation → Remotion React render tree → AlphaCTR A/B scoring → YAAS 10-platform distribution.</p>
+            <p><span class="text-lime-400 font-bold">• Protocol Design:</span> Webhook edge ingestion (&lt;1.2s ACK) → FastMCP strict type validation → Remotion React render tree → AlphaCTR A/B scoring → YAAS 10-platform distribution.</p>
           </div>
 
           <!-- Note for Slide 4 -->
           <div x-show="currentSlide === 4" class="space-y-2 text-neutral-300">
-            <p><span class="text-yaas-yellow font-bold">• Phased Milestones:</span> Week 1–2 intake & schema contracts; Weeks 3–4 Remotion compilation engine; scale to 1,000+ monthly assets with zero handholding.</p>
+            <p><span class="text-lime-400 font-bold">• Phased Milestones:</span> Week 1–2 intake & schema contracts; Weeks 3–4 Remotion compilation engine; scale to 1,000+ monthly assets with zero handholding.</p>
           </div>
 
           <!-- Note for Slide 5 -->
           <div x-show="currentSlide === 5" class="space-y-2 text-neutral-300">
-            <p><span class="text-yaas-yellow font-bold">• Unit Economics:</span> Traditional 6-editor team costs ₹4.5L/mo for 80 clips. Deterministic Remotion cluster costs ₹65K/mo for 1,000+ clips (85.5% burn cut).</p>
+            <p><span class="text-lime-400 font-bold">• Unit Economics:</span> Traditional 6-editor team costs ₹4.5L/mo for 80 clips. Deterministic Remotion cluster costs ₹65K/mo for 1,000+ clips (85.5% burn cut).</p>
           </div>
 
           <!-- Note for Slide 6 -->
           <div x-show="currentSlide === 6" class="space-y-2 text-neutral-300">
-            <p><span class="text-yaas-yellow font-bold">• Operator Provenance:</span> 122-node production n8n engine, PR #276 in notebooklm-py, and 3-layer HMAC webhook validator with 99.7% execution reliability across 1,000+ runs.</p>
+            <p><span class="text-lime-400 font-bold">• Operator Provenance:</span> 122-node production n8n engine, PR #276 in notebooklm-py, and 3-layer HMAC webhook validator with 99.7% execution reliability across 1,000+ runs.</p>
           </div>
         </div>
 
         <div class="bg-neutral-800 border border-neutral-700 p-3.5 rounded-xl text-xs font-mono text-neutral-300">
-          <span class="text-yaas-yellow font-bold block mb-1">CALL-TO-DECK RELAY SPECIFICATION:</span>
+          <span class="text-lime-400 font-bold block mb-1">CALL-TO-DECK RELAY SPECIFICATION:</span>
           Translating unstructured founder discovery into verified production software with zero translation loss.
         </div>
       </div>
