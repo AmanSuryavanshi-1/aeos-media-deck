@@ -1,7 +1,7 @@
 {
   "A:\\_Coding_Notes_Projects_IMP_\\MAJOR PROJECTS\\Career-Ops-System\\deploy\\aeos-deck\\index.html": {
-    "mtime": 1791699934.3085732,
-    "ast_hash": "5fd30e2f7d98edfca5e4c7f1d7ff12f9",
+    "mtime": 1791701883.2910047,
+    "ast_hash": "b9172c4c9c8ce4cda23ca4cfb738f966",
     "semantic_hash": ""
   },
   "A:\\_Coding_Notes_Projects_IMP_\\MAJOR PROJECTS\\Career-Ops-System\\deploy\\aeos-deck\\README.md": {
@@ -10,8 +10,8 @@
     "semantic_hash": ""
   },
   "A:\\_Coding_Notes_Projects_IMP_\\MAJOR PROJECTS\\Career-Ops-System\\deploy\\aeos-deck\\Aeos_Enterprise_Solutions_Architecture_Deck.pdf": {
-    "mtime": 1791699966.100966,
-    "ast_hash": "fcb1a4db98b9ebae88a11233055d10f8",
+    "mtime": 1791702026.6155155,
+    "ast_hash": "a7aee7a3069bfb85a7e13e256db81c35",
     "semantic_hash": ""
   },
   "A:\\_Coding_Notes_Projects_IMP_\\MAJOR PROJECTS\\Career-Ops-System\\deploy\\aeos-deck\\laptop_slide_01.png": {
@@ -102,6 +102,16 @@
   "A:\\_Coding_Notes_Projects_IMP_\\MAJOR PROJECTS\\Career-Ops-System\\deploy\\aeos-deck\\assets\\aeos_hero_studio.png": {
     "mtime": 1791698305.3858669,
     "ast_hash": "6685c034b2a6b2e2ad718ca1a3316925",
+    "semantic_hash": ""
+  },
+  "A:\\_Coding_Notes_Projects_IMP_\\MAJOR PROJECTS\\Career-Ops-System\\deploy\\aeos-deck\\assets\\aeos_creator_editorial.jpg": {
+    "mtime": 1791701018.1809137,
+    "ast_hash": "2cb80a0ed00ccac6fc6f3e0786d93c8f",
+    "semantic_hash": ""
+  },
+  "A:\\_Coding_Notes_Projects_IMP_\\MAJOR PROJECTS\\Career-Ops-System\\deploy\\aeos-deck\\assets\\aeos_isometric_core.jpg": {
+    "mtime": 1791700987.38739,
+    "ast_hash": "7a64dbdb67117575da2e46aa7b373ab0",
     "semantic_hash": ""
   }
 }
