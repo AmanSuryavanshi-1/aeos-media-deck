@@ -233,56 +233,49 @@
         </div>
       </div>
 
-      <!-- Right Column (5 cols): Spacious Deep-Tech Telemetry Radar HUD -->
+      <!-- Right Column (5 cols): High-Craft Brutalist Editorial Photographic Panel -->
       <div class="lg:col-span-5 flex justify-center items-center">
-        <div class="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 flex items-center justify-center">
+        <div class="w-full max-w-sm bg-pine-950/90 border border-pine-800 p-3.5 sm:p-4 rounded-2xl shadow-2xl relative">
           
-          <!-- Subtle Crosshair Axes -->
-          <div class="absolute inset-x-0 top-1/2 h-px bg-pine-800/60 pointer-events-none"></div>
-          <div class="absolute inset-y-0 left-1/2 w-px bg-pine-800/60 pointer-events-none"></div>
-
-          <!-- Outer Orbit Ring (1,000+ Assets / Mo) -->
-          <div class="absolute w-[240px] h-[240px] sm:w-[260px] sm:h-[260px] rounded-full border border-dashed border-pine-700 flex items-center justify-center pointer-events-none">
-            <!-- Satellite Dot at 45° -->
-            <div class="absolute top-[24px] right-[24px] w-2.5 h-2.5 rounded-full bg-lime-400 shadow-[0_0_12px_#C6FF3D] flex items-center justify-center">
-              <span class="w-1 h-1 rounded-full bg-pine-950"></span>
-            </div>
-          </div>
-
-          <!-- Top-Right Staggered HUD Callout Badge (Scale Ceiling) -->
-          <div class="absolute -top-1 -right-1 sm:-right-2 bg-pine-900/95 border border-lime-400/50 shadow-xl px-2.5 py-1 rounded-xl backdrop-blur-md z-20">
-            <div class="flex items-center gap-1.5 mb-0.5">
+          <!-- Top Metadata Header (Brutalist Editorial Spec) -->
+          <div class="flex items-center justify-between text-[10px] font-mono mb-2.5">
+            <span class="flex items-center gap-1.5 text-pine-300">
               <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
-              <span class="text-[9px] font-mono text-lime-400 uppercase font-bold tracking-wider">Scale Ceiling</span>
-            </div>
-            <div class="text-xs font-bold text-white font-mono">1,000+ Assets / Mo</div>
-            <div class="text-[8px] text-pine-300 font-mono">Autonomous Aeos Cluster</div>
+              <strong class="text-white">FIG. 01</strong> · SYNTHETIC AVATAR (WAN 2.1)
+            </span>
+            <span class="text-lime-400 font-bold">12.9716° N · BLR</span>
           </div>
 
-          <!-- Middle Orbit Ring (450 Assets / Mo) -->
-          <div class="absolute w-[170px] h-[170px] sm:w-[190px] sm:h-[190px] rounded-full border border-lime-400/30 flex items-center justify-center pointer-events-none">
-            <!-- Satellite Dot at 215° -->
-            <div class="absolute bottom-[16px] left-[16px] w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34D399]"></div>
+          <!-- Photographic Inset Frame with Monochromatic Contrast & Technical Overlay -->
+          <div class="relative rounded-xl overflow-hidden border border-pine-800/90 aspect-square max-h-56 sm:max-h-60 mx-auto group bg-black">
+            <img src="assets/aeos_avatar_portrait.jpg" alt="Aeos Synthetic Avatar Profile" 
+                 class="w-full h-full object-cover grayscale contrast-125 filter transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-pine-950/95 via-transparent to-transparent pointer-events-none"></div>
+            
+            <!-- Corner Crosshairs -->
+            <span class="absolute top-2 right-2 text-lime-400 font-mono text-xs font-bold pointer-events-none">+</span>
+            <span class="absolute bottom-2 left-2 text-lime-400 font-mono text-xs font-bold pointer-events-none">+</span>
+
+            <!-- Top Left AST Guardrail Tag -->
+            <div class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded bg-pine-950/90 border border-pine-750 text-[9px] font-mono text-lime-300 font-bold tracking-wider">
+              AST-GATED BRAND PARITY
+            </div>
+
+            <!-- Bottom In-Image Metadata Overlay -->
+            <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[10px] font-mono">
+              <span class="text-white font-bold bg-pine-900/80 px-1.5 py-0.5 rounded border border-pine-800">EXP: SYNTHETIC PRESENTER</span>
+              <span class="text-lime-400 font-bold">ZERO DRIFT</span>
+            </div>
           </div>
 
-          <!-- Bottom-Left Staggered HUD Callout Badge (Hybrid Engine) -->
-          <div class="absolute -bottom-1 -left-1 sm:-left-2 bg-pine-900/95 border border-pine-700 shadow-xl px-2.5 py-1 rounded-xl backdrop-blur-md z-20">
-            <div class="flex items-center gap-1.5 mb-0.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-              <span class="text-[9px] font-mono text-emerald-400 uppercase font-bold tracking-wider">Hybrid Tier</span>
+          <!-- Bottom Telemetry & Multiplier Strip -->
+          <div class="mt-3 pt-2.5 border-t border-pine-800/80 flex items-center justify-between text-xs font-mono">
+            <div class="flex items-center gap-1.5">
+              <span class="text-pine-400 text-[10px]">THROUGHPUT MULTIPLIER:</span>
             </div>
-            <div class="text-xs font-bold text-white font-mono">450 Assets / Mo</div>
-            <div class="text-[8px] text-pine-300 font-mono">Semi-Automated Workflows</div>
-          </div>
-
-          <!-- Inner Core Sphere (Obsidian + Electric Lime Radar Core) -->
-          <div class="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-gradient-to-br from-pine-950 via-pine-900 to-[#02100C] border-2 border-lime-400 flex flex-col items-center justify-center text-center shadow-[0_0_35px_rgba(198,255,61,0.25)] p-2 z-10 transition-transform hover:scale-105">
-            <div class="w-full flex items-center justify-center gap-1 mb-0.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-lime-400"></span>
-              <span class="text-[8px] font-mono text-pine-300 uppercase font-bold tracking-wider">Manual Baseline</span>
-            </div>
-            <span class="text-xl sm:text-2xl font-display font-black text-lime-400 my-0.5 whitespace-nowrap">80–100</span>
-            <span class="text-[8px] font-semibold text-white leading-tight">Assets / Mo<br><span class="text-pine-400 font-mono text-[8px]">(Editor Drag)</span></span>
+            <span class="text-lime-400 font-bold bg-pine-900 px-2 py-0.5 rounded border border-pine-750 text-[11px]">
+              12.5x (80 → 1k+/MO)
+            </span>
           </div>
 
         </div>
@@ -338,108 +331,151 @@
       </div>
     </div>
 
-    <!-- Main Content: Full-Width 2-Column Split -->
-    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center my-auto z-10 py-1">
+    <!-- Main Content: Full-Width 2-Column Split (UrbanWell Pitchdeck Split Layout) -->
+    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center my-auto z-10 py-0.5">
       
-      <!-- Left Column (5 cols): Clear Problem Statement & Stat -->
-      <div class="lg:col-span-5 space-y-3.5 lg:space-y-4">
+      <!-- Left Column (5 cols): Clear Problem Statement & 3 Structured Percentage Metrics -->
+      <div class="lg:col-span-5 space-y-2 sm:space-y-2.5">
         <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-stone-100 border border-stone-200 text-pine-800 text-[11px] font-mono">
           <span class="w-1.5 h-1.5 rounded-full bg-pine-900"></span>
           <span>THE HIDDEN CEILING OF AGENCY PRODUCTION</span>
         </div>
 
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-pine-950 leading-tight">
-          Eliminating <br>
-          <span class="text-pine-700">Fragile Loops</span>
+          Production <br>
+          <span class="text-pine-700">Drag Breakdown</span>
         </h2>
         
-        <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+        <p class="text-xs text-stone-600 leading-relaxed">
           <strong>90% of AI video pipelines degrade into slop.</strong> Unguided LLM prompts hallucinate client stats, drop brand rules, and crash without durable state.
         </p>
 
-        <!-- Deep Pine Stat Card (Compact Height) -->
-        <div class="bg-pine-900 text-white p-4 sm:p-5 rounded-2xl shadow-xl flex items-center justify-between border border-pine-800">
-          <div>
-            <span class="text-4xl sm:text-5xl font-display font-extrabold text-lime-400">85%</span>
-            <span class="block text-[11px] font-mono text-pine-300 mt-0.5 uppercase tracking-wider font-semibold">Turnaround Drag</span>
-            <p class="text-xs text-stone-300 mt-0.5 leading-snug">Wasted in manual meeting-to-editor context relay</p>
+        <!-- 3 Structured Percentage Metric Cards (Image 1 Layout) -->
+        <div class="space-y-2 pt-0.5">
+          <div class="flex items-start gap-3 bg-white p-2 sm:p-2.5 rounded-xl border border-stone-200/90 shadow-sm">
+            <span class="text-2xl sm:text-3xl font-display font-extrabold text-pine-900 w-14 shrink-0 leading-none">50%</span>
+            <div>
+              <h4 class="text-xs sm:text-sm font-bold text-pine-950 leading-tight">Manual Timeline Assembly</h4>
+              <p class="text-[11px] text-stone-600 leading-snug">Keyframing captions, typography sync, and clip cutting in Premiere/After Effects.</p>
+            </div>
           </div>
-          <div class="w-12 h-12 rounded-xl bg-pine-800 border border-pine-700 flex items-center justify-center text-lime-400 shrink-0">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+
+          <div class="flex items-start gap-3 bg-white p-2 sm:p-2.5 rounded-xl border border-stone-200/90 shadow-sm">
+            <span class="text-2xl sm:text-3xl font-display font-extrabold text-emerald-700 w-14 shrink-0 leading-none">30%</span>
+            <div>
+              <h4 class="text-xs sm:text-sm font-bold text-pine-950 leading-tight">Presenter & Talent Friction</h4>
+              <p class="text-[11px] text-stone-600 leading-snug">Reshoots, human scheduling, and audio drift across 70+ client channels.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3 bg-white p-2 sm:p-2.5 rounded-xl border border-stone-200/90 shadow-sm">
+            <span class="text-2xl sm:text-3xl font-display font-extrabold text-lime-700 w-14 shrink-0 leading-none">20%</span>
+            <div>
+              <h4 class="text-xs sm:text-sm font-bold text-pine-950 leading-tight">Format QC & Re-renders</h4>
+              <p class="text-[11px] text-stone-600 leading-snug">Multi-platform safe zones (9:16 vs 16:9), compression glitches, and tagging.</p>
+            </div>
           </div>
         </div>
 
-        <!-- Founder's Office Grounding Strip -->
-        <div class="bg-lime-300/40 border border-lime-500/30 p-3 rounded-xl flex items-center gap-2.5 text-xs text-pine-950 font-medium">
-          <svg class="w-4 h-4 text-pine-900 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          <span><strong>Executive Operational Signal:</strong> Translating unstructured client discussions directly into production architecture without context degradation.</span>
+        <!-- Projection Arrow Indicator directly matching Image 1 -->
+        <div class="pt-0.5 flex items-center gap-2 text-xs font-mono text-pine-950 font-bold">
+          <svg class="w-4 h-4 text-pine-900 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          <span class="text-[11px]">Target Shift: 100% of repetitive assembly shifted to Aeos Remotion React Engine</span>
         </div>
       </div>
 
-      <!-- Right Column (7 cols): 4 Wide Squircle Cards (2 Lime, 2 Deep Pine · Compact Height) -->
-      <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+      <!-- Right Column (7 cols): Segmented Donut Component + Optical Precision Inset Card -->
+      <div class="lg:col-span-7 bg-stone-100/70 p-3.5 lg:p-4 rounded-2xl border border-stone-200 shadow-md flex flex-col justify-between relative overflow-hidden">
         
-        <!-- Card 1: Electric Lime (Prompt Drift) -->
-        <div class="bg-lime-400 p-4 lg:p-5 rounded-2xl shadow-md border border-lime-500/40 flex flex-col justify-between">
-          <div>
-            <div class="w-8 h-8 rounded-lg bg-pine-950 flex items-center justify-center text-lime-400 mb-2.5 shadow-sm">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            </div>
-            <h3 class="text-sm lg:text-base font-bold text-pine-950 mb-1">Prompt Drift & Slop</h3>
-            <p class="text-xs text-pine-900/80 leading-relaxed">
-              Unguided ChatGPT/Zapier prompts generate generic layouts, purple AI glows, and warped brand assets that look like cheap AI slop.
-            </p>
-          </div>
-          <div class="mt-3 pt-2 border-t border-pine-900/15 text-[10px] font-mono text-pine-900 font-bold uppercase tracking-wider">
-            VULNERABILITY: UNGUARDED LLM
-          </div>
+        <!-- Subtle Top Strip -->
+        <div class="flex items-center justify-between text-[10px] font-mono text-stone-500 mb-0.5 z-10">
+          <span class="font-bold text-pine-900 uppercase tracking-wider">THROUGHPUT DRAG AUDIT</span>
+          <span class="text-stone-400">002 · SYSTEM BOTTLENECK</span>
         </div>
 
-        <!-- Card 2: Deep Pine (No Persistence) -->
-        <div class="bg-pine-900 text-white p-4 lg:p-5 rounded-2xl shadow-md border border-pine-800 flex flex-col justify-between">
-          <div>
-            <div class="w-8 h-8 rounded-lg bg-pine-800 flex items-center justify-center text-lime-400 mb-2.5">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-            </div>
-            <h3 class="text-sm lg:text-base font-bold text-white mb-1">Zero State Persistence</h3>
-            <p class="text-xs text-stone-300 leading-relaxed">
-              Brittle webhook endpoints fail silently without Dead Letter Queues (DLQs), memory retry, or durable call context anchors.
-            </p>
-          </div>
-          <div class="mt-3 pt-2 border-t border-pine-800 text-[10px] font-mono text-lime-400 font-bold uppercase tracking-wider">
-            FAILURE: SILENT PIPELINE DROPS
-          </div>
+        <!-- The SVG Segmented Donut Component (UrbanWell Pitchdeck Style) -->
+        <div class="w-full flex justify-center items-center py-0.5 z-10">
+          <svg class="w-full max-w-[370px] sm:max-w-[390px] h-[230px] sm:h-[245px] overflow-visible" viewBox="0 0 400 300" fill="none">
+            <defs>
+              <linearGradient id="slicePine" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0F3E35" />
+                <stop offset="100%" stop-color="#1F6B5C" />
+              </linearGradient>
+              <linearGradient id="sliceEmerald" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#10B981" />
+                <stop offset="100%" stop-color="#059669" />
+              </linearGradient>
+              <linearGradient id="sliceLime" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#C6FF3D" />
+                <stop offset="100%" stop-color="#A3E635" />
+              </linearGradient>
+              <filter id="donutShadow" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="rgba(0,0,0,0.12)" />
+              </filter>
+            </defs>
+
+            <!-- Hairline Concentric Guide Rings -->
+            <circle cx="200" cy="150" r="140" stroke="#CBD5E1" stroke-dasharray="3 3" fill="none" opacity="0.6"/>
+            <circle cx="200" cy="150" r="48" stroke="#E2E8F0" fill="none"/>
+
+            <!-- Donut Slices -->
+            <!-- Slice 1: 50% Timeline Assembly -->
+            <path d="M 203.27 25.04 A 125 125 0 0 1 203.27 274.96 L 201.70 214.98 A 65 65 0 0 0 201.70 85.02 Z" 
+                  fill="url(#slicePine)" filter="url(#donutShadow)" />
+            
+            <!-- Slice 2: 30% Presenter Reshoots -->
+            <path d="M 196.73 274.96 A 125 125 0 0 1 80.15 114.50 L 137.68 131.54 A 65 65 0 0 0 198.30 214.98 Z" 
+                  fill="url(#sliceEmerald)" filter="url(#donutShadow)" />
+
+            <!-- Slice 3: 20% QC & Format Re-renders -->
+            <path d="M 82.17 108.27 A 125 125 0 0 1 196.73 25.04 L 198.30 85.02 A 65 65 0 0 0 138.73 128.30 Z" 
+                  fill="url(#sliceLime)" filter="url(#donutShadow)" />
+
+            <!-- Center White Hole -->
+            <circle cx="200" cy="150" r="63" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" />
+            <text x="200" y="140" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="26" font-weight="900" fill="#031410">85%</text>
+            <text x="200" y="155" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#64748B" letter-spacing="0.8">DRAG CUT</text>
+            <text x="200" y="168" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="800" fill="#15803D" letter-spacing="0.5">REMOTION</text>
+
+            <!-- Slice 1 Icon & Label (at 295, 142) -->
+            <g transform="translate(286, 126)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/>
+              </svg>
+            </g>
+            <text x="295" y="154" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">50%</text>
+            <text x="295" y="167" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#99F6E4" letter-spacing="0.5">ASSEMBLY</text>
+
+            <!-- Slice 2 Icon & Label (at 123, 198) -->
+            <g transform="translate(114, 178)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+              </svg>
+            </g>
+            <text x="123" y="206" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">30%</text>
+            <text x="123" y="219" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#A7F3D0" letter-spacing="0.5">TALENT</text>
+
+            <!-- Slice 3 Icon & Label (at 144, 68) -->
+            <g transform="translate(135, 50)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#031410" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </g>
+            <text x="144" y="78" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="13" font-weight="800" fill="#031410">20%</text>
+            <text x="144" y="91" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="800" fill="#031410" letter-spacing="0.5">FORMAT QC</text>
+          </svg>
         </div>
 
-        <!-- Card 3: Deep Pine (Editor Bottleneck) -->
-        <div class="bg-pine-900 text-white p-4 lg:p-5 rounded-2xl shadow-md border border-pine-800 flex flex-col justify-between">
-          <div>
-            <div class="w-8 h-8 rounded-lg bg-pine-800 flex items-center justify-center text-lime-400 mb-2.5">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+        <!-- Bottom Optical Inset Card (Image 2 Brutalist Aesthetic) -->
+        <div class="mt-1.5 bg-white p-2.5 rounded-xl border border-stone-200/90 shadow-sm flex items-center gap-3 z-10">
+          <img src="assets/aeos_lens_macro.jpg" alt="Aperture Blades" 
+               class="w-10 h-10 rounded-lg object-cover grayscale contrast-125 shrink-0 border border-stone-200" />
+          <div class="min-w-0">
+            <div class="flex items-center gap-2">
+              <span class="text-[9px] font-mono text-pine-900 font-bold uppercase tracking-wider">OPTICAL TO CODE EQUIVALENCE</span>
+              <span class="text-[8px] font-mono bg-lime-200 text-pine-950 font-bold px-1.5 py-0.5 rounded">AST-GATED</span>
             </div>
-            <h3 class="text-sm lg:text-base font-bold text-white mb-1">Linear Editor Bottleneck</h3>
-            <p class="text-xs text-stone-300 leading-relaxed">
-              Timeline-based Premiere/After Effects editors require 4–8 hours per clip. Cannot scale to 1,000+ monthly assets without bloating payroll.
-            </p>
-          </div>
-          <div class="mt-3 pt-2 border-t border-pine-800 text-[10px] font-mono text-lime-400 font-bold uppercase tracking-wider">
-            BOTTLENECK: LINEAR TIME SPENT
-          </div>
-        </div>
-
-        <!-- Card 4: Electric Lime (Deterministic Moat) -->
-        <div class="bg-lime-400 p-4 lg:p-5 rounded-2xl shadow-md border border-lime-500/40 flex flex-col justify-between">
-          <div>
-            <div class="w-8 h-8 rounded-lg bg-pine-950 flex items-center justify-center text-lime-400 mb-2.5 shadow-sm">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
-            <h3 class="text-sm lg:text-base font-bold text-pine-950 mb-1">Aeos Deterministic Moat</h3>
-            <p class="text-xs text-pine-900/80 leading-relaxed">
-              FastMCP schema contracts, Remotion programmatic React rendering, and proposed AlphaCTR optimization enforcing brand-schema parity (AST-gated).
-            </p>
-          </div>
-          <div class="mt-3 pt-2 border-t border-pine-900/15 text-[10px] font-mono text-pine-900 font-bold uppercase tracking-wider">
-            SOLUTION: CODE-AS-VIDEO PIPELINE
+            <p class="text-[11px] text-stone-600 leading-snug truncate">Manual timeline keyframing replaced by deterministic Remotion React render trees.</p>
           </div>
         </div>
 
@@ -1046,13 +1082,26 @@
 
             <!-- Minimal Focus Areas -->
             <div class="grid grid-cols-2 gap-2 mt-3 text-xs">
-              <div class="bg-pine-950/70 p-2.5 rounded-xl border border-pine-800">
+              <div class="bg-pine-950/70 p-2 rounded-xl border border-pine-800">
                 <span class="text-[9px] font-mono text-lime-400 font-bold block uppercase tracking-wider mb-0.5">CONTEXT PIPELINES</span>
                 <span class="text-[11px] text-white font-medium block">Zero-loss discovery to code</span>
               </div>
-              <div class="bg-pine-950/70 p-2.5 rounded-xl border border-pine-800">
+              <div class="bg-pine-950/70 p-2 rounded-xl border border-pine-800">
                 <span class="text-[9px] font-mono text-lime-400 font-bold block uppercase tracking-wider mb-0.5">EVENT ORCHESTRATION</span>
                 <span class="text-[11px] text-white font-medium block">FastMCP & n8n architecture</span>
+              </div>
+            </div>
+
+            <!-- Fig 02: Timeline Context Editorial Inset (Image 2 Aesthetic) -->
+            <div class="mt-2.5 flex items-center gap-2.5 bg-pine-950/80 p-2 rounded-xl border border-pine-800/80">
+              <img src="assets/aeos_timeline_grid.jpg" alt="Production Timeline" 
+                   class="w-11 h-11 rounded-lg object-cover grayscale contrast-125 shrink-0 border border-pine-750" />
+              <div class="min-w-0">
+                <div class="flex items-center gap-1.5 mb-0.5">
+                  <span class="text-[9px] font-mono text-lime-400 font-bold uppercase tracking-wider">FIG. 02 · TIMELINE SPEC</span>
+                  <span class="text-[8px] font-mono text-pine-400">ゼロ・スロップ</span>
+                </div>
+                <p class="text-[10px] text-pine-300 leading-snug truncate">Discovery to deterministic code-as-video pipelines.</p>
               </div>
             </div>
           </div>
