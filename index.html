@@ -71,30 +71,42 @@
     html, body {
       margin: 0;
       padding: 0;
-      width: 100vw;
-      height: 100vh;
-      height: 100dvh;
-      max-height: 100vh;
-      max-height: 100dvh;
-      overflow: hidden !important;
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100dvh;
       background-color: #0A0A0A;
-      position: fixed;
-      inset: 0;
+      position: relative;
     }
 
+    /* Default (Laptops & Compact Screens < 820px height): min-h-screen with pb-24 dock clearance */
     .slide-canvas {
-      width: 100vw;
-      height: 100vh !important;
-      height: 100dvh !important;
-      max-height: 100vh !important;
-      max-height: 100dvh !important;
-      overflow: hidden !important;
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
       box-sizing: border-box;
-      padding: clamp(0.75rem, 1.8vh, 1.5rem) clamp(1rem, 2.5vw, 2.5rem) clamp(0.75rem, 1.6vh, 1.25rem) clamp(1rem, 2.5vw, 2.5rem) !important;
+      padding: clamp(0.75rem, 1.8vh, 1.5rem) clamp(1rem, 2.5vw, 2.5rem) 6rem clamp(1rem, 2.5vw, 2.5rem) !important;
+      overflow-y: auto;
+    }
+
+    /* True Desktop Displays (>= 1024px width AND >= 820px height): locked 100vh */
+    @media (min-width: 1024px) and (min-height: 820px) {
+      html, body {
+        height: 100vh;
+        max-height: 100vh;
+        overflow: hidden !important;
+        position: fixed;
+        inset: 0;
+      }
+      .slide-canvas {
+        height: 100vh !important;
+        max-height: 100vh !important;
+        overflow: hidden !important;
+        padding-bottom: clamp(0.75rem, 1.6vh, 1.25rem) !important;
+      }
     }
 
     /* Cognis Diagonal Dash Grid Pattern */
@@ -160,10 +172,10 @@
   <!-- SLIDE 1: STRATEGIC CONTEXT (Pitch Black Canvas · Cognis Editorial Style) -->
   <!-- ========================================================================= -->
   <section x-show="currentSlide === 1" x-transition.opacity.duration.300ms 
-           class="slide-canvas h-full w-full bg-yaas-dark text-white flex flex-col justify-between relative">
+           class="slide-canvas w-full bg-yaas-dark text-white flex flex-col justify-between relative">
     
     <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-neutral-800/80 pb-1.5 z-10 shrink-0">
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-neutral-800/80 pb-1.5 z-10 shrink-0 h-[30px]">
       <div class="flex items-center gap-2.5">
         <div class="w-5 h-5 rounded bg-yaas-yellow flex items-center justify-center font-display font-black text-black text-[11px] shadow-sm">
           Æ
@@ -171,7 +183,7 @@
         <div class="flex items-center gap-2">
           <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-yaas-yellow">Aeos Group · YAAS Media</span>
           <span class="text-neutral-700 font-mono">|</span>
-          <span class="text-[11px] font-mono text-neutral-400">01 · Strategic Context & Market Shift</span>
+          <span class="text-[11px] font-mono text-neutral-400">01 · Strategic Context</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
@@ -189,160 +201,91 @@
       </div>
     </div>
 
-    <!-- Main Content: Cognis-Style Balanced 2-Column Split (Spacious & High-Signal) -->
-    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center my-auto z-10 py-1">
+    <!-- Main Content: Minimalist Split (3–6 Word Headline + Mavence Giant Stats + 3D Token) -->
+    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto z-10 py-3">
       
-      <!-- Left Column (6 cols): Bold Cognis Headline & Core Thesis -->
-      <div class="lg:col-span-6 space-y-3.5">
+      <!-- Left Column (7 cols): Dramatic Typographic Hierarchy -->
+      <div class="lg:col-span-7 space-y-4">
         <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800 text-yaas-yellow text-[10px] font-mono">
-          <span class="w-1.5 h-1.5 rounded-full bg-yaas-yellow"></span>
-          <span>01 · THE ATTENTION ECONOMY PARADIGM SHIFT</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-yaas-yellow animate-pulse"></span>
+          <span>01 · THE ATTENTION ECONOMY</span>
         </div>
 
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-white leading-[1.08]">
-          The Market is Moving — <br>
-          <span class="text-yaas-yellow">And It’s Owned Media</span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-extrabold tracking-tight text-white leading-[1.05]">
+          Attention is <br class="hidden sm:inline">
+          <span class="text-yaas-yellow">the Moat.</span>
         </h1>
         
-        <p class="text-xs sm:text-sm text-neutral-300 max-w-xl leading-relaxed">
-          Paid ad CAC is breaking brand unit economics. Enterprise brands must escape ad spend by becoming autonomous media engines. YAAS delivers organic audience capture across 70+ channels; Aeos Labs mechanizes the post-production backend to 1,000+ monthly assets with zero headcount drag or brand drift.
+        <p class="text-xs sm:text-sm lg:text-base text-neutral-300 max-w-xl font-normal leading-relaxed">
+          Paid ad CAC is breaking brand economics. Enterprise brands must become autonomous media engines.
         </p>
 
-        <!-- Big Clean Cognis-Style Stats -->
-        <div class="pt-1 flex flex-wrap items-center gap-6 lg:gap-8">
+        <!-- Mavence-Style Giant Stat Triad -->
+        <div class="pt-2 flex flex-wrap items-baseline gap-6 lg:gap-10">
           <div>
             <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight leading-none">1B+</div>
-            <div class="text-[10px] font-mono text-yaas-yellow font-bold uppercase tracking-wider mt-1.5">MONTHLY ORGANIC VIEWS</div>
-            <div class="text-[10px] text-neutral-400 font-mono">YAAS Public Network Footprint</div>
-          </div>
-          <div class="h-10 w-px bg-neutral-800 hidden sm:block"></div>
-          <div>
-            <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight leading-none">1,000+</div>
-            <div class="text-[10px] font-mono text-yaas-yellow font-bold uppercase tracking-wider mt-1.5">VIDEOS / MONTH</div>
-            <div class="text-[10px] text-neutral-400 font-mono">Target Fleet Velocity</div>
+            <div class="text-[10px] font-mono text-yaas-yellow font-bold uppercase tracking-wider mt-1.5">ORGANIC REACH (Modeled)</div>
+            <div class="text-[10px] text-neutral-500 font-mono">YAAS Public Network Footprint</div>
           </div>
           <div class="h-10 w-px bg-neutral-800 hidden sm:block"></div>
           <div>
             <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight leading-none">70+</div>
-            <div class="text-[10px] font-mono text-yaas-yellow font-bold uppercase tracking-wider mt-1.5">BRAND CHANNELS</div>
-            <div class="text-[10px] text-neutral-400 font-mono">Zoho · Cleartrip · Zerodha</div>
+            <div class="text-[10px] font-mono text-yaas-yellow font-bold uppercase tracking-wider mt-1.5">BRAND CHANNELS (Modeled)</div>
+            <div class="text-[10px] text-neutral-500 font-mono">Zoho · Cleartrip · Zerodha</div>
+          </div>
+          <div class="h-10 w-px bg-neutral-800 hidden sm:block"></div>
+          <div>
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight leading-none">1,000+</div>
+            <div class="text-[10px] font-mono text-yaas-yellow font-bold uppercase tracking-wider mt-1.5">TARGET FLEET</div>
+            <div class="text-[10px] text-neutral-500 font-mono">Monthly Remotion AST Capacity</div>
           </div>
         </div>
 
-        <!-- Operating Axiom Callout: Amplifying Craft, Not Replacing It -->
-        <div class="p-3 rounded-xl bg-neutral-900/90 border border-neutral-800 max-w-xl flex items-start gap-3 shadow-md">
-          <div class="w-6 h-6 rounded bg-yaas-yellow/10 border border-yaas-yellow/30 flex items-center justify-center text-yaas-yellow shrink-0 mt-0.5">
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </div>
-          <div>
-            <div class="text-xs font-bold text-white mb-0.5 font-display">The Aeos Operating Axiom</div>
-            <p class="text-[11px] text-neutral-300 leading-relaxed font-sans">
-              "Attention is the only durable moat as technology commoditizes." Automation does not replace the creative engine — it builds the deterministic operating system around it to eliminate repetitive assembly friction.
+        <!-- Operating Axiom Single-Line Quote Pill -->
+        <div class="pt-1">
+          <div class="p-3 rounded-xl bg-neutral-900/90 border border-neutral-800 max-w-xl flex items-center gap-3 shadow-md">
+            <div class="w-1.5 h-6 rounded-full bg-yaas-yellow shrink-0"></div>
+            <p class="text-xs text-neutral-300 font-sans italic">
+              "Attention is the only durable moat as technology commoditizes."
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Right Column (6 cols): Creative Pipeline Architecture (High-Signal Systems Map) -->
-      <div class="lg:col-span-6 flex justify-center items-center">
-        <div class="w-full bg-neutral-900/95 border border-neutral-800 p-4 sm:p-5 rounded-2xl shadow-2xl relative overflow-hidden space-y-3">
+      <!-- Right Column (5 cols): 3D Translucent Geometric Core Visual Anchor -->
+      <div class="lg:col-span-5 flex justify-center items-center">
+        <div class="w-full max-w-[440px] bg-neutral-900/80 border border-neutral-800 p-3 sm:p-4 rounded-2xl shadow-2xl relative overflow-hidden group">
           
-          <!-- Subtle Top Pattern -->
-          <div class="absolute -top-6 -right-6 w-24 h-24 cognis-dash-pattern-dark pointer-events-none rounded-full opacity-30"></div>
-
-          <!-- Card Header Strip -->
-          <div class="flex items-center justify-between text-[10px] font-mono border-b border-neutral-800 pb-2 text-neutral-400">
+          <!-- Floating Status Pill -->
+          <div class="flex items-center justify-between text-[10px] font-mono border-b border-neutral-800 pb-2 mb-3 text-neutral-400">
             <span class="flex items-center gap-1.5 text-neutral-200">
-              <span class="w-1.5 h-1.5 rounded-full bg-yaas-yellow"></span>
-              <strong class="text-white tracking-wider">CREATIVE PRODUCTION OPERATING SYSTEM</strong>
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <strong class="text-white tracking-wider">AUTONOMOUS MEDIA OS</strong>
             </span>
             <span class="text-yaas-yellow font-bold">1 SHOOT → 100+ ASSETS</span>
           </div>
 
-          <!-- 3-Tier Pipeline Visualization -->
-          <div class="space-y-2 font-mono">
-            
-            <!-- Tier 1: Human Craft Layer -->
-            <div class="p-2.5 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-yaas-yellow font-bold text-xs shrink-0 font-mono">
-                  01
-                </div>
-                <div>
-                  <div class="text-xs font-sans font-bold text-white flex items-center gap-2">
-                    Human Creative Core
-                    <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-amber-950/80 text-yaas-yellow border border-yaas-yellow/30 font-semibold">100% CRAFT PRESERVED</span>
-                  </div>
-                  <div class="text-[10px] text-neutral-400 font-sans">
-                    Physical set design, directors, lighting, founder hook storytelling.
-                  </div>
-                </div>
-              </div>
-              <span class="text-[10px] text-neutral-500 uppercase tracking-wider hidden sm:block">INPUT</span>
+          <!-- 3D Geometric Token Image -->
+          <div class="relative w-full aspect-square rounded-xl overflow-hidden bg-black/60 border border-neutral-800/80 flex items-center justify-center">
+            <img src="assets/aeos_isometric_core.jpg" 
+                 alt="Aeos Autonomous Media OS Core" 
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <!-- Fallback SVG wireframe -->
+            <div class="hidden w-full h-full items-center justify-center bg-neutral-950 p-6">
+              <svg class="w-3/4 h-3/4 text-yaas-yellow/80" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polygon points="50,10 90,32 90,78 50,98 10,78 10,32"/>
+                <line x1="50" y1="10" x2="50" y2="98"/>
+                <line x1="10" y1="32" x2="90" y2="78"/>
+                <line x1="90" y1="32" x2="10" y2="78"/>
+              </svg>
             </div>
-
-            <!-- Transition Indicator -->
-            <div class="flex items-center justify-center text-neutral-600 text-xs py-0.5">
-              <svg class="w-4 h-4 text-yaas-yellow/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="7 10 12 15 17 10"/></svg>
-            </div>
-
-            <!-- Tier 2: Deterministic Remotion AST Layer -->
-            <div class="p-2.5 rounded-xl bg-neutral-950 border border-yaas-yellow/40 flex items-center justify-between shadow-inner">
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-yaas-yellow flex items-center justify-center text-black font-extrabold text-xs shrink-0 font-mono">
-                  02
-                </div>
-                <div>
-                  <div class="text-xs font-sans font-bold text-white flex items-center gap-2">
-                    Deterministic Remotion AST Engine
-                    <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-yaas-yellow/20 text-yaas-yellow border border-yaas-yellow/40 font-semibold">80% PLUMBING MECHANIZED</span>
-                  </div>
-                  <div class="text-[10px] text-neutral-300 font-sans">
-                    Script-to-video React render trees, typography sync, 9:16 vs 16:9 auto-crop.
-                  </div>
-                </div>
-              </div>
-              <span class="text-[10px] text-yaas-yellow font-bold tracking-wider hidden sm:block">&lt;45S / CLIP</span>
-            </div>
-
-            <!-- Transition Indicator -->
-            <div class="flex items-center justify-center text-neutral-600 text-xs py-0.5">
-              <svg class="w-4 h-4 text-yaas-yellow/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="7 10 12 15 17 10"/></svg>
-            </div>
-
-            <!-- Tier 3: Fleet Distribution Layer -->
-            <div class="p-2.5 rounded-xl bg-neutral-950 border border-neutral-800 flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 font-bold text-xs shrink-0 font-mono">
-                  03
-                </div>
-                <div>
-                  <div class="text-xs font-sans font-bold text-white flex items-center gap-2">
-                    Multi-Platform Brand Fleet
-                    <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-purple-950/80 text-purple-300 border border-purple-700/40 font-semibold">70+ ACTIVE CHANNELS</span>
-                  </div>
-                  <div class="text-[10px] text-neutral-400 font-sans">
-                    Simultaneous distribution to YouTube, Instagram, X, LinkedIn with zero drift.
-                  </div>
-                </div>
-              </div>
-              <span class="text-[10px] text-purple-400 font-bold uppercase tracking-wider hidden sm:block">FLEET</span>
-            </div>
-
           </div>
 
-          <!-- Bottom Metric Strip (Unit Economics Delta) -->
-          <div class="pt-2 border-t border-neutral-800 grid grid-cols-2 gap-2 text-center font-mono">
-            <div class="p-2 rounded-lg bg-black/60 border border-neutral-800">
-              <div class="text-[9px] text-neutral-500 uppercase tracking-wider">MANUAL TIMELINE ASSEMBLY</div>
-              <div class="text-xs sm:text-sm font-bold text-red-400 mt-0.5">₹4,500 <span class="text-[10px] text-neutral-500 font-normal">/ asset</span></div>
-              <div class="text-[9px] text-neutral-400 font-sans">4–8 hrs manual keyframing</div>
-            </div>
-            <div class="p-2 rounded-lg bg-black/60 border border-yaas-yellow/30">
-              <div class="text-[9px] text-yaas-yellow uppercase tracking-wider">DETERMINISTIC PIPELINE</div>
-              <div class="text-xs sm:text-sm font-bold text-white mt-0.5">₹320 <span class="text-[10px] text-neutral-500 font-normal">/ asset</span></div>
-              <div class="text-[9px] text-yaas-yellow font-sans">&lt;45s render · 14x efficiency</div>
-            </div>
+          <!-- Bottom Micro-Caption -->
+          <div class="mt-2.5 flex items-center justify-between text-[10px] font-mono text-neutral-400 pt-1">
+            <span>DETERMINISTIC COMPOSITION</span>
+            <span class="text-yaas-yellow font-bold">FRAME-ACCURATE AST</span>
           </div>
 
         </div>
@@ -369,18 +312,18 @@
   <!-- SLIDE 2: STRUCTURAL CONTRAST (Crisp Off-White Canvas · Cognis Layout)     -->
   <!-- ========================================================================= -->
   <section x-show="currentSlide === 2" x-transition.opacity.duration.300ms 
-           class="slide-canvas h-full w-full bg-canvas-light text-neutral-900 flex flex-col justify-between relative">
+           class="slide-canvas w-full bg-canvas-light text-neutral-900 flex flex-col justify-between relative">
     
     <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-1.5 z-10 shrink-0">
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-1.5 z-10 shrink-0 h-[30px]">
       <div class="flex items-center gap-2.5">
         <div class="w-5 h-5 rounded bg-black flex items-center justify-center font-display font-black text-yaas-yellow text-[11px] shadow-sm">
           Æ
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-neutral-900">Aeos Group · Root Cause Diagnosis</span>
+          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-neutral-900">Aeos Group · Root Cause</span>
           <span class="text-stone-300 font-mono">|</span>
-          <span class="text-[11px] font-mono text-stone-600">02 · Fragile Prompt Loops vs. Deterministic Pipelines</span>
+          <span class="text-[11px] font-mono text-stone-600">02 · Production Ceiling</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
@@ -398,96 +341,87 @@
       </div>
     </div>
 
-    <!-- Main Content: Full-Width 2-Column Split (Cognis 02 + Segmented Donut) -->
-    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center my-auto z-10 py-0.5">
+    <!-- Main Content: Solvanta / Agro Minimalist Split -->
+    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center my-auto z-10 py-2">
       
-      <!-- Left Column (5 cols): Clear Problem Statement & 3 Cognis Square-Badge Metrics -->
-      <div class="lg:col-span-5 space-y-2.5 sm:space-y-3">
+      <!-- Left Column (5 cols): Clear Problem Statement & 3 Clean Horizontal Metric Bars -->
+      <div class="lg:col-span-5 space-y-3">
         <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-stone-100 border border-stone-200 text-neutral-800 text-[11px] font-mono">
           <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
-          <span>02 · THE HIDDEN CEILING OF AGENCY PRODUCTION</span>
+          <span>02 · THE BOTTLENECK</span>
         </div>
 
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-neutral-950 leading-tight">
-          Production <br>
-          <span class="text-amber-600">Drag Breakdown</span>
+          The Headcount <br class="hidden sm:inline">
+          <span class="text-amber-600">Ceiling.</span>
         </h2>
         
-        <p class="text-xs text-stone-600 leading-relaxed">
-          <strong>Unguided prompt pipelines suffer high variance and brand drift.</strong> Raw LLM video scripts hallucinate client data, violate brand guidelines, and lack deterministic state.
+        <p class="text-xs sm:text-sm text-stone-600 max-w-lg leading-relaxed">
+          Linear agencies scale payroll, not output. Manual Premiere keyframing caps capacity at ~80 monthly clips.
         </p>
 
-        <!-- 3 Cognis-Style Colored Square-Badge Rows -->
-        <div class="space-y-2 pt-0.5">
+        <!-- 3 Minimalist Agro / Solvanta Horizontal Metric Bars -->
+        <div class="space-y-2.5 pt-1 max-w-lg">
           
-          <!-- Row 1: Orange Square Badge (50% Assembly) -->
-          <div class="flex items-center gap-3.5 bg-white p-2.5 rounded-xl border border-stone-200 shadow-sm">
-            <div class="w-10 h-10 rounded-lg bg-cognis-orange flex items-center justify-center text-white shrink-0 shadow-sm">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/>
-              </svg>
+          <!-- Bar 1: 50% Timeline Assembly -->
+          <div class="bg-white p-3 rounded-xl border border-stone-200/90 shadow-sm space-y-1.5">
+            <div class="flex items-baseline justify-between text-xs font-mono">
+              <span class="font-bold text-neutral-900 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-cognis-orange"></span>
+                Manual Timeline Assembly
+              </span>
+              <span class="font-display font-extrabold text-cognis-orange text-base">50%</span>
             </div>
-            <div class="flex-1 min-w-0">
-              <div class="flex items-baseline justify-between">
-                <h4 class="text-xs sm:text-sm font-bold text-neutral-900 leading-tight">Manual Timeline Assembly</h4>
-                <span class="text-lg font-display font-extrabold text-cognis-orange">50%</span>
-              </div>
-              <p class="text-[11px] text-stone-500 leading-snug">Keyframing captions, typography sync, and clip cutting in Premiere/AE.</p>
+            <div class="w-full bg-stone-100 rounded-full h-1.5 overflow-hidden">
+              <div class="bg-cognis-orange h-full rounded-full" style="width: 50%"></div>
             </div>
+            <p class="text-[11px] text-stone-500 font-sans">Keyframing captions & typography sync (4–8h/clip in Premiere/AE).</p>
           </div>
 
-          <!-- Row 2: YAAS Yellow Square Badge (30% Talent) -->
-          <div class="flex items-center gap-3.5 bg-white p-2.5 rounded-xl border border-stone-200 shadow-sm">
-            <div class="w-10 h-10 rounded-lg bg-amber-400 flex items-center justify-center text-black shrink-0 shadow-sm">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-              </svg>
+          <!-- Bar 2: 30% Talent Friction -->
+          <div class="bg-white p-3 rounded-xl border border-stone-200/90 shadow-sm space-y-1.5">
+            <div class="flex items-baseline justify-between text-xs font-mono">
+              <span class="font-bold text-neutral-900 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                Talent & Reshoot Friction
+              </span>
+              <span class="font-display font-extrabold text-amber-600 text-base">30%</span>
             </div>
-            <div class="flex-1 min-w-0">
-              <div class="flex items-baseline justify-between">
-                <h4 class="text-xs sm:text-sm font-bold text-neutral-900 leading-tight">Presenter & Talent Friction</h4>
-                <span class="text-lg font-display font-extrabold text-amber-600">30%</span>
-              </div>
-              <p class="text-[11px] text-stone-500 leading-snug">Reshoots, human scheduling, and audio drift across 70+ brand channels.</p>
+            <div class="w-full bg-stone-100 rounded-full h-1.5 overflow-hidden">
+              <div class="bg-amber-500 h-full rounded-full" style="width: 30%"></div>
             </div>
+            <p class="text-[11px] text-stone-500 font-sans">Scheduling drift & audio retakes across 70+ brand channels.</p>
           </div>
 
-          <!-- Row 3: Purple Square Badge (20% Format QC) -->
-          <div class="flex items-center gap-3.5 bg-white p-2.5 rounded-xl border border-stone-200 shadow-sm">
-            <div class="w-10 h-10 rounded-lg bg-cognis-purple flex items-center justify-center text-white shrink-0 shadow-sm">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-              </svg>
+          <!-- Bar 3: 20% Format QC -->
+          <div class="bg-white p-3 rounded-xl border border-stone-200/90 shadow-sm space-y-1.5">
+            <div class="flex items-baseline justify-between text-xs font-mono">
+              <span class="font-bold text-neutral-900 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-cognis-purple"></span>
+                Format QC & Compression
+              </span>
+              <span class="font-display font-extrabold text-cognis-purple text-base">20%</span>
             </div>
-            <div class="flex-1 min-w-0">
-              <div class="flex items-baseline justify-between">
-                <h4 class="text-xs sm:text-sm font-bold text-neutral-900 leading-tight">Format QC & Re-renders</h4>
-                <span class="text-lg font-display font-extrabold text-cognis-purple">20%</span>
-              </div>
-              <p class="text-[11px] text-stone-500 leading-snug">Multi-platform safe zones (9:16 vs 16:9), compression glitches, and tagging.</p>
+            <div class="w-full bg-stone-100 rounded-full h-1.5 overflow-hidden">
+              <div class="bg-cognis-purple h-full rounded-full" style="width: 20%"></div>
             </div>
+            <p class="text-[11px] text-stone-500 font-sans">9:16 vs 16:9 safe-zone re-renders and platform packaging.</p>
           </div>
 
-        </div>
-
-        <!-- Target Shift Indicator -->
-        <div class="pt-1 flex items-center gap-2 text-xs font-mono text-neutral-900 font-bold">
-          <svg class="w-4 h-4 text-amber-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          <span class="text-[11px]">Target Shift: 100% of repetitive assembly shifted to Aeos Remotion React Engine</span>
         </div>
       </div>
 
-      <!-- Right Column (7 cols): Segmented Donut Component + ZEISS Master Prime Inset Card -->
-      <div class="lg:col-span-7 bg-stone-100/90 p-3.5 lg:p-4 rounded-2xl border border-stone-200 shadow-md flex flex-col justify-between relative overflow-hidden">
+      <!-- Right Column (7 cols): Segmented Donut Component + Clean Architecture Inset Card -->
+      <div class="lg:col-span-7 bg-stone-100/90 p-4 lg:p-5 rounded-2xl border border-stone-200 shadow-md flex flex-col justify-between relative overflow-hidden">
         
         <!-- Subtle Top Strip -->
-        <div class="flex items-center justify-between text-[10px] font-mono text-stone-500 mb-0.5 z-10">
+        <div class="flex items-center justify-between text-[10px] font-mono text-stone-500 mb-1 z-10">
           <span class="font-bold text-neutral-900 uppercase tracking-wider">THROUGHPUT DRAG AUDIT</span>
-          <span class="text-stone-400">002 · SYSTEM BOTTLENECK</span>
+          <span class="text-amber-700 font-bold">85% DRAG CUT VIA REMOTION</span>
         </div>
 
-        <!-- The SVG Segmented Donut Component (Cognis & UrbanWell Fusion) -->
-        <div class="w-full flex justify-center items-center py-0.5 z-10">
+        <!-- The SVG Segmented Donut Component -->
+        <div class="w-full flex justify-center items-center py-1 z-10">
           <svg class="w-full max-w-[370px] sm:max-w-[390px] h-[230px] sm:h-[245px] overflow-visible" viewBox="0 0 400 300" fill="none">
             <defs>
               <linearGradient id="sliceDark" x1="0" y1="0" x2="1" y2="1">
@@ -530,47 +464,29 @@
             <text x="200" y="155" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#64748B" letter-spacing="0.8">DRAG CUT</text>
             <text x="200" y="168" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="800" fill="#D97706" letter-spacing="0.5">REMOTION</text>
 
-            <!-- Slice 1 Icon & Label -->
-            <g transform="translate(286, 126)">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2">
-                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/>
-              </svg>
-            </g>
-            <text x="295" y="154" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">50%</text>
-            <text x="295" y="167" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#CBD5E1" letter-spacing="0.5">ASSEMBLY</text>
+            <!-- Slice 1 Label -->
+            <text x="295" y="150" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">50%</text>
+            <text x="295" y="164" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#CBD5E1" letter-spacing="0.5">ASSEMBLY</text>
 
-            <!-- Slice 2 Icon & Label -->
-            <g transform="translate(114, 178)">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-              </svg>
-            </g>
-            <text x="123" y="206" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">30%</text>
-            <text x="123" y="219" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#FEF3C7" letter-spacing="0.5">TALENT</text>
+            <!-- Slice 2 Label -->
+            <text x="123" y="200" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">30%</text>
+            <text x="123" y="214" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#FEF3C7" letter-spacing="0.5">TALENT</text>
 
-            <!-- Slice 3 Icon & Label -->
-            <g transform="translate(135, 50)">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-              </svg>
-            </g>
-            <text x="144" y="78" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">20%</text>
-            <text x="144" y="91" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">FORMAT QC</text>
+            <!-- Slice 3 Label -->
+            <text x="144" y="74" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">20%</text>
+            <text x="144" y="88" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">FORMAT QC</text>
           </svg>
         </div>
 
-        <!-- Bottom Architecture Inset Card (Cognis Frame Integrity) -->
-        <div class="mt-1.5 bg-white p-2.5 rounded-xl border border-stone-200 shadow-sm flex items-center gap-3 z-10">
-          <div class="w-10 h-10 rounded-lg bg-stone-100 border border-stone-200 flex items-center justify-center text-neutral-800 shrink-0">
-            <svg class="w-5 h-5 text-neutral-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+        <!-- Bottom Architecture Inset Card -->
+        <div class="mt-2 bg-white p-3 rounded-xl border border-stone-200 shadow-sm flex items-center justify-between z-10">
+          <div class="flex items-center gap-2.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            <span class="text-[10px] font-mono text-neutral-900 font-bold uppercase tracking-wider">DETERMINISTIC COMPOSITION</span>
           </div>
-          <div class="min-w-0">
-            <div class="flex items-center gap-2">
-              <span class="text-[9px] font-mono text-neutral-900 font-bold uppercase tracking-wider">DETERMINISTIC COMPOSITION</span>
-              <span class="text-[8px] font-mono bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.5 rounded">FRAME-ACCURATE AST</span>
-            </div>
-            <p class="text-[11px] text-stone-600 leading-snug truncate">Script-to-video React render trees eliminate manual timeline keyframing drag.</p>
-          </div>
+          <span class="text-[9px] font-mono bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full">
+            FRAME-ACCURATE AST
+          </span>
         </div>
 
       </div>
@@ -591,10 +507,10 @@
   <!-- SLIDE 3: SYSTEM TOPOLOGY (Pitch Black Canvas · Cognis 07 Style)           -->
   <!-- ========================================================================= -->
   <section x-show="currentSlide === 3" x-transition.opacity.duration.300ms 
-           class="slide-canvas h-full w-full bg-yaas-dark text-white flex flex-col justify-between relative">
+           class="slide-canvas w-full bg-yaas-dark text-white flex flex-col justify-between relative">
     
     <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-neutral-800/80 pb-1.5 z-10 shrink-0">
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-neutral-800/80 pb-1.5 z-10 shrink-0 h-[30px]">
       <div class="flex items-center gap-2.5">
         <div class="w-5 h-5 rounded bg-yaas-yellow flex items-center justify-center font-display font-black text-black text-[11px] shadow-sm">
           Æ
@@ -602,7 +518,7 @@
         <div class="flex items-center gap-2">
           <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-yaas-yellow">Aeos Labs Architecture</span>
           <span class="text-neutral-700 font-mono">|</span>
-          <span class="text-[11px] font-mono text-neutral-400">03 · End-to-End Autonomous Pipeline & Distribution Flow</span>
+          <span class="text-[11px] font-mono text-neutral-400">03 · Autonomous Pipeline</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
@@ -620,199 +536,121 @@
       </div>
     </div>
 
-    <!-- Main Content: Full-Width 2-Row Layout -->
-    <div class="w-full max-w-[1600px] mx-auto space-y-3 lg:space-y-4 my-auto z-10 py-0">
+    <!-- Main Content: Oracle-Style Spacious Flow -->
+    <div class="w-full max-w-[1600px] mx-auto space-y-6 my-auto z-10 py-4">
       
-      <!-- Top Row: Bar Chart (5 cols) + Connected Pipeline (7 cols) -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5 items-stretch">
+      <!-- Headline & Subtitle -->
+      <div class="space-y-2 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800 text-yaas-yellow text-[10px] font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-yaas-yellow animate-pulse"></span>
+          <span>03 · DETERMINISTIC SYSTEM TOPOLOGY</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-white leading-tight">
+          Code Replaces <span class="text-yaas-yellow">Keyframes.</span>
+        </h2>
+        <p class="text-xs sm:text-sm lg:text-base text-neutral-300 font-normal leading-relaxed">
+          One founder shoot programmatically compiles into 100+ multi-format assets via deterministic React Remotion AST.
+        </p>
+      </div>
+
+      <!-- 4 Oracle-Style Pipeline Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         
-        <!-- Top Left Bar Chart Card -->
-        <div class="lg:col-span-5 bg-neutral-900 text-white p-4 lg:p-5 rounded-2xl shadow-xl flex flex-col justify-between border border-neutral-800">
-          <div>
-            <div class="flex items-center justify-between mb-1.5">
-              <span class="text-3xl sm:text-4xl font-display font-extrabold text-yaas-yellow tracking-tight">12.5x</span>
-              <span class="text-[11px] font-mono bg-neutral-800 text-yaas-yellow px-2.5 py-0.5 rounded-full border border-neutral-700 font-bold">TARGET CAPACITY (80 → 1k+/MO)</span>
-            </div>
-            <h3 class="text-base lg:text-lg font-bold text-white mb-0.5">Monthly Asset Throughput</h3>
-            <p class="text-xs text-neutral-400">Progression from manual solo editor to autonomous Aeos Remotion cluster.</p>
+        <!-- [01] Ingest -->
+        <div class="bg-neutral-900/90 border border-neutral-800 p-5 rounded-2xl shadow-xl space-y-3 relative overflow-hidden group hover:border-neutral-700 transition-all">
+          <div class="flex items-center justify-between">
+            <span class="text-2xl font-display font-black text-yaas-yellow/80 group-hover:text-yaas-yellow transition-colors">[01]</span>
+            <span class="text-[9px] font-mono bg-neutral-800 text-neutral-300 px-2 py-0.5 rounded-full">&lt;1.2s ACK</span>
           </div>
-
-          <!-- SVG Bar Chart with Reference Lines & Amber Spline Curve -->
-          <div class="pt-2">
-            <svg class="w-full h-28 lg:h-32 overflow-visible" viewBox="0 0 460 145" fill="none">
-              <defs>
-                <linearGradient id="barNeutral" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#334155" />
-                  <stop offset="100%" stop-color="#1E293B" />
-                </linearGradient>
-                <linearGradient id="barAmber" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#FFD900" />
-                  <stop offset="100%" stop-color="#D97706" />
-                </linearGradient>
-                <filter id="amberGlow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#FFD900" flood-opacity="0.6"/>
-                </filter>
-              </defs>
-
-              <!-- Horizontal Dashed Reference Grid Lines -->
-              <line x1="36" y1="18" x2="440" y2="18" stroke="rgba(255,255,255,0.08)" stroke-dasharray="3 3"/>
-              <text x="6" y="22" fill="#FFD900" font-size="8" font-family="'JetBrains Mono', monospace">1,000</text>
-
-              <line x1="36" y1="52" x2="440" y2="52" stroke="rgba(255,255,255,0.06)" stroke-dasharray="3 3"/>
-              <text x="14" y="56" fill="#F59E0B" font-size="8" font-family="'JetBrains Mono', monospace">500</text>
-
-              <line x1="36" y1="86" x2="440" y2="86" stroke="rgba(255,255,255,0.05)" stroke-dasharray="3 3"/>
-              <text x="14" y="90" fill="#CBD5E1" font-size="8" font-family="'JetBrains Mono', monospace">250</text>
-
-              <line x1="36" y1="120" x2="440" y2="120" stroke="#334155" stroke-width="1.5"/>
-              <text x="24" y="124" fill="#64748B" font-size="8" font-family="'JetBrains Mono', monospace">0</text>
-
-              <!-- 5 Stylized Rounded Bars -->
-              <rect x="58" y="106" width="46" height="14" rx="4" fill="url(#barNeutral)"/>
-              <text x="81" y="136" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="'JetBrains Mono', monospace">W1 (80)</text>
-
-              <rect x="136" y="90" width="46" height="30" rx="4" fill="url(#barNeutral)"/>
-              <text x="159" y="136" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="'JetBrains Mono', monospace">W2 (220)</text>
-
-              <rect x="214" y="60" width="46" height="60" rx="4" fill="url(#barNeutral)"/>
-              <text x="237" y="136" text-anchor="middle" fill="#FFD900" font-size="9" font-family="'JetBrains Mono', monospace">W3 (450)</text>
-
-              <rect x="292" y="28" width="46" height="92" rx="4" fill="url(#barAmber)" opacity="0.85"/>
-              <text x="315" y="136" text-anchor="middle" fill="#FFD900" font-weight="bold" font-size="9" font-family="'JetBrains Mono', monospace">W4 (800)</text>
-
-              <rect x="370" y="8" width="50" height="112" rx="5" fill="url(#barAmber)" filter="url(#amberGlow)"/>
-              <text x="395" y="136" text-anchor="middle" fill="#FFD900" font-weight="bold" font-size="9" font-family="'JetBrains Mono', monospace">Scale (1k+)</text>
-
-              <!-- Smooth Cubic Spline Trend Line Overlay -->
-              <path d="M 81 106 C 120 102, 140 88, 159 84 C 200 80, 220 54, 237 50 C 275 46, 300 24, 315 20 C 350 16, 375 6, 395 6"
-                    fill="none" stroke="#FFD900" stroke-width="2.5" stroke-linecap="round"/>
-
-              <!-- Glowing Node Vertices -->
-              <circle cx="81" cy="106" r="3.5" fill="#FFD900"/>
-              <circle cx="159" cy="84" r="3.5" fill="#FFD900"/>
-              <circle cx="237" cy="50" r="4" fill="#FFD900"/>
-              <circle cx="315" cy="20" r="4" fill="#FFD900"/>
-              <circle cx="395" cy="6" r="5" fill="#FFD900" filter="url(#amberGlow)"/>
-            </svg>
+          <div>
+            <h4 class="text-base font-bold text-white mb-1">Edge Ingest</h4>
+            <p class="text-xs text-neutral-400 leading-snug">
+              Automated webhook intake with HMAC SHA-256 validation.
+            </p>
+          </div>
+          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-neutral-500">
+            SHA-256 SIGNED
           </div>
         </div>
 
-        <!-- Top Right Flow Diagram (5-Stage Visual Connection Pipeline) -->
-        <div class="lg:col-span-7 bg-neutral-900 text-white p-4 lg:p-5 rounded-2xl shadow-xl flex flex-col justify-between border border-neutral-800">
+        <!-- [02] Schema -->
+        <div class="bg-neutral-900/90 border border-neutral-800 p-5 rounded-2xl shadow-xl space-y-3 relative overflow-hidden group hover:border-neutral-700 transition-all">
+          <div class="flex items-center justify-between">
+            <span class="text-2xl font-display font-black text-yaas-yellow/80 group-hover:text-yaas-yellow transition-colors">[02]</span>
+            <span class="text-[9px] font-mono bg-neutral-800 text-neutral-300 px-2 py-0.5 rounded-full">MCP TYPED</span>
+          </div>
           <div>
-            <div class="flex items-center justify-between mb-1.5">
-              <h3 class="text-sm lg:text-base font-bold text-white flex items-center gap-2">
-                <svg class="w-4 h-4 text-yaas-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
-                <span>5-Stage Deterministic Production Pipeline</span>
-              </h3>
-              <span class="text-[10px] font-mono text-yaas-yellow font-bold bg-neutral-800 px-2 py-0.5 rounded border border-neutral-700">RUN RELIABILITY: 99.7%</span>
-            </div>
-            <p class="text-xs text-neutral-400 mb-2">
-              Automated webhook acknowledgement, FastMCP type contracts, Remotion compilation, and automated DLQ recovery.
+            <h4 class="text-base font-bold text-white mb-1">FastMCP Schema</h4>
+            <p class="text-xs text-neutral-400 leading-snug">
+              Typed contracts with strict JSON Schemas and zero brand drift.
             </p>
           </div>
-
-          <!-- Horizontal Connected Steps Flow with Arrows -->
-          <div class="grid grid-cols-5 gap-2 my-auto items-center">
-            <!-- Step 1 -->
-            <div class="bg-neutral-800 p-2 rounded-xl border border-neutral-700 text-center flex flex-col justify-between h-[4.5rem] shadow-sm">
-              <div class="text-[8px] font-mono text-yaas-yellow font-bold uppercase">01 Intake</div>
-              <div class="text-xs font-bold text-white leading-tight">Webhook</div>
-              <div class="text-[9px] text-neutral-400 font-mono">Edge ACK &lt;1.2s</div>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="bg-neutral-800 p-2 rounded-xl border border-neutral-700 text-center flex flex-col justify-between h-[4.5rem] shadow-sm">
-              <div class="text-[8px] font-mono text-yaas-yellow font-bold uppercase">02 Schema</div>
-              <div class="text-xs font-bold text-white leading-tight">FastMCP</div>
-              <div class="text-[9px] text-neutral-400 font-mono">Zero Drift</div>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="bg-neutral-800 p-2 rounded-xl border border-neutral-700 text-center flex flex-col justify-between h-[4.5rem] shadow-sm">
-              <div class="text-[8px] font-mono text-yaas-yellow font-bold uppercase">03 Compiler</div>
-              <div class="text-xs font-bold text-white leading-tight">Remotion</div>
-              <div class="text-[9px] text-neutral-400 font-mono">React AST</div>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="bg-neutral-800 p-2 rounded-xl border border-neutral-700 text-center flex flex-col justify-between h-[4.5rem] shadow-sm">
-              <div class="text-[8px] font-mono text-yaas-yellow font-bold uppercase">04 Quality</div>
-              <div class="text-xs font-bold text-white leading-tight">AlphaCTR</div>
-              <div class="text-[9px] text-neutral-400 font-mono">Brand Parity</div>
-            </div>
-
-            <!-- Step 5 -->
-            <div class="bg-yaas-yellow text-black p-2 rounded-xl border border-amber-300 text-center flex flex-col justify-between h-[4.5rem] shadow-md">
-              <div class="text-[8px] font-mono text-neutral-900 font-black uppercase">05 Fan-Out</div>
-              <div class="text-xs font-black text-black leading-tight">YAAS 10x</div>
-              <div class="text-[9px] text-neutral-900 font-mono font-bold">70+ Brand DB</div>
-            </div>
+          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-neutral-500">
+            ZERO SCHEMA DRIFT
           </div>
+        </div>
 
-          <!-- Dead Letter Queue Safeguard -->
-          <div class="mt-2.5 pt-2 border-t border-neutral-800 flex items-center justify-between text-xs text-neutral-400">
-            <span class="flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-yaas-yellow"></span>
-              <span class="text-[11px]"><strong>DLQ Recovery:</strong> 3x exponential backoff with instant automated recovery.</span>
-            </span>
-            <span class="font-mono text-yaas-yellow text-[10px]">ZERO SOCKET LEAKS</span>
+        <!-- [03] Compile -->
+        <div class="bg-neutral-900/90 border border-yaas-yellow/40 p-5 rounded-2xl shadow-xl space-y-3 relative overflow-hidden group hover:border-yaas-yellow transition-all">
+          <div class="flex items-center justify-between">
+            <span class="text-2xl font-display font-black text-yaas-yellow">[03]</span>
+            <span class="text-[9px] font-mono bg-yaas-yellow text-black font-bold px-2 py-0.5 rounded-full">&lt;45s / CLIP</span>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white mb-1">Remotion AST</h4>
+            <p class="text-xs text-neutral-300 leading-snug">
+              Frame-accurate React render tree with automated typography sync.
+            </p>
+          </div>
+          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-yaas-yellow">
+            FRAME-ACCURATE AST
+          </div>
+        </div>
+
+        <!-- [04] Fleet -->
+        <div class="bg-neutral-900/90 border border-neutral-800 p-5 rounded-2xl shadow-xl space-y-3 relative overflow-hidden group hover:border-neutral-700 transition-all">
+          <div class="flex items-center justify-between">
+            <span class="text-2xl font-display font-black text-purple-400">[04]</span>
+            <span class="text-[9px] font-mono bg-purple-950/80 text-purple-300 px-2 py-0.5 rounded-full">70+ BRANDS</span>
+          </div>
+          <div>
+            <h4 class="text-base font-bold text-white mb-1">Fleet Fan-Out</h4>
+            <p class="text-xs text-neutral-400 leading-snug">
+              Simultaneous 10-platform distribution (YouTube, X, Reels, LinkedIn).
+            </p>
+          </div>
+          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-purple-400">
+            10-PLATFORM DISPATCH
           </div>
         </div>
 
       </div>
 
-      <!-- Bottom Row (3 Sleek Cognis-Style Bento Cards) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 pt-0.5">
-        
-        <!-- Bento 1 -->
-        <div class="bg-neutral-900 p-3 lg:p-3.5 rounded-xl shadow-md border border-neutral-800 flex items-center gap-3">
-          <div class="w-9 h-9 lg:w-10 lg:h-10 rounded-lg bg-neutral-800 border border-neutral-700 flex items-center justify-center text-yaas-yellow shrink-0 shadow-sm">
-            <svg class="w-5 h-5 text-yaas-yellow shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div>
-            <h4 class="text-xs sm:text-sm font-bold text-white mb-0.5">Ingest & HMAC Verification</h4>
-            <p class="text-[11px] text-neutral-400 leading-snug">
-              Automated webhook authentication with SHA-256 HMAC signatures and strict JSON schemas.
-            </p>
-          </div>
+      <!-- Bottom Metric Strip -->
+      <div class="p-3.5 rounded-xl bg-neutral-900/60 border border-neutral-800 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+        <div class="flex items-center gap-2">
+          <span class="text-neutral-500 uppercase">VELOCITY MULTIPLIER:</span>
+          <span class="text-yaas-yellow font-bold">12.5x (&lt;45s vs 4–8h manual)</span>
         </div>
-
-        <!-- Bento 2 -->
-        <div class="bg-neutral-900 p-3 lg:p-3.5 rounded-xl shadow-md border border-neutral-800 flex items-center gap-3">
-          <div class="w-9 h-9 lg:w-10 lg:h-10 rounded-lg bg-neutral-800 border border-neutral-700 flex items-center justify-center text-yaas-yellow shrink-0 shadow-sm">
-            <svg class="w-5 h-5 text-yaas-yellow shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <div>
-            <h4 class="text-xs sm:text-sm font-bold text-white mb-0.5">Remotion & AlphaCTR</h4>
-            <p class="text-[11px] text-neutral-400 leading-snug">
-              Deterministic React video rendering, VideoVault asset cache, and AlphaCTR thumbnail scoring.
-            </p>
-          </div>
+        <div class="h-3 w-px bg-neutral-800 hidden sm:block"></div>
+        <div class="flex items-center gap-2">
+          <span class="text-neutral-500 uppercase">CONCURRENCY:</span>
+          <span class="text-white font-bold">ZERO SOCKET LEAKS</span>
         </div>
-
-        <!-- Bento 3 -->
-        <div class="bg-neutral-900 p-3 lg:p-3.5 rounded-xl shadow-md border border-neutral-800 flex items-center gap-3">
-          <div class="w-9 h-9 lg:w-10 lg:h-10 rounded-lg bg-neutral-800 border border-neutral-700 flex items-center justify-center text-yaas-yellow shrink-0 shadow-sm">
-            <svg class="w-5 h-5 text-yaas-yellow shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-          </div>
-          <div>
-            <h4 class="text-xs sm:text-sm font-bold text-white mb-0.5">YAAS 10-Platform Fan-Out</h4>
-            <p class="text-[11px] text-neutral-400 leading-snug">
-              Simultaneous distribution across 70+ brand channels (YouTube, Shorts, LinkedIn, X, Reels).
-            </p>
-          </div>
+        <div class="h-3 w-px bg-neutral-800 hidden sm:block"></div>
+        <div class="flex items-center gap-2">
+          <span class="text-neutral-500 uppercase">DLQ RECOVERY:</span>
+          <span class="text-emerald-400 font-bold">3x BACKOFF · 99.7% RELIABILITY</span>
         </div>
-
       </div>
 
     </div>
 
     <!-- Bottom Footer Strip -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-neutral-500 pt-2 border-t border-neutral-800 font-medium z-10 shrink-0">
-      <span class="max-w-[28%] truncate">TOPOLOGY: DISTRIBUTED ASYNC</span>
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-neutral-500 pt-2 border-t border-neutral-800 z-10 shrink-0 font-medium">
+      <span class="max-w-[28%] truncate">CORE: REACT REMOTION AST</span>
       <div class="w-[300px] sm:w-[480px] lg:w-[560px] pointer-events-none shrink-0"></div>
-      <span class="text-right max-w-[28%] truncate">PROTOCOL: TYPED MCP / EVENT INGEST</span>
+      <span class="text-right max-w-[28%] truncate text-neutral-400">EXECUTION: ZERO SOCKET LEAKS</span>
     </div>
 
   </section>
@@ -822,18 +660,18 @@
   <!-- SLIDE 4: 3-PHASE EXECUTION ROADMAP (Crisp Off-White Canvas · Cognis 03)  -->
   <!-- ========================================================================= -->
   <section x-show="currentSlide === 4" x-transition.opacity.duration.300ms 
-           class="slide-canvas h-full w-full bg-canvas-light text-neutral-900 flex flex-col justify-between relative">
+           class="slide-canvas w-full bg-canvas-light text-neutral-900 flex flex-col justify-between relative">
     
     <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-1.5 z-10 shrink-0">
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-1.5 z-10 shrink-0 h-[30px]">
       <div class="flex items-center gap-2.5">
         <div class="w-5 h-5 rounded bg-black flex items-center justify-center font-display font-black text-yaas-yellow text-[11px] shadow-sm">
           Æ
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-neutral-900">Aeos Labs Delivery Engine</span>
+          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-neutral-900">Aeos Labs Delivery</span>
           <span class="text-stone-300 font-mono">|</span>
-          <span class="text-[11px] font-mono text-stone-600">04 · 30-Day Phased Milestones</span>
+          <span class="text-[11px] font-mono text-stone-600">04 · 30-Day Milestones</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
@@ -851,117 +689,125 @@
       </div>
     </div>
 
-    <!-- Main Content: Full-Width 3-Column Plan Cards (Cognis Style) -->
-    <div class="w-full max-w-[1600px] mx-auto space-y-3 lg:space-y-4 my-auto z-10 py-0">
-      <div>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold tracking-tight text-neutral-950 mb-1 leading-tight">
-          Rapid Phased Deployment: <br>
-          <span class="text-amber-600">Zero Handholding, Concrete Proof-of-Work</span>
+    <!-- Main Content: Solvanta / Oracle Clean 3-Column Plan -->
+    <div class="w-full max-w-[1600px] mx-auto space-y-5 my-auto z-10 py-3">
+      
+      <!-- Headline & Subtitle -->
+      <div class="space-y-2 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-stone-100 border border-stone-200 text-neutral-800 text-[11px] font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+          <span>04 · PHASED EXECUTION ROADMAP</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-neutral-950 leading-tight">
+          30-Day Autonomous <span class="text-amber-600">Fleet.</span>
         </h2>
-        <p class="text-xs sm:text-sm text-stone-600 max-w-2xl leading-relaxed">
-          Designed to deliver client-facing proof of work in Week 1, stress-test concurrency in Week 2, and achieve autonomous 1,000+ monthly asset velocity in Weeks 3–4.
+        <p class="text-xs sm:text-sm lg:text-base text-stone-600 font-normal leading-relaxed">
+          Zero handholding. Concrete proof-of-work delivered in rapid 14-day validation cycles.
         </p>
       </div>
 
-      <!-- 3 Cognis-Style Vertical Milestone Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 relative">
+      <!-- 3 Minimalist Milestone Columns -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         
         <!-- Phase 1: Weeks 1–2 -->
-        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-md flex flex-col justify-between hover:border-amber-400 transition-all">
+        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between hover:border-stone-300 transition-all space-y-4">
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-[11px] text-amber-700 font-bold bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200">PHASE 1 · WEEKS 1–2</span>
+              <span class="font-mono text-[10px] text-neutral-800 font-bold bg-stone-100 px-2.5 py-1 rounded-md border border-stone-200">
+                [01] WEEKS 1–2
+              </span>
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
             </div>
-            <h4 class="text-base font-bold text-neutral-950 mb-1.5">Intake & Schema Normalization</h4>
-            <p class="text-xs text-stone-600 leading-relaxed mb-4">
-              Ingest client brand guidelines and typography into machine-readable guardrails. Establish typed FastMCP gateways with strict JSON Schema validation and HMAC SHA-256 webhook ingestion.
-            </p>
-            <div class="space-y-2 text-xs text-stone-700">
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-neutral-900"></span>
-                <span>Webhook Edge ACK &lt;1.2s</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-neutral-900"></span>
-                <span>FastMCP zero-drift schema registry</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-neutral-900"></span>
+            <h4 class="text-base font-bold text-neutral-950 mb-2">Intake & Normalization</h4>
+            
+            <ul class="space-y-2 text-xs text-stone-600 font-sans">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
+                <span>Webhook edge intake (&lt;1.2s ACK)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
+                <span>FastMCP zero-drift typed schemas</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span>
                 <span>Notion CMS 0.67 req/s rate-limiting</span>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
-          <div class="pt-3 border-t border-stone-100 text-xs font-mono text-emerald-700 font-bold flex items-center justify-between mt-4">
-            <span>READY FOR PRODUCTION</span>
+          
+          <div class="pt-3 border-t border-stone-100 text-[11px] font-mono text-emerald-700 font-bold flex items-center justify-between">
             <span>DAY 14 GATE</span>
+            <span class="uppercase">PRODUCTION READY</span>
           </div>
         </div>
 
         <!-- Phase 2: Weeks 3–4 -->
-        <div class="bg-white p-5 rounded-2xl border-2 border-amber-400 shadow-lg flex flex-col justify-between relative">
+        <div class="bg-white p-5 rounded-2xl border-2 border-amber-400 shadow-md flex flex-col justify-between relative space-y-4">
           <div class="absolute -top-3 right-4 bg-black text-yaas-yellow text-[9px] font-mono font-bold px-2.5 py-0.5 rounded-full shadow-sm">
-            CORE VELOCITY ENGINE
+            CORE ENGINE
           </div>
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-[11px] text-black font-bold bg-yaas-yellow px-2.5 py-1 rounded-md">PHASE 2 · WEEKS 3–4</span>
+              <span class="font-mono text-[10px] text-black font-bold bg-yaas-yellow px-2.5 py-1 rounded-md">
+                [02] WEEKS 3–4
+              </span>
               <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
             </div>
-            <h4 class="text-base font-bold text-neutral-950 mb-1.5">Remotion Compilation Engine</h4>
-            <p class="text-xs text-stone-600 leading-relaxed mb-4">
-              Deploy deterministic React video render pipelines. Replace manual Premiere keyframing with script-to-video AST compilation, automated typography sync, and automated Dead Letter Queue recovery.
-            </p>
-            <div class="space-y-2 text-xs text-stone-700">
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-neutral-900"></span>
-                <span>Sub-45s headless Remotion compile</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-neutral-900"></span>
-                <span>VideoVault cached assets</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-neutral-900"></span>
-                <span>99.7% execution reliability</span>
-              </div>
-            </div>
+            <h4 class="text-base font-bold text-neutral-950 mb-2">Remotion AST Engine</h4>
+            
+            <ul class="space-y-2 text-xs text-stone-600 font-sans">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-black shrink-0"></span>
+                <span>Headless render cluster (&lt;45s/clip)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-black shrink-0"></span>
+                <span>VideoVault cached asset library</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-black shrink-0"></span>
+                <span>Automated DLQ 3x backoff recovery</span>
+              </li>
+            </ul>
           </div>
-          <div class="pt-3 border-t border-stone-100 text-xs font-mono text-amber-700 font-bold flex items-center justify-between mt-4">
-            <span>ACTIVE IMPLEMENTATION</span>
+          
+          <div class="pt-3 border-t border-stone-100 text-[11px] font-mono text-amber-700 font-bold flex items-center justify-between">
             <span>DAY 28 GATE</span>
+            <span class="uppercase">VELOCITY ENGINE</span>
           </div>
         </div>
 
-        <!-- Phase 3: Scale (1k+/mo) -->
-        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-md flex flex-col justify-between hover:border-amber-400 transition-all">
+        <!-- Phase 3: Scale -->
+        <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between hover:border-stone-300 transition-all space-y-4">
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-[11px] text-purple-700 font-bold bg-purple-50 px-2.5 py-1 rounded-md border border-purple-200">PHASE 3 · SCALE</span>
+              <span class="font-mono text-[10px] text-purple-700 font-bold bg-purple-50 px-2.5 py-1 rounded-md border border-purple-200">
+                [03] SCALE
+              </span>
               <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
             </div>
-            <h4 class="text-base font-bold text-neutral-950 mb-1.5">AlphaCTR & Fleet Scaling</h4>
-            <p class="text-xs text-stone-600 leading-relaxed mb-4">
-              Deploy automated thumbnail variant scoring and simultaneous 10-platform distribution across 70+ brand channels with automated multi-format tagging (9:16 vs 16:9).
-            </p>
-            <div class="space-y-2 text-xs text-stone-700">
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-neutral-900"></span>
-                <span>1,000+ monthly assets capacity</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-neutral-900"></span>
-                <span>AlphaCTR A/B thumbnail scoring</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-neutral-900"></span>
-                <span>Full distribution automation</span>
-              </div>
-            </div>
+            <h4 class="text-base font-bold text-neutral-950 mb-2">Fleet Scaling & Fan-Out</h4>
+            
+            <ul class="space-y-2 text-xs text-stone-600 font-sans">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                <span>1,000+ monthly assets fleet capacity</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                <span>AlphaCTR A/B thumbnail variant scoring</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                <span>10-platform distribution across 70+ channels</span>
+              </li>
+            </ul>
           </div>
-          <div class="pt-3 border-t border-stone-100 text-xs font-mono text-purple-700 font-bold flex items-center justify-between mt-4">
-            <span>TARGET VELOCITY</span>
-            <span>AUTONOMOUS FLEET</span>
+          
+          <div class="pt-3 border-t border-stone-100 text-[11px] font-mono text-purple-700 font-bold flex items-center justify-between">
+            <span>SCALE</span>
+            <span class="uppercase">AUTONOMOUS FLEET</span>
           </div>
         </div>
 
@@ -973,7 +819,7 @@
     <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-stone-500 pt-2 border-t border-stone-200 z-10 shrink-0 font-medium">
       <span class="max-w-[28%] truncate">CADENCE: 14-DAY VALIDATION</span>
       <div class="w-[300px] sm:w-[480px] lg:w-[560px] pointer-events-none shrink-0"></div>
-      <span class="text-right max-w-[28%] truncate">OBJECTIVE: 1,000+ ASSETS / MONTH</span>
+      <span class="text-right max-w-[28%] truncate font-mono">GOAL: 1,000+ ASSETS / MONTH</span>
     </div>
 
   </section>
@@ -983,10 +829,10 @@
   <!-- SLIDE 5: UNIT ECONOMICS (Pitch Black Canvas · Cognis 05 Style)           -->
   <!-- ========================================================================= -->
   <section x-show="currentSlide === 5" x-transition.opacity.duration.300ms 
-           class="slide-canvas h-full w-full bg-yaas-dark text-white flex flex-col justify-between relative">
+           class="slide-canvas w-full bg-yaas-dark text-white flex flex-col justify-between relative">
     
     <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-neutral-800/80 pb-1.5 z-10 shrink-0">
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-neutral-800/80 pb-1.5 z-10 shrink-0 h-[30px]">
       <div class="flex items-center gap-2.5">
         <div class="w-5 h-5 rounded bg-yaas-yellow flex items-center justify-center font-display font-black text-black text-[11px] shadow-sm">
           Æ
@@ -994,7 +840,7 @@
         <div class="flex items-center gap-2">
           <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-yaas-yellow">Aeos Group Unit Economics</span>
           <span class="text-neutral-700 font-mono">|</span>
-          <span class="text-[11px] font-mono text-neutral-400">05 · Margin Expansion & Capital Efficiency</span>
+          <span class="text-[11px] font-mono text-neutral-400">05 · Capital Efficiency</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
@@ -1012,93 +858,108 @@
       </div>
     </div>
 
-    <!-- Main Content: Full-Width 4-Column Metric Cards (Cognis 05 Layout) -->
-    <div class="w-full max-w-[1600px] mx-auto space-y-3 lg:space-y-4 my-auto z-10 py-0">
-      <div>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold tracking-tight text-white mb-1 leading-tight">
-          Margin Expansion: <br>
-          <span class="text-yaas-yellow">85.5% Net Burn Reduction</span>
+    <!-- Main Content: Mavence-Style Giant Typographic Metrics -->
+    <div class="w-full max-w-[1600px] mx-auto space-y-6 my-auto z-10 py-4">
+      
+      <!-- Headline & Subtitle -->
+      <div class="space-y-2 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800 text-yaas-yellow text-[10px] font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>05 · UNIT ECONOMICS & ARBITRAGE</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-white leading-tight">
+          85.5% Margin <span class="text-yaas-yellow">Expansion.</span>
         </h2>
-        <p class="text-xs sm:text-sm text-neutral-400 max-w-2xl leading-relaxed">
-          Modeled on 10 enterprise brand channels: comparing traditional linear agency payroll (₹4.5L/mo) against the deterministic Aeos programmatic Remotion rendering cluster (₹65K/mo).
+        <p class="text-xs sm:text-sm lg:text-base text-neutral-300 font-normal leading-relaxed">
+          Modeled on 10 enterprise channels: comparing linear agency payroll against programmatic Remotion compute.
         </p>
       </div>
 
-      <!-- 4 High-Impact Cognis Metric Cards -->
+      <!-- 4 Giant Typographic Metric Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         
-        <!-- Metric 1: Traditional Agency Burn -->
-        <div class="bg-neutral-900 text-white p-4 lg:p-5 rounded-2xl shadow-xl flex flex-col justify-between border border-neutral-800">
+        <!-- Card 1: Linear Agency Payroll -->
+        <div class="bg-neutral-900/90 border border-neutral-800 p-5 rounded-2xl shadow-xl flex flex-col justify-between space-y-3 group hover:border-neutral-700 transition-all">
           <div>
-            <span class="text-[9px] font-mono text-red-400 uppercase tracking-wider font-bold">TRADITIONAL MODEL</span>
-            <div class="text-3xl sm:text-4xl font-display font-extrabold text-white my-1.5 tracking-tight">₹4.5L<span class="text-base text-neutral-400 font-normal">/mo</span></div>
+            <span class="text-[10px] font-mono text-red-400 uppercase tracking-wider font-bold">TRADITIONAL (Modeled)</span>
+            <div class="text-4xl sm:text-5xl font-display font-extrabold text-white my-2 tracking-tight">₹4.5L<span class="text-sm text-neutral-500 font-normal">/mo</span></div>
             <h4 class="text-sm font-bold text-white mb-1">Linear Agency Payroll</h4>
-            <p class="text-xs text-neutral-400 leading-relaxed">
-              6 human video editors manually keyframing in Premiere/After Effects. Hard capacity ceiling at ~80 monthly clips.
+            <p class="text-xs text-neutral-400 leading-snug">
+              6 human editors keyframing in Premiere. Hard cap at ~80 clips/mo.
             </p>
           </div>
-          <div class="mt-3 pt-2.5 border-t border-neutral-800 text-[10px] font-mono text-neutral-400 flex items-center justify-between">
-            <span>HEADCOUNT: 6 EDITORS</span>
-            <span class="text-red-400 font-bold">4–8H / CLIP</span>
+          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-neutral-500 flex items-center justify-between">
+            <span>6 EDITORS</span>
+            <span class="text-red-400">4–8H / CLIP</span>
           </div>
         </div>
 
-        <!-- Metric 2: Aeos Remotion Engine -->
-        <div class="bg-neutral-900 text-white p-4 lg:p-5 rounded-2xl shadow-xl flex flex-col justify-between border-2 border-yaas-yellow">
+        <!-- Card 2: Aeos Remotion Cluster -->
+        <div class="bg-neutral-900/90 border border-yaas-yellow/50 p-5 rounded-2xl shadow-xl flex flex-col justify-between space-y-3 group hover:border-yaas-yellow transition-all">
           <div>
-            <span class="text-[9px] font-mono text-yaas-yellow uppercase tracking-wider font-bold">DETERMINISTIC MODEL</span>
-            <div class="text-3xl sm:text-4xl font-display font-extrabold text-yaas-yellow my-1.5 tracking-tight">₹65K<span class="text-base text-neutral-400 font-normal">/mo</span></div>
+            <span class="text-[10px] font-mono text-yaas-yellow uppercase tracking-wider font-bold">DETERMINISTIC (Modeled)</span>
+            <div class="text-4xl sm:text-5xl font-display font-extrabold text-yaas-yellow my-2 tracking-tight">₹65K<span class="text-sm text-neutral-400 font-normal">/mo</span></div>
             <h4 class="text-sm font-bold text-white mb-1">Aeos Remotion Cluster</h4>
-            <p class="text-xs text-neutral-300 leading-relaxed">
-              Programmatic React rendering on headless GPU nodes. 1 systems operator oversees 1,000+ monthly assets with zero fatigue.
+            <p class="text-xs text-neutral-300 leading-snug">
+              Programmatic React render cluster. 1 operator oversees 1,000+ clips.
             </p>
           </div>
-          <div class="mt-3 pt-2.5 border-t border-neutral-800 text-[10px] font-mono text-yaas-yellow font-bold flex items-center justify-between">
-            <span>OPERATOR: 1 ENGINEER</span>
-            <span class="text-yaas-yellow font-bold">&lt;45S / CLIP</span>
+          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-yaas-yellow flex items-center justify-between">
+            <span>1 OPERATOR</span>
+            <span>&lt;45S / CLIP</span>
           </div>
         </div>
 
-        <!-- Metric 3: 85.5% Net Margin Gain -->
-        <div class="bg-neutral-900 text-white p-4 lg:p-5 rounded-2xl shadow-xl flex flex-col justify-between border border-neutral-800">
+        <!-- Card 3: 85.5% Margin Expansion -->
+        <div class="bg-neutral-900/90 border border-neutral-800 p-5 rounded-2xl shadow-xl flex flex-col justify-between space-y-3 group hover:border-neutral-700 transition-all">
           <div>
-            <span class="text-[9px] font-mono text-emerald-400 uppercase tracking-wider font-bold">COST ARBITRAGE</span>
-            <div class="text-3xl sm:text-4xl font-display font-extrabold text-emerald-400 my-1.5 tracking-tight">85.5%</div>
-            <h4 class="text-sm font-bold text-white mb-1">Net Margin Expansion</h4>
-            <p class="text-xs text-neutral-400 leading-relaxed">
-              ₹3.85L/month in capital recovered per 10 client channels. Margins compound directly as output scales past 1,000 assets.
+            <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-wider font-bold">COST ARBITRAGE (Modeled)</span>
+            <div class="text-4xl sm:text-5xl font-display font-extrabold text-emerald-400 my-2 tracking-tight">85.5%</div>
+            <h4 class="text-sm font-bold text-white mb-1">Net Capital Recovery</h4>
+            <p class="text-xs text-neutral-400 leading-snug">
+              ₹3.85L/mo recovered capital per 10 client brand channels.
             </p>
           </div>
-          <div class="mt-3 pt-2.5 border-t border-neutral-800 text-[10px] font-mono text-emerald-400 font-bold flex items-center justify-between">
-            <span>SAVINGS / 10 CHANNELS</span>
-            <span class="text-emerald-400 font-bold">₹46L+ / YR</span>
+          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-emerald-400 flex items-center justify-between">
+            <span>RECOVERED</span>
+            <span>₹46L+ / YEAR</span>
           </div>
         </div>
 
-        <!-- Metric 4: 12.5x Media Velocity -->
-        <div class="bg-neutral-900 text-white p-4 lg:p-5 rounded-2xl shadow-xl flex flex-col justify-between border border-neutral-800">
+        <!-- Card 4: 12.5x Velocity Multiplier -->
+        <div class="bg-neutral-900/90 border border-neutral-800 p-5 rounded-2xl shadow-xl flex flex-col justify-between space-y-3 group hover:border-neutral-700 transition-all">
           <div>
-            <span class="text-[9px] font-mono text-yaas-yellow uppercase tracking-wider font-bold">MEDIA VELOCITY</span>
-            <div class="text-3xl sm:text-4xl font-display font-extrabold text-white my-1.5 tracking-tight">12.5x</div>
-            <h4 class="text-sm font-bold text-white mb-1">Output Multiplier</h4>
-            <p class="text-xs text-neutral-400 leading-relaxed">
-              Asset throughput multiplier at constant compute cost vs traditional linear video editing agencies, scaling to 1,000+ monthly assets programmatically.
+            <span class="text-[10px] font-mono text-yaas-yellow uppercase tracking-wider font-bold">MEDIA VELOCITY (Modeled)</span>
+            <div class="text-4xl sm:text-5xl font-display font-extrabold text-white my-2 tracking-tight">12.5x</div>
+            <h4 class="text-sm font-bold text-white mb-1">Asset Output Multiplier</h4>
+            <p class="text-xs text-neutral-400 leading-snug">
+              Throughput acceleration at constant compute budget vs manual timelines.
             </p>
           </div>
-          <div class="mt-3 pt-2.5 border-t border-neutral-800 text-[10px] font-mono text-yaas-yellow font-bold flex items-center justify-between">
-            <span>BENCHMARK: REMOTION</span>
+          <div class="pt-2 border-t border-neutral-800/80 text-[10px] font-mono text-neutral-400 flex items-center justify-between">
+            <span>CAPACITY</span>
             <span class="text-yaas-yellow font-bold">1,000+ CLIPS</span>
           </div>
         </div>
 
       </div>
+
+      <!-- Bottom Reference Footnote -->
+      <div class="p-3 rounded-xl bg-neutral-900/60 border border-neutral-800 flex items-center justify-between text-[11px] font-mono text-neutral-400">
+        <span class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-yaas-yellow"></span>
+          <span>CAPITAL EFFICIENCY: HIGH-LEVERAGE COMPUTE OVER LINEAR AGENCY PAYROLL</span>
+        </span>
+        <span class="text-neutral-500 hidden sm:inline">(Modeled on 10 Enterprise Brand Channels)</span>
+      </div>
+
     </div>
 
     <!-- Bottom Footer Strip -->
     <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-neutral-500 pt-2 border-t border-neutral-800 z-10 shrink-0 font-medium">
-      <span class="max-w-[28%] truncate">FRAMEWORK: ACCEPTANCE THRESHOLDS</span>
+      <span class="max-w-[28%] truncate">ANALYSIS: 10 ENTERPRISE CHANNELS</span>
       <div class="w-[300px] sm:w-[480px] lg:w-[560px] pointer-events-none shrink-0"></div>
-      <span class="text-right max-w-[28%] truncate">BOUNDED EMPIRICAL RECEIPTS</span>
+      <span class="text-right max-w-[28%] truncate text-neutral-400">STATUS: 85.5% NET CAPITAL RECOVERY</span>
     </div>
 
   </section>
@@ -1108,10 +969,10 @@
   <!-- SLIDE 6: FOUNDING OPERATOR & PROVENANCE (Crisp Off-White · Cognis 04)     -->
   <!-- ========================================================================= -->
   <section x-show="currentSlide === 6" x-transition.opacity.duration.300ms 
-           class="slide-canvas h-full w-full bg-canvas-light text-neutral-900 flex flex-col justify-between relative">
+           class="slide-canvas w-full bg-canvas-light text-neutral-900 flex flex-col justify-between relative">
     
     <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
-    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-1.5 z-10 shrink-0">
+    <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-1.5 z-10 shrink-0 h-[30px]">
       <div class="flex items-center gap-2.5">
         <div class="w-5 h-5 rounded bg-black flex items-center justify-center font-display font-black text-yaas-yellow text-[11px] shadow-sm">
           Æ
@@ -1119,7 +980,7 @@
         <div class="flex items-center gap-2">
           <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-neutral-900">Systems Operator Appendix</span>
           <span class="text-stone-300 font-mono">|</span>
-          <span class="text-[11px] font-mono text-stone-600">06 · Technical Implementation & Proof-of-Work</span>
+          <span class="text-[11px] font-mono text-stone-600">06 · Technical Provenance</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
@@ -1137,31 +998,41 @@
       </div>
     </div>
 
-    <!-- Main Content: De-Congested 2-Column Split (Cognis "Experienced Mentor" Style) -->
-    <div class="w-full max-w-[1600px] mx-auto space-y-3 lg:space-y-4 my-auto z-10 py-0">
+    <!-- Main Content: Editorial Mentor Split (Profile Card + 3 Shipped Receipts) -->
+    <div class="w-full max-w-[1600px] mx-auto space-y-4 my-auto z-10 py-3">
       <div>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold tracking-tight text-neutral-950 mb-1 leading-tight">
-          Technical Provenance: <br>
-          <span class="text-amber-600">Shipped Architectures & Grounded Receipts</span>
+        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-stone-100 border border-stone-200 text-neutral-800 text-[11px] font-mono mb-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-black"></span>
+          <span>06 · SHIPPED PROOF-OF-WORK RECEIPTS</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-neutral-950 leading-tight">
+          Technical <span class="text-amber-600">Provenance.</span>
         </h2>
-        <p class="text-xs sm:text-sm text-stone-600 max-w-3xl leading-relaxed">
+        <p class="text-xs sm:text-sm text-stone-600 max-w-3xl leading-relaxed mt-1">
           Production automation engines, upstream open-source PRs, and deterministic webhook pipelines backed by physical commits.
         </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-stretch">
         
-        <!-- Left Column (4 cols): Spacious Clean Profile Card (Cognis Style) -->
+        <!-- Left Column (4 cols): Editorial Profile Card -->
         <div class="lg:col-span-4 bg-white p-5 rounded-2xl border border-stone-200 shadow-md flex flex-col justify-between">
           <div>
-            <div class="flex items-center gap-3.5 mb-3">
-              <div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center font-display font-black text-yaas-yellow text-lg shadow-sm">
-                AS
+            <div class="flex items-center gap-3.5 mb-3.5">
+              <!-- Editorial Portrait Mask with SVG Fallback -->
+              <div class="w-14 h-14 rounded-2xl overflow-hidden bg-neutral-900 border border-stone-200 shadow-sm shrink-0 flex items-center justify-center">
+                <img src="assets/aeos_creator_editorial.jpg" 
+                     alt="Aman Suryavanshi" 
+                     class="w-full h-full object-cover object-top"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="hidden w-full h-full bg-black items-center justify-center font-display font-black text-yaas-yellow text-base">
+                  AS
+                </div>
               </div>
               <div>
                 <h3 class="text-lg font-display font-extrabold text-neutral-950">Aman Suryavanshi</h3>
                 <p class="text-xs font-mono text-amber-600 font-bold">Autonomous Systems Automator</p>
-                <p class="text-[11px] text-stone-500">Delhi NCR / Bengaluru · On-Site & Hybrid</p>
+                <p class="text-[11px] text-stone-500 font-mono">Delhi NCR / Bengaluru · On-Site & Hybrid</p>
               </div>
             </div>
 
@@ -1172,33 +1043,33 @@
             <div class="mt-4 p-3 bg-stone-50 rounded-xl border border-stone-200">
               <span class="text-[10px] font-mono text-amber-700 font-bold block uppercase mb-1">OPERATING VECTOR</span>
               <p class="text-xs text-stone-700 font-medium leading-snug">
-                Zero LeetCode trivia. 100% production shipping: AST validation, webhook queues, and programmatic React rendering.
+                Zero LeetCode trivia. 100% production shipping: AST validation, webhook queues, and programmatic React video.
               </p>
             </div>
           </div>
 
           <!-- Canonical Contact Coordinates -->
-          <div class="space-y-2 pt-3 border-t border-stone-100 mt-4">
+          <div class="space-y-2 pt-3 border-t border-stone-100 mt-4 font-mono">
             <div class="flex flex-wrap items-center gap-2">
-              <a href="https://amansuryavanshi.me" target="_blank" class="px-2.5 py-1 rounded-lg bg-stone-100 hover:bg-stone-200 border border-stone-200 text-[11px] font-mono text-neutral-900 font-semibold transition-all">
+              <a href="https://amansuryavanshi.me/" target="_blank" class="px-2.5 py-1 rounded-lg bg-stone-100 hover:bg-stone-200 border border-stone-200 text-[11px] text-neutral-900 font-semibold transition-all">
                 amansuryavanshi.me
               </a>
-              <a href="https://github.com/AmanSuryavanshi-1" target="_blank" class="px-2.5 py-1 rounded-lg bg-stone-100 hover:bg-stone-200 border border-stone-200 text-[11px] font-mono text-neutral-900 font-semibold transition-all">
+              <a href="https://github.com/AmanSuryavanshi-1" target="_blank" class="px-2.5 py-1 rounded-lg bg-stone-100 hover:bg-stone-200 border border-stone-200 text-[11px] text-neutral-900 font-semibold transition-all">
                 GitHub
               </a>
-              <a href="https://www.linkedin.com/in/amansuryavanshi-ai/" target="_blank" class="px-2.5 py-1 rounded-lg bg-stone-100 hover:bg-stone-200 border border-stone-200 text-[11px] font-mono text-neutral-900 font-semibold transition-all">
+              <a href="https://www.linkedin.com/in/amansuryavanshi-ai/" target="_blank" class="px-2.5 py-1 rounded-lg bg-stone-100 hover:bg-stone-200 border border-stone-200 text-[11px] text-neutral-900 font-semibold transition-all">
                 LinkedIn
               </a>
             </div>
 
-            <div class="flex items-center justify-between text-[11px] font-mono text-stone-600 pt-1">
+            <div class="flex items-center justify-between text-[11px] text-stone-600 pt-1">
               <span class="text-neutral-900 font-bold">amansurya.work@gmail.com</span>
               <span>+91-8745030106</span>
             </div>
           </div>
         </div>
 
-        <!-- Right Column (8 cols): 3 Spacious Horizontal Receipt Rows (Cognis Top Courses Style) -->
+        <!-- Right Column (8 cols): 3 Clean Proof-of-Work Receipts (Explicitly Tagged (Shipped)) -->
         <div class="lg:col-span-8 space-y-3 flex flex-col justify-between">
           
           <!-- Receipt 1: OmniPost-Core -->
@@ -1211,7 +1082,7 @@
             <div class="flex-1 min-w-0">
               <div class="flex items-baseline justify-between mb-0.5">
                 <h4 class="text-sm font-bold text-neutral-950 leading-tight">OmniPost Automation Engine</h4>
-                <span class="text-xs font-mono font-bold text-cognis-orange">122 NODES · FASTMCP</span>
+                <span class="text-xs font-mono font-bold text-cognis-orange">122 NODES · FASTMCP (Shipped)</span>
               </div>
               <p class="text-xs text-stone-600 leading-snug">
                 122-node production n8n automation engine, FastMCP protocol gateways on port 3010, structured JSON schemas, and automated Dead Letter Queues (DLQs).
@@ -1229,7 +1100,7 @@
             <div class="flex-1 min-w-0">
               <div class="flex items-baseline justify-between mb-0.5">
                 <h4 class="text-sm font-bold text-neutral-950 leading-tight">notebooklm-py (PR #276 Merged)</h4>
-                <span class="text-xs font-mono font-bold text-cognis-purple">16.5K★ REPO · 24 FILES</span>
+                <span class="text-xs font-mono font-bold text-cognis-purple">16.5k★ REPO · 24 FILES (Shipped)</span>
               </div>
               <p class="text-xs text-stone-600 leading-snug">
                 Merged upstream PR refactoring async HTTPX sessions, cookie rotation, and Windows asyncio event loop concurrency across 24 files with zero socket leaks.
@@ -1247,7 +1118,7 @@
             <div class="flex-1 min-w-0">
               <div class="flex items-baseline justify-between mb-0.5">
                 <h4 class="text-sm font-bold text-neutral-950 leading-tight">Aviators Training Centre (ATC)</h4>
-                <span class="text-xs font-mono font-bold text-amber-700">1,000+ RUNS · 99.7%</span>
+                <span class="text-xs font-mono font-bold text-amber-700">1,000+ RUNS · 99.7% (Shipped)</span>
               </div>
               <p class="text-xs text-stone-600 leading-snug">
                 3-layer HMAC SHA-256 webhook validator, Notion CMS 8 relational databases with 0.67 req/s semaphore throttle, 99.7% execution reliability across 1,000+ bookings.
@@ -1264,7 +1135,7 @@
     <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-stone-500 pt-2 border-t border-stone-200 z-10 shrink-0 font-medium">
       <span class="max-w-[28%] truncate">SOURCE: PHYSICAL CODEBASE COMMITS</span>
       <div class="w-[300px] sm:w-[480px] lg:w-[560px] pointer-events-none shrink-0"></div>
-      <span class="text-right max-w-[28%] truncate">VERIFIED DEPLOYMENTS: DELPHI NCR / BLR</span>
+      <span class="text-right max-w-[28%] truncate font-mono">VERIFIED OPERATOR: AMAN SURYAVANSHI · DELHI NCR / BLR</span>
     </div>
 
   </section>
