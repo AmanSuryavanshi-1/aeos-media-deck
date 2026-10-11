@@ -243,104 +243,99 @@
       </div>
     </div>
 
-    <!-- Main Content: Balanced 6/6 Executive Split (Solvanta KPI Bento + shadcn Radial Gauge Card) -->
-    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center my-auto z-10 py-1 sm:py-2">
+    <!-- Main Content: Balanced 6/6 Executive Split with Locked Column Heights (items-stretch) -->
+    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-stretch my-auto z-10 py-1 sm:py-2">
       
-      <!-- Left Column (6 cols): Commanding Typography + Solvanta-Style Bento KPI Cards -->
-      <div class="lg:col-span-6 space-y-3 sm:space-y-4">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D2B22] border border-[#1E4E40] text-lime-400 text-[10px] font-mono shadow-sm">
-          <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
-          <span>01 · THE ATTENTION ECONOMY</span>
+      <!-- Left Column (6 cols): Commanding Typography + Editorial Axiom + 3 Bento KPI Cards (Height-Locked to Right Column) -->
+      <div class="lg:col-span-6 flex flex-col justify-between space-y-3 sm:space-y-4">
+        
+        <!-- Top Editorial Block -->
+        <div class="space-y-3 sm:space-y-3.5">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D2B22] border border-[#1E4E40] text-lime-400 text-[10px] font-mono shadow-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
+            <span>01 · THE ATTENTION ECONOMY</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-display font-extrabold tracking-[-0.03em] text-white leading-[1.03]">
+            Attention is <br class="hidden sm:inline">
+            <span class="text-lime-400">the Only Moat.</span>
+          </h1>
+          
+          <p class="text-xs sm:text-sm text-pine-200 max-w-xl font-normal leading-relaxed">
+            Paid ad CAC is breaking brand unit economics. Enterprise brands must escape linear ad spend by becoming autonomous media engines.
+          </p>
+
+          <!-- Borderless Editorial Pull-Quote (Zero Rectangular Clutter) -->
+          <div class="border-l-2 border-lime-400 pl-3.5 py-0.5 space-y-0.5 max-w-xl">
+            <div class="text-[10px] font-mono text-lime-400 font-bold uppercase tracking-widest">
+              THE AEOS OPERATING AXIOM · ZERO CAC DRAG
+            </div>
+            <p class="text-xs sm:text-[13px] text-white/95 font-medium italic">
+              "Attention is the only durable moat as technology commoditizes."
+            </p>
+          </div>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-display font-extrabold tracking-[-0.03em] text-white leading-[1.03]">
-          Attention is <br class="hidden sm:inline">
-          <span class="text-lime-400">the Only Moat.</span>
-        </h1>
-        
-        <p class="text-xs sm:text-sm text-pine-200 max-w-xl font-normal leading-relaxed">
-          Paid ad CAC is breaking brand unit economics. Enterprise brands must escape linear ad spend by becoming autonomous media engines.
-        </p>
-
-        <!-- Solvanta / Mavence Architectural KPI Bento Triad -->
-        <div class="pt-1 grid grid-cols-3 gap-2.5 sm:gap-3">
+        <!-- Bottom Solvanta / Mavence Architectural KPI Bento Triad (Aligned to Bottom of Right Card) -->
+        <div class="grid grid-cols-3 gap-3 sm:gap-3.5 pt-1">
           
           <!-- Stat Card 1: 1B+ -->
-          <div class="bg-gradient-to-b from-[#12362B] to-[#0B231C] border border-[#215243] rounded-xl p-3 sm:p-3.5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] flex flex-col justify-between">
-            <div class="flex items-center justify-between text-[9px] font-mono text-pine-300 uppercase tracking-wider">
+          <div class="bg-gradient-to-b from-[#133A2E] via-[#0E2D24] to-[#0A211A] border border-[#245948] rounded-2xl p-3.5 sm:p-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14),0_16px_30px_-10px_rgba(0,0,0,0.5)] flex flex-col justify-between min-h-[112px] sm:min-h-[120px]">
+            <div class="flex items-center justify-between text-[9.5px] font-mono text-pine-200 uppercase tracking-wider font-semibold">
               <span>REACH (Modeled)</span>
               <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
-            <div class="text-2xl sm:text-3xl lg:text-[34px] font-display font-extrabold text-white tracking-tight leading-none my-1.5">1B+</div>
-            <div class="text-[9.5px] text-pine-300 font-mono truncate">YAAS Public Footprint</div>
+            <div class="text-2xl sm:text-3xl lg:text-[36px] font-display font-extrabold text-white tracking-tight leading-none my-1.5">1B+</div>
+            <div class="text-[10px] text-pine-300 font-mono truncate">YAAS Public Footprint</div>
           </div>
 
           <!-- Stat Card 2: 70+ -->
-          <div class="bg-gradient-to-b from-[#12362B] to-[#0B231C] border border-[#215243] rounded-xl p-3 sm:p-3.5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] flex flex-col justify-between">
-            <div class="flex items-center justify-between text-[9px] font-mono text-pine-300 uppercase tracking-wider">
+          <div class="bg-gradient-to-b from-[#133A2E] via-[#0E2D24] to-[#0A211A] border border-[#245948] rounded-2xl p-3.5 sm:p-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14),0_16px_30px_-10px_rgba(0,0,0,0.5)] flex flex-col justify-between min-h-[112px] sm:min-h-[120px]">
+            <div class="flex items-center justify-between text-[9.5px] font-mono text-pine-200 uppercase tracking-wider font-semibold">
               <span>CHANNELS</span>
               <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
             </div>
-            <div class="text-2xl sm:text-3xl lg:text-[34px] font-display font-extrabold text-white tracking-tight leading-none my-1.5">70+</div>
-            <div class="text-[9.5px] text-pine-300 font-mono truncate">Zoho · Cleartrip · Zerodha</div>
+            <div class="text-2xl sm:text-3xl lg:text-[36px] font-display font-extrabold text-white tracking-tight leading-none my-1.5">70+</div>
+            <div class="text-[10px] text-pine-300 font-mono truncate">Zoho · Cleartrip · Zerodha</div>
           </div>
 
-          <!-- Stat Card 3: 1,000+ (Solid Electric Lime Solvanta Hero Tile) -->
-          <div class="bg-lime-400 text-pine-950 border border-lime-300 rounded-xl p-3 sm:p-3.5 shadow-[0_10px_25px_rgba(198,255,61,0.18)] flex flex-col justify-between">
-            <div class="flex items-center justify-between text-[9px] font-mono text-pine-950 font-extrabold uppercase tracking-wider">
+          <!-- Stat Card 3: 1,000+ (Solid Electric Lime Hero Tile) -->
+          <div class="bg-gradient-to-b from-lime-300 via-lime-400 to-lime-500 text-pine-950 border-2 border-lime-200 rounded-2xl p-3.5 sm:p-4 shadow-[0_16px_32px_-8px_rgba(198,255,61,0.28)] flex flex-col justify-between min-h-[112px] sm:min-h-[120px]">
+            <div class="flex items-center justify-between text-[9.5px] font-mono text-pine-950 font-extrabold uppercase tracking-wider">
               <span>TARGET FLEET</span>
               <svg class="w-3.5 h-3.5 text-pine-950 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
-            <div class="text-2xl sm:text-3xl lg:text-[34px] font-display font-black text-pine-950 tracking-tight leading-none my-1.5">1,000+</div>
-            <div class="text-[9.5px] text-pine-900 font-mono font-bold truncate">Monthly Remotion Clips</div>
+            <div class="text-2xl sm:text-3xl lg:text-[36px] font-display font-black text-pine-950 tracking-tight leading-none my-1.5">1,000+</div>
+            <div class="text-[10px] text-pine-900 font-mono font-bold truncate">Monthly Remotion Clips</div>
           </div>
 
         </div>
 
-        <!-- Executive Thesis Shift Strip (shadcn Alert Card Pattern) -->
-        <div class="pt-0.5">
-          <div class="p-3 sm:p-3.5 rounded-xl bg-gradient-to-r from-[#0E2B22] to-[#0A2019] border border-[#1E4E40] flex items-center justify-between gap-3 shadow-lg">
-            <div class="flex items-center gap-3 min-w-0">
-              <div class="w-8 h-8 rounded-lg bg-lime-400/15 border border-lime-400/40 flex items-center justify-center text-lime-400 shrink-0">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-              </div>
-              <div class="min-w-0">
-                <div class="text-[10px] font-mono text-lime-400 font-bold uppercase tracking-wider">THE AEOS OPERATING AXIOM</div>
-                <p class="text-xs text-white font-medium truncate">
-                  "Attention is the only durable moat as technology commoditizes."
-                </p>
-              </div>
-            </div>
-            <span class="hidden sm:inline-flex items-center px-2.5 py-1 rounded-md bg-pine-950 border border-pine-750 text-[10px] font-mono text-emerald-300 font-bold shrink-0">
-              ZERO CAC DRAG
-            </span>
-          </div>
-        </div>
       </div>
 
-      <!-- Right Column (6 cols): shadcn RadialBarChart + Circular SVG Icon Hub -->
-      <div class="lg:col-span-6 bg-gradient-to-b from-[#103127] via-[#0B231C] to-[#081B15] p-4 sm:p-5 rounded-2xl border border-[#215243] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12),0_25px_50px_-12px_rgba(0,0,0,0.6)] flex flex-col justify-between relative overflow-hidden">
+      <!-- Right Column (6 cols): shadcn RadialBarChart with Circular Orbital Icon Nodes (Zero Nested Rectangles) -->
+      <div class="lg:col-span-6 bg-gradient-to-b from-[#133A2E] via-[#0C261E] to-[#081B15] p-4 sm:p-5 rounded-2xl border border-[#245948] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14),0_25px_50px_-12px_rgba(0,0,0,0.6)] flex flex-col justify-between relative overflow-hidden">
         
         <!-- Subtle Dot Grid Backdrop inside Card -->
         <div class="absolute inset-0 cognis-dash-pattern-dark opacity-25 pointer-events-none"></div>
 
         <!-- shadcn CardHeader -->
-        <div class="flex items-start justify-between border-b border-[#1C4639] pb-2.5 z-10">
+        <div class="flex items-start justify-between border-b border-[#1E4D3E] pb-2.5 z-10">
           <div>
             <div class="flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-lime-400"></span>
               <h3 class="text-xs sm:text-sm font-display font-bold text-white tracking-tight uppercase">Autonomous Throughput Radial Gauge</h3>
             </div>
-            <p class="text-[10px] font-mono text-pine-300 mt-0.5">Remotion React AST Fleet vs. Manual Agency Keyframing</p>
+            <p class="text-[10px] font-mono text-pine-200 mt-0.5">Remotion React AST Fleet vs. Manual Agency Keyframing</p>
           </div>
-          <span class="text-pine-950 font-mono text-[10px] font-extrabold bg-lime-400 px-2.5 py-1 rounded-md shadow-sm shrink-0">
+          <span class="text-pine-950 font-mono text-[10px] font-extrabold bg-lime-400 px-2.5 py-1 rounded-full shadow-sm shrink-0">
             12.5× MULTIPLIER
           </span>
         </div>
 
-        <!-- shadcn CardContent: Thick Concentric Radial Bar Chart + 4 SVG Icon Callout Nodes -->
-        <div class="w-full flex justify-center items-center py-1.5 z-10 relative">
-          <svg class="w-full max-w-[500px] h-[238px] sm:h-[246px] overflow-visible" viewBox="0 0 520 260" fill="none">
+        <!-- shadcn CardContent: Concentric Radial Bar Chart + 4 Circular Orbital Icon Nodes (Zero Box Clutter) -->
+        <div class="w-full flex justify-center items-center py-1 z-10 relative my-auto">
+          <svg class="w-full max-w-[500px] h-[225px] sm:h-[236px] overflow-visible" viewBox="0 0 520 250" fill="none">
             <defs>
               <linearGradient id="radialLime" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="#C6FF3D" />
@@ -359,127 +354,123 @@
               </filter>
             </defs>
 
-            <!-- Outer Guide Ring & Axis Ticks (cx=260, cy=130, r=112 -> spans x=148..372) -->
-            <circle cx="260" cy="130" r="112" stroke="#1E4D3E" stroke-width="1.2" stroke-dasharray="3 3" />
-            <line x1="260" y1="12" x2="260" y2="20" stroke="#286452" stroke-width="1.5" />
-            <line x1="260" y1="240" x2="260" y2="248" stroke="#286452" stroke-width="1.5" />
-            <line x1="142" y1="130" x2="148" y2="130" stroke="#286452" stroke-width="1.5" />
-            <line x1="372" y1="130" x2="378" y2="130" stroke="#286452" stroke-width="1.5" />
+            <!-- Outer Guide Ring & Axis Ticks (cx=260, cy=125, r=108 -> spans x=152..368) -->
+            <circle cx="260" cy="125" r="108" stroke="#1E4D3E" stroke-width="1.2" stroke-dasharray="3 3" />
+            <line x1="260" y1="11" x2="260" y2="17" stroke="#286452" stroke-width="1.5" />
+            <line x1="260" y1="233" x2="260" y2="239" stroke="#286452" stroke-width="1.5" />
+            <line x1="146" y1="125" x2="152" y2="125" stroke="#286452" stroke-width="1.5" />
+            <line x1="368" y1="125" x2="374" y2="125" stroke="#286452" stroke-width="1.5" />
 
             <!-- ========================================================= -->
-            <!-- RING 1 (OUTER): 1,000+ Assets/Mo (r=95, C=596.9)          -->
+            <!-- RING 1 (OUTER): 1,000+ Assets/Mo (r=92, C=578.1)          -->
             <!-- ========================================================= -->
-            <circle cx="260" cy="130" r="95" stroke="#153B2F" stroke-width="15" />
-            <circle cx="260" cy="130" r="95" stroke="url(#radialLime)" stroke-width="15"
-                    stroke-dasharray="505 596.9" stroke-dashoffset="0" stroke-linecap="round"
-                    transform="rotate(-90 260 130)" filter="url(#radialGlow)" />
+            <circle cx="260" cy="125" r="92" stroke="#163E31" stroke-width="14" />
+            <circle cx="260" cy="125" r="92" stroke="url(#radialLime)" stroke-width="14"
+                    stroke-dasharray="488 578.1" stroke-dashoffset="0" stroke-linecap="round"
+                    transform="rotate(-90 260 125)" filter="url(#radialGlow)" />
 
             <!-- ========================================================= -->
-            <!-- RING 2 (MIDDLE): 70+ Brand Channels (r=74, C=464.9)       -->
+            <!-- RING 2 (MIDDLE): 70+ Brand Channels (r=72, C=452.4)       -->
             <!-- ========================================================= -->
-            <circle cx="260" cy="130" r="74" stroke="#153B2F" stroke-width="14" />
-            <circle cx="260" cy="130" r="74" stroke="url(#radialEmerald)" stroke-width="14"
-                    stroke-dasharray="355 464.9" stroke-dashoffset="0" stroke-linecap="round"
-                    transform="rotate(-90 260 130)" />
+            <circle cx="260" cy="125" r="72" stroke="#163E31" stroke-width="13" />
+            <circle cx="260" cy="125" r="72" stroke="url(#radialEmerald)" stroke-width="13"
+                    stroke-dasharray="345 452.4" stroke-dashoffset="0" stroke-linecap="round"
+                    transform="rotate(-90 260 125)" />
 
             <!-- ========================================================= -->
-            <!-- RING 3 (INNER): 80-100 Manual Baseline (r=54, C=339.3)    -->
+            <!-- RING 3 (INNER): 80-100 Manual Baseline (r=52, C=326.7)    -->
             <!-- ========================================================= -->
-            <circle cx="260" cy="130" r="54" stroke="#153B2F" stroke-width="13" />
-            <circle cx="260" cy="130" r="54" stroke="url(#radialAmber)" stroke-width="13"
-                    stroke-dasharray="95 339.3" stroke-dashoffset="0" stroke-linecap="round"
-                    transform="rotate(-90 260 130)" />
+            <circle cx="260" cy="125" r="52" stroke="#163E31" stroke-width="12" />
+            <circle cx="260" cy="125" r="52" stroke="url(#radialAmber)" stroke-width="12"
+                    stroke-dasharray="92 326.7" stroke-dashoffset="0" stroke-linecap="round"
+                    transform="rotate(-90 260 125)" />
 
             <!-- ========================================================= -->
-            <!-- CENTER CORE: Crisp shadcn Radial Readout (r=38)           -->
+            <!-- CENTER CORE: Crisp shadcn Radial Readout (r=36)           -->
             <!-- ========================================================= -->
-            <circle cx="260" cy="130" r="38" fill="#061914" stroke="#286452" stroke-width="1.5" />
-            <text x="260" y="125" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="19" font-weight="900" fill="#C6FF3D">12.5×</text>
-            <text x="260" y="138" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#D5E6E0" letter-spacing="0.8">OUTPUT</text>
-            <text x="260" y="148" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="6.5" font-weight="600" fill="#7EAB9C">SCALE</text>
+            <circle cx="260" cy="125" r="36" fill="#061914" stroke="#286452" stroke-width="1.5" />
+            <text x="260" y="120" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="18.5" font-weight="900" fill="#C6FF3D">12.5×</text>
+            <text x="260" y="133" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#D5E6E0" letter-spacing="0.8">OUTPUT</text>
+            <text x="260" y="143" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="6.5" font-weight="600" fill="#7EAB9C">SCALE</text>
 
             <!-- ========================================================= -->
-            <!-- 4 ORBITING SHADCN ICON CALLOUT CARDS (ZERO OVERLAP)       -->
+            <!-- 4 CIRCULAR ORBITAL ICON NODES (ZERO RECTANGLES)           -->
             <!-- ========================================================= -->
 
-            <!-- Leader Line 1: Top-Left (Inner Amber Ring -> Manual Baseline) -->
-            <polyline points="260,76 205,40 138,40" stroke="#F59E0B" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
-            <circle cx="260" cy="76" r="3.5" fill="#FBBF24" />
-            <!-- Top-Left Badge Card (x=2..138) -->
-            <g transform="translate(2, 14)">
-              <rect x="0" y="0" width="136" height="52" rx="10" fill="#071D17" stroke="#F59E0B" stroke-opacity="0.55" stroke-width="1.2" />
-              <rect x="8" y="11" width="28" height="28" rx="7" fill="#F59E0B" fill-opacity="0.16" />
-              <!-- Clock SVG Icon -->
-              <circle cx="22" cy="25" r="7" stroke="#FBBF24" stroke-width="1.6" fill="none" />
-              <polyline points="22,21 22,25 25,27" stroke="#FBBF24" stroke-width="1.6" stroke-linecap="round" fill="none" />
-              <text x="42" y="21" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#FBBF24">MANUAL BASELINE</text>
-              <text x="42" y="35" font-family="'Space Grotesk', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">80–100 <tspan font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="#A9CCC0">/mo</tspan></text>
-              <text x="42" y="45" font-family="'JetBrains Mono', monospace" font-size="7" fill="#7EAB9C">4–8h / clip drag</text>
+            <!-- Orbital Node 1: Top-Left (Inner Amber Ring -> Manual Baseline) -->
+            <polyline points="260,73 202,42 136,42" stroke="#F59E0B" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
+            <circle cx="260" cy="73" r="3.5" fill="#FBBF24" />
+            <g transform="translate(8, 16)">
+              <!-- Circular Icon Medallion -->
+              <circle cx="20" cy="24" r="17" fill="#09221B" stroke="#FBBF24" stroke-width="1.5" />
+              <circle cx="20" cy="24" r="7" stroke="#FBBF24" stroke-width="1.6" fill="none" />
+              <polyline points="20,20 20,24 23,26" stroke="#FBBF24" stroke-width="1.6" stroke-linecap="round" fill="none" />
+              <!-- Borderless Floating Readout -->
+              <text x="45" y="16" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#FBBF24" letter-spacing="0.4">MANUAL BASELINE</text>
+              <text x="45" y="31" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">80–100 <tspan font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="500" fill="#A9CCC0">/mo</tspan></text>
+              <text x="45" y="42" font-family="'JetBrains Mono', monospace" font-size="7.5" fill="#7EAB9C">4–8h / clip drag</text>
             </g>
 
-            <!-- Leader Line 2: Top-Right (Outer Lime Ring -> Scale Ceiling) -->
-            <polyline points="327,63 356,40 382,40" stroke="#C6FF3D" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
-            <circle cx="327" cy="63" r="4" fill="#C6FF3D" />
-            <!-- Top-Right Badge Card (x=382..518, Highlighted Lime Border) -->
-            <g transform="translate(382, 14)">
-              <rect x="0" y="0" width="136" height="52" rx="10" fill="#0D2E24" stroke="#C6FF3D" stroke-width="1.4" />
-              <rect x="8" y="11" width="28" height="28" rx="7" fill="#C6FF3D" />
-              <!-- Video / Remotion AST Icon -->
-              <polygon points="19,20 27,25 19,30" fill="#061914" />
-              <text x="42" y="21" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="800" fill="#C6FF3D">SCALE CEILING</text>
-              <text x="42" y="35" font-family="'Space Grotesk', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">1,000+ <tspan font-family="'JetBrains Mono', monospace" font-size="8" font-weight="600" fill="#C6FF3D">/mo</tspan></text>
-              <text x="42" y="45" font-family="'JetBrains Mono', monospace" font-size="7" fill="#A9CCC0">Remotion AST</text>
+            <!-- Orbital Node 2: Top-Right (Outer Lime Ring -> Scale Ceiling) -->
+            <polyline points="325,60 356,42 384,42" stroke="#C6FF3D" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
+            <circle cx="325" cy="60" r="4" fill="#C6FF3D" />
+            <g transform="translate(388, 16)">
+              <!-- Solid Lime Circular Medallion -->
+              <circle cx="20" cy="24" r="17" fill="#C6FF3D" />
+              <polygon points="17,19 26,24 17,29" fill="#061914" />
+              <!-- Borderless Floating Readout -->
+              <text x="45" y="16" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="800" fill="#C6FF3D" letter-spacing="0.4">SCALE CEILING</text>
+              <text x="45" y="31" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">1,000+ <tspan font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600" fill="#C6FF3D">/mo</tspan></text>
+              <text x="45" y="42" font-family="'JetBrains Mono', monospace" font-size="7.5" fill="#A9CCC0">Remotion AST Fleet</text>
             </g>
 
-            <!-- Leader Line 3: Bottom-Left (Middle Emerald Ring -> 70+ Brands) -->
-            <polyline points="186,130 162,214 138,214" stroke="#10B981" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
-            <circle cx="186" cy="130" r="3.5" fill="#34D399" />
-            <!-- Bottom-Left Badge Card (x=2..138) -->
-            <g transform="translate(2, 188)">
-              <rect x="0" y="0" width="136" height="52" rx="10" fill="#071D17" stroke="#10B981" stroke-opacity="0.55" stroke-width="1.2" />
-              <rect x="8" y="11" width="28" height="28" rx="7" fill="#10B981" fill-opacity="0.16" />
-              <!-- Network Nodes SVG Icon -->
-              <circle cx="18" cy="25" r="2.5" stroke="#34D399" stroke-width="1.5" fill="none" />
-              <circle cx="26" cy="20" r="2.5" stroke="#34D399" stroke-width="1.5" fill="none" />
-              <circle cx="26" cy="30" r="2.5" stroke="#34D399" stroke-width="1.5" fill="none" />
-              <line x1="20" y1="24" x2="24" y2="21" stroke="#34D399" stroke-width="1.3" />
-              <line x1="20" y1="26" x2="24" y2="29" stroke="#34D399" stroke-width="1.3" />
-              <text x="42" y="21" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#34D399">ACTIVE NETWORK</text>
-              <text x="42" y="35" font-family="'Space Grotesk', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">70+ <tspan font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="#A9CCC0">Brands</tspan></text>
-              <text x="42" y="45" font-family="'JetBrains Mono', monospace" font-size="7" fill="#7EAB9C">10-Platform Sync</text>
+            <!-- Orbital Node 3: Bottom-Left (Middle Emerald Ring -> 70+ Brands) -->
+            <polyline points="188,125 164,204 136,204" stroke="#10B981" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
+            <circle cx="188" cy="125" r="3.5" fill="#34D399" />
+            <g transform="translate(8, 178)">
+              <!-- Circular Emerald Medallion -->
+              <circle cx="20" cy="24" r="17" fill="#09221B" stroke="#34D399" stroke-width="1.5" />
+              <circle cx="16" cy="24" r="2.5" stroke="#34D399" stroke-width="1.5" fill="none" />
+              <circle cx="24" cy="19" r="2.5" stroke="#34D399" stroke-width="1.5" fill="none" />
+              <circle cx="24" cy="29" r="2.5" stroke="#34D399" stroke-width="1.5" fill="none" />
+              <line x1="18" y1="23" x2="22" y2="20" stroke="#34D399" stroke-width="1.3" />
+              <line x1="18" y1="25" x2="22" y2="28" stroke="#34D399" stroke-width="1.3" />
+              <!-- Borderless Floating Readout -->
+              <text x="45" y="16" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#34D399" letter-spacing="0.4">ACTIVE NETWORK</text>
+              <text x="45" y="31" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">70+ <tspan font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="500" fill="#A9CCC0">Brands</tspan></text>
+              <text x="45" y="42" font-family="'JetBrains Mono', monospace" font-size="7.5" fill="#7EAB9C">10-Platform Sync</text>
             </g>
 
-            <!-- Leader Line 4: Bottom-Right (Outer Ring -> <45s Render Speed) -->
-            <polyline points="327,197 356,214 382,214" stroke="#C6FF3D" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
-            <circle cx="327" cy="197" r="3.5" fill="#C6FF3D" />
-            <!-- Bottom-Right Badge Card (x=382..518) -->
-            <g transform="translate(382, 188)">
-              <rect x="0" y="0" width="136" height="52" rx="10" fill="#071D17" stroke="#286452" stroke-width="1.2" />
-              <rect x="8" y="11" width="28" height="28" rx="7" fill="#C6FF3D" fill-opacity="0.16" />
-              <!-- Bolt / Speed SVG Icon -->
-              <polygon points="23,18 17,26 22,26 21,32 27,24 22,24" fill="#C6FF3D" />
-              <text x="42" y="21" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#C6FF3D">RENDER LATENCY</text>
-              <text x="42" y="35" font-family="'Space Grotesk', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">&lt;45s <tspan font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="#A9CCC0">/clip</tspan></text>
-              <text x="42" y="45" font-family="'JetBrains Mono', monospace" font-size="7" fill="#7EAB9C">99.7% Reliability</text>
+            <!-- Orbital Node 4: Bottom-Right (Outer Ring -> <45s Render Speed) -->
+            <polyline points="325,190 356,204 384,204" stroke="#C6FF3D" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
+            <circle cx="325" cy="190" r="3.5" fill="#C6FF3D" />
+            <g transform="translate(388, 178)">
+              <!-- Circular Lime-Teal Medallion -->
+              <circle cx="20" cy="24" r="17" fill="#09221B" stroke="#C6FF3D" stroke-width="1.5" />
+              <polygon points="21,17 15,25 20,25 19,31 25,23 20,23" fill="#C6FF3D" />
+              <!-- Borderless Floating Readout -->
+              <text x="45" y="16" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#C6FF3D" letter-spacing="0.4">RENDER LATENCY</text>
+              <text x="45" y="31" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">&lt;45s <tspan font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="500" fill="#A9CCC0">/clip</tspan></text>
+              <text x="45" y="42" font-family="'JetBrains Mono', monospace" font-size="7.5" fill="#7EAB9C">99.7% Reliability</text>
             </g>
 
           </svg>
         </div>
 
         <!-- shadcn CardFooter: Clean Legend & Telemetry Status -->
-        <div class="pt-2.5 border-t border-[#1C4639] flex items-center justify-between text-[10px] font-mono z-10">
+        <div class="pt-2.5 border-t border-[#1E4D3E] flex items-center justify-between text-[10px] font-mono z-10">
           <div class="flex items-center gap-3">
             <span class="flex items-center gap-1.5 text-amber-400 font-semibold">
-              <span class="w-2 h-2 rounded-sm bg-amber-400"></span> Manual (80–100)
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span> Manual (80–100)
             </span>
             <span class="flex items-center gap-1.5 text-emerald-400 font-semibold">
-              <span class="w-2 h-2 rounded-sm bg-emerald-400"></span> Network (70+ Ch)
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Network (70+ Ch)
             </span>
             <span class="flex items-center gap-1.5 text-lime-400 font-bold">
-              <span class="w-2 h-2 rounded-sm bg-lime-400"></span> Aeos AST (1,000+)
+              <span class="w-2 h-2 rounded-full bg-lime-400"></span> Aeos AST (1,000+)
             </span>
           </div>
-          <span class="text-pine-300 hidden sm:inline font-bold">ACK: &lt;1.2s</span>
+          <span class="text-pine-200 hidden sm:inline font-bold">ACK: &lt;1.2s</span>
         </div>
 
       </div>
@@ -503,7 +494,7 @@
 
 
   <!-- ========================================================================= -->
-  <!-- SLIDE 2: STRUCTURAL CONTRAST (Crisp Off-White Canvas · Cognis Layout)     -->
+  <!-- SLIDE 2: STRUCTURAL CONTRAST (Harmonized Deep Pine & Emerald Palette)     -->
   <!-- ========================================================================= -->
   <section x-show="currentSlide === 2" x-transition.opacity.duration.300ms 
            class="slide-canvas w-full bg-canvas-light text-neutral-900 flex flex-col justify-between relative">
@@ -535,69 +526,71 @@
       </div>
     </div>
 
-    <!-- Main Content: Solvanta / Agro Minimalist Split -->
-    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center my-auto z-10 py-2">
+    <!-- Main Content: Harmonized Deep Pine & Emerald Split (Matching Slide 4 Color Scheme) -->
+    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-stretch my-auto z-10 py-2">
       
-      <!-- Left Column (5 cols): Clear Problem Statement & 3 Clean Horizontal Metric Bars -->
-      <div class="lg:col-span-5 space-y-3">
-        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-stone-100 border border-stone-200 text-neutral-800 text-[11px] font-mono">
-          <span class="w-1.5 h-1.5 rounded-full bg-pine-950"></span>
-          <span>02 · THE BOTTLENECK</span>
+      <!-- Left Column (5 cols): Clear Problem Statement & 3 Harmonized Metric Bars -->
+      <div class="lg:col-span-5 flex flex-col justify-between space-y-3">
+        <div class="space-y-2.5">
+          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-stone-100 border border-stone-200 text-neutral-800 text-[11px] font-mono">
+            <span class="w-1.5 h-1.5 rounded-full bg-pine-950"></span>
+            <span>02 · THE BOTTLENECK</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-neutral-950 leading-tight">
+            The Headcount <br class="hidden sm:inline">
+            <span class="text-pine-800">Ceiling.</span>
+          </h2>
+          
+          <p class="text-xs sm:text-sm text-stone-600 max-w-lg leading-relaxed">
+            Linear agencies scale payroll, not output. Manual Premiere keyframing caps capacity at ~80 monthly clips.
+          </p>
         </div>
 
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-neutral-950 leading-tight">
-          The Headcount <br class="hidden sm:inline">
-          <span class="text-amber-600">Ceiling.</span>
-        </h2>
-        
-        <p class="text-xs sm:text-sm text-stone-600 max-w-lg leading-relaxed">
-          Linear agencies scale payroll, not output. Manual Premiere keyframing caps capacity at ~80 monthly clips.
-        </p>
-
-        <!-- 3 Minimalist Agro / Solvanta Horizontal Metric Bars -->
-        <div class="space-y-2.5 pt-1 max-w-lg">
+        <!-- 3 Minimalist Metric Bars (Deep Pine, Forest Emerald, Emerald-Teal matching Slide 4) -->
+        <div class="space-y-2.5 pt-1">
           
-          <!-- Bar 1: 50% Timeline Assembly (Dark Charcoal matching Donut Slice 1) -->
+          <!-- Bar 1: 50% Timeline Assembly (Deep Pine #061914) -->
           <div class="bg-white p-3 rounded-xl border border-stone-200/90 shadow-sm space-y-1.5">
             <div class="flex items-baseline justify-between text-xs font-mono">
-              <span class="font-bold text-neutral-900 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-neutral-900"></span>
+              <span class="font-bold text-neutral-950 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-pine-950"></span>
                 Manual Timeline Assembly
               </span>
-              <span class="font-display font-extrabold text-neutral-900 text-base">50%</span>
+              <span class="font-display font-extrabold text-pine-950 text-base">50%</span>
             </div>
             <div class="w-full bg-stone-100 rounded-full h-1.5 overflow-hidden">
-              <div class="bg-neutral-900 h-full rounded-full" style="width: 50%"></div>
+              <div class="bg-pine-950 h-full rounded-full" style="width: 50%"></div>
             </div>
             <p class="text-[11px] text-stone-500 font-sans">Keyframing captions & typography sync (4–8h/clip in Premiere/AE).</p>
           </div>
 
-          <!-- Bar 2: 30% Talent Friction (Amber matching Donut Slice 2) -->
+          <!-- Bar 2: 30% Talent Friction (Forest Emerald #0F5338) -->
           <div class="bg-white p-3 rounded-xl border border-stone-200/90 shadow-sm space-y-1.5">
             <div class="flex items-baseline justify-between text-xs font-mono">
-              <span class="font-bold text-neutral-900 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+              <span class="font-bold text-neutral-950 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-[#0F5338]"></span>
                 Talent & Reshoot Friction
               </span>
-              <span class="font-display font-extrabold text-amber-600 text-base">30%</span>
+              <span class="font-display font-extrabold text-[#0F5338] text-base">30%</span>
             </div>
             <div class="w-full bg-stone-100 rounded-full h-1.5 overflow-hidden">
-              <div class="bg-amber-500 h-full rounded-full" style="width: 30%"></div>
+              <div class="bg-[#0F5338] h-full rounded-full" style="width: 30%"></div>
             </div>
             <p class="text-[11px] text-stone-500 font-sans">Scheduling drift & audio retakes across 70+ brand channels.</p>
           </div>
 
-          <!-- Bar 3: 20% Format QC (Coral Orange matching Donut Slice 3) -->
+          <!-- Bar 3: 20% Format QC (Vibrant Emerald #10B981) -->
           <div class="bg-white p-3 rounded-xl border border-stone-200/90 shadow-sm space-y-1.5">
             <div class="flex items-baseline justify-between text-xs font-mono">
-              <span class="font-bold text-neutral-900 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-[#FF5722]"></span>
+              <span class="font-bold text-neutral-950 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
                 Format QC & Compression
               </span>
-              <span class="font-display font-extrabold text-[#FF5722] text-base">20%</span>
+              <span class="font-display font-extrabold text-emerald-700 text-base">20%</span>
             </div>
             <div class="w-full bg-stone-100 rounded-full h-1.5 overflow-hidden">
-              <div class="bg-[#FF5722] h-full rounded-full" style="width: 20%"></div>
+              <div class="bg-emerald-500 h-full rounded-full" style="width: 20%"></div>
             </div>
             <p class="text-[11px] text-stone-500 font-sans">9:16 vs 16:9 safe-zone re-renders and platform packaging.</p>
           </div>
@@ -605,80 +598,85 @@
         </div>
       </div>
 
-      <!-- Right Column (7 cols): Segmented Donut Component + Clean Architecture Inset Card -->
-      <div class="lg:col-span-7 bg-stone-100/90 p-4 lg:p-5 rounded-2xl border border-stone-200 shadow-md flex flex-col justify-between relative overflow-hidden">
+      <!-- Right Column (7 cols): Crisp White Hero Card Matching Slide 4 Station 02 -->
+      <div class="lg:col-span-7 bg-white p-4 lg:p-5 rounded-2xl border-2 border-pine-900 shadow-md flex flex-col justify-between relative">
         
-        <!-- Subtle Top Strip -->
-        <div class="flex items-center justify-between text-[10px] font-mono text-stone-500 mb-1 z-10">
-          <span class="font-bold text-neutral-900 uppercase tracking-wider">THROUGHPUT DRAG AUDIT</span>
-          <span class="text-amber-700 font-bold">85% DRAG CUT VIA REMOTION</span>
+        <div class="absolute -top-3 right-5 bg-pine-950 text-lime-400 text-[9px] font-mono font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
+          ROOT CAUSE AUDIT
         </div>
 
-        <!-- The SVG Segmented Donut Component -->
-        <div class="w-full flex justify-center items-center py-1 z-10">
-          <svg class="w-full max-w-[370px] sm:max-w-[390px] h-[230px] sm:h-[245px] overflow-visible" viewBox="0 0 400 300" fill="none">
+        <!-- Subtle Top Strip -->
+        <div class="flex items-center justify-between text-[10px] font-mono border-b border-stone-100 pb-2.5 z-10">
+          <span class="font-bold text-neutral-950 uppercase tracking-wider">THROUGHPUT DRAG AUDIT (MODELED)</span>
+          <span class="bg-lime-400 text-pine-950 font-bold px-2.5 py-0.5 rounded-md">85% DRAG CUT VIA REMOTION</span>
+        </div>
+
+        <!-- The SVG Segmented Donut Component (Deep Pine + Forest Emerald + Vibrant Emerald) -->
+        <div class="w-full flex justify-center items-center py-1 z-10 my-auto">
+          <svg class="w-full max-w-[370px] sm:max-w-[390px] h-[225px] sm:h-[238px] overflow-visible" viewBox="0 0 400 300" fill="none">
             <defs>
-              <linearGradient id="sliceDark" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#171717" />
-                <stop offset="100%" stop-color="#262626" />
+              <linearGradient id="slicePine" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#061914" />
+                <stop offset="100%" stop-color="#0D3328" />
               </linearGradient>
-              <linearGradient id="sliceAmber" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#F59E0B" />
-                <stop offset="100%" stop-color="#D97706" />
+              <linearGradient id="sliceForest" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0F5338" />
+                <stop offset="100%" stop-color="#15734E" />
               </linearGradient>
-              <linearGradient id="sliceOrange" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#FF5722" />
-                <stop offset="100%" stop-color="#E64A19" />
+              <linearGradient id="sliceEmerald" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#10B981" />
+                <stop offset="100%" stop-color="#059669" />
               </linearGradient>
               <filter id="donutShadow" x="-10%" y="-10%" width="120%" height="120%">
-                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="rgba(0,0,0,0.12)" />
+                <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(6,25,20,0.14)" />
               </filter>
             </defs>
 
             <!-- Hairline Concentric Guide Rings -->
-            <circle cx="200" cy="150" r="140" stroke="#CBD5E1" stroke-dasharray="3 3" fill="none" opacity="0.6"/>
+            <circle cx="200" cy="150" r="138" stroke="#CBD5E1" stroke-dasharray="3 3" fill="none" opacity="0.7"/>
             <circle cx="200" cy="150" r="48" stroke="#E2E8F0" fill="none"/>
 
             <!-- Donut Slices -->
-            <!-- Slice 1: 50% Timeline Assembly (Dark Charcoal Arc) -->
+            <!-- Slice 1: 50% Timeline Assembly (Deep Pine #061914 Arc) -->
             <path d="M 203.27 25.04 A 125 125 0 0 1 203.27 274.96 L 201.70 214.98 A 65 65 0 0 0 201.70 85.02 Z" 
-                  fill="url(#sliceDark)" filter="url(#donutShadow)" />
+                  fill="url(#slicePine)" filter="url(#donutShadow)" />
             
-            <!-- Slice 2: 30% Presenter Reshoots (Warm Amber Arc) -->
+            <!-- Slice 2: 30% Presenter Reshoots (Forest Emerald #0F5338 Arc) -->
             <path d="M 196.73 274.96 A 125 125 0 0 1 80.15 114.50 L 137.68 131.54 A 65 65 0 0 0 198.30 214.98 Z" 
-                  fill="url(#sliceAmber)" filter="url(#donutShadow)" />
+                  fill="url(#sliceForest)" filter="url(#donutShadow)" />
 
-            <!-- Slice 3: 20% QC & Format Re-renders (Vibrant Orange Arc) -->
+            <!-- Slice 3: 20% QC & Format Re-renders (Vibrant Emerald #10B981 Arc) -->
             <path d="M 82.17 108.27 A 125 125 0 0 1 196.73 25.04 L 198.30 85.02 A 65 65 0 0 0 138.73 128.30 Z" 
-                  fill="url(#sliceOrange)" filter="url(#donutShadow)" />
+                  fill="url(#sliceEmerald)" filter="url(#donutShadow)" />
 
             <!-- Center White Hole -->
-            <circle cx="200" cy="150" r="63" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" />
-            <text x="200" y="140" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="26" font-weight="900" fill="#0A0A0A">85%</text>
+            <circle cx="200" cy="150" r="63" fill="#FFFFFF" stroke="#061914" stroke-width="1.5" />
+            <text x="200" y="140" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="26" font-weight="900" fill="#061914">85%</text>
             <text x="200" y="155" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#64748B" letter-spacing="0.8">DRAG CUT</text>
-            <text x="200" y="168" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="800" fill="#D97706" letter-spacing="0.5">REMOTION</text>
+            <text x="200" y="168" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="800" fill="#0F5338" letter-spacing="0.5">REMOTION AST</text>
 
             <!-- Slice 1 Label -->
-            <text x="295" y="150" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">50%</text>
-            <text x="295" y="164" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#CBD5E1" letter-spacing="0.5">ASSEMBLY</text>
+            <text x="295" y="150" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="800" fill="#C6FF3D">50%</text>
+            <text x="295" y="164" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#D5E6E0" letter-spacing="0.5">ASSEMBLY</text>
 
             <!-- Slice 2 Label -->
             <text x="123" y="200" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">30%</text>
-            <text x="123" y="214" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#FEF3C7" letter-spacing="0.5">TALENT</text>
+            <text x="123" y="214" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#A7F3D0" letter-spacing="0.5">TALENT</text>
 
             <!-- Slice 3 Label -->
             <text x="144" y="74" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">20%</text>
-            <text x="144" y="88" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">FORMAT QC</text>
+            <text x="144" y="88" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="800" fill="#ECFDF5" letter-spacing="0.5">FORMAT QC</text>
           </svg>
         </div>
 
-        <!-- Bottom Architecture Inset Card -->
-        <div class="mt-2 bg-white p-3 rounded-xl border border-stone-200 shadow-sm flex items-center justify-between z-10">
-          <div class="flex items-center gap-2.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-            <span class="text-[10px] font-mono text-neutral-900 font-bold uppercase tracking-wider">DETERMINISTIC COMPOSITION</span>
+        <!-- Bottom Architecture Inset Strip (Matching Slide 4 Footer Gate Style) -->
+        <div class="pt-3 border-t border-stone-100 flex items-center justify-between z-10 text-[11px] font-mono">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span class="text-neutral-950 font-bold uppercase tracking-wider">DETERMINISTIC COMPOSITION</span>
           </div>
-          <span class="text-[9px] font-mono bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full">
+          <span class="text-[10px] font-mono bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold px-2.5 py-0.5 rounded-md">
             FRAME-ACCURATE AST
           </span>
         </div>
@@ -943,7 +941,7 @@
       <!-- Stepped Horizon Progress Corridor & Timeline Stations -->
       <div class="relative pt-2">
         <!-- Connecting Milestone Corridor Spine (Desktop) -->
-        <div class="hidden md:block absolute top-10 left-12 right-12 h-1 bg-gradient-to-r from-emerald-500 via-lime-500 to-purple-500 rounded-full z-0 pointer-events-none opacity-80"></div>
+        <div class="hidden md:block absolute top-10 left-12 right-12 h-1 bg-gradient-to-r from-emerald-500 via-lime-400 to-pine-900 rounded-full z-0 pointer-events-none opacity-80"></div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5 relative z-10">
           
@@ -1017,34 +1015,34 @@
             </div>
           </div>
 
-          <!-- Station 03: Scale -->
+          <!-- Station 03: Scale (Harmonized Deep Pine & Emerald) -->
           <div class="bg-white p-5 rounded-2xl border border-stone-200/90 shadow-sm flex flex-col justify-between hover:border-stone-300 transition-all space-y-4">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="font-mono text-[10px] text-purple-700 font-bold bg-purple-50 px-2.5 py-1 rounded-md border border-purple-200">
+                <span class="font-mono text-[10px] text-emerald-900 font-bold bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
                   [03] SCALE
                 </span>
-                <span class="w-5 h-5 rounded-full bg-purple-100 border border-purple-300 flex items-center justify-center text-purple-700 text-xs font-bold shadow-sm">🚀</span>
+                <span class="w-5 h-5 rounded-full bg-pine-950 text-lime-400 flex items-center justify-center text-[10px] font-bold shadow-sm">↗</span>
               </div>
               <h4 class="text-base font-bold text-neutral-950 mb-2">Fleet Scaling & Fan-Out</h4>
               
               <ul class="space-y-2 text-xs text-stone-600 font-sans">
                 <li class="flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#0F5338] shrink-0"></span>
                   <span>1,000+ monthly assets fleet capacity</span>
                 </li>
                 <li class="flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#0F5338] shrink-0"></span>
                   <span>AlphaCTR A/B thumbnail scoring</span>
                 </li>
                 <li class="flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#0F5338] shrink-0"></span>
                   <span>10-platform distribution (70+ channels)</span>
                 </li>
               </ul>
             </div>
             
-            <div class="pt-3 border-t border-stone-100 text-[11px] font-mono text-purple-700 font-bold flex items-center justify-between">
+            <div class="pt-3 border-t border-stone-100 text-[11px] font-mono text-[#0F5338] font-bold flex items-center justify-between">
               <span>SCALE</span>
               <span class="uppercase">AUTONOMOUS FLEET</span>
             </div>
@@ -1101,12 +1099,12 @@
       </div>
     </div>
 
-    <!-- Main Content: Diverse Comparative Infographic Layout -->
-    <div class="w-full max-w-[1600px] mx-auto space-y-3 sm:space-y-3.5 my-auto z-10 py-1.5">
+    <!-- Main Content: Diverse Comparative Infographic Layout (Matching Slide 3 Hero Contrast) -->
+    <div class="w-full max-w-[1600px] mx-auto space-y-3 sm:space-y-4 my-auto z-10 py-1.5">
       
       <!-- Headline & Subtitle -->
       <div class="space-y-1.5 max-w-3xl">
-        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-pine-900 border border-pine-750 text-lime-400 text-[10px] font-mono">
+        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-[#0D2B22] border border-[#1E4E40] text-lime-400 text-[10px] font-mono">
           <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
           <span>05 · UNIT ECONOMICS & ARBITRAGE</span>
         </div>
@@ -1118,116 +1116,123 @@
         </p>
       </div>
 
-      <!-- 3 Diverse Infographic Panels (Breaking Monotony) -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5 items-stretch">
+      <!-- 3 Diverse Infographic Panels (Elevated Teal Side Panels + Solid Electric Lime Center Hero Card) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5 items-stretch pt-1">
         
-        <!-- Panel 1 (4 cols): Side-by-Side Visual Comparative Height Bars (~7:1 Height Ratio) -->
-        <div class="lg:col-span-4 bg-pine-900/90 border border-pine-800 p-3.5 sm:p-4 rounded-2xl shadow-xl flex flex-col justify-between space-y-2.5">
-          <div>
-            <div class="flex items-center justify-between mb-1">
-              <span class="text-[10px] font-mono text-pine-400 uppercase tracking-wider font-bold">MONTHLY RUN-RATE (Modeled)</span>
-              <span class="text-[9px] font-mono text-lime-400 bg-pine-800 px-2 py-0.5 rounded-full border border-pine-700">7:1 COST RATIO</span>
+        <!-- Panel 1 (4 cols): Elevated Frosted Emerald-Teal Card -->
+        <div class="lg:col-span-4 bg-gradient-to-b from-[#133A2E] via-[#0E2D24] to-[#0A211A] border border-[#245948] p-4 sm:p-4.5 rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14),0_20px_35px_-10px_rgba(0,0,0,0.55)] flex flex-col justify-between space-y-3 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 cognis-dash-pattern-dark opacity-30 pointer-events-none"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-[10px] font-mono text-emerald-300 uppercase tracking-wider font-bold bg-[#081C16] px-2 py-0.5 rounded border border-[#1F4E3F]">[01] RUN-RATE</span>
+              <span class="text-[9.5px] font-mono text-lime-400 bg-[#081C16] px-2 py-0.5 rounded-full border border-[#1F4E3F] font-bold">7:1 COST RATIO</span>
             </div>
-            <h4 class="text-xs sm:text-sm font-bold text-white mb-1.5">Payroll vs Compute</h4>
+            <h4 class="text-sm sm:text-base font-bold text-white">Payroll vs Compute</h4>
           </div>
 
           <!-- The Visual Side-by-Side Height Bars Component -->
-          <div class="h-24 sm:h-28 flex items-end justify-center gap-6 px-3 pb-1 border-b border-pine-800/80">
-            <!-- Left Bar: ₹4.5L Traditional Payroll (Height ~70px) -->
-            <div class="flex flex-col items-center gap-1 flex-1 max-w-[85px]">
+          <div class="h-28 sm:h-32 flex items-end justify-center gap-6 px-3 pb-2 border-b border-[#1E4A3C] relative z-10">
+            <!-- Left Bar: ₹4.5L Traditional Payroll -->
+            <div class="flex flex-col items-center gap-1 flex-1 max-w-[88px]">
               <span class="text-xs font-mono font-bold text-red-400">₹4.5L</span>
-              <div class="w-full h-14 sm:h-16 rounded-t-lg bg-gradient-to-t from-red-950/80 to-red-500/80 border border-red-500/50 shadow-[0_0_15px_rgba(239,68,68,0.2)]"></div>
-              <span class="text-[9px] font-mono text-pine-400 text-center leading-tight">Agency<br>Payroll</span>
+              <div class="w-full h-16 sm:h-[72px] rounded-t-lg bg-gradient-to-t from-red-950/90 to-red-500/85 border border-red-400/60 shadow-[0_0_15px_rgba(239,68,68,0.2)]"></div>
+              <span class="text-[9.5px] font-mono text-pine-200 text-center leading-tight">Agency<br>Payroll</span>
             </div>
 
-            <!-- Right Bar: ₹65K Remotion Compute (~10px for 7:1 visual ratio) -->
-            <div class="flex flex-col items-center gap-1 flex-1 max-w-[85px]">
+            <!-- Right Bar: ₹65K Remotion Compute (~7:1 visual ratio) -->
+            <div class="flex flex-col items-center gap-1 flex-1 max-w-[88px]">
               <span class="text-xs font-mono font-bold text-lime-400">₹65K</span>
-              <div class="w-full h-2.5 sm:h-3 rounded-t-lg bg-gradient-to-t from-lime-500 to-lime-300 border border-lime-400 shadow-[0_0_15px_rgba(198,255,61,0.3)]"></div>
-              <span class="text-[9px] font-mono text-lime-400 font-bold text-center leading-tight">Aeos<br>Compute</span>
+              <div class="w-full h-3 rounded-t-lg bg-gradient-to-t from-lime-500 to-lime-300 border border-lime-300 shadow-[0_0_15px_rgba(198,255,61,0.35)]"></div>
+              <span class="text-[9.5px] font-mono text-lime-400 font-bold text-center leading-tight">Aeos<br>Compute</span>
             </div>
           </div>
 
-          <div class="text-[10px] font-mono text-pine-400 flex items-center justify-between pt-0.5">
+          <div class="text-[10px] font-mono text-pine-200 flex items-center justify-between pt-0.5 relative z-10">
             <span>6 Editors (80 clips cap)</span>
             <span class="text-lime-400 font-bold">1 Op (1,000+ clips)</span>
           </div>
         </div>
 
-        <!-- Panel 2 (4 cols): Upward Growth Curve & Capital Recovery Core -->
-        <div class="lg:col-span-4 bg-gradient-to-b from-pine-900 via-pine-850 to-pine-900 border-2 border-lime-400/80 p-3.5 sm:p-4 rounded-2xl shadow-[0_0_30px_rgba(198,255,61,0.15)] flex flex-col justify-between space-y-2.5">
+        <!-- Panel 2 (4 cols): SOLID ELECTRIC LIME HERO CARD (Matching Slide 3 Stage [03] Remotion AST) -->
+        <div class="lg:col-span-4 bg-gradient-to-b from-lime-300 via-lime-400 to-lime-500 text-pine-950 border-2 border-lime-200 p-4 sm:p-4.5 rounded-2xl shadow-[0_24px_48px_-12px_rgba(198,255,61,0.3)] flex flex-col justify-between space-y-3 relative transform lg:-translate-y-1">
+          <div class="absolute -top-2.5 right-4 bg-pine-950 text-lime-400 text-[9px] font-mono font-bold px-2.5 py-0.5 rounded-full shadow-md flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
+            ARBITRAGE ENGINE
+          </div>
           <div>
-            <div class="flex items-center justify-between mb-1">
-              <span class="text-[10px] font-mono text-lime-400 uppercase tracking-wider font-bold">COST ARBITRAGE (Modeled)</span>
-              <span class="w-2 h-2 rounded-full bg-lime-400 animate-pulse"></span>
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-[10px] font-mono text-pine-950 uppercase tracking-wider font-extrabold bg-pine-950/10 px-2 py-0.5 rounded border border-pine-950/20">[02] COST ARBITRAGE</span>
+              <span class="w-6 h-6 rounded-lg bg-pine-950 text-lime-400 flex items-center justify-center shadow-sm">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </span>
             </div>
-            <h4 class="text-xs sm:text-sm font-bold text-white">Net Capital Recovery</h4>
+            <h4 class="text-sm sm:text-base font-black text-pine-950">Net Capital Recovery</h4>
           </div>
 
           <!-- Dynamic SVG Upward Growth Curve & Center Metric -->
-          <div class="py-0.5 flex flex-col items-center justify-center text-center relative">
-            <!-- Background Curved Path -->
+          <div class="py-1 flex flex-col items-center justify-center text-center relative">
             <svg class="w-36 h-8 sm:h-9 overflow-visible mb-0.5" viewBox="0 0 200 60" fill="none">
-              <path d="M 10 50 Q 100 48 180 12" stroke="#C6FF3D" stroke-width="3" stroke-linecap="round" fill="none" />
-              <!-- Arrowhead -->
-              <polygon points="180,5 192,13 180,21" fill="#C6FF3D" />
+              <path d="M 10 50 Q 100 48 180 12" stroke="#061914" stroke-width="3.5" stroke-linecap="round" fill="none" />
+              <polygon points="180,5 193,13 180,21" fill="#061914" />
             </svg>
-            <div class="text-3xl sm:text-4xl font-display font-extrabold text-lime-400 tracking-tight leading-none my-0.5">
+            <div class="text-4xl sm:text-[44px] font-display font-black text-pine-950 tracking-tight leading-none my-0.5">
               85.5%
             </div>
-            <div class="text-xs font-mono font-bold text-white mt-0.5">₹3.85L / month Recovered</div>
-            <div class="text-[10px] text-pine-300 font-mono mt-0.5">₹46L+ / Year Saved per 10 Channels</div>
+            <div class="text-xs font-mono font-extrabold text-pine-950 mt-1">₹3.85L / month Recovered</div>
+            <div class="text-[10px] text-pine-900 font-mono font-bold mt-0.5">₹46L+ / Year Saved per 10 Channels</div>
           </div>
 
-          <div class="p-2 rounded-xl bg-pine-950/80 border border-pine-800 text-[10px] font-mono text-pine-300 text-center">
-            REDEPLOYED CAPITAL: R&D & TALENT ACQUISITION
+          <div class="p-2 rounded-xl bg-pine-950 text-[10px] font-mono text-lime-400 font-bold text-center shadow-sm">
+            REDEPLOYED: R&amp;D &amp; TALENT ACQUISITION
           </div>
         </div>
 
-        <!-- Panel 3 (4 cols): Media Velocity & 10×10 Capacity Dot Matrix -->
-        <div class="lg:col-span-4 bg-pine-900/90 border border-pine-800 p-3.5 sm:p-4 rounded-2xl shadow-xl flex flex-col justify-between space-y-2.5">
-          <div>
-            <div class="flex items-center justify-between mb-1">
-              <span class="text-[10px] font-mono text-pine-400 uppercase tracking-wider font-bold">MEDIA VELOCITY (Modeled)</span>
-              <span class="text-xl sm:text-2xl font-display font-black text-lime-400">12.5x</span>
+        <!-- Panel 3 (4 cols): Elevated Frosted Emerald-Teal Card -->
+        <div class="lg:col-span-4 bg-gradient-to-b from-[#133A2E] via-[#0E2D24] to-[#0A211A] border border-[#245948] p-4 sm:p-4.5 rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14),0_20px_35px_-10px_rgba(0,0,0,0.55)] flex flex-col justify-between space-y-3 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 cognis-dash-pattern-dark opacity-30 pointer-events-none"></div>
+          <div class="relative z-10">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-[10px] font-mono text-emerald-300 uppercase tracking-wider font-bold bg-[#081C16] px-2 py-0.5 rounded border border-[#1F4E3F]">[03] MEDIA VELOCITY</span>
+              <span class="text-xl sm:text-2xl font-display font-black text-lime-400">12.5×</span>
             </div>
-            <h4 class="text-xs sm:text-sm font-bold text-white mb-1">Fleet Capacity Scale</h4>
+            <h4 class="text-sm sm:text-base font-bold text-white">Fleet Capacity Scale</h4>
           </div>
 
           <!-- Mavence-Style 10x10 Capacity Dot Matrix (100 Dots) -->
-          <div class="flex flex-col items-center py-0.5">
-            <div class="grid grid-cols-10 gap-0.5 sm:gap-1 p-1.5 sm:p-2 rounded-xl bg-pine-950/90 border border-pine-800">
+          <div class="flex flex-col items-center py-1 relative z-10">
+            <div class="grid grid-cols-10 gap-1 sm:gap-1.5 p-2 sm:p-2.5 rounded-xl bg-[#071B15] border border-[#1E4A3C] shadow-inner">
               <!-- 8 Red Dots representing Manual Premiere Cap (~80 clips) -->
-              <span class="w-1.5 h-1.5 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-red-400/80 shadow-sm" title="Manual Clip"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-red-400/90 shadow-sm" title="Manual Clip"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-red-400/90 shadow-sm" title="Manual Clip"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-red-400/90 shadow-sm" title="Manual Clip"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-red-400/90 shadow-sm" title="Manual Clip"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-red-400/90 shadow-sm" title="Manual Clip"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-red-400/90 shadow-sm" title="Manual Clip"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-red-400/90 shadow-sm" title="Manual Clip"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-red-400/90 shadow-sm" title="Manual Clip"></span>
               <!-- Remaining 92 Electric Lime Dots representing Autonomous Fleet Scale -->
               <template x-for="i in 92" :key="i">
-                <span class="w-1.5 h-1.5 rounded-full bg-lime-400/80 shadow-[0_0_4px_#C6FF3D]" title="Remotion Fleet Clip"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-lime-400/90 shadow-[0_0_4px_#C6FF3D]" title="Remotion Fleet Clip"></span>
               </template>
             </div>
           </div>
 
-          <div class="pt-1.5 border-t border-pine-800/80 text-[10px] font-mono flex items-center justify-between text-pine-400">
-            <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> Manual (80)</span>
-            <span class="flex items-center gap-1.5 text-lime-400 font-bold"><span class="w-1.5 h-1.5 rounded-full bg-lime-400"></span> Fleet (1,000+)</span>
+          <div class="pt-2 border-t border-[#1E4A3C] text-[10px] font-mono flex items-center justify-between text-pine-200 relative z-10">
+            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-400"></span> Manual (80)</span>
+            <span class="flex items-center gap-1.5 text-lime-400 font-bold"><span class="w-2 h-2 rounded-full bg-lime-400"></span> Fleet (1,000+)</span>
           </div>
         </div>
 
       </div>
 
-      <!-- Bottom Reference Footnote -->
-      <div class="py-1.5 px-3 rounded-lg bg-pine-900/80 border border-pine-800 flex items-center justify-between text-[10px] font-mono text-pine-400">
-        <span class="flex items-center gap-2">
+      <!-- Compact Telemetry Strip (Matching Slide 3 Bottom Strip) -->
+      <div class="px-4 py-2 rounded-xl bg-[#0D2B22] border border-[#1E4E40] flex flex-wrap items-center justify-between gap-2 text-[10px] font-mono shadow-lg">
+        <div class="flex items-center gap-2">
           <span class="w-1.5 h-1.5 rounded-full bg-lime-400"></span>
-          <span>CAPITAL EFFICIENCY: HIGH-LEVERAGE COMPUTE OVER LINEAR AGENCY PAYROLL</span>
-        </span>
-        <span class="text-pine-400 hidden sm:inline">(Modeled on 10 Enterprise Brand Channels)</span>
+          <span class="text-pine-300 uppercase">CAPITAL EFFICIENCY:</span>
+          <span class="text-lime-400 font-bold">HIGH-LEVERAGE COMPUTE OVER LINEAR AGENCY PAYROLL</span>
+        </div>
+        <span class="text-pine-200 hidden sm:inline font-semibold">MODELED ON 10 ENTERPRISE BRAND CHANNELS</span>
       </div>
 
     </div>
