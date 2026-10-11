@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aeos Group & YAAS — Autonomous Media Infrastructure Deck</title>
 
-  <!-- Google Fonts: Space Grotesk, Instrument Serif, Inter, Outfit, JetBrains Mono -->
+  <!-- Google Fonts: Plus Jakarta Sans, Space Grotesk, Playfair Display Italic, Instrument Serif, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,9 +18,9 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Inter"', 'system-ui', 'sans-serif'],
-            display: ['"Space Grotesk"', '"Outfit"', 'sans-serif'],
-            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', '"Instrument Serif"', 'Georgia', 'serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
@@ -78,6 +78,22 @@
     /* Custom Selection */
     ::selection { background: #C6FF3D; color: #061914; }
 
+    /* Editorial High-Contrast Serif Accent for Slide Headlines */
+    .font-editorial {
+      font-family: 'Playfair Display', 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      padding-right: 0.08em;
+    }
+
+    /* Crisp Font Smoothing Across All Monitors */
+    body, svg text {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
     /* HARD LOCK: ZERO SCROLLBARS NATIONWIDE */
     * {
       scrollbar-width: none !important;
@@ -125,7 +141,7 @@
       flex-direction: column;
       justify-content: space-between;
       box-sizing: border-box;
-      padding: clamp(0.75rem, 1.6vh, 1.25rem) clamp(1rem, 2.5vw, 2.5rem) 5.5rem clamp(1rem, 2.5vw, 2.5rem);
+      padding: clamp(0.75rem, 1.6vh, 1.25rem) clamp(1rem, 2.5vw, 2.5rem) 3.25rem clamp(1rem, 2.5vw, 2.5rem);
       overflow: hidden !important;
     }
 
@@ -148,7 +164,7 @@
       background-size: 14px 14px;
     }
 
-    /* Print / PDF Engine: Strictly 1920x1080 16:9 Landscape Pages */
+    /* Print / PDF Engine: Strictly 1920x1080 16:9 Landscape Pages (5-Slide Pure Executive Deck) */
     @media print {
       @page {
         size: 1920px 1080px landscape;
@@ -191,6 +207,9 @@
       [x-show].slide-canvas {
         display: flex !important;
         opacity: 1 !important;
+      }
+      .slide-operator-appendix {
+        display: none !important;
       }
       .drawer-panel { display: none !important; }
     }
@@ -244,33 +263,33 @@
     </div>
 
     <!-- Main Content: Balanced 6/6 Executive Split with Locked Column Heights (items-stretch) -->
-    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-stretch my-auto z-10 py-1 sm:py-2">
+    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-stretch my-auto z-10 pt-3 sm:pt-4 pb-1">
       
       <!-- Left Column (6 cols): Commanding Typography + Editorial Axiom + 3 Bento KPI Cards (Height-Locked to Right Column) -->
       <div class="lg:col-span-6 flex flex-col justify-between space-y-3 sm:space-y-4">
         
         <!-- Top Editorial Block -->
         <div class="space-y-3 sm:space-y-3.5">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D2B22] border border-[#1E4E40] text-lime-400 text-[10px] font-mono shadow-sm">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D2B22] border border-[#1E4E40] text-lime-400 text-[11px] font-mono font-semibold shadow-sm">
             <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
             <span>01 · THE ATTENTION ECONOMY</span>
           </div>
 
-          <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-display font-extrabold tracking-[-0.03em] text-white leading-[1.03]">
+          <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-display font-extrabold tracking-[-0.025em] text-white leading-[1.08] pb-0.5">
             Attention is <br class="hidden sm:inline">
-            <span class="text-lime-400">the Only Moat.</span>
+            <span class="font-editorial text-lime-400">the Only Moat.</span>
           </h1>
           
-          <p class="text-xs sm:text-sm text-pine-200 max-w-xl font-normal leading-relaxed">
+          <p class="text-xs sm:text-sm text-pine-200 max-w-xl font-sans font-normal leading-relaxed">
             Paid ad CAC is breaking brand unit economics. Enterprise brands must escape linear ad spend by becoming autonomous media engines.
           </p>
 
           <!-- Borderless Editorial Pull-Quote (Zero Rectangular Clutter) -->
           <div class="border-l-2 border-lime-400 pl-3.5 py-0.5 space-y-0.5 max-w-xl">
-            <div class="text-[10px] font-mono text-lime-400 font-bold uppercase tracking-widest">
+            <div class="text-[11px] font-sans text-lime-400 font-bold uppercase tracking-wider">
               THE AEOS OPERATING AXIOM · ZERO CAC DRAG
             </div>
-            <p class="text-xs sm:text-[13px] text-white/95 font-medium italic">
+            <p class="text-xs sm:text-[13.5px] text-white/95 font-sans font-medium italic">
               "Attention is the only durable moat as technology commoditizes."
             </p>
           </div>
@@ -281,32 +300,32 @@
           
           <!-- Stat Card 1: 1B+ -->
           <div class="bg-gradient-to-b from-[#133A2E] via-[#0E2D24] to-[#0A211A] border border-[#245948] rounded-2xl p-3.5 sm:p-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14),0_16px_30px_-10px_rgba(0,0,0,0.5)] flex flex-col justify-between min-h-[112px] sm:min-h-[120px]">
-            <div class="flex items-center justify-between text-[9.5px] font-mono text-pine-200 uppercase tracking-wider font-semibold">
+            <div class="flex items-center justify-between text-[11px] font-sans text-pine-200 uppercase tracking-wider font-bold">
               <span>REACH (Modeled)</span>
               <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
             <div class="text-2xl sm:text-3xl lg:text-[36px] font-display font-extrabold text-white tracking-tight leading-none my-1.5">1B+</div>
-            <div class="text-[10px] text-pine-300 font-mono truncate">YAAS Public Footprint</div>
+            <div class="text-xs text-pine-200 font-sans font-medium truncate">YAAS Public Footprint</div>
           </div>
 
           <!-- Stat Card 2: 70+ -->
           <div class="bg-gradient-to-b from-[#133A2E] via-[#0E2D24] to-[#0A211A] border border-[#245948] rounded-2xl p-3.5 sm:p-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14),0_16px_30px_-10px_rgba(0,0,0,0.5)] flex flex-col justify-between min-h-[112px] sm:min-h-[120px]">
-            <div class="flex items-center justify-between text-[9.5px] font-mono text-pine-200 uppercase tracking-wider font-semibold">
+            <div class="flex items-center justify-between text-[11px] font-sans text-pine-200 uppercase tracking-wider font-bold">
               <span>CHANNELS</span>
               <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
             </div>
             <div class="text-2xl sm:text-3xl lg:text-[36px] font-display font-extrabold text-white tracking-tight leading-none my-1.5">70+</div>
-            <div class="text-[10px] text-pine-300 font-mono truncate">Zoho · Cleartrip · Zerodha</div>
+            <div class="text-xs text-pine-200 font-sans font-medium truncate">Zoho · Cleartrip · Zerodha</div>
           </div>
 
           <!-- Stat Card 3: 1,000+ (Solid Electric Lime Hero Tile) -->
           <div class="bg-gradient-to-b from-lime-300 via-lime-400 to-lime-500 text-pine-950 border-2 border-lime-200 rounded-2xl p-3.5 sm:p-4 shadow-[0_16px_32px_-8px_rgba(198,255,61,0.28)] flex flex-col justify-between min-h-[112px] sm:min-h-[120px]">
-            <div class="flex items-center justify-between text-[9.5px] font-mono text-pine-950 font-extrabold uppercase tracking-wider">
+            <div class="flex items-center justify-between text-[11px] font-sans text-pine-950 font-extrabold uppercase tracking-wider">
               <span>TARGET FLEET</span>
               <svg class="w-3.5 h-3.5 text-pine-950 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             </div>
             <div class="text-2xl sm:text-3xl lg:text-[36px] font-display font-black text-pine-950 tracking-tight leading-none my-1.5">1,000+</div>
-            <div class="text-[10px] text-pine-900 font-mono font-bold truncate">Monthly Remotion Clips</div>
+            <div class="text-xs text-pine-950 font-sans font-bold truncate">Monthly Remotion Clips</div>
           </div>
 
         </div>
@@ -319,23 +338,23 @@
         <!-- Subtle Dot Grid Backdrop inside Card -->
         <div class="absolute inset-0 cognis-dash-pattern-dark opacity-25 pointer-events-none"></div>
 
-        <!-- shadcn CardHeader -->
+        <!-- shadcn CardHeader (Crisp Title Case Sans-Serif + Readable Subtitle) -->
         <div class="flex items-start justify-between border-b border-[#1E4D3E] pb-2.5 z-10">
           <div>
             <div class="flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-lime-400"></span>
-              <h3 class="text-xs sm:text-sm font-display font-bold text-white tracking-tight uppercase">Autonomous Throughput Radial Gauge</h3>
+              <h3 class="text-sm sm:text-[15px] font-display font-bold text-white tracking-normal">Autonomous Throughput Radial Gauge</h3>
             </div>
-            <p class="text-[10px] font-mono text-pine-200 mt-0.5">Remotion React AST Fleet vs. Manual Agency Keyframing</p>
+            <p class="text-xs font-sans font-medium text-pine-200 mt-0.5 pl-4">Remotion React AST Fleet vs. Manual Agency Keyframing</p>
           </div>
-          <span class="text-pine-950 font-mono text-[10px] font-extrabold bg-lime-400 px-2.5 py-1 rounded-full shadow-sm shrink-0">
+          <span class="text-pine-950 font-mono text-[11px] font-extrabold bg-lime-400 px-3 py-1 rounded-full shadow-sm shrink-0">
             12.5× MULTIPLIER
           </span>
         </div>
 
-        <!-- shadcn CardContent: Concentric Radial Bar Chart + 4 Circular Orbital Icon Nodes (Zero Box Clutter) -->
+        <!-- shadcn CardContent: Concentric Radial Bar Chart + 4 Circular Orbital Icon Nodes (High-Legibility Typography) -->
         <div class="w-full flex justify-center items-center py-1 z-10 relative my-auto">
-          <svg class="w-full max-w-[500px] h-[225px] sm:h-[236px] overflow-visible" viewBox="0 0 520 250" fill="none">
+          <svg class="w-full max-w-[520px] h-[225px] sm:h-[236px] overflow-visible" viewBox="0 0 540 250" fill="none">
             <defs>
               <linearGradient id="radialLime" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="#C6FF3D" />
@@ -354,123 +373,123 @@
               </filter>
             </defs>
 
-            <!-- Outer Guide Ring & Axis Ticks (cx=260, cy=125, r=108 -> spans x=152..368) -->
-            <circle cx="260" cy="125" r="108" stroke="#1E4D3E" stroke-width="1.2" stroke-dasharray="3 3" />
-            <line x1="260" y1="11" x2="260" y2="17" stroke="#286452" stroke-width="1.5" />
-            <line x1="260" y1="233" x2="260" y2="239" stroke="#286452" stroke-width="1.5" />
-            <line x1="146" y1="125" x2="152" y2="125" stroke="#286452" stroke-width="1.5" />
-            <line x1="368" y1="125" x2="374" y2="125" stroke="#286452" stroke-width="1.5" />
+            <!-- Outer Guide Ring & Axis Ticks (cx=270, cy=125, r=106 -> spans x=164..376) -->
+            <circle cx="270" cy="125" r="106" stroke="#1E4D3E" stroke-width="1.2" stroke-dasharray="3 3" />
+            <line x1="270" y1="13" x2="270" y2="19" stroke="#286452" stroke-width="1.5" />
+            <line x1="270" y1="231" x2="270" y2="237" stroke="#286452" stroke-width="1.5" />
+            <line x1="158" y1="125" x2="164" y2="125" stroke="#286452" stroke-width="1.5" />
+            <line x1="376" y1="125" x2="382" y2="125" stroke="#286452" stroke-width="1.5" />
 
             <!-- ========================================================= -->
-            <!-- RING 1 (OUTER): 1,000+ Assets/Mo (r=92, C=578.1)          -->
+            <!-- RING 1 (OUTER): 1,000+ Assets/Mo (r=90, C=565.5)          -->
             <!-- ========================================================= -->
-            <circle cx="260" cy="125" r="92" stroke="#163E31" stroke-width="14" />
-            <circle cx="260" cy="125" r="92" stroke="url(#radialLime)" stroke-width="14"
-                    stroke-dasharray="488 578.1" stroke-dashoffset="0" stroke-linecap="round"
-                    transform="rotate(-90 260 125)" filter="url(#radialGlow)" />
+            <circle cx="270" cy="125" r="90" stroke="#163E31" stroke-width="14" />
+            <circle cx="270" cy="125" r="90" stroke="url(#radialLime)" stroke-width="14"
+                    stroke-dasharray="478 565.5" stroke-dashoffset="0" stroke-linecap="round"
+                    transform="rotate(-90 270 125)" filter="url(#radialGlow)" />
 
             <!-- ========================================================= -->
-            <!-- RING 2 (MIDDLE): 70+ Brand Channels (r=72, C=452.4)       -->
+            <!-- RING 2 (MIDDLE): 70+ Brand Channels (r=71, C=446.1)       -->
             <!-- ========================================================= -->
-            <circle cx="260" cy="125" r="72" stroke="#163E31" stroke-width="13" />
-            <circle cx="260" cy="125" r="72" stroke="url(#radialEmerald)" stroke-width="13"
-                    stroke-dasharray="345 452.4" stroke-dashoffset="0" stroke-linecap="round"
-                    transform="rotate(-90 260 125)" />
+            <circle cx="270" cy="125" r="71" stroke="#163E31" stroke-width="13" />
+            <circle cx="270" cy="125" r="71" stroke="url(#radialEmerald)" stroke-width="13"
+                    stroke-dasharray="340 446.1" stroke-dashoffset="0" stroke-linecap="round"
+                    transform="rotate(-90 270 125)" />
 
             <!-- ========================================================= -->
             <!-- RING 3 (INNER): 80-100 Manual Baseline (r=52, C=326.7)    -->
             <!-- ========================================================= -->
-            <circle cx="260" cy="125" r="52" stroke="#163E31" stroke-width="12" />
-            <circle cx="260" cy="125" r="52" stroke="url(#radialAmber)" stroke-width="12"
+            <circle cx="270" cy="125" r="52" stroke="#163E31" stroke-width="12" />
+            <circle cx="270" cy="125" r="52" stroke="url(#radialAmber)" stroke-width="12"
                     stroke-dasharray="92 326.7" stroke-dashoffset="0" stroke-linecap="round"
-                    transform="rotate(-90 260 125)" />
+                    transform="rotate(-90 270 125)" />
 
             <!-- ========================================================= -->
             <!-- CENTER CORE: Crisp shadcn Radial Readout (r=36)           -->
             <!-- ========================================================= -->
-            <circle cx="260" cy="125" r="36" fill="#061914" stroke="#286452" stroke-width="1.5" />
-            <text x="260" y="120" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="18.5" font-weight="900" fill="#C6FF3D">12.5×</text>
-            <text x="260" y="133" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#D5E6E0" letter-spacing="0.8">OUTPUT</text>
-            <text x="260" y="143" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="6.5" font-weight="600" fill="#7EAB9C">SCALE</text>
+            <circle cx="270" cy="125" r="36" fill="#061914" stroke="#286452" stroke-width="1.5" />
+            <text x="270" y="120" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="19" font-weight="800" fill="#C6FF3D">12.5×</text>
+            <text x="270" y="133" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="800" fill="#FFFFFF" letter-spacing="0.6">OUTPUT</text>
+            <text x="270" y="143" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="700" fill="#A9CCC0" letter-spacing="0.5">SCALE</text>
 
             <!-- ========================================================= -->
-            <!-- 4 CIRCULAR ORBITAL ICON NODES (ZERO RECTANGLES)           -->
+            <!-- 4 CIRCULAR ORBITAL ICON NODES (HIGH-CONTRAST SANS-SERIF)  -->
             <!-- ========================================================= -->
 
             <!-- Orbital Node 1: Top-Left (Inner Amber Ring -> Manual Baseline) -->
-            <polyline points="260,73 202,42 136,42" stroke="#F59E0B" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
-            <circle cx="260" cy="73" r="3.5" fill="#FBBF24" />
-            <g transform="translate(8, 16)">
+            <polyline points="270,73 206,40 144,40" stroke="#F59E0B" stroke-width="1.4" stroke-dasharray="2.5 2.5" fill="none" />
+            <circle cx="270" cy="73" r="3.5" fill="#FBBF24" />
+            <g transform="translate(4, 12)">
               <!-- Circular Icon Medallion -->
-              <circle cx="20" cy="24" r="17" fill="#09221B" stroke="#FBBF24" stroke-width="1.5" />
-              <circle cx="20" cy="24" r="7" stroke="#FBBF24" stroke-width="1.6" fill="none" />
-              <polyline points="20,20 20,24 23,26" stroke="#FBBF24" stroke-width="1.6" stroke-linecap="round" fill="none" />
-              <!-- Borderless Floating Readout -->
-              <text x="45" y="16" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#FBBF24" letter-spacing="0.4">MANUAL BASELINE</text>
-              <text x="45" y="31" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">80–100 <tspan font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="500" fill="#A9CCC0">/mo</tspan></text>
-              <text x="45" y="42" font-family="'JetBrains Mono', monospace" font-size="7.5" fill="#7EAB9C">4–8h / clip drag</text>
+              <circle cx="20" cy="26" r="17" fill="#09221B" stroke="#FBBF24" stroke-width="1.5" />
+              <circle cx="20" cy="26" r="7" stroke="#FBBF24" stroke-width="1.6" fill="none" />
+              <polyline points="20,22 20,26 23,28" stroke="#FBBF24" stroke-width="1.6" stroke-linecap="round" fill="none" />
+              <!-- High-Legibility Readout (Plus Jakarta Sans + Space Grotesk) -->
+              <text x="44" y="15" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="800" fill="#FBBF24" letter-spacing="0.5">MANUAL BASELINE</text>
+              <text x="44" y="33" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">80–100 <tspan font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="600" fill="#D5E6E0">/mo</tspan></text>
+              <text x="44" y="47" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="600" fill="#D5E6E0">4–8h / clip drag</text>
             </g>
 
             <!-- Orbital Node 2: Top-Right (Outer Lime Ring -> Scale Ceiling) -->
-            <polyline points="325,60 356,42 384,42" stroke="#C6FF3D" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
-            <circle cx="325" cy="60" r="4" fill="#C6FF3D" />
-            <g transform="translate(388, 16)">
+            <polyline points="334,61 364,40 392,40" stroke="#C6FF3D" stroke-width="1.4" stroke-dasharray="2.5 2.5" fill="none" />
+            <circle cx="334" cy="61" r="4" fill="#C6FF3D" />
+            <g transform="translate(396, 12)">
               <!-- Solid Lime Circular Medallion -->
-              <circle cx="20" cy="24" r="17" fill="#C6FF3D" />
-              <polygon points="17,19 26,24 17,29" fill="#061914" />
-              <!-- Borderless Floating Readout -->
-              <text x="45" y="16" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="800" fill="#C6FF3D" letter-spacing="0.4">SCALE CEILING</text>
-              <text x="45" y="31" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">1,000+ <tspan font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="600" fill="#C6FF3D">/mo</tspan></text>
-              <text x="45" y="42" font-family="'JetBrains Mono', monospace" font-size="7.5" fill="#A9CCC0">Remotion AST Fleet</text>
+              <circle cx="20" cy="26" r="17" fill="#C6FF3D" />
+              <polygon points="17,21 26,26 17,31" fill="#061914" />
+              <!-- High-Legibility Readout -->
+              <text x="44" y="15" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="800" fill="#C6FF3D" letter-spacing="0.5">SCALE CEILING</text>
+              <text x="44" y="33" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">1,000+ <tspan font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="700" fill="#C6FF3D">/mo</tspan></text>
+              <text x="44" y="47" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="600" fill="#E2F2EC">Remotion AST Fleet</text>
             </g>
 
             <!-- Orbital Node 3: Bottom-Left (Middle Emerald Ring -> 70+ Brands) -->
-            <polyline points="188,125 164,204 136,204" stroke="#10B981" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
-            <circle cx="188" cy="125" r="3.5" fill="#34D399" />
-            <g transform="translate(8, 178)">
+            <polyline points="199,125 170,204 144,204" stroke="#10B981" stroke-width="1.4" stroke-dasharray="2.5 2.5" fill="none" />
+            <circle cx="199" cy="125" r="3.5" fill="#34D399" />
+            <g transform="translate(4, 176)">
               <!-- Circular Emerald Medallion -->
-              <circle cx="20" cy="24" r="17" fill="#09221B" stroke="#34D399" stroke-width="1.5" />
-              <circle cx="16" cy="24" r="2.5" stroke="#34D399" stroke-width="1.5" fill="none" />
-              <circle cx="24" cy="19" r="2.5" stroke="#34D399" stroke-width="1.5" fill="none" />
-              <circle cx="24" cy="29" r="2.5" stroke="#34D399" stroke-width="1.5" fill="none" />
-              <line x1="18" y1="23" x2="22" y2="20" stroke="#34D399" stroke-width="1.3" />
-              <line x1="18" y1="25" x2="22" y2="28" stroke="#34D399" stroke-width="1.3" />
-              <!-- Borderless Floating Readout -->
-              <text x="45" y="16" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#34D399" letter-spacing="0.4">ACTIVE NETWORK</text>
-              <text x="45" y="31" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">70+ <tspan font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="500" fill="#A9CCC0">Brands</tspan></text>
-              <text x="45" y="42" font-family="'JetBrains Mono', monospace" font-size="7.5" fill="#7EAB9C">10-Platform Sync</text>
+              <circle cx="20" cy="26" r="17" fill="#09221B" stroke="#34D399" stroke-width="1.5" />
+              <circle cx="16" cy="26" r="2.5" stroke="#34D399" stroke-width="1.5" fill="none" />
+              <circle cx="24" cy="21" r="2.5" stroke="#34D399" stroke-width="1.5" fill="none" />
+              <circle cx="24" cy="31" r="2.5" stroke="#34D399" stroke-width="1.5" fill="none" />
+              <line x1="18" y1="25" x2="22" y2="22" stroke="#34D399" stroke-width="1.3" />
+              <line x1="18" y1="27" x2="22" y2="30" stroke="#34D399" stroke-width="1.3" />
+              <!-- High-Legibility Readout -->
+              <text x="44" y="15" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="800" fill="#34D399" letter-spacing="0.5">ACTIVE NETWORK</text>
+              <text x="44" y="33" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">70+ <tspan font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="600" fill="#D5E6E0">Brands</tspan></text>
+              <text x="44" y="47" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="600" fill="#D5E6E0">10-Platform Sync</text>
             </g>
 
             <!-- Orbital Node 4: Bottom-Right (Outer Ring -> <45s Render Speed) -->
-            <polyline points="325,190 356,204 384,204" stroke="#C6FF3D" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
-            <circle cx="325" cy="190" r="3.5" fill="#C6FF3D" />
-            <g transform="translate(388, 178)">
+            <polyline points="334,189 364,204 392,204" stroke="#C6FF3D" stroke-width="1.4" stroke-dasharray="2.5 2.5" fill="none" />
+            <circle cx="334" cy="189" r="3.5" fill="#C6FF3D" />
+            <g transform="translate(396, 176)">
               <!-- Circular Lime-Teal Medallion -->
-              <circle cx="20" cy="24" r="17" fill="#09221B" stroke="#C6FF3D" stroke-width="1.5" />
-              <polygon points="21,17 15,25 20,25 19,31 25,23 20,23" fill="#C6FF3D" />
-              <!-- Borderless Floating Readout -->
-              <text x="45" y="16" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#C6FF3D" letter-spacing="0.4">RENDER LATENCY</text>
-              <text x="45" y="31" font-family="'Space Grotesk', sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">&lt;45s <tspan font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="500" fill="#A9CCC0">/clip</tspan></text>
-              <text x="45" y="42" font-family="'JetBrains Mono', monospace" font-size="7.5" fill="#7EAB9C">99.7% Reliability</text>
+              <circle cx="20" cy="26" r="17" fill="#09221B" stroke="#C6FF3D" stroke-width="1.5" />
+              <polygon points="21,19 15,27 20,27 19,33 25,25 20,25" fill="#C6FF3D" />
+              <!-- High-Legibility Readout -->
+              <text x="44" y="15" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="800" fill="#C6FF3D" letter-spacing="0.5">RENDER LATENCY</text>
+              <text x="44" y="33" font-family="'Space Grotesk', sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">&lt;45s <tspan font-family="'Plus Jakarta Sans', sans-serif" font-size="11.5" font-weight="600" fill="#D5E6E0">/clip</tspan></text>
+              <text x="44" y="47" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="600" fill="#D5E6E0">99.7% Reliability</text>
             </g>
 
           </svg>
         </div>
 
         <!-- shadcn CardFooter: Clean Legend & Telemetry Status -->
-        <div class="pt-2.5 border-t border-[#1E4D3E] flex items-center justify-between text-[10px] font-mono z-10">
-          <div class="flex items-center gap-3">
-            <span class="flex items-center gap-1.5 text-amber-400 font-semibold">
+        <div class="pt-2.5 border-t border-[#1E4D3E] flex items-center justify-between text-xs font-sans z-10">
+          <div class="flex items-center gap-4">
+            <span class="flex items-center gap-1.5 text-amber-300 font-semibold">
               <span class="w-2 h-2 rounded-full bg-amber-400"></span> Manual (80–100)
             </span>
-            <span class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+            <span class="flex items-center gap-1.5 text-emerald-300 font-semibold">
               <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Network (70+ Ch)
             </span>
             <span class="flex items-center gap-1.5 text-lime-400 font-bold">
               <span class="w-2 h-2 rounded-full bg-lime-400"></span> Aeos AST (1,000+)
             </span>
           </div>
-          <span class="text-pine-200 hidden sm:inline font-bold">ACK: &lt;1.2s</span>
+          <span class="text-pine-200 hidden sm:inline font-mono text-[11px] font-bold">ACK: &lt;1.2s</span>
         </div>
 
       </div>
@@ -527,22 +546,22 @@
     </div>
 
     <!-- Main Content: Harmonized Deep Pine & Emerald Split (Matching Slide 4 Color Scheme) -->
-    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-stretch my-auto z-10 py-2">
+    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-stretch my-auto z-10 pt-3 sm:pt-4 pb-1">
       
       <!-- Left Column (5 cols): Clear Problem Statement & 3 Harmonized Metric Bars -->
       <div class="lg:col-span-5 flex flex-col justify-between space-y-3">
         <div class="space-y-2.5">
-          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-stone-100 border border-stone-200 text-neutral-800 text-[11px] font-mono">
+          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-stone-100 border border-stone-200 text-neutral-800 text-[11px] font-mono font-semibold">
             <span class="w-1.5 h-1.5 rounded-full bg-pine-950"></span>
             <span>02 · THE BOTTLENECK</span>
           </div>
 
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-neutral-950 leading-tight">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-neutral-950 leading-[1.08] pb-0.5">
             The Headcount <br class="hidden sm:inline">
-            <span class="text-pine-800">Ceiling.</span>
+            <span class="font-editorial text-pine-800">Ceiling.</span>
           </h2>
           
-          <p class="text-xs sm:text-sm text-stone-600 max-w-lg leading-relaxed">
+          <p class="text-xs sm:text-sm text-stone-600 max-w-lg font-sans leading-relaxed">
             Linear agencies scale payroll, not output. Manual Premiere keyframing caps capacity at ~80 monthly clips.
           </p>
         </div>
@@ -552,7 +571,7 @@
           
           <!-- Bar 1: 50% Timeline Assembly (Deep Pine #061914) -->
           <div class="bg-white p-3 rounded-xl border border-stone-200/90 shadow-sm space-y-1.5">
-            <div class="flex items-baseline justify-between text-xs font-mono">
+            <div class="flex items-baseline justify-between text-xs sm:text-[13px] font-sans">
               <span class="font-bold text-neutral-950 flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-pine-950"></span>
                 Manual Timeline Assembly
@@ -562,37 +581,37 @@
             <div class="w-full bg-stone-100 rounded-full h-1.5 overflow-hidden">
               <div class="bg-pine-950 h-full rounded-full" style="width: 50%"></div>
             </div>
-            <p class="text-[11px] text-stone-500 font-sans">Keyframing captions & typography sync (4–8h/clip in Premiere/AE).</p>
+            <p class="text-xs text-stone-600 font-sans">Keyframing captions &amp; typography sync (4–8h/clip in Premiere/AE).</p>
           </div>
 
           <!-- Bar 2: 30% Talent Friction (Forest Emerald #0F5338) -->
           <div class="bg-white p-3 rounded-xl border border-stone-200/90 shadow-sm space-y-1.5">
-            <div class="flex items-baseline justify-between text-xs font-mono">
+            <div class="flex items-baseline justify-between text-xs sm:text-[13px] font-sans">
               <span class="font-bold text-neutral-950 flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-[#0F5338]"></span>
-                Talent & Reshoot Friction
+                Talent &amp; Reshoot Friction
               </span>
               <span class="font-display font-extrabold text-[#0F5338] text-base">30%</span>
             </div>
             <div class="w-full bg-stone-100 rounded-full h-1.5 overflow-hidden">
               <div class="bg-[#0F5338] h-full rounded-full" style="width: 30%"></div>
             </div>
-            <p class="text-[11px] text-stone-500 font-sans">Scheduling drift & audio retakes across 70+ brand channels.</p>
+            <p class="text-xs text-stone-600 font-sans">Scheduling drift &amp; audio retakes across 70+ brand channels.</p>
           </div>
 
           <!-- Bar 3: 20% Format QC (Vibrant Emerald #10B981) -->
           <div class="bg-white p-3 rounded-xl border border-stone-200/90 shadow-sm space-y-1.5">
-            <div class="flex items-baseline justify-between text-xs font-mono">
+            <div class="flex items-baseline justify-between text-xs sm:text-[13px] font-sans">
               <span class="font-bold text-neutral-950 flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                Format QC & Compression
+                Format QC &amp; Compression
               </span>
               <span class="font-display font-extrabold text-emerald-700 text-base">20%</span>
             </div>
             <div class="w-full bg-stone-100 rounded-full h-1.5 overflow-hidden">
               <div class="bg-emerald-500 h-full rounded-full" style="width: 20%"></div>
             </div>
-            <p class="text-[11px] text-stone-500 font-sans">9:16 vs 16:9 safe-zone re-renders and platform packaging.</p>
+            <p class="text-xs text-stone-600 font-sans">9:16 vs 16:9 safe-zone re-renders and platform packaging.</p>
           </div>
 
         </div>
@@ -601,15 +620,15 @@
       <!-- Right Column (7 cols): Crisp White Hero Card Matching Slide 4 Station 02 -->
       <div class="lg:col-span-7 bg-white p-4 lg:p-5 rounded-2xl border-2 border-pine-900 shadow-md flex flex-col justify-between relative">
         
-        <div class="absolute -top-3 right-5 bg-pine-950 text-lime-400 text-[9px] font-mono font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1.5">
+        <div class="absolute -top-3 right-5 bg-pine-950 text-lime-400 text-[9.5px] font-mono font-bold px-2.5 py-0.5 rounded-full shadow-sm flex items-center gap-1.5">
           <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
           ROOT CAUSE AUDIT
         </div>
 
         <!-- Subtle Top Strip -->
-        <div class="flex items-center justify-between text-[10px] font-mono border-b border-stone-100 pb-2.5 z-10">
-          <span class="font-bold text-neutral-950 uppercase tracking-wider">THROUGHPUT DRAG AUDIT (MODELED)</span>
-          <span class="bg-lime-400 text-pine-950 font-bold px-2.5 py-0.5 rounded-md">85% DRAG CUT VIA REMOTION</span>
+        <div class="flex items-center justify-between border-b border-stone-100 pb-2.5 z-10">
+          <span class="text-xs sm:text-sm font-display font-bold text-neutral-950 tracking-normal">Throughput Drag Audit (Modeled)</span>
+          <span class="bg-lime-400 text-pine-950 text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-md">85% DRAG CUT VIA REMOTION</span>
         </div>
 
         <!-- Middle Content: Donut Chart (Left) + 50% Assembly Sub-Parts Deconstruction (Right) -->
@@ -622,9 +641,9 @@
             <div class="flex items-center justify-between border-b border-stone-200/80 pb-2">
               <div class="flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-[#0F5338]"></span>
-                <span class="text-[10px] font-mono font-extrabold text-neutral-900 uppercase tracking-wider">Macro Drag Split</span>
+                <span class="text-xs font-sans font-extrabold text-neutral-900 tracking-normal">Macro Drag Split</span>
               </div>
-              <span class="text-[9px] font-mono font-bold bg-stone-200/80 text-neutral-800 px-2 py-0.5 rounded">100% NLE Time</span>
+              <span class="text-[10px] font-mono font-bold bg-stone-200/80 text-neutral-800 px-2 py-0.5 rounded">100% NLE Time</span>
             </div>
 
             <!-- Center SVG Donut + Left Callouts + Right Explode Bracket -->
@@ -655,14 +674,14 @@
                 <!-- Left Radial Callout 1: 20% Format QC (Top-Left) -->
                 <polyline points="118,52 92,34 68,34" stroke="#10B981" stroke-width="1.25" fill="none" />
                 <circle cx="118" cy="52" r="3" fill="#10B981" />
-                <text x="64" y="31" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="800" fill="#047857">20% FORMAT QC</text>
-                <text x="64" y="42" text-anchor="end" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="600" fill="#64748B">9:16 / 16:9 Crop</text>
+                <text x="64" y="30" text-anchor="end" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="800" fill="#047857">20% FORMAT QC</text>
+                <text x="64" y="42" text-anchor="end" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" fill="#475569">9:16 / 16:9 Crop</text>
 
                 <!-- Left Radial Callout 2: 30% Talent Friction (Bottom-Left) -->
                 <polyline points="110,168 88,186 68,186" stroke="#0F5338" stroke-width="1.25" fill="none" />
                 <circle cx="110" cy="168" r="3" fill="#0F5338" />
-                <text x="64" y="183" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="800" fill="#0F5338">30% TALENT</text>
-                <text x="64" y="194" text-anchor="end" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="600" fill="#64748B">Studio Retakes</text>
+                <text x="64" y="182" text-anchor="end" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="800" fill="#0F5338">30% TALENT</text>
+                <text x="64" y="194" text-anchor="end" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="600" fill="#475569">Studio Retakes</text>
 
                 <!-- Right Explode Bracket from 50% Assembly Semicircle to Right Panel -->
                 <path d="M 288 60 L 320 34 L 356 34" stroke="#061914" stroke-width="1.25" stroke-dasharray="2.5 2.5" opacity="0.6" />
@@ -686,28 +705,28 @@
 
                 <!-- Center White Hole -->
                 <circle cx="190" cy="115" r="50" fill="#FFFFFF" stroke="#061914" stroke-width="1.5" />
-                <text x="190" y="107" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="900" fill="#061914">85%</text>
-                <text x="190" y="120" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700" fill="#64748B" letter-spacing="0.8">DRAG CUT</text>
-                <text x="190" y="131" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="6.5" font-weight="800" fill="#0F5338" letter-spacing="0.5">REMOTION AST</text>
+                <text x="190" y="106" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="800" fill="#061914">85%</text>
+                <text x="190" y="119" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="800" fill="#475569" letter-spacing="0.5">DRAG CUT</text>
+                <text x="190" y="131" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="800" fill="#0F5338" letter-spacing="0.4">REMOTION AST</text>
 
                 <!-- Slice 1 Label (Right Semicircle: 50% Assembly) -->
-                <text x="265" y="113" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="13.5" font-weight="800" fill="#C6FF3D">50%</text>
-                <text x="265" y="125" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#D5E6E0" letter-spacing="0.4">ASSEMBLY</text>
+                <text x="265" y="113" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="14.5" font-weight="800" fill="#C6FF3D">50%</text>
+                <text x="265" y="125" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="800" fill="#E2F2EC" letter-spacing="0.4">ASSEMBLY</text>
 
                 <!-- Slice 2 Label (Bottom-Left: 30% Talent) -->
-                <text x="129" y="154" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="800" fill="#FFFFFF">30%</text>
-                <text x="129" y="165" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700" fill="#A7F3D0" letter-spacing="0.4">TALENT</text>
+                <text x="129" y="153" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">30%</text>
+                <text x="129" y="165" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="800" fill="#D1FAE5" letter-spacing="0.4">TALENT</text>
 
                 <!-- Slice 3 Label (Top-Left: 20% Format QC) -->
-                <text x="145" y="55" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="800" fill="#FFFFFF">20%</text>
-                <text x="145" y="66" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="800" fill="#ECFDF5" letter-spacing="0.4">FORMAT QC</text>
+                <text x="145" y="54" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="800" fill="#FFFFFF">20%</text>
+                <text x="145" y="66" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="800" fill="#ECFDF5" letter-spacing="0.4">FORMAT QC</text>
               </svg>
             </div>
 
             <!-- Left Panel Footer (Matches Right Panel Footer) -->
-            <div class="flex items-center justify-between pt-1 text-[10px] font-mono border-t border-stone-200/80">
-              <span class="text-stone-500">CAP: <strong class="text-neutral-800">~80 clips/mo</strong></span>
-              <span class="text-emerald-800 font-bold bg-emerald-100/80 px-2 py-0.5 rounded">TARGET: 1,000+/MO</span>
+            <div class="flex items-center justify-between pt-1 text-[11px] font-sans border-t border-stone-200/80">
+              <span class="text-stone-600 font-medium">Cap: <strong class="text-neutral-900">~80 clips/mo</strong></span>
+              <span class="text-emerald-900 font-mono text-[10px] font-bold bg-emerald-100/90 px-2 py-0.5 rounded">TARGET: 1,000+/MO</span>
             </div>
           </div>
 
@@ -718,60 +737,60 @@
             <div class="flex items-center justify-between border-b border-stone-200/80 pb-2">
               <div class="flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-pine-950"></span>
-                <span class="text-[10px] font-mono font-extrabold text-pine-950 uppercase tracking-wider">50% Assembly Breakdown</span>
+                <span class="text-xs font-sans font-extrabold text-pine-950 tracking-normal">50% Assembly Breakdown</span>
               </div>
-              <span class="text-[9px] font-mono font-bold bg-pine-950 text-lime-400 px-2 py-0.5 rounded">4–8h / Clip</span>
+              <span class="text-[10px] font-mono font-bold bg-pine-950 text-lime-400 px-2 py-0.5 rounded">4–8h / Clip</span>
             </div>
 
             <!-- Sub-Part 1: 22% Kinetic Typography & Word Sync -->
             <div class="bg-white rounded-lg p-2.5 border border-stone-200/80 shadow-xs space-y-1">
-              <div class="flex items-center justify-between text-[11px] font-mono">
-                <span class="font-bold text-neutral-950">01 · Kinetic Captions & Easing</span>
-                <span class="font-display font-extrabold text-pine-950">22%</span>
+              <div class="flex items-center justify-between text-xs font-sans">
+                <span class="font-bold text-neutral-950">01 · Kinetic Captions &amp; Easing</span>
+                <span class="font-display font-extrabold text-pine-950 text-sm">22%</span>
               </div>
-              <div class="w-full bg-stone-100 rounded-full h-1 overflow-hidden">
+              <div class="w-full bg-stone-100 rounded-full h-1.5 overflow-hidden">
                 <div class="bg-pine-950 h-full rounded-full" style="width: 44%"></div>
               </div>
-              <div class="flex items-center justify-between text-[10px] text-stone-500 pt-0.5">
+              <div class="flex items-center justify-between text-[11px] font-sans text-stone-600 pt-0.5">
                 <span>Frame-by-frame AE bezier curves</span>
-                <span class="font-mono font-bold text-emerald-700">→ Whisper JSON AST</span>
+                <span class="font-sans font-bold text-emerald-700">→ Whisper JSON AST</span>
               </div>
             </div>
 
             <!-- Sub-Part 2: 18% B-Roll, SFX & Layer Compositing -->
             <div class="bg-white rounded-lg p-2.5 border border-stone-200/80 shadow-xs space-y-1">
-              <div class="flex items-center justify-between text-[11px] font-mono">
-                <span class="font-bold text-neutral-950">02 · B-Roll & Audio Ducking</span>
-                <span class="font-display font-extrabold text-[#0F5338]">18%</span>
+              <div class="flex items-center justify-between text-xs font-sans">
+                <span class="font-bold text-neutral-950">02 · B-Roll &amp; Audio Ducking</span>
+                <span class="font-display font-extrabold text-[#0F5338] text-sm">18%</span>
               </div>
-              <div class="w-full bg-stone-100 rounded-full h-1 overflow-hidden">
+              <div class="w-full bg-stone-100 rounded-full h-1.5 overflow-hidden">
                 <div class="bg-[#0F5338] h-full rounded-full" style="width: 36%"></div>
               </div>
-              <div class="flex items-center justify-between text-[10px] text-stone-500 pt-0.5">
-                <span>Manual cut alignment & SFX gain</span>
-                <span class="font-mono font-bold text-emerald-700">→ &lt;Sequence&gt; Props</span>
+              <div class="flex items-center justify-between text-[11px] font-sans text-stone-600 pt-0.5">
+                <span>Manual cut alignment &amp; SFX gain</span>
+                <span class="font-sans font-bold text-emerald-700">→ &lt;Sequence&gt; Props</span>
               </div>
             </div>
 
             <!-- Sub-Part 3: 10% Revision Ripple-Edits -->
             <div class="bg-white rounded-lg p-2.5 border border-stone-200/80 shadow-xs space-y-1">
-              <div class="flex items-center justify-between text-[11px] font-mono">
+              <div class="flex items-center justify-between text-xs font-sans">
                 <span class="font-bold text-neutral-950">03 · Revision Ripple-Edits</span>
-                <span class="font-display font-extrabold text-emerald-700">10%</span>
+                <span class="font-display font-extrabold text-emerald-700 text-sm">10%</span>
               </div>
-              <div class="w-full bg-stone-100 rounded-full h-1 overflow-hidden">
+              <div class="w-full bg-stone-100 rounded-full h-1.5 overflow-hidden">
                 <div class="bg-emerald-500 h-full rounded-full" style="width: 20%"></div>
               </div>
-              <div class="flex items-center justify-between text-[10px] text-stone-500 pt-0.5">
+              <div class="flex items-center justify-between text-[11px] font-sans text-stone-600 pt-0.5">
                 <span>Hook change breaks NLE timeline</span>
-                <span class="font-mono font-bold text-emerald-700">→ Hot-Reload State</span>
+                <span class="font-sans font-bold text-emerald-700">→ Hot-Reload State</span>
               </div>
             </div>
 
             <!-- Sub-Panel Footer: Cycle Time Arbitrage -->
-            <div class="flex items-center justify-between pt-1 text-[10px] font-mono border-t border-stone-200/80">
-              <span class="text-stone-500">NLE: <strong class="text-neutral-800">240–480 min</strong></span>
-              <span class="text-pine-950 font-bold bg-lime-400/90 px-2 py-0.5 rounded">AST RENDER: &lt; 90 SEC</span>
+            <div class="flex items-center justify-between pt-1 text-[11px] font-sans border-t border-stone-200/80">
+              <span class="text-stone-600 font-medium">NLE: <strong class="text-neutral-900">240–480 min</strong></span>
+              <span class="text-pine-950 font-mono text-[10px] font-bold bg-lime-400/90 px-2 py-0.5 rounded">AST RENDER: &lt; 90 SEC</span>
             </div>
 
           </div>
@@ -779,12 +798,12 @@
         </div>
 
         <!-- Bottom Architecture Inset Strip (Matching Slide 4 Footer Gate Style) -->
-        <div class="pt-3 border-t border-stone-100 flex items-center justify-between z-10 text-[11px] font-mono">
+        <div class="pt-3 border-t border-stone-100 flex items-center justify-between z-10 text-xs font-sans">
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-            <span class="text-neutral-950 font-bold uppercase tracking-wider">DETERMINISTIC COMPOSITION</span>
+            <span class="text-neutral-950 font-bold tracking-normal">Deterministic Composition</span>
           </div>
-          <span class="text-[10px] font-mono bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold px-2.5 py-0.5 rounded-md">
+          <span class="text-[10.5px] font-mono bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold px-2.5 py-0.5 rounded-md">
             FRAME-ACCURATE AST
           </span>
         </div>
@@ -840,7 +859,7 @@
     </div>
 
     <!-- Main Content: Connected Pipeline Rail Flow -->
-    <div class="w-full max-w-[1600px] mx-auto space-y-4 my-auto z-10 py-2 sm:py-2.5">
+    <div class="w-full max-w-[1600px] mx-auto space-y-4 my-auto z-10 pt-3 sm:pt-4 pb-1">
       
       <!-- Headline & Subtitle -->
       <div class="space-y-2 max-w-3xl">
@@ -849,7 +868,7 @@
           <span>03 · DETERMINISTIC SYSTEM TOPOLOGY</span>
         </div>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-white leading-tight">
-          Code Replaces <span class="text-lime-400">Keyframes.</span>
+          Code Replaces <span class="font-editorial text-lime-400">Keyframes.</span>
         </h2>
         <p class="text-xs sm:text-sm lg:text-base text-pine-200 font-normal leading-relaxed">
           One founder shoot programmatically compiles into 100+ multi-format assets via deterministic React Remotion AST.
@@ -874,15 +893,15 @@
                   </div>
                   <span class="text-xl font-display font-black text-lime-400">[01]</span>
                 </div>
-                <span class="text-[9px] font-mono bg-[#071914] text-lime-300 font-bold px-2.5 py-1 rounded-md border border-[#245948]">&lt;1.2s ACK</span>
+                <span class="text-[9.5px] font-mono bg-[#071914] text-lime-300 font-bold px-2.5 py-1 rounded-md border border-[#245948]">&lt;1.2s ACK</span>
               </div>
-              <h4 class="text-base font-bold text-white mb-1">Edge Ingest</h4>
-              <p class="text-xs text-pine-200 leading-relaxed">
+              <h4 class="text-base font-display font-bold text-white mb-1">Edge Ingest</h4>
+              <p class="text-xs text-pine-100 font-sans leading-relaxed">
                 Automated webhook intake with 3-layer HMAC SHA-256 validation.
               </p>
             </div>
-            <div class="relative z-10 pt-2.5 border-t border-[#1E4B3D] text-[10px] font-mono text-pine-300 flex items-center justify-between">
-              <span class="font-semibold">SHA-256 SIGNED</span>
+            <div class="relative z-10 pt-2.5 border-t border-[#1E4B3D] text-[10.5px] font-sans text-pine-200 flex items-center justify-between">
+              <span class="font-semibold">SHA-256 Signed Intake</span>
               <span class="hidden lg:inline text-lime-400 font-bold">➔</span>
             </div>
           </div>
@@ -898,15 +917,15 @@
                   </div>
                   <span class="text-xl font-display font-black text-lime-400">[02]</span>
                 </div>
-                <span class="text-[9px] font-mono bg-[#071914] text-lime-300 font-bold px-2.5 py-1 rounded-md border border-[#245948]">MCP TYPED</span>
+                <span class="text-[9.5px] font-mono bg-[#071914] text-lime-300 font-bold px-2.5 py-1 rounded-md border border-[#245948]">MCP TYPED</span>
               </div>
-              <h4 class="text-base font-bold text-white mb-1">FastMCP Schema</h4>
-              <p class="text-xs text-pine-200 leading-relaxed">
+              <h4 class="text-base font-display font-bold text-white mb-1">FastMCP Schema</h4>
+              <p class="text-xs text-pine-100 font-sans leading-relaxed">
                 Typed contracts with strict JSON Schemas and zero brand drift.
               </p>
             </div>
-            <div class="relative z-10 pt-2.5 border-t border-[#1E4B3D] text-[10px] font-mono text-pine-300 flex items-center justify-between">
-              <span class="font-semibold">ZERO SCHEMA DRIFT</span>
+            <div class="relative z-10 pt-2.5 border-t border-[#1E4B3D] text-[10.5px] font-sans text-pine-200 flex items-center justify-between">
+              <span class="font-semibold">Zero Schema Drift</span>
               <span class="hidden lg:inline text-lime-400 font-bold">➔</span>
             </div>
           </div>
@@ -926,15 +945,15 @@
                   </div>
                   <span class="text-xl font-display font-black text-pine-950">[03]</span>
                 </div>
-                <span class="text-[9px] font-mono bg-pine-950 text-lime-400 font-extrabold px-2.5 py-1 rounded-md shadow-sm">&lt;45s / CLIP</span>
+                <span class="text-[9.5px] font-mono bg-pine-950 text-lime-400 font-extrabold px-2.5 py-1 rounded-md shadow-sm">&lt;45s / CLIP</span>
               </div>
-              <h4 class="text-base font-extrabold text-pine-950 mb-1">Remotion AST</h4>
-              <p class="text-xs text-pine-900 font-medium leading-relaxed">
+              <h4 class="text-base font-display font-extrabold text-pine-950 mb-1">Remotion AST</h4>
+              <p class="text-xs text-pine-950 font-sans font-semibold leading-relaxed">
                 Frame-accurate React render tree with automated typography sync.
               </p>
             </div>
-            <div class="pt-2.5 border-t border-pine-950/20 text-[10px] font-mono text-pine-950 flex items-center justify-between font-extrabold">
-              <span>FRAME-ACCURATE AST</span>
+            <div class="pt-2.5 border-t border-pine-950/20 text-[10.5px] font-sans text-pine-950 flex items-center justify-between font-extrabold">
+              <span>Frame-Accurate React AST</span>
               <span class="hidden lg:inline text-pine-950 font-black">➔</span>
             </div>
           </div>
@@ -950,15 +969,15 @@
                   </div>
                   <span class="text-xl font-display font-black text-emerald-400">[04]</span>
                 </div>
-                <span class="text-[9px] font-mono bg-[#071914] text-emerald-300 font-bold px-2.5 py-1 rounded-md border border-[#245948]">70+ BRANDS</span>
+                <span class="text-[9.5px] font-mono bg-[#071914] text-emerald-300 font-bold px-2.5 py-1 rounded-md border border-[#245948]">70+ BRANDS</span>
               </div>
-              <h4 class="text-base font-bold text-white mb-1">Fleet Fan-Out</h4>
-              <p class="text-xs text-pine-200 leading-relaxed">
+              <h4 class="text-base font-display font-bold text-white mb-1">Fleet Fan-Out</h4>
+              <p class="text-xs text-pine-100 font-sans leading-relaxed">
                 Simultaneous 10-platform distribution (YouTube, X, Reels, LinkedIn).
               </p>
             </div>
-            <div class="relative z-10 pt-2.5 border-t border-[#1E4B3D] text-[10px] font-mono text-emerald-400 flex items-center justify-between font-semibold">
-              <span>10-PLATFORM DISPATCH</span>
+            <div class="relative z-10 pt-2.5 border-t border-[#1E4B3D] text-[10.5px] font-sans text-emerald-400 flex items-center justify-between font-semibold">
+              <span>10-Platform Dispatch</span>
               <span class="hidden lg:inline text-emerald-400 font-bold">●</span>
             </div>
           </div>
@@ -967,20 +986,20 @@
       </div>
 
       <!-- Bottom Metric Strip (Elevated Frosted Surface) -->
-      <div class="p-3.5 rounded-xl bg-gradient-to-r from-[#11352A] via-[#0D2A21] to-[#11352A] border border-[#235747] shadow-lg flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+      <div class="p-3.5 rounded-xl bg-gradient-to-r from-[#11352A] via-[#0D2A21] to-[#11352A] border border-[#235747] shadow-lg flex flex-wrap items-center justify-between gap-4 font-sans text-xs">
         <div class="flex items-center gap-2">
-          <span class="text-pine-300 uppercase">VELOCITY MULTIPLIER:</span>
-          <span class="text-lime-400 font-bold">12.5x (&lt;45s vs 4–8h manual)</span>
+          <span class="text-pine-300 font-mono text-[10.5px] uppercase">VELOCITY MULTIPLIER:</span>
+          <span class="text-lime-400 font-bold">12.5× (&lt;45s vs 4–8h manual)</span>
         </div>
         <div class="h-3 w-px bg-[#235747] hidden sm:block"></div>
         <div class="flex items-center gap-2">
-          <span class="text-pine-300 uppercase">CONCURRENCY:</span>
-          <span class="text-white font-bold">ZERO SOCKET LEAKS</span>
+          <span class="text-pine-300 font-mono text-[10.5px] uppercase">CONCURRENCY:</span>
+          <span class="text-white font-bold">Zero Socket Leaks</span>
         </div>
         <div class="h-3 w-px bg-[#235747] hidden sm:block"></div>
         <div class="flex items-center gap-2">
-          <span class="text-pine-300 uppercase">DLQ RECOVERY:</span>
-          <span class="text-emerald-400 font-bold">3x BACKOFF · 99.7% RELIABILITY</span>
+          <span class="text-pine-300 font-mono text-[10.5px] uppercase">DLQ RECOVERY:</span>
+          <span class="text-emerald-400 font-bold">3× Backoff · 99.7% Reliability</span>
         </div>
       </div>
 
@@ -1030,7 +1049,7 @@
     </div>
 
     <!-- Main Content: Stepped Horizon Milestone Timeline -->
-    <div class="w-full max-w-[1600px] mx-auto space-y-5 my-auto z-10 py-3">
+    <div class="w-full max-w-[1600px] mx-auto space-y-5 my-auto z-10 pt-3 sm:pt-4 pb-1">
       
       <!-- Headline & Subtitle -->
       <div class="space-y-2 max-w-3xl">
@@ -1039,7 +1058,7 @@
           <span>04 · PHASED EXECUTION ROADMAP</span>
         </div>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-neutral-950 leading-tight">
-          30-Day Autonomous <span class="text-pine-800">Fleet.</span>
+          30-Day Autonomous <span class="font-editorial text-pine-800">Fleet.</span>
         </h2>
         <p class="text-xs sm:text-sm lg:text-base text-stone-600 font-normal leading-relaxed">
           Zero handholding. Concrete proof-of-work delivered in rapid 14-day validation cycles toward autonomy.
@@ -1062,7 +1081,7 @@
                 </span>
                 <span class="w-5 h-5 rounded-full bg-emerald-100 border border-emerald-400 flex items-center justify-center text-emerald-700 text-xs font-bold shadow-sm">✓</span>
               </div>
-              <h4 class="text-base font-bold text-neutral-950 mb-2">Intake & Normalization</h4>
+              <h4 class="text-base font-display font-bold text-neutral-950 mb-2">Intake &amp; Normalization</h4>
               
               <ul class="space-y-2 text-xs text-stone-600 font-sans">
                 <li class="flex items-center gap-2">
@@ -1099,7 +1118,7 @@
                 </span>
                 <span class="w-5 h-5 rounded-full bg-lime-100 border border-lime-400 flex items-center justify-center text-pine-950 text-xs font-bold shadow-sm">⚡</span>
               </div>
-              <h4 class="text-base font-bold text-neutral-950 mb-2">Remotion AST Engine</h4>
+              <h4 class="text-base font-display font-bold text-neutral-950 mb-2">Remotion AST Engine</h4>
               
               <ul class="space-y-2 text-xs text-stone-600 font-sans">
                 <li class="flex items-center gap-2">
@@ -1132,7 +1151,7 @@
                 </span>
                 <span class="w-5 h-5 rounded-full bg-pine-950 text-lime-400 flex items-center justify-center text-[10px] font-bold shadow-sm">↗</span>
               </div>
-              <h4 class="text-base font-bold text-neutral-950 mb-2">Fleet Scaling & Fan-Out</h4>
+              <h4 class="text-base font-display font-bold text-neutral-950 mb-2">Fleet Scaling &amp; Fan-Out</h4>
               
               <ul class="space-y-2 text-xs text-stone-600 font-sans">
                 <li class="flex items-center gap-2">
@@ -1208,7 +1227,7 @@
     </div>
 
     <!-- Main Content: Diverse Comparative Infographic Layout (Matching Slide 3 Hero Contrast) -->
-    <div class="w-full max-w-[1600px] mx-auto space-y-3 sm:space-y-4 my-auto z-10 py-1.5">
+    <div class="w-full max-w-[1600px] mx-auto space-y-3 sm:space-y-4 my-auto z-10 pt-3 sm:pt-4 pb-1">
       
       <!-- Headline & Subtitle -->
       <div class="space-y-1.5 max-w-3xl">
@@ -1217,7 +1236,7 @@
           <span>05 · UNIT ECONOMICS & ARBITRAGE</span>
         </div>
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold tracking-tight text-white leading-tight">
-          85.5% Margin <span class="text-lime-400">Expansion.</span>
+          85.5% Margin <span class="font-editorial text-lime-400">Expansion.</span>
         </h2>
         <p class="text-xs sm:text-sm text-pine-200 font-normal leading-relaxed">
           Modeled on 10 enterprise channels: comparing linear agency payroll against programmatic Remotion compute.
@@ -1235,27 +1254,27 @@
               <span class="text-[10px] font-mono text-emerald-300 uppercase tracking-wider font-bold bg-[#081C16] px-2 py-0.5 rounded border border-[#1F4E3F]">[01] RUN-RATE</span>
               <span class="text-[9.5px] font-mono text-lime-400 bg-[#081C16] px-2 py-0.5 rounded-full border border-[#1F4E3F] font-bold">7:1 COST RATIO</span>
             </div>
-            <h4 class="text-sm sm:text-base font-bold text-white">Payroll vs Compute</h4>
+            <h4 class="text-sm sm:text-base font-display font-bold text-white">Payroll vs Compute</h4>
           </div>
 
           <!-- The Visual Side-by-Side Height Bars Component -->
           <div class="h-28 sm:h-32 flex items-end justify-center gap-6 px-3 pb-2 border-b border-[#1E4A3C] relative z-10">
             <!-- Left Bar: ₹4.5L Traditional Payroll -->
             <div class="flex flex-col items-center gap-1 flex-1 max-w-[88px]">
-              <span class="text-xs font-mono font-bold text-red-400">₹4.5L</span>
+              <span class="text-xs font-display font-extrabold text-red-400">₹4.5L</span>
               <div class="w-full h-16 sm:h-[72px] rounded-t-lg bg-gradient-to-t from-red-950/90 to-red-500/85 border border-red-400/60 shadow-[0_0_15px_rgba(239,68,68,0.2)]"></div>
-              <span class="text-[9.5px] font-mono text-pine-200 text-center leading-tight">Agency<br>Payroll</span>
+              <span class="text-[10.5px] font-sans font-semibold text-pine-100 text-center leading-tight">Agency<br>Payroll</span>
             </div>
 
             <!-- Right Bar: ₹65K Remotion Compute (~7:1 visual ratio) -->
             <div class="flex flex-col items-center gap-1 flex-1 max-w-[88px]">
-              <span class="text-xs font-mono font-bold text-lime-400">₹65K</span>
+              <span class="text-xs font-display font-extrabold text-lime-400">₹65K</span>
               <div class="w-full h-3 rounded-t-lg bg-gradient-to-t from-lime-500 to-lime-300 border border-lime-300 shadow-[0_0_15px_rgba(198,255,61,0.35)]"></div>
-              <span class="text-[9.5px] font-mono text-lime-400 font-bold text-center leading-tight">Aeos<br>Compute</span>
+              <span class="text-[10.5px] font-sans font-bold text-lime-400 text-center leading-tight">Aeos<br>Compute</span>
             </div>
           </div>
 
-          <div class="text-[10px] font-mono text-pine-200 flex items-center justify-between pt-0.5 relative z-10">
+          <div class="text-[11px] font-sans font-semibold text-pine-100 flex items-center justify-between pt-0.5 relative z-10">
             <span>6 Editors (80 clips cap)</span>
             <span class="text-lime-400 font-bold">1 Op (1,000+ clips)</span>
           </div>
@@ -1274,7 +1293,7 @@
                 <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
               </span>
             </div>
-            <h4 class="text-sm sm:text-base font-black text-pine-950">Net Capital Recovery</h4>
+            <h4 class="text-sm sm:text-base font-display font-black text-pine-950">Net Capital Recovery</h4>
           </div>
 
           <!-- Dynamic SVG Upward Growth Curve & Center Metric -->
@@ -1286,8 +1305,8 @@
             <div class="text-4xl sm:text-[44px] font-display font-black text-pine-950 tracking-tight leading-none my-0.5">
               85.5%
             </div>
-            <div class="text-xs font-mono font-extrabold text-pine-950 mt-1">₹3.85L / month Recovered</div>
-            <div class="text-[10px] text-pine-900 font-mono font-bold mt-0.5">₹46L+ / Year Saved per 10 Channels</div>
+            <div class="text-xs font-sans font-extrabold text-pine-950 mt-1">₹3.85L / month Recovered</div>
+            <div class="text-[11px] text-pine-900 font-sans font-semibold mt-0.5">₹46L+ / Year Saved per 10 Channels</div>
           </div>
 
           <div class="p-2 rounded-xl bg-pine-950 text-[10px] font-mono text-lime-400 font-bold text-center shadow-sm">
@@ -1303,7 +1322,7 @@
               <span class="text-[10px] font-mono text-emerald-300 uppercase tracking-wider font-bold bg-[#081C16] px-2 py-0.5 rounded border border-[#1F4E3F]">[03] MEDIA VELOCITY</span>
               <span class="text-xl sm:text-2xl font-display font-black text-lime-400">12.5×</span>
             </div>
-            <h4 class="text-sm sm:text-base font-bold text-white">Fleet Capacity Scale</h4>
+            <h4 class="text-sm sm:text-base font-display font-bold text-white">Fleet Capacity Scale</h4>
           </div>
 
           <!-- Mavence-Style 10x10 Capacity Dot Matrix (100 Dots) -->
@@ -1325,7 +1344,7 @@
             </div>
           </div>
 
-          <div class="pt-2 border-t border-[#1E4A3C] text-[10px] font-mono flex items-center justify-between text-pine-200 relative z-10">
+          <div class="pt-2 border-t border-[#1E4A3C] text-[11px] font-sans font-semibold flex items-center justify-between text-pine-100 relative z-10">
             <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-red-400"></span> Manual (80)</span>
             <span class="flex items-center gap-1.5 text-lime-400 font-bold"><span class="w-2 h-2 rounded-full bg-lime-400"></span> Fleet (1,000+)</span>
           </div>
@@ -1334,13 +1353,13 @@
       </div>
 
       <!-- Compact Telemetry Strip (Matching Slide 3 Bottom Strip) -->
-      <div class="px-4 py-2 rounded-xl bg-[#0D2B22] border border-[#1E4E40] flex flex-wrap items-center justify-between gap-2 text-[10px] font-mono shadow-lg">
+      <div class="px-4 py-2 rounded-xl bg-[#0D2B22] border border-[#1E4E40] flex flex-wrap items-center justify-between gap-2 text-[11px] font-sans shadow-lg">
         <div class="flex items-center gap-2">
           <span class="w-1.5 h-1.5 rounded-full bg-lime-400"></span>
-          <span class="text-pine-300 uppercase">CAPITAL EFFICIENCY:</span>
-          <span class="text-lime-400 font-bold">HIGH-LEVERAGE COMPUTE OVER LINEAR AGENCY PAYROLL</span>
+          <span class="text-pine-300 font-mono text-[10px] uppercase">CAPITAL EFFICIENCY:</span>
+          <span class="text-lime-400 font-bold">High-Leverage Compute over Linear Agency Payroll</span>
         </div>
-        <span class="text-pine-200 hidden sm:inline font-semibold">MODELED ON 10 ENTERPRISE BRAND CHANNELS</span>
+        <span class="text-pine-200 hidden sm:inline font-semibold">Modeled on 10 Enterprise Brand Channels</span>
       </div>
 
     </div>
@@ -1356,10 +1375,10 @@
 
 
   <!-- ========================================================================= -->
-  <!-- SLIDE 6: FOUNDING OPERATOR & PROVENANCE (Crisp Off-White · Cognis 04)     -->
+  <!-- SLIDE 6: SHIPPED SYSTEMS APPENDIX (Hidden by Default: Pure 5-Slide Deck)  -->
   <!-- ========================================================================= -->
   <section x-show="currentSlide === 6" x-transition.opacity.duration.300ms 
-           class="slide-canvas w-full bg-canvas-light text-neutral-900 flex flex-col justify-between relative">
+           class="slide-canvas slide-operator-appendix w-full bg-canvas-light text-neutral-900 flex flex-col justify-between relative">
     
     <!-- Top Header Strip (Ultra-Compact 30px Executive Standard) -->
     <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between border-b border-stone-200 pb-1.5 z-10 shrink-0 h-[30px]">
@@ -1368,9 +1387,9 @@
           Æ
         </div>
         <div class="flex items-center gap-2">
-          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-neutral-900">Systems Operator Appendix</span>
+          <span class="text-[11px] uppercase tracking-wider font-bold font-mono text-neutral-900">Aeos Labs Reference</span>
           <span class="text-stone-300 font-mono">|</span>
-          <span class="text-[11px] font-mono text-stone-600">06 · Technical Provenance</span>
+          <span class="text-[11px] font-mono text-stone-600">06 · Shipped Systems</span>
         </div>
       </div>
       <!-- Right Action Triggers -->
@@ -1388,55 +1407,45 @@
       </div>
     </div>
 
-    <!-- Main Content: Editorial Mentor Split (Profile Card + 3 Shipped Receipts) -->
-    <div class="w-full max-w-[1600px] mx-auto space-y-2.5 sm:space-y-3 my-auto z-10 py-1 sm:py-1.5">
+    <!-- Main Content: Non-Salesy Plain-English Shipped Systems Overview -->
+    <div class="w-full max-w-[1600px] mx-auto space-y-3 my-auto z-10 pt-3 sm:pt-4 pb-1">
       <div>
         <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-stone-100 border border-stone-200 text-neutral-800 text-[10px] font-mono mb-1">
           <span class="w-1.5 h-1.5 rounded-full bg-pine-950"></span>
-          <span>06 · SHIPPED PROOF-OF-WORK RECEIPTS</span>
+          <span>06 · PRODUCTION PROOF OF WORK</span>
         </div>
         <h2 class="text-2xl sm:text-3xl font-display font-extrabold tracking-tight text-neutral-950 leading-tight">
-          Verified Technical <span class="text-pine-800">Provenance.</span>
+          Shipped Systems in <span class="font-editorial text-pine-800">Production.</span>
         </h2>
         <p class="text-xs text-stone-600 max-w-3xl leading-relaxed mt-0.5">
-          Production automation engines, upstream open-source PRs, and deterministic webhook pipelines backed by physical commits.
+          Real-world content automation, open-source infrastructure, and booking engines already running in production.
         </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-stretch">
         
-        <!-- Left Column (4 cols): Editorial Profile Card -->
-        <div class="lg:col-span-4 bg-white p-3.5 sm:p-4 rounded-2xl border border-stone-200 shadow-md flex flex-col justify-between">
+        <!-- Left Column (4 cols): Minimal Builder Attribution -->
+        <div class="lg:col-span-4 bg-white p-4 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
           <div>
-            <div class="flex items-center gap-3 mb-2">
-              <!-- Architectural Monogram Badge (Zero Fake AI Portrait) -->
-              <div class="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-pine-950 border border-pine-800 shadow-sm shrink-0 flex items-center justify-center">
-                <span class="font-display font-black text-lime-400 text-sm sm:text-base tracking-tight">AS</span>
-                <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 border-2 border-white" title="Verified Systems Operator"></span>
+            <div class="flex items-center gap-3 mb-2.5">
+              <div class="relative w-11 h-11 rounded-xl bg-pine-950 border border-pine-800 shadow-sm shrink-0 flex items-center justify-center">
+                <span class="font-display font-black text-lime-400 text-sm tracking-tight">AS</span>
               </div>
               <div>
                 <h3 class="text-base sm:text-lg font-display font-extrabold text-neutral-950 leading-tight">Aman Suryavanshi</h3>
-                <p class="text-xs font-mono text-amber-600 font-bold">Autonomous Systems Automator</p>
-                <p class="text-[10px] text-stone-500 font-mono">Delhi NCR / Bengaluru · On-Site & Hybrid</p>
+                <p class="text-xs font-mono text-[#0F5338] font-bold">AI &amp; Media Systems Builder</p>
               </div>
             </div>
 
-            <p class="text-xs text-stone-600 leading-relaxed border-t border-stone-100 pt-2">
-              Specialized in high-throughput media pipelines, FastMCP protocol gateways, and executive context relay—translating unstructured founder discovery into verified production software.
+            <p class="text-xs text-stone-600 leading-relaxed border-t border-stone-100 pt-2.5">
+              Builds end-to-end content pipelines, programmatic video engines, and automated distribution workflows that turn raw founder inputs into multi-platform media at scale.
             </p>
-
-            <div class="mt-2 p-2 bg-stone-50 rounded-xl border border-stone-200">
-              <span class="text-[9px] font-mono text-amber-700 font-bold block uppercase mb-0.5">OPERATING VECTOR</span>
-              <p class="text-[11px] text-stone-700 font-medium leading-snug">
-                Zero LeetCode trivia. 100% production shipping: AST validation, webhook queues, and programmatic React video.
-              </p>
-            </div>
           </div>
 
-          <!-- Canonical Contact Coordinates -->
-          <div class="space-y-1.5 pt-2 border-t border-stone-100 mt-2 font-mono">
+          <!-- Canonical Links -->
+          <div class="space-y-1.5 pt-2.5 border-t border-stone-100 mt-2 font-mono">
             <div class="flex flex-wrap items-center gap-1.5">
-              <a href="https://amansuryavanshi.me/" target="_blank" class="px-2 py-0.5 rounded-md bg-stone-100 hover:bg-stone-200 border border-stone-200 text-[10px] text-neutral-900 font-semibold transition-all">
+              <a href="https://amansuryavanshi.me/" target="_blank" class="px-2.5 py-0.5 rounded-md bg-pine-950 text-lime-400 text-[10px] font-bold transition-all">
                 amansuryavanshi.me
               </a>
               <a href="https://github.com/AmanSuryavanshi-1" target="_blank" class="px-2 py-0.5 rounded-md bg-stone-100 hover:bg-stone-200 border border-stone-200 text-[10px] text-neutral-900 font-semibold transition-all">
@@ -1446,67 +1455,65 @@
                 LinkedIn
               </a>
             </div>
-
-            <div class="flex items-center justify-between text-[10px] text-stone-600 pt-0.5">
+            <div class="text-[10px] text-stone-600 pt-0.5">
               <span class="text-neutral-900 font-bold">amansurya.work@gmail.com</span>
-              <span>+91-8745030106</span>
             </div>
           </div>
         </div>
 
-        <!-- Right Column (8 cols): 3 Clean Proof-of-Work Receipts (Explicitly Tagged (Shipped)) -->
-        <div class="lg:col-span-8 space-y-2 sm:space-y-2.5 flex flex-col justify-between">
+        <!-- Right Column (8 cols): 3 Intuitive, Plain-English Shipped Projects -->
+        <div class="lg:col-span-8 space-y-2.5 flex flex-col justify-between">
           
-          <!-- Receipt 1: OmniPost-Core -->
-          <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-stone-200 shadow-sm flex items-center gap-3 hover:border-amber-400 transition-all">
-            <div class="w-9 h-9 rounded-lg bg-cognis-orange text-white flex items-center justify-center shrink-0 shadow-sm">
+          <!-- Project 1: OmniPost -->
+          <div class="bg-white p-3 rounded-xl border border-stone-200 shadow-sm flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-pine-950 text-lime-400 flex items-center justify-center shrink-0 shadow-sm">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/>
               </svg>
             </div>
             <div class="flex-1 min-w-0">
               <div class="flex items-baseline justify-between mb-0.5">
-                <h4 class="text-xs sm:text-sm font-bold text-neutral-950 leading-tight">OmniPost Automation Engine</h4>
-                <span class="text-[10px] sm:text-[11px] font-mono font-bold text-cognis-orange">122 NODES · FASTMCP (Shipped)</span>
+                <h4 class="text-xs sm:text-sm font-bold text-neutral-950 leading-tight">OmniPost — Multi-Platform Content Engine</h4>
+                <span class="text-[10px] font-mono font-bold text-pine-950 bg-lime-400 px-2 py-0.5 rounded">1 INPUT → 10 PLATFORMS</span>
               </div>
-              <p class="text-[10.5px] text-stone-600 leading-snug">
-                122-node production n8n automation engine, FastMCP protocol gateways on port 3010, structured JSON schemas, and automated Dead Letter Queues (DLQs).
+              <p class="text-[11px] text-stone-600 leading-snug">
+                Takes one raw session or voice note and automatically formats, verifies, and stages native posts across 10 social channels (LinkedIn, X, YouTube, Reels) with automatic failure recovery.
               </p>
             </div>
           </div>
 
-          <!-- Receipt 2: notebooklm-py PR #276 -->
-          <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-stone-200 shadow-sm flex items-center gap-3 hover:border-amber-400 transition-all">
-            <div class="w-9 h-9 rounded-lg bg-cognis-purple text-white flex items-center justify-center shrink-0 shadow-sm">
+          <!-- Project 2: notebooklm-py PR #276 -->
+          <div class="bg-white p-3 rounded-xl border border-stone-200 shadow-sm flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-[#0F5338] text-white flex items-center justify-center shrink-0 shadow-sm">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/>
               </svg>
             </div>
             <div class="flex-1 min-w-0">
               <div class="flex items-baseline justify-between mb-0.5">
-                <h4 class="text-xs sm:text-sm font-bold text-neutral-950 leading-tight">notebooklm-py (PR #276 Merged)</h4>
-                <span class="text-[10px] sm:text-[11px] font-mono font-bold text-cognis-purple">16.5k★ REPO · 24 FILES (Shipped)</span>
+                <h4 class="text-xs sm:text-sm font-bold text-neutral-950 leading-tight">notebooklm-py — Open-Source Core Fix (PR #276)</h4>
+                <span class="text-[10px] font-mono font-bold text-[#0F5338] bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">16.5k★ GITHUB REPO</span>
               </div>
-              <p class="text-[10.5px] text-stone-600 leading-snug">
-                Merged upstream PR refactoring async HTTPX sessions, cookie rotation, and Windows asyncio event loop concurrency across 24 files with zero socket leaks.
+              <p class="text-[11px] text-stone-600 leading-snug">
+                Merged upstream contribution fixing high-concurrency connection drops and session rotation across 24 files so automated research pipelines run without crashing.
               </p>
             </div>
           </div>
 
-          <!-- Receipt 3: Aviators Training Centre (ATC) -->
-          <div class="bg-white p-2.5 sm:p-3 rounded-xl border border-stone-200 shadow-sm flex items-center gap-3 hover:border-amber-400 transition-all">
-            <div class="w-9 h-9 rounded-lg bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-sm">
+          <!-- Project 3: Aviators Training Centre -->
+          <div class="bg-white p-3 rounded-xl border border-stone-200 shadow-sm flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-sm">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
               </svg>
             </div>
             <div class="flex-1 min-w-0">
               <div class="flex items-baseline justify-between mb-0.5">
-                <h4 class="text-xs sm:text-sm font-bold text-neutral-950 leading-tight">Aviators Training Centre (ATC)</h4>
-                <span class="text-[10px] sm:text-[11px] font-mono font-bold text-amber-700">1,000+ RUNS · 99.7% (Shipped)</span>
+                <h4 class="text-xs sm:text-sm font-bold text-neutral-950 leading-tight">Aviators Training Centre — Automated Operations</h4>
+                <span class="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">1,000+ LIVE BOOKINGS</span>
               </div>
-              <p class="text-[10.5px] text-stone-600 leading-snug">
-                3-layer HMAC SHA-256 webhook validator, Notion CMS 8 relational databases with 0.67 req/s semaphore throttle, 99.7% execution reliability across 1,000+ bookings.
+              <p class="text-[11px] text-stone-600 leading-snug">
+                End-to-end booking and CRM automation connecting web forms to 8 live Notion databases with 99.7% reliability across 1,000+ student enrollments.
               </p>
             </div>
           </div>
@@ -1518,9 +1525,9 @@
 
     <!-- Bottom Footer Strip (Standardized 30px Fixed Footprint) -->
     <div class="w-full max-w-[1600px] mx-auto flex items-center justify-between text-[11px] font-mono text-stone-500 pt-1 border-t border-stone-200 z-10 shrink-0 font-medium h-[30px]">
-      <span class="max-w-[32%] truncate">SOURCE: PHYSICAL CODEBASE COMMITS</span>
+      <span class="max-w-[32%] truncate">SOURCE: PRODUCTION SYSTEMS</span>
       <div class="w-[320px] sm:w-[420px] md:w-[480px] pointer-events-none shrink-0"></div>
-      <span class="text-right max-w-[32%] truncate font-mono">VERIFIED OPERATOR: AMAN SURYAVANSHI · DELHI NCR / BLR</span>
+      <span class="text-right max-w-[32%] truncate font-mono">PORTFOLIO: AMANSURYAVANSHI.ME</span>
     </div>
 
   </section>
@@ -1625,7 +1632,7 @@
 
           <!-- Note for Slide 6 -->
           <div x-show="currentSlide === 6" class="space-y-2 text-neutral-300">
-            <p><span class="text-lime-400 font-bold">• Operator Provenance:</span> 122-node production n8n engine, PR #276 in notebooklm-py, and 3-layer HMAC webhook validator with 99.7% execution reliability across 1,000+ runs.</p>
+            <p><span class="text-lime-400 font-bold">• Shipped Systems:</span> OmniPost multi-platform content engine, PR #276 merged in notebooklm-py (16.5k★), and ATC automated operations across 1,000+ bookings.</p>
           </div>
         </div>
 
@@ -1646,7 +1653,7 @@
     function deckApp() {
       return {
         currentSlide: 1,
-        totalSlides: 6,
+        totalSlides: 5,
         drawerOpen: false,
 
         init() {
