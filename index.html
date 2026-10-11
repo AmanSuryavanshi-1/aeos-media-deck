@@ -612,62 +612,170 @@
           <span class="bg-lime-400 text-pine-950 font-bold px-2.5 py-0.5 rounded-md">85% DRAG CUT VIA REMOTION</span>
         </div>
 
-        <!-- The SVG Segmented Donut Component (Deep Pine + Forest Emerald + Vibrant Emerald) -->
-        <div class="w-full flex justify-center items-center py-1 z-10 my-auto">
-          <svg class="w-full max-w-[370px] sm:max-w-[390px] h-[225px] sm:h-[238px] overflow-visible" viewBox="0 0 400 300" fill="none">
-            <defs>
-              <linearGradient id="slicePine" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#061914" />
-                <stop offset="100%" stop-color="#0D3328" />
-              </linearGradient>
-              <linearGradient id="sliceForest" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#0F5338" />
-                <stop offset="100%" stop-color="#15734E" />
-              </linearGradient>
-              <linearGradient id="sliceEmerald" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#10B981" />
-                <stop offset="100%" stop-color="#059669" />
-              </linearGradient>
-              <filter id="donutShadow" x="-10%" y="-10%" width="120%" height="120%">
-                <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="rgba(6,25,20,0.14)" />
-              </filter>
-            </defs>
-
-            <!-- Hairline Concentric Guide Rings -->
-            <circle cx="200" cy="150" r="138" stroke="#CBD5E1" stroke-dasharray="3 3" fill="none" opacity="0.7"/>
-            <circle cx="200" cy="150" r="48" stroke="#E2E8F0" fill="none"/>
-
-            <!-- Donut Slices -->
-            <!-- Slice 1: 50% Timeline Assembly (Deep Pine #061914 Arc) -->
-            <path d="M 203.27 25.04 A 125 125 0 0 1 203.27 274.96 L 201.70 214.98 A 65 65 0 0 0 201.70 85.02 Z" 
-                  fill="url(#slicePine)" filter="url(#donutShadow)" />
+        <!-- Middle Content: Donut Chart (Left) + 50% Assembly Sub-Parts Deconstruction (Right) -->
+        <div class="w-full grid grid-cols-1 sm:grid-cols-12 gap-3 lg:gap-4 items-stretch my-auto py-1 z-10">
+          
+          <!-- Left 6 Cols: The Segmented Donut Chart with Left Callouts & Right Explode Bracket -->
+          <div class="sm:col-span-6 bg-stone-50/50 rounded-xl border border-stone-200/70 p-3.5 flex flex-col justify-between relative">
             
-            <!-- Slice 2: 30% Presenter Reshoots (Forest Emerald #0F5338 Arc) -->
-            <path d="M 196.73 274.96 A 125 125 0 0 1 80.15 114.50 L 137.68 131.54 A 65 65 0 0 0 198.30 214.98 Z" 
-                  fill="url(#sliceForest)" filter="url(#donutShadow)" />
+            <!-- Left Panel Header (Matches Right Panel Header) -->
+            <div class="flex items-center justify-between border-b border-stone-200/80 pb-2">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-[#0F5338]"></span>
+                <span class="text-[10px] font-mono font-extrabold text-neutral-900 uppercase tracking-wider">Macro Drag Split</span>
+              </div>
+              <span class="text-[9px] font-mono font-bold bg-stone-200/80 text-neutral-800 px-2 py-0.5 rounded">100% NLE Time</span>
+            </div>
 
-            <!-- Slice 3: 20% QC & Format Re-renders (Vibrant Emerald #10B981 Arc) -->
-            <path d="M 82.17 108.27 A 125 125 0 0 1 196.73 25.04 L 198.30 85.02 A 65 65 0 0 0 138.73 128.30 Z" 
-                  fill="url(#sliceEmerald)" filter="url(#donutShadow)" />
+            <!-- Center SVG Donut + Left Callouts + Right Explode Bracket -->
+            <div class="w-full flex justify-center items-center my-auto py-0.5">
+              <svg class="w-full max-w-[350px] h-[195px] sm:h-[208px] overflow-visible" viewBox="0 0 360 230" fill="none">
+                <defs>
+                  <linearGradient id="slicePine" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#061914" />
+                    <stop offset="100%" stop-color="#0D3328" />
+                  </linearGradient>
+                  <linearGradient id="sliceForest" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#0F5338" />
+                    <stop offset="100%" stop-color="#15734E" />
+                  </linearGradient>
+                  <linearGradient id="sliceEmerald" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#10B981" />
+                    <stop offset="100%" stop-color="#059669" />
+                  </linearGradient>
+                  <filter id="donutShadow" x="-12%" y="-12%" width="124%" height="124%">
+                    <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="rgba(6,25,20,0.14)" />
+                  </filter>
+                </defs>
 
-            <!-- Center White Hole -->
-            <circle cx="200" cy="150" r="63" fill="#FFFFFF" stroke="#061914" stroke-width="1.5" />
-            <text x="200" y="140" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="26" font-weight="900" fill="#061914">85%</text>
-            <text x="200" y="155" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#64748B" letter-spacing="0.8">DRAG CUT</text>
-            <text x="200" y="168" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="800" fill="#0F5338" letter-spacing="0.5">REMOTION AST</text>
+                <!-- Hairline Concentric Guide Rings (Centered at cx=190, cy=115) -->
+                <circle cx="190" cy="115" r="108" stroke="#CBD5E1" stroke-dasharray="3 3" fill="none" opacity="0.8"/>
+                <circle cx="190" cy="115" r="40" stroke="#E2E8F0" fill="none"/>
 
-            <!-- Slice 1 Label -->
-            <text x="295" y="150" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="800" fill="#C6FF3D">50%</text>
-            <text x="295" y="164" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#D5E6E0" letter-spacing="0.5">ASSEMBLY</text>
+                <!-- Left Radial Callout 1: 20% Format QC (Top-Left) -->
+                <polyline points="118,52 92,34 68,34" stroke="#10B981" stroke-width="1.25" fill="none" />
+                <circle cx="118" cy="52" r="3" fill="#10B981" />
+                <text x="64" y="31" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="800" fill="#047857">20% FORMAT QC</text>
+                <text x="64" y="42" text-anchor="end" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="600" fill="#64748B">9:16 / 16:9 Crop</text>
 
-            <!-- Slice 2 Label -->
-            <text x="123" y="200" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">30%</text>
-            <text x="123" y="214" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#A7F3D0" letter-spacing="0.5">TALENT</text>
+                <!-- Left Radial Callout 2: 30% Talent Friction (Bottom-Left) -->
+                <polyline points="110,168 88,186 68,186" stroke="#0F5338" stroke-width="1.25" fill="none" />
+                <circle cx="110" cy="168" r="3" fill="#0F5338" />
+                <text x="64" y="183" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="800" fill="#0F5338">30% TALENT</text>
+                <text x="64" y="194" text-anchor="end" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="600" fill="#64748B">Studio Retakes</text>
 
-            <!-- Slice 3 Label -->
-            <text x="144" y="74" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">20%</text>
-            <text x="144" y="88" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="800" fill="#ECFDF5" letter-spacing="0.5">FORMAT QC</text>
-          </svg>
+                <!-- Right Explode Bracket from 50% Assembly Semicircle to Right Panel -->
+                <path d="M 288 60 L 320 34 L 356 34" stroke="#061914" stroke-width="1.25" stroke-dasharray="2.5 2.5" opacity="0.6" />
+                <path d="M 288 170 L 320 196 L 356 196" stroke="#061914" stroke-width="1.25" stroke-dasharray="2.5 2.5" opacity="0.6" />
+                <line x1="292" y1="115" x2="356" y2="115" stroke="#061914" stroke-width="1.5" />
+                <circle cx="292" cy="115" r="4.5" fill="#C6FF3D" stroke="#061914" stroke-width="1.5" />
+                <polygon points="358,115 351,111.5 351,118.5" fill="#061914" />
+
+                <!-- Donut Slices (cx=190, cy=115, R=99, r=52) -->
+                <!-- Slice 1: 50% Timeline Assembly (Deep Pine #061914 Right Semicircle) -->
+                <path d="M 192.5 16.03 A 99 99 0 0 1 192.5 213.97 L 191.3 166.98 A 52 52 0 0 0 191.3 63.02 Z" 
+                      fill="url(#slicePine)" filter="url(#donutShadow)" />
+                
+                <!-- Slice 2: 30% Presenter Reshoots (Forest Emerald #0F5338 Bottom-Left Arc) -->
+                <path d="M 187.5 213.97 A 99 99 0 0 1 95.1 86.9 L 140.1 100.2 A 52 52 0 0 0 188.7 166.98 Z" 
+                      fill="url(#sliceForest)" filter="url(#donutShadow)" />
+
+                <!-- Slice 3: 20% QC & Format Re-renders (Vibrant Emerald #10B981 Top-Left Arc) -->
+                <path d="M 96.7 81.9 A 99 99 0 0 1 187.5 16.03 L 188.7 63.02 A 52 52 0 0 0 141.0 97.6 Z" 
+                      fill="url(#sliceEmerald)" filter="url(#donutShadow)" />
+
+                <!-- Center White Hole -->
+                <circle cx="190" cy="115" r="50" fill="#FFFFFF" stroke="#061914" stroke-width="1.5" />
+                <text x="190" y="107" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="900" fill="#061914">85%</text>
+                <text x="190" y="120" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700" fill="#64748B" letter-spacing="0.8">DRAG CUT</text>
+                <text x="190" y="131" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="6.5" font-weight="800" fill="#0F5338" letter-spacing="0.5">REMOTION AST</text>
+
+                <!-- Slice 1 Label (Right Semicircle: 50% Assembly) -->
+                <text x="265" y="113" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="13.5" font-weight="800" fill="#C6FF3D">50%</text>
+                <text x="265" y="125" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#D5E6E0" letter-spacing="0.4">ASSEMBLY</text>
+
+                <!-- Slice 2 Label (Bottom-Left: 30% Talent) -->
+                <text x="129" y="154" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="800" fill="#FFFFFF">30%</text>
+                <text x="129" y="165" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="700" fill="#A7F3D0" letter-spacing="0.4">TALENT</text>
+
+                <!-- Slice 3 Label (Top-Left: 20% Format QC) -->
+                <text x="145" y="55" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="12" font-weight="800" fill="#FFFFFF">20%</text>
+                <text x="145" y="66" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="800" fill="#ECFDF5" letter-spacing="0.4">FORMAT QC</text>
+              </svg>
+            </div>
+
+            <!-- Left Panel Footer (Matches Right Panel Footer) -->
+            <div class="flex items-center justify-between pt-1 text-[10px] font-mono border-t border-stone-200/80">
+              <span class="text-stone-500">CAP: <strong class="text-neutral-800">~80 clips/mo</strong></span>
+              <span class="text-emerald-800 font-bold bg-emerald-100/80 px-2 py-0.5 rounded">TARGET: 1,000+/MO</span>
+            </div>
+          </div>
+
+          <!-- Right 6 Cols: 50% Manual Timeline Assembly Deconstruction Panel -->
+          <div class="sm:col-span-6 bg-stone-50/90 rounded-xl border border-stone-200/90 p-3.5 flex flex-col justify-between space-y-2 shadow-inner">
+            
+            <!-- Breakdown Header -->
+            <div class="flex items-center justify-between border-b border-stone-200/80 pb-2">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-pine-950"></span>
+                <span class="text-[10px] font-mono font-extrabold text-pine-950 uppercase tracking-wider">50% Assembly Breakdown</span>
+              </div>
+              <span class="text-[9px] font-mono font-bold bg-pine-950 text-lime-400 px-2 py-0.5 rounded">4–8h / Clip</span>
+            </div>
+
+            <!-- Sub-Part 1: 22% Kinetic Typography & Word Sync -->
+            <div class="bg-white rounded-lg p-2.5 border border-stone-200/80 shadow-xs space-y-1">
+              <div class="flex items-center justify-between text-[11px] font-mono">
+                <span class="font-bold text-neutral-950">01 · Kinetic Captions & Easing</span>
+                <span class="font-display font-extrabold text-pine-950">22%</span>
+              </div>
+              <div class="w-full bg-stone-100 rounded-full h-1 overflow-hidden">
+                <div class="bg-pine-950 h-full rounded-full" style="width: 44%"></div>
+              </div>
+              <div class="flex items-center justify-between text-[10px] text-stone-500 pt-0.5">
+                <span>Frame-by-frame AE bezier curves</span>
+                <span class="font-mono font-bold text-emerald-700">→ Whisper JSON AST</span>
+              </div>
+            </div>
+
+            <!-- Sub-Part 2: 18% B-Roll, SFX & Layer Compositing -->
+            <div class="bg-white rounded-lg p-2.5 border border-stone-200/80 shadow-xs space-y-1">
+              <div class="flex items-center justify-between text-[11px] font-mono">
+                <span class="font-bold text-neutral-950">02 · B-Roll & Audio Ducking</span>
+                <span class="font-display font-extrabold text-[#0F5338]">18%</span>
+              </div>
+              <div class="w-full bg-stone-100 rounded-full h-1 overflow-hidden">
+                <div class="bg-[#0F5338] h-full rounded-full" style="width: 36%"></div>
+              </div>
+              <div class="flex items-center justify-between text-[10px] text-stone-500 pt-0.5">
+                <span>Manual cut alignment & SFX gain</span>
+                <span class="font-mono font-bold text-emerald-700">→ &lt;Sequence&gt; Props</span>
+              </div>
+            </div>
+
+            <!-- Sub-Part 3: 10% Revision Ripple-Edits -->
+            <div class="bg-white rounded-lg p-2.5 border border-stone-200/80 shadow-xs space-y-1">
+              <div class="flex items-center justify-between text-[11px] font-mono">
+                <span class="font-bold text-neutral-950">03 · Revision Ripple-Edits</span>
+                <span class="font-display font-extrabold text-emerald-700">10%</span>
+              </div>
+              <div class="w-full bg-stone-100 rounded-full h-1 overflow-hidden">
+                <div class="bg-emerald-500 h-full rounded-full" style="width: 20%"></div>
+              </div>
+              <div class="flex items-center justify-between text-[10px] text-stone-500 pt-0.5">
+                <span>Hook change breaks NLE timeline</span>
+                <span class="font-mono font-bold text-emerald-700">→ Hot-Reload State</span>
+              </div>
+            </div>
+
+            <!-- Sub-Panel Footer: Cycle Time Arbitrage -->
+            <div class="flex items-center justify-between pt-1 text-[10px] font-mono border-t border-stone-200/80">
+              <span class="text-stone-500">NLE: <strong class="text-neutral-800">240–480 min</strong></span>
+              <span class="text-pine-950 font-bold bg-lime-400/90 px-2 py-0.5 rounded">AST RENDER: &lt; 90 SEC</span>
+            </div>
+
+          </div>
+
         </div>
 
         <!-- Bottom Architecture Inset Strip (Matching Slide 4 Footer Gate Style) -->
