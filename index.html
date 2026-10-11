@@ -243,151 +243,243 @@
       </div>
     </div>
 
-    <!-- Main Content: Minimalist Split (Headline + Mavence Stats + Executive Telemetry Card) -->
-    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center my-auto z-10 py-1 sm:py-2">
+    <!-- Main Content: Balanced 6/6 Executive Split (Solvanta KPI Bento + shadcn Radial Gauge Card) -->
+    <div class="w-full max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center my-auto z-10 py-1 sm:py-2">
       
-      <!-- Left Column (7 cols): Refined Typographic Hierarchy -->
-      <div class="lg:col-span-7 space-y-3 sm:space-y-3.5">
-        <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-pine-900 border border-pine-800 text-lime-400 text-[10px] font-mono shadow-sm">
+      <!-- Left Column (6 cols): Commanding Typography + Solvanta-Style Bento KPI Cards -->
+      <div class="lg:col-span-6 space-y-3 sm:space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D2B22] border border-[#1E4E40] text-lime-400 text-[10px] font-mono shadow-sm">
           <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
           <span>01 · THE ATTENTION ECONOMY</span>
         </div>
 
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold tracking-tight text-white leading-[1.08]">
+        <h1 class="text-4xl sm:text-5xl lg:text-[54px] font-display font-extrabold tracking-[-0.03em] text-white leading-[1.03]">
           Attention is <br class="hidden sm:inline">
-          <span class="text-lime-400">the Moat.</span>
+          <span class="text-lime-400">the Only Moat.</span>
         </h1>
         
-        <p class="text-xs sm:text-sm text-pine-200/90 max-w-xl font-normal leading-relaxed">
-          Paid ad CAC is breaking brand economics. Enterprise brands must become autonomous media engines.
+        <p class="text-xs sm:text-sm text-pine-200 max-w-xl font-normal leading-relaxed">
+          Paid ad CAC is breaking brand unit economics. Enterprise brands must escape linear ad spend by becoming autonomous media engines.
         </p>
 
-        <!-- Mavence-Style Giant Stat Triad -->
-        <div class="pt-1 flex flex-wrap items-baseline gap-6 lg:gap-8">
-          <div>
-            <div class="text-3xl sm:text-4xl lg:text-[44px] font-display font-extrabold text-white tracking-tight leading-none">1B+</div>
-            <div class="text-[10px] font-mono text-lime-400 font-bold uppercase tracking-wider mt-1.5">ORGANIC REACH (Modeled)</div>
-            <div class="text-[10px] text-pine-400 font-mono">YAAS Public Network Footprint</div>
+        <!-- Solvanta / Mavence Architectural KPI Bento Triad -->
+        <div class="pt-1 grid grid-cols-3 gap-2.5 sm:gap-3">
+          
+          <!-- Stat Card 1: 1B+ -->
+          <div class="bg-gradient-to-b from-[#12362B] to-[#0B231C] border border-[#215243] rounded-xl p-3 sm:p-3.5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] flex flex-col justify-between">
+            <div class="flex items-center justify-between text-[9px] font-mono text-pine-300 uppercase tracking-wider">
+              <span>REACH (Modeled)</span>
+              <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div class="text-2xl sm:text-3xl lg:text-[34px] font-display font-extrabold text-white tracking-tight leading-none my-1.5">1B+</div>
+            <div class="text-[9.5px] text-pine-300 font-mono truncate">YAAS Public Footprint</div>
           </div>
-          <div class="h-9 w-px bg-pine-800 hidden sm:block"></div>
-          <div>
-            <div class="text-3xl sm:text-4xl lg:text-[44px] font-display font-extrabold text-white tracking-tight leading-none">70+</div>
-            <div class="text-[10px] font-mono text-lime-400 font-bold uppercase tracking-wider mt-1.5">BRAND CHANNELS (Modeled)</div>
-            <div class="text-[10px] text-pine-400 font-mono">Zoho · Cleartrip · Zerodha</div>
+
+          <!-- Stat Card 2: 70+ -->
+          <div class="bg-gradient-to-b from-[#12362B] to-[#0B231C] border border-[#215243] rounded-xl p-3 sm:p-3.5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] flex flex-col justify-between">
+            <div class="flex items-center justify-between text-[9px] font-mono text-pine-300 uppercase tracking-wider">
+              <span>CHANNELS</span>
+              <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <div class="text-2xl sm:text-3xl lg:text-[34px] font-display font-extrabold text-white tracking-tight leading-none my-1.5">70+</div>
+            <div class="text-[9.5px] text-pine-300 font-mono truncate">Zoho · Cleartrip · Zerodha</div>
           </div>
-          <div class="h-9 w-px bg-pine-800 hidden sm:block"></div>
-          <div>
-            <div class="text-3xl sm:text-4xl lg:text-[44px] font-display font-extrabold text-white tracking-tight leading-none">1,000+</div>
-            <div class="text-[10px] font-mono text-lime-400 font-bold uppercase tracking-wider mt-1.5">TARGET FLEET (Modeled)</div>
-            <div class="text-[10px] text-pine-400 font-mono">Monthly Remotion AST Capacity</div>
+
+          <!-- Stat Card 3: 1,000+ (Solid Electric Lime Solvanta Hero Tile) -->
+          <div class="bg-lime-400 text-pine-950 border border-lime-300 rounded-xl p-3 sm:p-3.5 shadow-[0_10px_25px_rgba(198,255,61,0.18)] flex flex-col justify-between">
+            <div class="flex items-center justify-between text-[9px] font-mono text-pine-950 font-extrabold uppercase tracking-wider">
+              <span>TARGET FLEET</span>
+              <svg class="w-3.5 h-3.5 text-pine-950 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="text-2xl sm:text-3xl lg:text-[34px] font-display font-black text-pine-950 tracking-tight leading-none my-1.5">1,000+</div>
+            <div class="text-[9.5px] text-pine-900 font-mono font-bold truncate">Monthly Remotion Clips</div>
           </div>
+
         </div>
 
-        <!-- Operating Axiom Single-Line Quote Pill -->
+        <!-- Executive Thesis Shift Strip (shadcn Alert Card Pattern) -->
         <div class="pt-0.5">
-          <div class="p-3 rounded-xl bg-pine-900/70 border border-pine-800 max-w-xl flex items-center gap-3 shadow-md backdrop-blur-sm">
-            <div class="w-1.5 h-6 rounded-full bg-lime-400 shrink-0 shadow-[0_0_8px_#C6FF3D]"></div>
-            <p class="text-xs text-pine-200 font-sans italic">
-              "Attention is the only durable moat as technology commoditizes."
-            </p>
+          <div class="p-3 sm:p-3.5 rounded-xl bg-gradient-to-r from-[#0E2B22] to-[#0A2019] border border-[#1E4E40] flex items-center justify-between gap-3 shadow-lg">
+            <div class="flex items-center gap-3 min-w-0">
+              <div class="w-8 h-8 rounded-lg bg-lime-400/15 border border-lime-400/40 flex items-center justify-center text-lime-400 shrink-0">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+              <div class="min-w-0">
+                <div class="text-[10px] font-mono text-lime-400 font-bold uppercase tracking-wider">THE AEOS OPERATING AXIOM</div>
+                <p class="text-xs text-white font-medium truncate">
+                  "Attention is the only durable moat as technology commoditizes."
+                </p>
+              </div>
+            </div>
+            <span class="hidden sm:inline-flex items-center px-2.5 py-1 rounded-md bg-pine-950 border border-pine-750 text-[10px] font-mono text-emerald-300 font-bold shrink-0">
+              ZERO CAC DRAG
+            </span>
           </div>
         </div>
       </div>
 
-      <!-- Right Column (5 cols): Beautifully Centered Executive Capacity Radar Card -->
-      <div class="lg:col-span-5 bg-pine-900/60 p-4 sm:p-5 rounded-2xl border border-pine-800/90 shadow-2xl backdrop-blur-xl flex flex-col justify-between relative overflow-hidden">
+      <!-- Right Column (6 cols): shadcn RadialBarChart + Circular SVG Icon Hub -->
+      <div class="lg:col-span-6 bg-gradient-to-b from-[#103127] via-[#0B231C] to-[#081B15] p-4 sm:p-5 rounded-2xl border border-[#215243] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12),0_25px_50px_-12px_rgba(0,0,0,0.6)] flex flex-col justify-between relative overflow-hidden">
         
-        <!-- Card Top Bar -->
-        <div class="flex items-center justify-between text-[10px] font-mono text-pine-400 mb-1 z-10">
-          <span class="font-bold text-white uppercase tracking-wider">VELOCITY & CAPACITY RADAR</span>
-          <span class="text-lime-400 font-bold bg-pine-800/90 px-2 py-0.5 rounded-full border border-pine-700/80">12.5× MULTIPLIER</span>
+        <!-- Subtle Dot Grid Backdrop inside Card -->
+        <div class="absolute inset-0 cognis-dash-pattern-dark opacity-25 pointer-events-none"></div>
+
+        <!-- shadcn CardHeader -->
+        <div class="flex items-start justify-between border-b border-[#1C4639] pb-2.5 z-10">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-lime-400"></span>
+              <h3 class="text-xs sm:text-sm font-display font-bold text-white tracking-tight uppercase">Autonomous Throughput Radial Gauge</h3>
+            </div>
+            <p class="text-[10px] font-mono text-pine-300 mt-0.5">Remotion React AST Fleet vs. Manual Agency Keyframing</p>
+          </div>
+          <span class="text-pine-950 font-mono text-[10px] font-extrabold bg-lime-400 px-2.5 py-1 rounded-md shadow-sm shrink-0">
+            12.5× MULTIPLIER
+          </span>
         </div>
 
-        <!-- High-Definition Centered Circular Orbital Telemetry HUD -->
-        <div class="w-full flex justify-center items-center py-1 z-10 relative">
-          <svg class="w-full max-w-[340px] h-[240px] sm:h-[250px] overflow-visible" viewBox="0 0 360 270" fill="none">
+        <!-- shadcn CardContent: Thick Concentric Radial Bar Chart + 4 SVG Icon Callout Nodes -->
+        <div class="w-full flex justify-center items-center py-1.5 z-10 relative">
+          <svg class="w-full max-w-[500px] h-[238px] sm:h-[246px] overflow-visible" viewBox="0 0 520 260" fill="none">
             <defs>
-              <linearGradient id="orbitLimeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#C6FF3D" stop-opacity="1" />
-                <stop offset="100%" stop-color="#10B981" stop-opacity="0.3" />
+              <linearGradient id="radialLime" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#C6FF3D" />
+                <stop offset="100%" stop-color="#10B981" />
               </linearGradient>
-              <linearGradient id="orbitAmberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#F59E0B" stop-opacity="1" />
-                <stop offset="100%" stop-color="#D97706" stop-opacity="0.4" />
+              <linearGradient id="radialEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#34D399" />
+                <stop offset="100%" stop-color="#059669" />
               </linearGradient>
-              <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#14382E" />
-                <stop offset="70%" stop-color="#0E2820" />
-                <stop offset="100%" stop-color="#061914" />
-              </radialGradient>
-              <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#C6FF3D" flood-opacity="0.45"/>
-              </filter>
-              <filter id="amberGlow" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#F59E0B" flood-opacity="0.4"/>
+              <linearGradient id="radialAmber" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FBBF24" />
+                <stop offset="100%" stop-color="#D97706" />
+              </linearGradient>
+              <filter id="radialGlow" x="-15%" y="-15%" width="130%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#C6FF3D" flood-opacity="0.28"/>
               </filter>
             </defs>
 
-            <!-- Crosshair Grid Axes -->
-            <line x1="180" y1="10" x2="180" y2="260" stroke="#174034" stroke-width="1" stroke-dasharray="2 3"/>
-            <line x1="20" y1="135" x2="340" y2="135" stroke="#174034" stroke-width="1" stroke-dasharray="2 3"/>
+            <!-- Outer Guide Ring & Axis Ticks (cx=260, cy=130, r=112 -> spans x=148..372) -->
+            <circle cx="260" cy="130" r="112" stroke="#1E4D3E" stroke-width="1.2" stroke-dasharray="3 3" />
+            <line x1="260" y1="12" x2="260" y2="20" stroke="#286452" stroke-width="1.5" />
+            <line x1="260" y1="240" x2="260" y2="248" stroke="#286452" stroke-width="1.5" />
+            <line x1="142" y1="130" x2="148" y2="130" stroke="#286452" stroke-width="1.5" />
+            <line x1="372" y1="130" x2="378" y2="130" stroke="#286452" stroke-width="1.5" />
 
-            <!-- Hairline Concentric Coordinate Rings -->
-            <circle cx="180" cy="135" r="125" stroke="#174034" stroke-width="1" stroke-dasharray="3 4"/>
-            <circle cx="180" cy="135" r="95" stroke="#113027" stroke-width="1"/>
-            <circle cx="180" cy="135" r="65" stroke="#174034" stroke-width="1" stroke-dasharray="2 2"/>
+            <!-- ========================================================= -->
+            <!-- RING 1 (OUTER): 1,000+ Assets/Mo (r=95, C=596.9)          -->
+            <!-- ========================================================= -->
+            <circle cx="260" cy="130" r="95" stroke="#153B2F" stroke-width="15" />
+            <circle cx="260" cy="130" r="95" stroke="url(#radialLime)" stroke-width="15"
+                    stroke-dasharray="505 596.9" stroke-dashoffset="0" stroke-linecap="round"
+                    transform="rotate(-90 260 130)" filter="url(#radialGlow)" />
 
-            <!-- Precision Degree Ticks at Cardinal Axes -->
-            <line x1="180" y1="8" x2="180" y2="14" stroke="#7EAB9C" stroke-width="1.5"/>
-            <line x1="334" y1="135" x2="340" y2="135" stroke="#7EAB9C" stroke-width="1.5"/>
-            <line x1="180" y1="256" x2="180" y2="262" stroke="#7EAB9C" stroke-width="1.5"/>
-            <line x1="20" y1="135" x2="26" y2="135" stroke="#7EAB9C" stroke-width="1.5"/>
+            <!-- ========================================================= -->
+            <!-- RING 2 (MIDDLE): 70+ Brand Channels (r=74, C=464.9)       -->
+            <!-- ========================================================= -->
+            <circle cx="260" cy="130" r="74" stroke="#153B2F" stroke-width="14" />
+            <circle cx="260" cy="130" r="74" stroke="url(#radialEmerald)" stroke-width="14"
+                    stroke-dasharray="355 464.9" stroke-dashoffset="0" stroke-linecap="round"
+                    transform="rotate(-90 260 130)" />
 
-            <!-- Track 2 (Outer Arc): 1,000+ Assets / Mo (Autonomous Scale Ceiling) -->
-            <circle cx="180" cy="135" r="110" stroke="url(#orbitLimeGrad)" stroke-width="4"
-                    stroke-dasharray="520 170" stroke-dashoffset="-30" stroke-linecap="round" filter="url(#neonGlow)"/>
-            <!-- Pulsing Satellite Pulse Node at (268, 65) on r=110 -->
-            <circle cx="268" cy="65" r="5" fill="#C6FF3D" filter="url(#neonGlow)"/>
-            <circle cx="268" cy="65" r="2" fill="#061914"/>
+            <!-- ========================================================= -->
+            <!-- RING 3 (INNER): 80-100 Manual Baseline (r=54, C=339.3)    -->
+            <!-- ========================================================= -->
+            <circle cx="260" cy="130" r="54" stroke="#153B2F" stroke-width="13" />
+            <circle cx="260" cy="130" r="54" stroke="url(#radialAmber)" stroke-width="13"
+                    stroke-dasharray="95 339.3" stroke-dashoffset="0" stroke-linecap="round"
+                    transform="rotate(-90 260 130)" />
 
-            <!-- Track 1 (Inner Arc): 80–100 Assets / Mo (Manual Baseline Ceiling) -->
-            <circle cx="180" cy="135" r="75" stroke="url(#orbitAmberGrad)" stroke-width="3"
-                    stroke-dasharray="120 350" stroke-dashoffset="130" stroke-linecap="round" filter="url(#amberGlow)"/>
-            <!-- Satellite Node at (127, 82) on r=75 -->
-            <circle cx="127" cy="82" r="3.5" fill="#F59E0B"/>
+            <!-- ========================================================= -->
+            <!-- CENTER CORE: Crisp shadcn Radial Readout (r=38)           -->
+            <!-- ========================================================= -->
+            <circle cx="260" cy="130" r="38" fill="#061914" stroke="#286452" stroke-width="1.5" />
+            <text x="260" y="125" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="19" font-weight="900" fill="#C6FF3D">12.5×</text>
+            <text x="260" y="138" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#D5E6E0" letter-spacing="0.8">OUTPUT</text>
+            <text x="260" y="148" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="6.5" font-weight="600" fill="#7EAB9C">SCALE</text>
 
-            <!-- Center Core Telemetry Lens (r=46 at (180, 135)) -->
-            <circle cx="180" cy="135" r="46" fill="url(#coreGlow)" stroke="#C6FF3D" stroke-width="1.5" stroke-opacity="0.8"/>
-            <circle cx="180" cy="135" r="39" stroke="#174034" stroke-width="1" stroke-dasharray="2 3"/>
+            <!-- ========================================================= -->
+            <!-- 4 ORBITING SHADCN ICON CALLOUT CARDS (ZERO OVERLAP)       -->
+            <!-- ========================================================= -->
 
-            <!-- Core Typography -->
-            <text x="180" y="120" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="800" fill="#C6FF3D" letter-spacing="1.2">FLEET TARGET</text>
-            <text x="180" y="141" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="900" fill="#FFFFFF" letter-spacing="-0.5">1,000+</text>
-            <text x="180" y="153" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" fill="#A9CCC0" letter-spacing="0.8">ASSETS / MO</text>
+            <!-- Leader Line 1: Top-Left (Inner Amber Ring -> Manual Baseline) -->
+            <polyline points="260,76 205,40 138,40" stroke="#F59E0B" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
+            <circle cx="260" cy="76" r="3.5" fill="#FBBF24" />
+            <!-- Top-Left Badge Card (x=2..138) -->
+            <g transform="translate(2, 14)">
+              <rect x="0" y="0" width="136" height="52" rx="10" fill="#071D17" stroke="#F59E0B" stroke-opacity="0.55" stroke-width="1.2" />
+              <rect x="8" y="11" width="28" height="28" rx="7" fill="#F59E0B" fill-opacity="0.16" />
+              <!-- Clock SVG Icon -->
+              <circle cx="22" cy="25" r="7" stroke="#FBBF24" stroke-width="1.6" fill="none" />
+              <polyline points="22,21 22,25 25,27" stroke="#FBBF24" stroke-width="1.6" stroke-linecap="round" fill="none" />
+              <text x="42" y="21" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#FBBF24">MANUAL BASELINE</text>
+              <text x="42" y="35" font-family="'Space Grotesk', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">80–100 <tspan font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="#A9CCC0">/mo</tspan></text>
+              <text x="42" y="45" font-family="'JetBrains Mono', monospace" font-size="7" fill="#7EAB9C">4–8h / clip drag</text>
+            </g>
+
+            <!-- Leader Line 2: Top-Right (Outer Lime Ring -> Scale Ceiling) -->
+            <polyline points="327,63 356,40 382,40" stroke="#C6FF3D" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
+            <circle cx="327" cy="63" r="4" fill="#C6FF3D" />
+            <!-- Top-Right Badge Card (x=382..518, Highlighted Lime Border) -->
+            <g transform="translate(382, 14)">
+              <rect x="0" y="0" width="136" height="52" rx="10" fill="#0D2E24" stroke="#C6FF3D" stroke-width="1.4" />
+              <rect x="8" y="11" width="28" height="28" rx="7" fill="#C6FF3D" />
+              <!-- Video / Remotion AST Icon -->
+              <polygon points="19,20 27,25 19,30" fill="#061914" />
+              <text x="42" y="21" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="800" fill="#C6FF3D">SCALE CEILING</text>
+              <text x="42" y="35" font-family="'Space Grotesk', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">1,000+ <tspan font-family="'JetBrains Mono', monospace" font-size="8" font-weight="600" fill="#C6FF3D">/mo</tspan></text>
+              <text x="42" y="45" font-family="'JetBrains Mono', monospace" font-size="7" fill="#A9CCC0">Remotion AST</text>
+            </g>
+
+            <!-- Leader Line 3: Bottom-Left (Middle Emerald Ring -> 70+ Brands) -->
+            <polyline points="186,130 162,214 138,214" stroke="#10B981" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
+            <circle cx="186" cy="130" r="3.5" fill="#34D399" />
+            <!-- Bottom-Left Badge Card (x=2..138) -->
+            <g transform="translate(2, 188)">
+              <rect x="0" y="0" width="136" height="52" rx="10" fill="#071D17" stroke="#10B981" stroke-opacity="0.55" stroke-width="1.2" />
+              <rect x="8" y="11" width="28" height="28" rx="7" fill="#10B981" fill-opacity="0.16" />
+              <!-- Network Nodes SVG Icon -->
+              <circle cx="18" cy="25" r="2.5" stroke="#34D399" stroke-width="1.5" fill="none" />
+              <circle cx="26" cy="20" r="2.5" stroke="#34D399" stroke-width="1.5" fill="none" />
+              <circle cx="26" cy="30" r="2.5" stroke="#34D399" stroke-width="1.5" fill="none" />
+              <line x1="20" y1="24" x2="24" y2="21" stroke="#34D399" stroke-width="1.3" />
+              <line x1="20" y1="26" x2="24" y2="29" stroke="#34D399" stroke-width="1.3" />
+              <text x="42" y="21" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#34D399">ACTIVE NETWORK</text>
+              <text x="42" y="35" font-family="'Space Grotesk', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">70+ <tspan font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="#A9CCC0">Brands</tspan></text>
+              <text x="42" y="45" font-family="'JetBrains Mono', monospace" font-size="7" fill="#7EAB9C">10-Platform Sync</text>
+            </g>
+
+            <!-- Leader Line 4: Bottom-Right (Outer Ring -> <45s Render Speed) -->
+            <polyline points="327,197 356,214 382,214" stroke="#C6FF3D" stroke-width="1.3" stroke-dasharray="2.5 2.5" fill="none" />
+            <circle cx="327" cy="197" r="3.5" fill="#C6FF3D" />
+            <!-- Bottom-Right Badge Card (x=382..518) -->
+            <g transform="translate(382, 188)">
+              <rect x="0" y="0" width="136" height="52" rx="10" fill="#071D17" stroke="#286452" stroke-width="1.2" />
+              <rect x="8" y="11" width="28" height="28" rx="7" fill="#C6FF3D" fill-opacity="0.16" />
+              <!-- Bolt / Speed SVG Icon -->
+              <polygon points="23,18 17,26 22,26 21,32 27,24 22,24" fill="#C6FF3D" />
+              <text x="42" y="21" font-family="'JetBrains Mono', monospace" font-size="7.5" font-weight="700" fill="#C6FF3D">RENDER LATENCY</text>
+              <text x="42" y="35" font-family="'Space Grotesk', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">&lt;45s <tspan font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="#A9CCC0">/clip</tspan></text>
+              <text x="42" y="45" font-family="'JetBrains Mono', monospace" font-size="7" fill="#7EAB9C">99.7% Reliability</text>
+            </g>
+
           </svg>
         </div>
 
-        <!-- Symmetrical Dual Comparison Cards -->
-        <div class="grid grid-cols-2 gap-2 w-full z-10">
-          <div class="bg-pine-950/80 p-2 sm:p-2.5 rounded-xl border border-amber-500/30 flex flex-col justify-between">
-            <span class="text-[9px] font-mono text-amber-400 font-bold flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> MANUAL BASELINE</span>
-            <div class="text-xs sm:text-sm font-display font-bold text-amber-200 mt-0.5">80–100 <span class="text-[9px] font-mono text-amber-400 font-normal">/ mo</span></div>
-            <span class="text-[8.5px] font-mono text-pine-400 mt-0.5">Linear Drag (4–8h/clip)</span>
+        <!-- shadcn CardFooter: Clean Legend & Telemetry Status -->
+        <div class="pt-2.5 border-t border-[#1C4639] flex items-center justify-between text-[10px] font-mono z-10">
+          <div class="flex items-center gap-3">
+            <span class="flex items-center gap-1.5 text-amber-400 font-semibold">
+              <span class="w-2 h-2 rounded-sm bg-amber-400"></span> Manual (80–100)
+            </span>
+            <span class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+              <span class="w-2 h-2 rounded-sm bg-emerald-400"></span> Network (70+ Ch)
+            </span>
+            <span class="flex items-center gap-1.5 text-lime-400 font-bold">
+              <span class="w-2 h-2 rounded-sm bg-lime-400"></span> Aeos AST (1,000+)
+            </span>
           </div>
-          <div class="bg-pine-950/80 p-2 sm:p-2.5 rounded-xl border border-lime-400/30 flex flex-col justify-between">
-            <span class="text-[9px] font-mono text-lime-400 font-bold flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span> SCALE CEILING</span>
-            <div class="text-xs sm:text-sm font-display font-bold text-white mt-0.5">1,000+ <span class="text-[9px] font-mono text-lime-400 font-normal">/ mo</span></div>
-            <span class="text-[8.5px] font-mono text-lime-400/80 mt-0.5">Autonomous Aeos Cluster</span>
-          </div>
-        </div>
-
-        <!-- Bottom Telemetry Readout Strip -->
-        <div class="mt-2 w-full py-1 px-3 rounded-lg bg-pine-950/90 border border-pine-800 flex items-center justify-between text-[9px] font-mono text-pine-300 z-10">
-          <span class="flex items-center gap-1.5 text-lime-400 font-bold"><span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span> STATUS: AST VERIFIED</span>
-          <span class="text-pine-500">|</span>
-          <span class="text-pine-400">ACK: &lt;1.2s</span>
-          <span class="text-pine-500">|</span>
-          <span class="text-white font-bold">12.5× VELOCITY</span>
+          <span class="text-pine-300 hidden sm:inline font-bold">ACK: &lt;1.2s</span>
         </div>
 
       </div>
@@ -658,85 +750,108 @@
         </p>
       </div>
 
-      <!-- Connected Horizontal Pipeline Rail (Custom Flow) -->
-      <div class="relative pt-2">
+      <!-- Connected Horizontal Pipeline Rail (Elevated Solvanta / shadcn Card Surfaces) -->
+      <div class="relative pt-3">
         <!-- Connecting Corridor Rail Line (Visible on Desktop) -->
-        <div class="hidden lg:block absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-pine-800 via-lime-400/30 to-pine-800 -translate-y-6 z-0 pointer-events-none rounded-full"></div>
+        <div class="hidden lg:block absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-[#245948] via-lime-400/60 to-[#245948] -translate-y-6 z-0 pointer-events-none rounded-full"></div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
           
-          <!-- [01] Ingest -->
-          <div class="relative bg-pine-900/90 border border-pine-800 p-5 rounded-2xl shadow-xl space-y-3 group hover:border-pine-700 transition-all flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-2xl font-display font-black text-lime-400/80 group-hover:text-lime-400 transition-colors">[01]</span>
-                <span class="text-[9px] font-mono bg-pine-800 text-pine-200 px-2.5 py-0.5 rounded-full border border-pine-700">&lt;1.2s ACK</span>
+          <!-- [01] Edge Ingest (Elevated Frosted Emerald Card) -->
+          <div class="relative bg-gradient-to-b from-[#133A2E] via-[#0E2D24] to-[#0A211A] border border-[#245948] p-5 rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14),0_20px_35px_-10px_rgba(0,0,0,0.55)] space-y-3 group hover:border-lime-400/50 transition-all flex flex-col justify-between overflow-hidden">
+            <div class="absolute top-0 right-0 w-28 h-28 cognis-dash-pattern-dark opacity-30 pointer-events-none"></div>
+            <div class="relative z-10">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-lg bg-lime-400/15 border border-lime-400/30 flex items-center justify-center text-lime-400">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  </div>
+                  <span class="text-xl font-display font-black text-lime-400">[01]</span>
+                </div>
+                <span class="text-[9px] font-mono bg-[#071914] text-lime-300 font-bold px-2.5 py-1 rounded-md border border-[#245948]">&lt;1.2s ACK</span>
               </div>
               <h4 class="text-base font-bold text-white mb-1">Edge Ingest</h4>
-              <p class="text-xs text-pine-300 leading-snug">
-                Automated webhook intake with HMAC SHA-256 validation.
+              <p class="text-xs text-pine-200 leading-relaxed">
+                Automated webhook intake with 3-layer HMAC SHA-256 validation.
               </p>
             </div>
-            <div class="pt-2 border-t border-pine-800/80 text-[10px] font-mono text-pine-400 flex items-center justify-between">
-              <span>SHA-256 SIGNED</span>
-              <span class="hidden lg:inline text-lime-400/60 font-bold">➔</span>
-            </div>
-          </div>
-
-          <!-- [02] Schema -->
-          <div class="relative bg-pine-900/90 border border-pine-800 p-5 rounded-2xl shadow-xl space-y-3 group hover:border-pine-700 transition-all flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-2xl font-display font-black text-lime-400/80 group-hover:text-lime-400 transition-colors">[02]</span>
-                <span class="text-[9px] font-mono bg-pine-800 text-pine-200 px-2.5 py-0.5 rounded-full border border-pine-700">MCP TYPED</span>
-              </div>
-              <h4 class="text-base font-bold text-white mb-1">FastMCP Schema</h4>
-              <p class="text-xs text-pine-300 leading-snug">
-                Typed contracts with strict JSON Schemas and zero brand drift.
-              </p>
-            </div>
-            <div class="pt-2 border-t border-pine-800/80 text-[10px] font-mono text-pine-400 flex items-center justify-between">
-              <span>ZERO SCHEMA DRIFT</span>
-              <span class="hidden lg:inline text-lime-400/60 font-bold">➔</span>
-            </div>
-          </div>
-
-          <!-- [03] Remotion AST (Hero Stage) -->
-          <div class="relative bg-gradient-to-b from-pine-900 via-pine-850 to-pine-900 border-2 border-lime-400 p-5 rounded-2xl shadow-[0_0_30px_rgba(198,255,61,0.2)] space-y-3 group transition-all flex flex-col justify-between transform lg:-translate-y-1">
-            <!-- Pulsing Active Stage Pill -->
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-lime-400 text-pine-950 text-[9px] font-mono font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-md tracking-wider flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-pine-950 animate-pulse"></span>
-              HERO STAGE
-            </div>
-            <div>
-              <div class="flex items-center justify-between mb-2 mt-1">
-                <span class="text-2xl font-display font-black text-lime-400">[03]</span>
-                <span class="text-[9px] font-mono bg-lime-400 text-pine-950 font-bold px-2 py-0.5 rounded-full">&lt;45s / CLIP</span>
-              </div>
-              <h4 class="text-base font-bold text-white mb-1">Remotion AST</h4>
-              <p class="text-xs text-pine-200 leading-snug">
-                Frame-accurate React render tree with automated typography sync.
-              </p>
-            </div>
-            <div class="pt-2 border-t border-lime-400/30 text-[10px] font-mono text-lime-400 flex items-center justify-between font-bold">
-              <span>FRAME-ACCURATE AST</span>
+            <div class="relative z-10 pt-2.5 border-t border-[#1E4B3D] text-[10px] font-mono text-pine-300 flex items-center justify-between">
+              <span class="font-semibold">SHA-256 SIGNED</span>
               <span class="hidden lg:inline text-lime-400 font-bold">➔</span>
             </div>
           </div>
 
-          <!-- [04] Fleet Fan-Out -->
-          <div class="relative bg-pine-900/90 border border-pine-800 p-5 rounded-2xl shadow-xl space-y-3 group hover:border-pine-700 transition-all flex flex-col justify-between">
+          <!-- [02] FastMCP Schema (Elevated Frosted Emerald Card) -->
+          <div class="relative bg-gradient-to-b from-[#133A2E] via-[#0E2D24] to-[#0A211A] border border-[#245948] p-5 rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14),0_20px_35px_-10px_rgba(0,0,0,0.55)] space-y-3 group hover:border-lime-400/50 transition-all flex flex-col justify-between overflow-hidden">
+            <div class="absolute top-0 right-0 w-28 h-28 cognis-dash-pattern-dark opacity-30 pointer-events-none"></div>
+            <div class="relative z-10">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-lg bg-lime-400/15 border border-lime-400/30 flex items-center justify-center text-lime-400">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                  </div>
+                  <span class="text-xl font-display font-black text-lime-400">[02]</span>
+                </div>
+                <span class="text-[9px] font-mono bg-[#071914] text-lime-300 font-bold px-2.5 py-1 rounded-md border border-[#245948]">MCP TYPED</span>
+              </div>
+              <h4 class="text-base font-bold text-white mb-1">FastMCP Schema</h4>
+              <p class="text-xs text-pine-200 leading-relaxed">
+                Typed contracts with strict JSON Schemas and zero brand drift.
+              </p>
+            </div>
+            <div class="relative z-10 pt-2.5 border-t border-[#1E4B3D] text-[10px] font-mono text-pine-300 flex items-center justify-between">
+              <span class="font-semibold">ZERO SCHEMA DRIFT</span>
+              <span class="hidden lg:inline text-lime-400 font-bold">➔</span>
+            </div>
+          </div>
+
+          <!-- [03] Remotion AST (Solid Electric Lime Solvanta Hero Card) -->
+          <div class="relative bg-gradient-to-b from-lime-300 via-lime-400 to-lime-500 text-pine-950 border-2 border-lime-200 p-5 rounded-2xl shadow-[0_20px_45px_rgba(198,255,61,0.25)] space-y-3 group transition-all flex flex-col justify-between transform lg:-translate-y-1.5">
+            <!-- Pulsing Active Stage Pill -->
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-pine-950 text-lime-400 border border-lime-400/50 text-[9px] font-mono font-extrabold uppercase px-3 py-0.5 rounded-full shadow-md tracking-wider flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-lime-400 animate-pulse"></span>
+              HERO STAGE
+            </div>
             <div>
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-2xl font-display font-black text-emerald-400 group-hover:text-emerald-300 transition-colors">[04]</span>
-                <span class="text-[9px] font-mono bg-emerald-950/80 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-800">70+ BRANDS</span>
+              <div class="flex items-center justify-between mb-3 mt-1">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-lg bg-pine-950 text-lime-400 flex items-center justify-center shadow-sm">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </div>
+                  <span class="text-xl font-display font-black text-pine-950">[03]</span>
+                </div>
+                <span class="text-[9px] font-mono bg-pine-950 text-lime-400 font-extrabold px-2.5 py-1 rounded-md shadow-sm">&lt;45s / CLIP</span>
+              </div>
+              <h4 class="text-base font-extrabold text-pine-950 mb-1">Remotion AST</h4>
+              <p class="text-xs text-pine-900 font-medium leading-relaxed">
+                Frame-accurate React render tree with automated typography sync.
+              </p>
+            </div>
+            <div class="pt-2.5 border-t border-pine-950/20 text-[10px] font-mono text-pine-950 flex items-center justify-between font-extrabold">
+              <span>FRAME-ACCURATE AST</span>
+              <span class="hidden lg:inline text-pine-950 font-black">➔</span>
+            </div>
+          </div>
+
+          <!-- [04] Fleet Fan-Out (Elevated Frosted Emerald Card) -->
+          <div class="relative bg-gradient-to-b from-[#133A2E] via-[#0E2D24] to-[#0A211A] border border-[#245948] p-5 rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.14),0_20px_35px_-10px_rgba(0,0,0,0.55)] space-y-3 group hover:border-emerald-400/50 transition-all flex flex-col justify-between overflow-hidden">
+            <div class="absolute top-0 right-0 w-28 h-28 cognis-dash-pattern-dark opacity-30 pointer-events-none"></div>
+            <div class="relative z-10">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-lg bg-emerald-400/15 border border-emerald-400/30 flex items-center justify-center text-emerald-400">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                  </div>
+                  <span class="text-xl font-display font-black text-emerald-400">[04]</span>
+                </div>
+                <span class="text-[9px] font-mono bg-[#071914] text-emerald-300 font-bold px-2.5 py-1 rounded-md border border-[#245948]">70+ BRANDS</span>
               </div>
               <h4 class="text-base font-bold text-white mb-1">Fleet Fan-Out</h4>
-              <p class="text-xs text-pine-300 leading-snug">
+              <p class="text-xs text-pine-200 leading-relaxed">
                 Simultaneous 10-platform distribution (YouTube, X, Reels, LinkedIn).
               </p>
             </div>
-            <div class="pt-2 border-t border-pine-800/80 text-[10px] font-mono text-emerald-400 flex items-center justify-between">
+            <div class="relative z-10 pt-2.5 border-t border-[#1E4B3D] text-[10px] font-mono text-emerald-400 flex items-center justify-between font-semibold">
               <span>10-PLATFORM DISPATCH</span>
               <span class="hidden lg:inline text-emerald-400 font-bold">●</span>
             </div>
@@ -745,20 +860,20 @@
         </div>
       </div>
 
-      <!-- Bottom Metric Strip (Deep Pine Telemetry) -->
-      <div class="p-3.5 rounded-xl bg-pine-900/80 border border-pine-800 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+      <!-- Bottom Metric Strip (Elevated Frosted Surface) -->
+      <div class="p-3.5 rounded-xl bg-gradient-to-r from-[#11352A] via-[#0D2A21] to-[#11352A] border border-[#235747] shadow-lg flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
         <div class="flex items-center gap-2">
-          <span class="text-pine-400 uppercase">VELOCITY MULTIPLIER:</span>
+          <span class="text-pine-300 uppercase">VELOCITY MULTIPLIER:</span>
           <span class="text-lime-400 font-bold">12.5x (&lt;45s vs 4–8h manual)</span>
         </div>
-        <div class="h-3 w-px bg-pine-800 hidden sm:block"></div>
+        <div class="h-3 w-px bg-[#235747] hidden sm:block"></div>
         <div class="flex items-center gap-2">
-          <span class="text-pine-400 uppercase">CONCURRENCY:</span>
+          <span class="text-pine-300 uppercase">CONCURRENCY:</span>
           <span class="text-white font-bold">ZERO SOCKET LEAKS</span>
         </div>
-        <div class="h-3 w-px bg-pine-800 hidden sm:block"></div>
+        <div class="h-3 w-px bg-[#235747] hidden sm:block"></div>
         <div class="flex items-center gap-2">
-          <span class="text-pine-400 uppercase">DLQ RECOVERY:</span>
+          <span class="text-pine-300 uppercase">DLQ RECOVERY:</span>
           <span class="text-emerald-400 font-bold">3x BACKOFF · 99.7% RELIABILITY</span>
         </div>
       </div>
@@ -1181,15 +1296,10 @@
         <div class="lg:col-span-4 bg-white p-3.5 sm:p-4 rounded-2xl border border-stone-200 shadow-md flex flex-col justify-between">
           <div>
             <div class="flex items-center gap-3 mb-2">
-              <!-- Editorial Portrait Mask with SVG Fallback -->
-              <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl overflow-hidden bg-neutral-900 border border-stone-200 shadow-sm shrink-0 flex items-center justify-center">
-                <img src="assets/aeos_creator_editorial.jpg" 
-                     alt="Aman Suryavanshi" 
-                     class="w-full h-full object-cover object-top"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="hidden w-full h-full bg-pine-950 items-center justify-center font-display font-black text-lime-400 text-sm">
-                  AS
-                </div>
+              <!-- Architectural Monogram Badge (Zero Fake AI Portrait) -->
+              <div class="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-pine-950 border border-pine-800 shadow-sm shrink-0 flex items-center justify-center">
+                <span class="font-display font-black text-lime-400 text-sm sm:text-base tracking-tight">AS</span>
+                <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 border-2 border-white" title="Verified Systems Operator"></span>
               </div>
               <div>
                 <h3 class="text-base sm:text-lg font-display font-extrabold text-neutral-950 leading-tight">Aman Suryavanshi</h3>
